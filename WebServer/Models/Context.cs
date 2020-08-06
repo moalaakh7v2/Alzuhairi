@@ -1,14 +1,16 @@
 namespace WebServer.Models
 {
     using System;
-    using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Design;
+    using Microsoft.Extensions.Configuration;
 
     public partial class Context : DbContext
     {
-        public Context()
-            : base("name=Context")
+        public Context(DbContextOptions<Context> options)
+            : base(options)
         {
         }
 
@@ -25,47 +27,20 @@ namespace WebServer.Models
         public virtual DbSet<tblUser> tblUsers { get; set; }
         public virtual DbSet<tblUserSerial> tblUserSerials { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<tblDept>()
-                .HasMany(e => e.tblSubjects)
-                .WithRequired(e => e.tblDept)
-                .HasForeignKey(e => e.IdDept);
-
-            modelBuilder.Entity<tblDept>()
-                .HasMany(e => e.tblUsers)
-                .WithRequired(e => e.tblDept)
-                .HasForeignKey(e => e.IdDept);
-
-            modelBuilder.Entity<tblNota>()
-                .HasMany(e => e.tblQrCodes)
-                .WithRequired(e => e.tblNota)
-                .HasForeignKey(e => e.IdNota);
-
-            modelBuilder.Entity<tblNota>()
-                .HasMany(e => e.tblSerialNumbers)
-                .WithRequired(e => e.tblNota)
-                .HasForeignKey(e => e.IdNota);
-
-            modelBuilder.Entity<tblPhone>()
-                .HasMany(e => e.tblCodes)
-                .WithRequired(e => e.tblPhone)
-                .HasForeignKey(e => e.IdPhone);
-
-            modelBuilder.Entity<tblSubject>()
-                .HasMany(e => e.tblNotas)
-                .WithRequired(e => e.tblSubject)
-                .HasForeignKey(e => e.IdSubject);
-
-            modelBuilder.Entity<tblUser>()
-                .HasMany(e => e.tblPhones)
-                .WithRequired(e => e.tblUser)
-                .HasForeignKey(e => e.IdUser);
-
-            modelBuilder.Entity<tblUser>()
-                .HasMany(e => e.tblUserInfos)
-                .WithRequired(e => e.tblUser)
-                .HasForeignKey(e => e.IdUser);
+            base.OnModelCreating(modelBuilder);
+            foreach (var entity in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var foreignKey in entity.GetForeignKeys())
+                {
+                    foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+                }
+            }
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+          
         }
     }
 }
