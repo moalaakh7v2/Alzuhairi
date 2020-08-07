@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebServer.Models;
+using Models;
 
 namespace WebServer.Controllers
 {
@@ -21,7 +21,7 @@ namespace WebServer.Controllers
         }
 
         [HttpPost("AdminExists")]
-        public bool AdminExists(tblAdmin admin)
+        public bool AdminExists(Admin admin)
         {
             return db.tblAdmins.Any(x=>x.UserName == admin.UserName && x.Password == admin.Password);
         }
