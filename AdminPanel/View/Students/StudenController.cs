@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace AdminPanel.View.Students
 {
-    public partial class controller : Form
+    public partial class StudenController : Form
     {
         Panel pnlDisplay;
-        public controller(Panel pnlDisplay)
+        public StudenController(Panel pnlDisplay)
         {
             this.pnlDisplay = pnlDisplay;
             InitializeComponent();
@@ -24,6 +24,12 @@ namespace AdminPanel.View.Students
         {
             DisplayStudents displayStudents = new DisplayStudents();
             btnDisplay.GetFormInDisplay(pnlDisplay, displayStudents);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddStudent addStudent = new AddStudent();
+            btnDisplay.GetFormInDisplay(pnlDisplay, addStudent);
         }
     }
 }

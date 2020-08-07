@@ -75,11 +75,17 @@
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Students\controller.cs">
+    <Compile Include="View\Students\AddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Students\controller.Designer.cs">
-      <DependentUpon>controller.cs</DependentUpon>
+    <Compile Include="View\Students\AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Students\StudenController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Students\StudenController.Designer.cs">
+      <DependentUpon>StudenController.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Students\DisplayStudents.cs">
       <SubType>Form</SubType>
@@ -92,6 +98,18 @@
     </Compile>
     <Compile Include="View\Students\GetStudent.Designer.cs">
       <DependentUpon>GetStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Subjects\ManageSubjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Subjects\ManageSubjects.Designer.cs">
+      <DependentUpon>ManageSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Subjects\SubjectsController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Subjects\SubjectsController.Designer.cs">
+      <DependentUpon>SubjectsController.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,14 +127,23 @@
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Students\controller.resx">
-      <DependentUpon>controller.cs</DependentUpon>
+    <EmbeddedResource Include="View\Students\AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Students\StudenController.resx">
+      <DependentUpon>StudenController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Students\DisplayStudents.resx">
       <DependentUpon>DisplayStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Students\GetStudent.resx">
       <DependentUpon>GetStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Subjects\ManageSubjects.resx">
+      <DependentUpon>ManageSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Subjects\SubjectsController.resx">
+      <DependentUpon>SubjectsController.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

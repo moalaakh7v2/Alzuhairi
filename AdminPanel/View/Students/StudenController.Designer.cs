@@ -1,6 +1,6 @@
 ﻿namespace AdminPanel.View.Students
 {
-    partial class controller
+    partial class StudenController
     {
         /// <summary>
         /// Required designer variable.
@@ -52,8 +52,9 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // controller
+            // StudenController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -62,7 +63,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "controller";
+            this.Name = "StudenController";
             this.Text = "controller";
             this.ResumeLayout(false);
 

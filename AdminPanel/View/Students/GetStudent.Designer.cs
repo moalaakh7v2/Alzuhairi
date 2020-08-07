@@ -43,6 +43,7 @@
             this.comboGender = new System.Windows.Forms.ComboBox();
             this.comboDept = new System.Windows.Forms.ComboBox();
             this.comboPhone = new System.Windows.Forms.ComboBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,20 +123,20 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(176, 353);
+            this.btnEdit.Location = new System.Drawing.Point(179, 384);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "تعديل";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(95, 353);
+            this.btnDelete.Location = new System.Drawing.Point(98, 384);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "حذف";
+            this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // label55
@@ -174,12 +175,20 @@
             this.comboPhone.Size = new System.Drawing.Size(185, 21);
             this.comboPhone.TabIndex = 16;
             // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(108, 322);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(185, 20);
+            this.txtPhone.TabIndex = 17;
+            // 
             // GetStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(202)))), ((int)(((byte)(199)))));
-            this.ClientSize = new System.Drawing.Size(355, 401);
+            this.ClientSize = new System.Drawing.Size(355, 429);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.comboPhone);
             this.Controls.Add(this.comboDept);
             this.Controls.Add(this.comboGender);
@@ -222,5 +231,6 @@
         private System.Windows.Forms.ComboBox comboGender;
         private System.Windows.Forms.ComboBox comboDept;
         private System.Windows.Forms.ComboBox comboPhone;
+        private System.Windows.Forms.TextBox txtPhone;
     }
 }

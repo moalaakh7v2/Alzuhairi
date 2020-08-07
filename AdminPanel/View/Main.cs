@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminPanel.Tools;
 using AdminPanel.View.Students;
+using AdminPanel.View.Subjects;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
@@ -34,7 +35,13 @@ namespace AdminPanel.View
 
         private void btnStudents_Click_1(object sender, EventArgs e)
         {
-            controller myForm = new controller(pnlDisplay);
+            StudenController myForm = new StudenController(pnlDisplay);
+            btnStudents.ChangePanelMood(pnlControl, pnlDisplay, myForm);
+        }
+
+        private void btnSubjects_Click(object sender, EventArgs e)
+        {
+            SubjectsController myForm = new SubjectsController(pnlDisplay);
             btnStudents.ChangePanelMood(pnlControl, pnlDisplay, myForm);
         }
     }
