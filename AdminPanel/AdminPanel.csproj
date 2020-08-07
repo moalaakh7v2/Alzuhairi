@@ -99,6 +99,12 @@
     <Compile Include="View\Students\GetStudent.Designer.cs">
       <DependentUpon>GetStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Subjects\ManageDepts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Subjects\ManageDepts.Designer.cs">
+      <DependentUpon>ManageDepts.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Subjects\ManageSubjects.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Students\GetStudent.resx">
       <DependentUpon>GetStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Subjects\ManageDepts.resx">
+      <DependentUpon>ManageDepts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Subjects\ManageSubjects.resx">
       <DependentUpon>ManageSubjects.cs</DependentUpon>

@@ -52,6 +52,7 @@
             this.btnDepts.TabIndex = 4;
             this.btnDepts.Text = "Manage Depts";
             this.btnDepts.UseVisualStyleBackColor = false;
+            this.btnDepts.Click += new System.EventHandler(this.btnDepts_Click);
             // 
             // SubjectsController
             // 

@@ -30,5 +30,11 @@ namespace AdminPanel.View.Subjects
             ManageSubjects displaySubjects = new ManageSubjects();
             btnDisplay.GetFormInDisplay(pnlDisplay, displaySubjects);
         }
+
+        private void btnDepts_Click(object sender, EventArgs e)
+        {
+            ManageDepts manageDepts = new ManageDepts();
+            btnDisplay.GetFormInDisplay(pnlDisplay, manageDepts);
+        }
     }
 }

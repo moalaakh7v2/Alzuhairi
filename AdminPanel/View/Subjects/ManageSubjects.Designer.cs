@@ -30,17 +30,17 @@
         {
             this.grdDisplay = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSubject = new System.Windows.Forms.TextBox();
-            this.comboDept = new System.Windows.Forms.ComboBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.comboDeptEdit = new System.Windows.Forms.ComboBox();
+            this.txtSubjectEdit = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboDeptAdd = new System.Windows.Forms.ComboBox();
+            this.txtSubjectAdd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdDisplay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,48 +59,14 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.comboDept);
-            this.groupBox1.Controls.Add(this.txtSubject);
+            this.groupBox1.Controls.Add(this.comboDeptEdit);
+            this.groupBox1.Controls.Add(this.txtSubjectEdit);
             this.groupBox1.Location = new System.Drawing.Point(229, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 259);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Subject Info";
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.Location = new System.Drawing.Point(97, 45);
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(159, 20);
-            this.txtSubject.TabIndex = 0;
-            // 
-            // comboDept
-            // 
-            this.comboDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboDept.FormattingEnabled = true;
-            this.comboDept.Location = new System.Drawing.Point(97, 110);
-            this.comboDept.Name = "comboDept";
-            this.comboDept.Size = new System.Drawing.Size(159, 21);
-            this.comboDept.TabIndex = 1;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(97, 183);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(159, 23);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Subject";
             // 
             // label2
             // 
@@ -111,13 +77,47 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Dept";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Subject";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(97, 183);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(159, 23);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // comboDeptEdit
+            // 
+            this.comboDeptEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboDeptEdit.FormattingEnabled = true;
+            this.comboDeptEdit.Location = new System.Drawing.Point(97, 110);
+            this.comboDeptEdit.Name = "comboDeptEdit";
+            this.comboDeptEdit.Size = new System.Drawing.Size(159, 21);
+            this.comboDeptEdit.TabIndex = 1;
+            // 
+            // txtSubjectEdit
+            // 
+            this.txtSubjectEdit.Location = new System.Drawing.Point(97, 45);
+            this.txtSubjectEdit.Name = "txtSubjectEdit";
+            this.txtSubjectEdit.Size = new System.Drawing.Size(159, 20);
+            this.txtSubjectEdit.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btnAdd);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.comboDeptAdd);
+            this.groupBox2.Controls.Add(this.txtSubjectAdd);
             this.groupBox2.Location = new System.Drawing.Point(520, 44);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(214, 259);
@@ -152,23 +152,23 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboDeptAdd
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboDeptAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboDeptAdd.FormattingEnabled = true;
+            this.comboDeptAdd.Location = new System.Drawing.Point(26, 113);
+            this.comboDeptAdd.Name = "comboDeptAdd";
+            this.comboDeptAdd.Size = new System.Drawing.Size(159, 21);
+            this.comboDeptAdd.TabIndex = 1;
             // 
-            // textBox1
+            // txtSubjectAdd
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtSubjectAdd.Location = new System.Drawing.Point(26, 45);
+            this.txtSubjectAdd.Name = "txtSubjectAdd";
+            this.txtSubjectAdd.Size = new System.Drawing.Size(159, 20);
+            this.txtSubjectAdd.TabIndex = 0;
             // 
-            // DisplaySubjects
+            // ManageSubjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +178,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grdDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DisplaySubjects";
+            this.Name = "ManageSubjects";
             this.Text = "DisplaySubjects";
             ((System.ComponentModel.ISupportInitialize)(this.grdDisplay)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -196,13 +196,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.ComboBox comboDept;
-        private System.Windows.Forms.TextBox txtSubject;
+        private System.Windows.Forms.ComboBox comboDeptEdit;
+        private System.Windows.Forms.TextBox txtSubjectEdit;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboDeptAdd;
+        private System.Windows.Forms.TextBox txtSubjectAdd;
     }
 }
