@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminPanel.Tools;
-using AdminPanel.View.Books;
+using AdminPanel.View.Notas;
 using AdminPanel.View.Students;
 using AdminPanel.View.Subjects;
 using MetroFramework;
@@ -43,7 +43,7 @@ namespace AdminPanel.View
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            BookController myForm = new BookController(pnlDisplay);
+            NotaController myForm = new NotaController(pnlDisplay);
             btnBooks.ChangePanelMood(pnlControl, pnlDisplay, myForm);
         }
     }

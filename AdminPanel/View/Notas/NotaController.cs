@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace AdminPanel.View.Notas
 {
-    public partial class BookController : Form
+    public partial class NotaController : Form
     {
         Panel pnlDisplay;
-        public BookController(Panel pnlDisplay)
+        public NotaController(Panel pnlDisplay)
         {
             this.pnlDisplay = pnlDisplay;
             InitializeComponent();

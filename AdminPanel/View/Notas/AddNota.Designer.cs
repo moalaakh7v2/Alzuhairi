@@ -31,14 +31,17 @@
             this.comboSubjects = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnAddNota = new System.Windows.Forms.Button();
             this.txtCount = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.grpVideos = new System.Windows.Forms.GroupBox();
+            this.txtDescribe = new System.Windows.Forms.TextBox();
+            this.btnAddVideo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grpVideos.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboSubjects
@@ -61,25 +64,33 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.btnAddNota);
             this.groupBox1.Controls.Add(this.txtCount);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboSubjects);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(77, 40);
+            this.groupBox1.Location = new System.Drawing.Point(67, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 225);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Nota";
             // 
-            // dataGridView1
+            // btnAddNota
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(345, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(216, 177);
-            this.dataGridView1.TabIndex = 3;
+            this.btnAddNota.Location = new System.Drawing.Point(85, 167);
+            this.btnAddNota.Name = "btnAddNota";
+            this.btnAddNota.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNota.TabIndex = 4;
+            this.btnAddNota.Text = "Create";
+            this.btnAddNota.UseVisualStyleBackColor = true;
+            // 
+            // txtCount
+            // 
+            this.txtCount.Location = new System.Drawing.Point(59, 104);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.Size = new System.Drawing.Size(166, 20);
+            this.txtCount.TabIndex = 3;
             // 
             // label2
             // 
@@ -90,58 +101,80 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Count";
             // 
-            // txtCount
+            // grpVideos
             // 
-            this.txtCount.Location = new System.Drawing.Point(59, 104);
-            this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(166, 20);
-            this.txtCount.TabIndex = 3;
+            this.grpVideos.Controls.Add(this.btnBrowse);
+            this.grpVideos.Controls.Add(this.label3);
+            this.grpVideos.Controls.Add(this.btnAddVideo);
+            this.grpVideos.Controls.Add(this.txtDescribe);
+            this.grpVideos.Location = new System.Drawing.Point(345, 40);
+            this.grpVideos.Name = "grpVideos";
+            this.grpVideos.Size = new System.Drawing.Size(270, 225);
+            this.grpVideos.TabIndex = 3;
+            this.grpVideos.TabStop = false;
+            this.grpVideos.Text = "Add Video";
             // 
-            // btnAdd
+            // txtDescribe
             // 
-            this.btnAdd.Location = new System.Drawing.Point(85, 167);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Create";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.txtDescribe.Location = new System.Drawing.Point(16, 104);
+            this.txtDescribe.Multiline = true;
+            this.txtDescribe.Name = "txtDescribe";
+            this.txtDescribe.Size = new System.Drawing.Size(236, 63);
+            this.txtDescribe.TabIndex = 0;
+            // 
+            // btnAddVideo
+            // 
+            this.btnAddVideo.Location = new System.Drawing.Point(100, 186);
+            this.btnAddVideo.Name = "btnAddVideo";
+            this.btnAddVideo.Size = new System.Drawing.Size(75, 23);
+            this.btnAddVideo.TabIndex = 5;
+            this.btnAddVideo.Text = "Add";
+            this.btnAddVideo.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(342, 61);
+            this.label3.Location = new System.Drawing.Point(13, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Nota Codes";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Describe";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(16, 45);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(236, 23);
+            this.btnBrowse.TabIndex = 7;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(606, 144);
+            this.btnExport.Location = new System.Drawing.Point(641, 147);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(90, 39);
-            this.btnExport.TabIndex = 5;
+            this.btnExport.Size = new System.Drawing.Size(84, 46);
+            this.btnExport.TabIndex = 8;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // AddBook
+            // AddNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
             this.ClientSize = new System.Drawing.Size(746, 325);
             this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grpVideos);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddBook";
+            this.Name = "AddNota";
             this.Text = "AddBook";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.grpVideos.ResumeLayout(false);
+            this.grpVideos.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -150,10 +183,13 @@
         private System.Windows.Forms.ComboBox comboSubjects;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddNota;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox grpVideos;
+        private System.Windows.Forms.TextBox txtDescribe;
+        private System.Windows.Forms.Button btnAddVideo;
+        private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExport;
     }

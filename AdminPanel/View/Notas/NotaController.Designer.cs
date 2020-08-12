@@ -1,6 +1,6 @@
 ﻿namespace AdminPanel.View.Notas
 {
-    partial class BookController
+    partial class NotaController
     {
         /// <summary>
         /// Required designer variable.

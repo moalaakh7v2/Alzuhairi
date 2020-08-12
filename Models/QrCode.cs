@@ -8,9 +8,11 @@ namespace Models
     public partial class QrCode
     {
         public Guid Id { get; set; }
+        public string Title { get; set; }
 
         [Required]
         public string VideoLink { get; set; }
+        public string Describe { get; set; }
 
         public int IdNota { get; set; }
 
