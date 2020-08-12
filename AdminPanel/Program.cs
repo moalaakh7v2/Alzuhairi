@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace AdminPanel
 {
-    static class Program
+   
+    public static class Program
     {
+        public static Login login;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +19,8 @@ namespace AdminPanel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            login = new Login();
+            Application.Run(login);
         }
     }
 }

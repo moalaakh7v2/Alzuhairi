@@ -28,30 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pnlManage = new System.Windows.Forms.Panel();
+            this.btnBooks = new System.Windows.Forms.Button();
             this.btnSubjects = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
-            this.btnLogOut = new Bunifu.Framework.UI.BunifuTileButton();
             this.pnlDisplay = new System.Windows.Forms.Panel();
             this.pnlControl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBooks = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlManage.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlManage
             // 
             this.pnlManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
+            this.pnlManage.Controls.Add(this.pictureBox1);
             this.pnlManage.Controls.Add(this.btnBooks);
             this.pnlManage.Controls.Add(this.btnSubjects);
             this.pnlManage.Controls.Add(this.btnStudents);
-            this.pnlManage.Controls.Add(this.btnLogOut);
             this.pnlManage.Location = new System.Drawing.Point(12, 12);
             this.pnlManage.Name = "pnlManage";
             this.pnlManage.Size = new System.Drawing.Size(212, 461);
             this.pnlManage.TabIndex = 0;
+            // 
+            // btnBooks
+            // 
+            this.btnBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
+            this.btnBooks.Location = new System.Drawing.Point(21, 240);
+            this.btnBooks.Name = "btnBooks";
+            this.btnBooks.Size = new System.Drawing.Size(170, 31);
+            this.btnBooks.TabIndex = 6;
+            this.btnBooks.Text = "Books";
+            this.btnBooks.UseVisualStyleBackColor = false;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // btnSubjects
             // 
@@ -74,26 +85,6 @@
             this.btnStudents.Text = "Students";
             this.btnStudents.UseVisualStyleBackColor = false;
             this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click_1);
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnLogOut.color = System.Drawing.Color.SeaGreen;
-            this.btnLogOut.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
-            this.btnLogOut.ImagePosition = 20;
-            this.btnLogOut.ImageZoom = 50;
-            this.btnLogOut.LabelPosition = 41;
-            this.btnLogOut.LabelText = "Tile 1";
-            this.btnLogOut.Location = new System.Drawing.Point(60, 379);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(6);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(79, 60);
-            this.btnLogOut.TabIndex = 0;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pnlDisplay
             // 
@@ -123,16 +114,16 @@
             this.panel1.Size = new System.Drawing.Size(988, 489);
             this.panel1.TabIndex = 3;
             // 
-            // btnBooks
+            // pictureBox1
             // 
-            this.btnBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
-            this.btnBooks.Location = new System.Drawing.Point(21, 240);
-            this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(170, 31);
-            this.btnBooks.TabIndex = 6;
-            this.btnBooks.Text = "Books";
-            this.btnBooks.UseVisualStyleBackColor = false;
-            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
+            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.logout_icon_65;
+            this.pictureBox1.Location = new System.Drawing.Point(74, 405);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Main
             // 
@@ -149,6 +140,7 @@
             this.Text = "Main";
             this.pnlManage.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,9 +151,9 @@
         private System.Windows.Forms.Panel pnlDisplay;
         private System.Windows.Forms.Panel pnlControl;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuTileButton btnLogOut;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnSubjects;
         private System.Windows.Forms.Button btnBooks;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

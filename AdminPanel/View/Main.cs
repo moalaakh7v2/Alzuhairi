@@ -24,11 +24,6 @@ namespace AdminPanel.View
             InitializeComponent();
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnStudents_Click_1(object sender, EventArgs e)
         {
             StudenController myForm = new StudenController(pnlDisplay);
@@ -45,6 +40,12 @@ namespace AdminPanel.View
         {
             NotaController myForm = new NotaController(pnlDisplay);
             btnBooks.ChangePanelMood(pnlControl, pnlDisplay, myForm);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Program.login.Show();
         }
     }
 }

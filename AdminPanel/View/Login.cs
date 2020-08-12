@@ -24,6 +24,7 @@ namespace AdminPanel.View
                 MessageBox.Show("UserName And Password are required");
                 return;
             }
+            txtPassword.Text = txtUserName.Text = "";
             Main main = new Main();
             main.Show();
             this.Hide();

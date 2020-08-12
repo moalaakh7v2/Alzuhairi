@@ -187,8 +187,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MetroFramework.txt" />
-    <None Include="Resources\47fb998d-ca76-4408-8e92-bc7082c6e2ca.jpg" />
+    <None Include="Resources\logout-icon-65.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">

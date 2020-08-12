@@ -15,7 +15,6 @@ namespace AdminPanel.Tools
         {
             panelController.Controls.Clear();
             panelDisplay.Controls.Clear();
-            btn.BackColor = ColorTranslator.FromHtml("#59405c");
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
             panelController.Controls.Add(myForm);
@@ -25,7 +24,6 @@ namespace AdminPanel.Tools
         public static void GetFormInDisplay(this Button btn, Panel panelDisplay, Form myForm)
         {
             panelDisplay.Controls.Clear();
-            btn.BackColor = ColorTranslator.FromHtml("#59405c");
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
             panelDisplay.Controls.Add(myForm);
