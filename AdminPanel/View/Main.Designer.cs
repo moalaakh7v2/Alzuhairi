@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pnlManage = new System.Windows.Forms.Panel();
+            this.btnSubjects = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnLogOut = new Bunifu.Framework.UI.BunifuTileButton();
             this.pnlDisplay = new System.Windows.Forms.Panel();
             this.pnlControl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSubjects = new System.Windows.Forms.Button();
+            this.btnBooks = new System.Windows.Forms.Button();
             this.pnlManage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // pnlManage
             // 
             this.pnlManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
+            this.pnlManage.Controls.Add(this.btnBooks);
             this.pnlManage.Controls.Add(this.btnSubjects);
             this.pnlManage.Controls.Add(this.btnStudents);
             this.pnlManage.Controls.Add(this.btnLogOut);
@@ -50,6 +52,17 @@
             this.pnlManage.Name = "pnlManage";
             this.pnlManage.Size = new System.Drawing.Size(212, 461);
             this.pnlManage.TabIndex = 0;
+            // 
+            // btnSubjects
+            // 
+            this.btnSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
+            this.btnSubjects.Location = new System.Drawing.Point(21, 188);
+            this.btnSubjects.Name = "btnSubjects";
+            this.btnSubjects.Size = new System.Drawing.Size(170, 31);
+            this.btnSubjects.TabIndex = 5;
+            this.btnSubjects.Text = "Subjects";
+            this.btnSubjects.UseVisualStyleBackColor = false;
+            this.btnSubjects.Click += new System.EventHandler(this.btnSubjects_Click);
             // 
             // btnStudents
             // 
@@ -109,18 +122,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(988, 489);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnSubjects
+            // btnBooks
             // 
-            this.btnSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
-            this.btnSubjects.Location = new System.Drawing.Point(21, 188);
-            this.btnSubjects.Name = "btnSubjects";
-            this.btnSubjects.Size = new System.Drawing.Size(170, 31);
-            this.btnSubjects.TabIndex = 5;
-            this.btnSubjects.Text = "Subjects";
-            this.btnSubjects.UseVisualStyleBackColor = false;
-            this.btnSubjects.Click += new System.EventHandler(this.btnSubjects_Click);
+            this.btnBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
+            this.btnBooks.Location = new System.Drawing.Point(21, 240);
+            this.btnBooks.Name = "btnBooks";
+            this.btnBooks.Size = new System.Drawing.Size(170, 31);
+            this.btnBooks.TabIndex = 6;
+            this.btnBooks.Text = "Books";
+            this.btnBooks.UseVisualStyleBackColor = false;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // Main
             // 
@@ -150,5 +162,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnLogOut;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnSubjects;
+        private System.Windows.Forms.Button btnBooks;
     }
 }

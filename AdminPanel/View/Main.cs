@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminPanel.Tools;
+using AdminPanel.View.Books;
 using AdminPanel.View.Students;
 using AdminPanel.View.Subjects;
 using MetroFramework;
@@ -21,11 +22,6 @@ namespace AdminPanel.View
         public Main()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -42,7 +38,13 @@ namespace AdminPanel.View
         private void btnSubjects_Click(object sender, EventArgs e)
         {
             SubjectsController myForm = new SubjectsController(pnlDisplay);
-            btnStudents.ChangePanelMood(pnlControl, pnlDisplay, myForm);
+            btnSubjects.ChangePanelMood(pnlControl, pnlDisplay, myForm);
+        }
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            BookController myForm = new BookController(pnlDisplay);
+            btnBooks.ChangePanelMood(pnlControl, pnlDisplay, myForm);
         }
     }
 }

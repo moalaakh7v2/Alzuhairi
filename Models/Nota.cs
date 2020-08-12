@@ -17,7 +17,7 @@ namespace Models
 
         public DateTime ReleaseDate { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
 
         public virtual Subject tblSubject { get; set; }
         public virtual ICollection<QrCode> tblQrCodes { get; set; }

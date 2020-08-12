@@ -63,6 +63,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\FormMood.cs" />
+    <Compile Include="View\Notas\AddNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Notas\AddNota.Designer.cs">
+      <DependentUpon>AddNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Notas\NotaController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Notas\NotaController.Designer.cs">
+      <DependentUpon>NotaController.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Notas\AddNota.resx">
+      <DependentUpon>AddNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Notas\NotaController.resx">
+      <DependentUpon>NotaController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,5 +196,6 @@
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
