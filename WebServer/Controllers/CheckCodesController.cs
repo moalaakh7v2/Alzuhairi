@@ -39,7 +39,7 @@ namespace WebServer.Controllers
         }
 
         //2
-        [HttpGet("CheckCodeExists/{PhoneNumber}/{Code}")]
+        [HttpPost("CheckCodeExists/{PhoneNumber}/{Code}")]
         private async Task<ActionResult<RegisterState>> CheckCodeExists(string PhoneNumber , int Code)
         {
             bool state = _context.CheckCodes.Any(x=>x.PhoneNumber == PhoneNumber && x.Code == Code && x.SendDate.AddMinutes(15) <= DateTime.Now);
