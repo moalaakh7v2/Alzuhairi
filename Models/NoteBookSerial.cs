@@ -16,5 +16,6 @@ namespace Models
 
         public virtual NoteBook NoteBook { get; set; }
         public virtual ICollection<NoteBooksSold> NoteBooksSolds { get; set; }
+        public virtual ICollection<StudentNoteBook> StudentNoteBooks { get; set; }
     }
 }

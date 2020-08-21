@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,13 @@ namespace WebServer.Controllers
             _context = context;
         }
 
+        //4
+        [HttpGet("GetStudent/{imei}")]
+        public async Task<ActionResult<Student>> GetStudent(string imei)
+        {
+            return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
+        }
+
         //3
         [HttpPost("CreateStudent")]
         public async Task<ActionResult<Student>> CreateStudent(Student student)
@@ -30,6 +38,15 @@ namespace WebServer.Controllers
             return Ok(student);
         }
 
-        
+        //5
+        [HttpPut("ModifyStudent")]
+        public async Task<ActionResult<Student>> ModifyStudent(Student student)
+        {
+            //Todo Update Phone Number
+            _context.Entry(student).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return Ok(student);
+        }
+
     }
 }

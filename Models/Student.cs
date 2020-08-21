@@ -27,5 +27,6 @@ namespace Models
         public bool IsActive { get; set; } = true;
 
         public virtual Dept Dept { get; set; }
+        public virtual ICollection<StudentNoteBook> StudentNoteBooks { get; set; }
     }
 }
