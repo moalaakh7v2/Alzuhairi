@@ -23,7 +23,7 @@ namespace WebServer.Controllers
         [HttpPost("AdminExists")]
         public bool AdminExists(Admin admin)
         {
-            return db.tblAdmins.Any(x=>x.UserName == admin.UserName && x.Password == admin.Password);
+            return db.Admins.Any(x=>x.Email == admin.Email && x.Password == admin.Password);
         }
     }
 }

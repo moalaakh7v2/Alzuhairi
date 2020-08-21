@@ -21,15 +21,15 @@ namespace WebServer.Controllers
         }
        
         [HttpGet("GetUsers")]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Student>>> GetUsers()
         {
-            return await _context.tblUsers.ToListAsync();
+            return await _context.Students.ToListAsync();
         }
 
         [HttpGet("GetUser/{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<Student>> GetUser(int id)
         {
-            var User = await _context.tblUsers.FindAsync(id);
+            var User = await _context.Students.FindAsync(id);
 
             if (User == null)
             {

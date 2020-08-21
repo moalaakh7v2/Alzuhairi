@@ -1,11 +1,6 @@
+using System.ComponentModel.DataAnnotations;
 namespace Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    
-
     public partial class NoteBookFeature
     {
         public int Id { get; set; }
@@ -15,7 +10,7 @@ namespace Models
         [Required]
         public string Title { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
 
         public virtual NoteBook NoteBook { get; set; }
     }

@@ -1,11 +1,6 @@
+using System.ComponentModel.DataAnnotations;
 namespace Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    
-
     public partial class sysdiagram
     {
         [Required]

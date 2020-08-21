@@ -13,7 +13,7 @@ namespace AdminPanel.View.Students
 {
     public partial class GetStudent : Form
     {
-        public GetStudent(User user)
+        public GetStudent(Student student)
         {
             InitializeComponent();
         }

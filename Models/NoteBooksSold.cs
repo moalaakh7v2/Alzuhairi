@@ -1,12 +1,5 @@
 namespace Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    
-
-    [Table("NoteBooksSold")]
     public partial class NoteBooksSold
     {
         public int Id { get; set; }
