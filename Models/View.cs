@@ -6,14 +6,12 @@ namespace Models
     using System.ComponentModel.DataAnnotations.Schema;
     
 
-    public partial class Admin
+    public partial class View
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        [Required]
-        public string Email { get; set; }
+        public int StudentId { get; set; }
 
-        [Required]
-        public string Password { get; set; }
+        public Guid VideoId { get; set; }
     }
 }

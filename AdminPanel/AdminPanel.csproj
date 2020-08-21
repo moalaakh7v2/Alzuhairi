@@ -69,6 +69,12 @@
     <Compile Include="View\Notas\AddNota.Designer.cs">
       <DependentUpon>AddNota.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Notas\DisplayNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Notas\DisplayNotas.Designer.cs">
+      <DependentUpon>DisplayNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Notas\NotaController.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="View\Notas\AddNota.resx">
       <DependentUpon>AddNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Notas\DisplayNotas.resx">
+      <DependentUpon>DisplayNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Notas\NotaController.resx">
       <DependentUpon>NotaController.cs</DependentUpon>

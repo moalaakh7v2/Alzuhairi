@@ -15,17 +15,20 @@ namespace Models
         }
 
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Admin> tblAdmins { get; set; }
-        public virtual DbSet<Code> tblCodes { get; set; }
-        public virtual DbSet<Dept> tblDepts { get; set; }
-        public virtual DbSet<Nota> tblNotas { get; set; }
-        public virtual DbSet<Phone> tblPhones { get; set; }
-        public virtual DbSet<QrCode> tblQrCodes { get; set; }
-        public virtual DbSet<SerialNumber> tblSerialNumbers { get; set; }
-        public virtual DbSet<Subject> tblSubjects { get; set; }
-        public virtual DbSet<UserInfo> tblUserInfos { get; set; }
-        public virtual DbSet<User> tblUsers { get; set; }
-        public virtual DbSet<UserSerial> tblUserSerials { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<Dept> Depts { get; set; }
+        public virtual DbSet<NoteBookFeature> NoteBookFeatures { get; set; }
+        public virtual DbSet<NoteBook> NoteBooks { get; set; }
+        public virtual DbSet<NoteBookSerial> NoteBookSerials { get; set; }
+        public virtual DbSet<NoteBooksSold> NoteBooksSolds { get; set; }
+        public virtual DbSet<RegisterCode> RegisterCodes { get; set; }
+        public virtual DbSet<Reseller> Resellers { get; set; }
+        public virtual DbSet<StudentInfo> StudentInfos { get; set; }
+        public virtual DbSet<StudentNoteBook> StudentNoteBooks { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<Video> Videos { get; set; }
+        public virtual DbSet<View> Views { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

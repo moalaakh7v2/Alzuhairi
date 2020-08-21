@@ -35,10 +35,10 @@
             this.txtCount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grpVideos = new System.Windows.Forms.GroupBox();
-            this.txtDescribe = new System.Windows.Forms.TextBox();
-            this.btnAddVideo = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAddVideo = new System.Windows.Forms.Button();
+            this.txtDescribe = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpVideos.SuspendLayout();
@@ -114,22 +114,14 @@
             this.grpVideos.TabStop = false;
             this.grpVideos.Text = "Add Video";
             // 
-            // txtDescribe
+            // btnBrowse
             // 
-            this.txtDescribe.Location = new System.Drawing.Point(16, 104);
-            this.txtDescribe.Multiline = true;
-            this.txtDescribe.Name = "txtDescribe";
-            this.txtDescribe.Size = new System.Drawing.Size(236, 63);
-            this.txtDescribe.TabIndex = 0;
-            // 
-            // btnAddVideo
-            // 
-            this.btnAddVideo.Location = new System.Drawing.Point(100, 186);
-            this.btnAddVideo.Name = "btnAddVideo";
-            this.btnAddVideo.Size = new System.Drawing.Size(75, 23);
-            this.btnAddVideo.TabIndex = 5;
-            this.btnAddVideo.Text = "Add";
-            this.btnAddVideo.UseVisualStyleBackColor = true;
+            this.btnBrowse.Location = new System.Drawing.Point(16, 45);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(236, 23);
+            this.btnBrowse.TabIndex = 7;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -140,18 +132,26 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Describe";
             // 
-            // btnBrowse
+            // btnAddVideo
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(16, 45);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(236, 23);
-            this.btnBrowse.TabIndex = 7;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnAddVideo.Location = new System.Drawing.Point(100, 186);
+            this.btnAddVideo.Name = "btnAddVideo";
+            this.btnAddVideo.Size = new System.Drawing.Size(75, 23);
+            this.btnAddVideo.TabIndex = 5;
+            this.btnAddVideo.Text = "Add";
+            this.btnAddVideo.UseVisualStyleBackColor = true;
+            // 
+            // txtDescribe
+            // 
+            this.txtDescribe.Location = new System.Drawing.Point(16, 104);
+            this.txtDescribe.Multiline = true;
+            this.txtDescribe.Name = "txtDescribe";
+            this.txtDescribe.Size = new System.Drawing.Size(236, 63);
+            this.txtDescribe.TabIndex = 0;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(641, 147);
+            this.btnExport.Location = new System.Drawing.Point(641, 130);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(84, 46);
             this.btnExport.TabIndex = 8;

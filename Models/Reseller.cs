@@ -6,24 +6,26 @@ namespace Models
     using System.ComponentModel.DataAnnotations.Schema;
     
 
-    public partial class Subject
+    public partial class Reseller
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subject()
+        public Reseller()
         {
-            NoteBooks = new HashSet<NoteBook>();
+            NoteBooksSolds = new HashSet<NoteBooksSold>();
         }
 
         public int Id { get; set; }
 
         [Required]
-        public string SubjectName { get; set; }
+        public string Title { get; set; }
 
-        public int DeptId { get; set; }
+        [Required]
+        public string Location { get; set; }
 
-        public virtual Dept Dept { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NoteBook> NoteBooks { get; set; }
+        public virtual ICollection<NoteBooksSold> NoteBooksSolds { get; set; }
     }
 }

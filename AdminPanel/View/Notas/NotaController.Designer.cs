@@ -52,8 +52,9 @@
             this.btnDisplay.TabIndex = 2;
             this.btnDisplay.Text = "Display";
             this.btnDisplay.UseVisualStyleBackColor = false;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
-            // BookController
+            // NotaController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -62,7 +63,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BookController";
+            this.Name = "NotaController";
             this.Text = "BookController";
             this.ResumeLayout(false);
 

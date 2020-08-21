@@ -1,23 +1,29 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    
+
     public partial class Dept
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Dept()
         {
-            tblSubjects = new HashSet<Subject>();
-            tblUsers = new HashSet<User>();
+            Students = new HashSet<Student>();
+            Subjects = new HashSet<Subject>();
         }
 
         public int Id { get; set; }
 
         [Required]
         public string DeptName { get; set; }
-        public virtual ICollection<Subject> tblSubjects { get; set; }
-        public virtual ICollection<User> tblUsers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student> Students { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Subject> Subjects { get; set; }
     }
 }

@@ -6,14 +6,17 @@ namespace Models
     using System.ComponentModel.DataAnnotations.Schema;
     
 
-    public partial class Admin
+    public partial class NoteBookFeature
     {
         public int Id { get; set; }
 
-        [Required]
-        public string Email { get; set; }
+        public int NoteBookId { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public string Title { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public virtual NoteBook NoteBook { get; set; }
     }
 }

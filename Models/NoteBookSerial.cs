@@ -6,24 +6,24 @@ namespace Models
     using System.ComponentModel.DataAnnotations.Schema;
     
 
-    public partial class Subject
+    public partial class NoteBookSerial
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subject()
+        public NoteBookSerial()
         {
-            NoteBooks = new HashSet<NoteBook>();
+            NoteBooksSolds = new HashSet<NoteBooksSold>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        [Required]
-        public string SubjectName { get; set; }
+        public Guid NoteSerial { get; set; }
 
-        public int DeptId { get; set; }
+        public int NoteBookId { get; set; }
 
-        public virtual Dept Dept { get; set; }
+        public virtual NoteBook NoteBook { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NoteBook> NoteBooks { get; set; }
+        public virtual ICollection<NoteBooksSold> NoteBooksSolds { get; set; }
     }
 }

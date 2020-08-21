@@ -25,5 +25,11 @@ namespace AdminPanel.View.Notas
             AddNota addNota = new AddNota();
             btnAdd.GetFormInDisplay(pnlDisplay, addNota);
         }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            DisplayNotas displayNotas = new DisplayNotas();
+            btnDisplay.GetFormInDisplay(pnlDisplay, displayNotas);
+        }
     }
 }
