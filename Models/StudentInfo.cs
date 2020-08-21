@@ -18,12 +18,9 @@ namespace Models
         [Required]
         public string Imei { get; set; }
 
-        [Required]
-        public string MacAddress { get; set; }
-
         public int StudentId { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
         public virtual ICollection<RegisterCode> RegisterCodes { get; set; }
 
         public virtual Student Student { get; set; }

@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel", "AdminPanel\Ad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebServer.csproj", "{F2B80761-842C-45C4-86FA-AF2B7AEA2C25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{AC33B592-F61F-4E80-829B-D32DE109984A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{AC33B592-F61F-4E80-829B-D32DE109984A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{C3E0EC11-4071-41AA-8943-4AB8ADD4157C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{AC33B592-F61F-4E80-829B-D32DE109984A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC33B592-F61F-4E80-829B-D32DE109984A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC33B592-F61F-4E80-829B-D32DE109984A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E0EC11-4071-41AA-8943-4AB8ADD4157C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E0EC11-4071-41AA-8943-4AB8ADD4157C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E0EC11-4071-41AA-8943-4AB8ADD4157C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E0EC11-4071-41AA-8943-4AB8ADD4157C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

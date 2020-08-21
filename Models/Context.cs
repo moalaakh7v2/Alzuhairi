@@ -16,6 +16,7 @@ namespace Models
 
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<CheckCode> CheckCodes { get; set; }
         public virtual DbSet<Dept> Depts { get; set; }
         public virtual DbSet<NoteBookFeature> NoteBookFeatures { get; set; }
         public virtual DbSet<NoteBook> NoteBooks { get; set; }

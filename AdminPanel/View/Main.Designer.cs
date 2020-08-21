@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.pnlManage = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBooks = new System.Windows.Forms.Button();
             this.btnSubjects = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.pnlDisplay = new System.Windows.Forms.Panel();
             this.pnlControl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlManage.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlManage
@@ -53,6 +53,17 @@
             this.pnlManage.Size = new System.Drawing.Size(212, 461);
             this.pnlManage.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.logout_icon_65;
+            this.pictureBox1.Location = new System.Drawing.Point(74, 405);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // btnBooks
             // 
             this.btnBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
@@ -60,7 +71,7 @@
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(170, 31);
             this.btnBooks.TabIndex = 6;
-            this.btnBooks.Text = "Books";
+            this.btnBooks.Text = "Note Books";
             this.btnBooks.UseVisualStyleBackColor = false;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
@@ -114,17 +125,6 @@
             this.panel1.Size = new System.Drawing.Size(988, 489);
             this.panel1.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.logout_icon_65;
-            this.pictureBox1.Location = new System.Drawing.Point(74, 405);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,8 +139,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.pnlManage.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
