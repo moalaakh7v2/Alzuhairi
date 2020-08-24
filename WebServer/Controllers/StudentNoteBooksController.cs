@@ -23,7 +23,7 @@ namespace WebServer.Controllers
 
         //6
         [HttpPost("SetUpNewNoteBook/{studentId}")]
-        public async Task<ActionResult<StudentNoteBook>> SetUpNewNoteBook(Guid noteSerial , int studentId)
+        public async Task<ActionResult<List<NoteBookFeature>>> SetUpNewNoteBook(Guid noteSerial , int studentId)
         {
             //Check If Serial Fount
             NoteBookSerial noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x=>x.NoteSerial == noteSerial);
@@ -48,48 +48,21 @@ namespace WebServer.Controllers
                     return Ok(studentNoteBook);
                 }
             }
+            List<StudentNoteBook> studentNoteBooks = await  _context.StudentNoteBooks.Where(x=>x.StudentId == studentId).ToListAsync();
+            foreach (var item in studentNoteBooks)
+                item.IsActive = false;
+
             StudentNoteBook CraetestudentNoteBook = new StudentNoteBook
             {
                 StudentId = studentId,
-                SerialId = noteBookSerial.Id
+                SerialId = noteBookSerial.Id,
+                IsActive = true,
             };
+            List<NoteBookFeature> noteBookFeatures = await _context.NoteBookFeatures.Where(x => x.NoteBookId == noteBook.Id).ToListAsync();
             await _context.StudentNoteBooks.AddAsync(CraetestudentNoteBook);
             await _context.SaveChangesAsync();
-
-            return Ok(CraetestudentNoteBook);
+            
+            return Ok(noteBookFeatures);
         }
-
-
-        //void test()
-        //{
-        //    NoteBook noteBook = new NoteBook
-        //    {
-        //        Id = 1,
-        //        ReleaseDate = DateTime.Now,
-        //        SubjectId = 2,
-        //        IsActive = true,
-        //        Note = "Thie for math"
-        //    };
-        //    NoteBookSerial noteBookSerial1 = new NoteBookSerial
-        //    {
-        //        Id = 1,
-        //        NoteSerial = Guid.NewGuid(),
-        //        NoteBookId =1
-        //    };
-        //    NoteBookSerial noteBookSerial2 = new NoteBookSerial
-        //    {
-        //        Id = 2,
-        //        NoteSerial = Guid.NewGuid(),
-        //        NoteBookId = 1
-        //    };
-        //    StudentNoteBook studentNoteBook = new StudentNoteBook
-        //    {
-        //        Id = 1 ,
-        //        StudentId =1 ,
-        //        SerialId = 1
-        //    };
-        //}
-
-        
     }
 }
