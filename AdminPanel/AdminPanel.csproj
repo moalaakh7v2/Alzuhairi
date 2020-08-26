@@ -126,5 +126,11 @@
   <ItemGroup>
     <None Include="Resources\Google-Play-Books-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\841-8415925_5519-lincoln-ave-blue-store-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about-us-logo-png-6.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

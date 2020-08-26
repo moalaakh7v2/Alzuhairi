@@ -55,6 +55,7 @@ namespace AdminPanel.View
             if (LogIn.IsLogin)
             {
                 pnlView.Controls.Clear();
+                btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible  = true;
             }
             else
             {
@@ -64,17 +65,26 @@ namespace AdminPanel.View
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
+            pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 12);
         }
 
         private void btnNoteBook_Click(object sender, EventArgs e)
         {
+            pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 67);
         }
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
+            pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 124);
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            pnlChoise.Visible = true;
+            pnlChoise.Location = new Point(63, 176);
         }
     }
 }

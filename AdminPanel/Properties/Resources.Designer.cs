@@ -83,6 +83,26 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _841_8415925_5519_lincoln_ave_blue_store_icon_png {
+            get {
+                object obj = ResourceManager.GetObject("841-8415925_5519-lincoln-ave-blue-store-icon-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap about_us_logo_png_6 {
+            get {
+                object obj = ResourceManager.GetObject("about-us-logo-png-6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Google_Play_Books_icon {
             get {
                 object obj = ResourceManager.GetObject("Google-Play-Books-icon", resourceCulture);
