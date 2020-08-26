@@ -63,77 +63,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\FormMood.cs" />
-    <Compile Include="View\Notas\AddNota.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Notas\AddNota.Designer.cs">
-      <DependentUpon>AddNota.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Notas\DisplayNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Notas\DisplayNotas.Designer.cs">
-      <DependentUpon>DisplayNotas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Notas\NotaController.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Notas\NotaController.Designer.cs">
-      <DependentUpon>NotaController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Students\AddStudent.cs">
+    <Compile Include="View\Settings\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Students\AddStudent.Designer.cs">
-      <DependentUpon>AddStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Students\StudenController.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Students\StudenController.Designer.cs">
-      <DependentUpon>StudenController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Students\DisplayStudents.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Students\DisplayStudents.Designer.cs">
-      <DependentUpon>DisplayStudents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Students\GetStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Students\GetStudent.Designer.cs">
-      <DependentUpon>GetStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Subjects\ManageDepts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Subjects\ManageDepts.Designer.cs">
-      <DependentUpon>ManageDepts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Subjects\ManageSubjects.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Subjects\ManageSubjects.Designer.cs">
-      <DependentUpon>ManageSubjects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Subjects\SubjectsController.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Subjects\SubjectsController.Designer.cs">
-      <DependentUpon>SubjectsController.cs</DependentUpon>
+    <Compile Include="View\Settings\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,41 +85,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\Notas\AddNota.resx">
-      <DependentUpon>AddNota.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Notas\DisplayNotas.resx">
-      <DependentUpon>DisplayNotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Notas\NotaController.resx">
-      <DependentUpon>NotaController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Students\AddStudent.resx">
-      <DependentUpon>AddStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Students\StudenController.resx">
-      <DependentUpon>StudenController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Students\DisplayStudents.resx">
-      <DependentUpon>DisplayStudents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Students\GetStudent.resx">
-      <DependentUpon>GetStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Subjects\ManageDepts.resx">
-      <DependentUpon>ManageDepts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Subjects\ManageSubjects.resx">
-      <DependentUpon>ManageSubjects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Subjects\SubjectsController.resx">
-      <DependentUpon>SubjectsController.cs</DependentUpon>
+    <EmbeddedResource Include="View\Settings\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -204,6 +114,17 @@
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\شعار صافي.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\124-1244891_user-groups-filled-icon-group-icon-png-clipart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\124-1244891_user-groups-filled-icon-group-icon-png-clipart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Google-Play-Books-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

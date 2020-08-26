@@ -28,132 +28,241 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlManage = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.pnlNav = new System.Windows.Forms.Panel();
+            this.btnMin = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlConrols = new System.Windows.Forms.Panel();
+            this.pnlView = new System.Windows.Forms.Panel();
+            this.pnlControlManage = new System.Windows.Forms.Panel();
+            this.pnlChoise = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btnPOS = new System.Windows.Forms.PictureBox();
+            this.btnNoteBook = new System.Windows.Forms.PictureBox();
+            this.btnStudents = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBooks = new System.Windows.Forms.Button();
-            this.btnSubjects = new System.Windows.Forms.Button();
-            this.btnStudents = new System.Windows.Forms.Button();
-            this.pnlDisplay = new System.Windows.Forms.Panel();
-            this.pnlControl = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlManage.SuspendLayout();
+            this.pnlNav.SuspendLayout();
+            this.pnlConrols.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoteBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlManage
+            // pnlNav
             // 
-            this.pnlManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
-            this.pnlManage.Controls.Add(this.pictureBox1);
-            this.pnlManage.Controls.Add(this.btnBooks);
-            this.pnlManage.Controls.Add(this.btnSubjects);
-            this.pnlManage.Controls.Add(this.btnStudents);
-            this.pnlManage.Location = new System.Drawing.Point(12, 12);
-            this.pnlManage.Name = "pnlManage";
-            this.pnlManage.Size = new System.Drawing.Size(212, 461);
-            this.pnlManage.TabIndex = 0;
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.pnlNav.Controls.Add(this.btnMin);
+            this.pnlNav.Controls.Add(this.btnClose);
+            this.pnlNav.Controls.Add(this.label1);
+            this.pnlNav.Controls.Add(this.pictureBox1);
+            this.pnlNav.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNav.Location = new System.Drawing.Point(0, 0);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(972, 34);
+            this.pnlNav.TabIndex = 0;
             // 
-            // pictureBox1
+            // btnMin
             // 
-            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.logout_icon_65;
-            this.pictureBox1.Location = new System.Drawing.Point(74, 405);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMin.FlatAppearance.BorderSize = 0;
+            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMin.Location = new System.Drawing.Point(890, 4);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(33, 23);
+            this.btnMin.TabIndex = 3;
+            this.btnMin.Text = "ــ";
+            this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
-            // btnBooks
+            // btnClose
             // 
-            this.btnBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
-            this.btnBooks.Location = new System.Drawing.Point(21, 240);
-            this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(170, 31);
-            this.btnBooks.TabIndex = 6;
-            this.btnBooks.Text = "Note Books";
-            this.btnBooks.UseVisualStyleBackColor = false;
-            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClose.Location = new System.Drawing.Point(929, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(33, 23);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
             // 
-            // btnSubjects
+            // label1
             // 
-            this.btnSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
-            this.btnSubjects.Location = new System.Drawing.Point(21, 188);
-            this.btnSubjects.Name = "btnSubjects";
-            this.btnSubjects.Size = new System.Drawing.Size(170, 31);
-            this.btnSubjects.TabIndex = 5;
-            this.btnSubjects.Text = "Subjects";
-            this.btnSubjects.UseVisualStyleBackColor = false;
-            this.btnSubjects.Click += new System.EventHandler(this.btnSubjects_Click);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(54, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Alzuhairi";
+            // 
+            // pnlConrols
+            // 
+            this.pnlConrols.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.pnlConrols.Controls.Add(this.pnlChoise);
+            this.pnlConrols.Controls.Add(this.pictureBox6);
+            this.pnlConrols.Controls.Add(this.pictureBox5);
+            this.pnlConrols.Controls.Add(this.btnPOS);
+            this.pnlConrols.Controls.Add(this.btnNoteBook);
+            this.pnlConrols.Controls.Add(this.btnStudents);
+            this.pnlConrols.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlConrols.Location = new System.Drawing.Point(0, 34);
+            this.pnlConrols.Name = "pnlConrols";
+            this.pnlConrols.Size = new System.Drawing.Size(69, 468);
+            this.pnlConrols.TabIndex = 1;
+            // 
+            // pnlView
+            // 
+            this.pnlView.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlView.Location = new System.Drawing.Point(228, 34);
+            this.pnlView.Name = "pnlView";
+            this.pnlView.Size = new System.Drawing.Size(744, 468);
+            this.pnlView.TabIndex = 2;
+            // 
+            // pnlControlManage
+            // 
+            this.pnlControlManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlControlManage.Location = new System.Drawing.Point(69, 34);
+            this.pnlControlManage.Name = "pnlControlManage";
+            this.pnlControlManage.Size = new System.Drawing.Size(159, 468);
+            this.pnlControlManage.TabIndex = 3;
+            // 
+            // pnlChoise
+            // 
+            this.pnlChoise.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlChoise.Location = new System.Drawing.Point(63, 12);
+            this.pnlChoise.Name = "pnlChoise";
+            this.pnlChoise.Size = new System.Drawing.Size(5, 46);
+            this.pnlChoise.TabIndex = 5;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Location = new System.Drawing.Point(12, 235);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 180);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
+            // btnPOS
+            // 
+            this.btnPOS.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPOS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPOS.Location = new System.Drawing.Point(12, 125);
+            this.btnPOS.Name = "btnPOS";
+            this.btnPOS.Size = new System.Drawing.Size(45, 40);
+            this.btnPOS.TabIndex = 2;
+            this.btnPOS.TabStop = false;
+            this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
+            // 
+            // btnNoteBook
+            // 
+            this.btnNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNoteBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNoteBook.Image = global::AdminPanel.Properties.Resources.Google_Play_Books_icon;
+            this.btnNoteBook.Location = new System.Drawing.Point(12, 70);
+            this.btnNoteBook.Name = "btnNoteBook";
+            this.btnNoteBook.Size = new System.Drawing.Size(45, 40);
+            this.btnNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNoteBook.TabIndex = 1;
+            this.btnNoteBook.TabStop = false;
+            this.btnNoteBook.Click += new System.EventHandler(this.btnNoteBook_Click);
             // 
             // btnStudents
             // 
-            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(85)))), ((int)(((byte)(111)))));
-            this.btnStudents.Location = new System.Drawing.Point(21, 136);
+            this.btnStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStudents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudents.Image = global::AdminPanel.Properties.Resources._124_1244891_user_groups_filled_icon_group_icon_png_clipart1;
+            this.btnStudents.Location = new System.Drawing.Point(12, 15);
             this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(170, 31);
-            this.btnStudents.TabIndex = 4;
-            this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = false;
-            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click_1);
+            this.btnStudents.Size = new System.Drawing.Size(45, 40);
+            this.btnStudents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnStudents.TabIndex = 0;
+            this.btnStudents.TabStop = false;
+            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
             // 
-            // pnlDisplay
+            // pictureBox1
             // 
-            this.pnlDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
-            this.pnlDisplay.Location = new System.Drawing.Point(230, 148);
-            this.pnlDisplay.Name = "pnlDisplay";
-            this.pnlDisplay.Size = new System.Drawing.Size(746, 325);
-            this.pnlDisplay.TabIndex = 1;
-            // 
-            // pnlControl
-            // 
-            this.pnlControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
-            this.pnlControl.Location = new System.Drawing.Point(230, 61);
-            this.pnlControl.Name = "pnlControl";
-            this.pnlControl.Size = new System.Drawing.Size(746, 65);
-            this.pnlControl.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(93)))), ((int)(((byte)(103)))));
-            this.panel1.Controls.Add(this.pnlDisplay);
-            this.panel1.Controls.Add(this.pnlManage);
-            this.panel1.Controls.Add(this.pnlControl);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 489);
-            this.panel1.TabIndex = 3;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.شعار_صافي;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(988, 489);
-            this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(972, 502);
+            this.Controls.Add(this.pnlControlManage);
+            this.Controls.Add(this.pnlView);
+            this.Controls.Add(this.pnlConrols);
+            this.Controls.Add(this.pnlNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            this.pnlManage.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Main_Load);
+            this.pnlNav.ResumeLayout(false);
+            this.pnlNav.PerformLayout();
+            this.pnlConrols.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoteBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlManage;
-        private System.Windows.Forms.Panel pnlDisplay;
-        private System.Windows.Forms.Panel pnlControl;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnStudents;
-        private System.Windows.Forms.Button btnSubjects;
-        private System.Windows.Forms.Button btnBooks;
+        private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnMin;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlConrols;
+        private System.Windows.Forms.Panel pnlView;
+        private System.Windows.Forms.Panel pnlControlManage;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox btnPOS;
+        private System.Windows.Forms.PictureBox btnNoteBook;
+        private System.Windows.Forms.PictureBox btnStudents;
+        private System.Windows.Forms.Panel pnlChoise;
     }
 }

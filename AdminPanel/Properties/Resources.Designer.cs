@@ -63,9 +63,49 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _124_1244891_user_groups_filled_icon_group_icon_png_clipart {
+            get {
+                object obj = ResourceManager.GetObject("124-1244891_user-groups-filled-icon-group-icon-png-clipart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _124_1244891_user_groups_filled_icon_group_icon_png_clipart1 {
+            get {
+                object obj = ResourceManager.GetObject("124-1244891_user-groups-filled-icon-group-icon-png-clipart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_Play_Books_icon {
+            get {
+                object obj = ResourceManager.GetObject("Google-Play-Books-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_icon_65 {
             get {
                 object obj = ResourceManager.GetObject("logout-icon-65", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap شعار_صافي {
+            get {
+                object obj = ResourceManager.GetObject("شعار صافي", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

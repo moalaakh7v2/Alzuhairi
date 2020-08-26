@@ -10,7 +10,7 @@ namespace AdminPanel
    
     public static class Program
     {
-        public static Login login;
+        public static Main MainForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,8 +19,8 @@ namespace AdminPanel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            login = new Login();
-            Application.Run(login);
+            MainForm = new Main();
+            Application.Run(MainForm);
         }
     }
 }
