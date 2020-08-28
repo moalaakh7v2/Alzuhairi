@@ -32,6 +32,9 @@ namespace AdminPanel.View.NoteBook
         private void btnManageNoteBook_Click(object sender, EventArgs e)
         {
             pnlChoise.Location = new Point(150, 67);
+
+            ManageNoteBooks manageNoteBooks = new ManageNoteBooks();
+            ShowInPanelView(manageNoteBooks);
         }
         void ShowInPanelView(Form form)
         {

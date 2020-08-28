@@ -30,30 +30,30 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.grdNotebooks = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lstFeatures = new System.Windows.Forms.ListBox();
+            this.lstStudent = new System.Windows.Forms.ListBox();
+            this.btnDeAvtiveNoteBook = new System.Windows.Forms.PictureBox();
+            this.txtUnused = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtUsed = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.grdNotebooks = new System.Windows.Forms.DataGridView();
             this.comboDeptSubjectYear = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chkVideos = new System.Windows.Forms.CheckedListBox();
-            this.txtCount = new System.Windows.Forms.TextBox();
-            this.txtUsed = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtUnused = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnAddVideo = new System.Windows.Forms.PictureBox();
             this.btnDownloadVideoQR = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
-            this.btnDeAvtiveNoteBook = new System.Windows.Forms.PictureBox();
-            this.lstStudent = new System.Windows.Forms.ListBox();
-            this.lstFeatures = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeAvtiveNoteBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdNotebooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownloadVideoQR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeAvtiveNoteBook)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,14 +89,91 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notebook Info";
             // 
-            // grdNotebooks
+            // label7
             // 
-            this.grdNotebooks.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grdNotebooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdNotebooks.Location = new System.Drawing.Point(18, 102);
-            this.grdNotebooks.Name = "grdNotebooks";
-            this.grdNotebooks.Size = new System.Drawing.Size(393, 178);
-            this.grdNotebooks.TabIndex = 4;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 233);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 18);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Features";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 125);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Students";
+            // 
+            // lstFeatures
+            // 
+            this.lstFeatures.FormattingEnabled = true;
+            this.lstFeatures.ItemHeight = 18;
+            this.lstFeatures.Location = new System.Drawing.Point(91, 235);
+            this.lstFeatures.Name = "lstFeatures";
+            this.lstFeatures.Size = new System.Drawing.Size(218, 94);
+            this.lstFeatures.TabIndex = 8;
+            // 
+            // lstStudent
+            // 
+            this.lstStudent.FormattingEnabled = true;
+            this.lstStudent.ItemHeight = 18;
+            this.lstStudent.Location = new System.Drawing.Point(91, 125);
+            this.lstStudent.Name = "lstStudent";
+            this.lstStudent.Size = new System.Drawing.Size(218, 94);
+            this.lstStudent.TabIndex = 7;
+            // 
+            // btnDeAvtiveNoteBook
+            // 
+            this.btnDeAvtiveNoteBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeAvtiveNoteBook.Image = global::AdminPanel.Properties.Resources._1246273;
+            this.btnDeAvtiveNoteBook.Location = new System.Drawing.Point(131, 356);
+            this.btnDeAvtiveNoteBook.Name = "btnDeAvtiveNoteBook";
+            this.btnDeAvtiveNoteBook.Size = new System.Drawing.Size(32, 28);
+            this.btnDeAvtiveNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDeAvtiveNoteBook.TabIndex = 6;
+            this.btnDeAvtiveNoteBook.TabStop = false;
+            // 
+            // txtUnused
+            // 
+            this.txtUnused.Location = new System.Drawing.Point(222, 75);
+            this.txtUnused.Name = "txtUnused";
+            this.txtUnused.Size = new System.Drawing.Size(87, 23);
+            this.txtUnused.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(165, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 18);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "UnUsed";
+            // 
+            // txtUsed
+            // 
+            this.txtUsed.Location = new System.Drawing.Point(60, 75);
+            this.txtUsed.Name = "txtUsed";
+            this.txtUsed.Size = new System.Drawing.Size(87, 23);
+            this.txtUsed.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Used";
+            // 
+            // txtCount
+            // 
+            this.txtCount.Location = new System.Drawing.Point(121, 33);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.Size = new System.Drawing.Size(188, 23);
+            this.txtCount.TabIndex = 1;
             // 
             // label2
             // 
@@ -106,6 +183,15 @@
             this.label2.Size = new System.Drawing.Size(99, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Count of copies";
+            // 
+            // grdNotebooks
+            // 
+            this.grdNotebooks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grdNotebooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdNotebooks.Location = new System.Drawing.Point(18, 102);
+            this.grdNotebooks.Name = "grdNotebooks";
+            this.grdNotebooks.Size = new System.Drawing.Size(393, 178);
+            this.grdNotebooks.TabIndex = 4;
             // 
             // comboDeptSubjectYear
             // 
@@ -137,45 +223,6 @@
             this.chkVideos.Name = "chkVideos";
             this.chkVideos.Size = new System.Drawing.Size(294, 154);
             this.chkVideos.TabIndex = 11;
-            // 
-            // txtCount
-            // 
-            this.txtCount.Location = new System.Drawing.Point(121, 33);
-            this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(188, 23);
-            this.txtCount.TabIndex = 1;
-            // 
-            // txtUsed
-            // 
-            this.txtUsed.Location = new System.Drawing.Point(60, 75);
-            this.txtUsed.Name = "txtUsed";
-            this.txtUsed.Size = new System.Drawing.Size(87, 23);
-            this.txtUsed.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Used";
-            // 
-            // txtUnused
-            // 
-            this.txtUnused.Location = new System.Drawing.Point(222, 75);
-            this.txtUnused.Name = "txtUnused";
-            this.txtUnused.Size = new System.Drawing.Size(87, 23);
-            this.txtUnused.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(165, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "UnUsed";
             // 
             // btnAddVideo
             // 
@@ -213,52 +260,6 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.TabStop = false;
             // 
-            // btnDeAvtiveNoteBook
-            // 
-            this.btnDeAvtiveNoteBook.Image = global::AdminPanel.Properties.Resources._1246273;
-            this.btnDeAvtiveNoteBook.Location = new System.Drawing.Point(131, 356);
-            this.btnDeAvtiveNoteBook.Name = "btnDeAvtiveNoteBook";
-            this.btnDeAvtiveNoteBook.Size = new System.Drawing.Size(32, 28);
-            this.btnDeAvtiveNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDeAvtiveNoteBook.TabIndex = 6;
-            this.btnDeAvtiveNoteBook.TabStop = false;
-            // 
-            // lstStudent
-            // 
-            this.lstStudent.FormattingEnabled = true;
-            this.lstStudent.ItemHeight = 18;
-            this.lstStudent.Location = new System.Drawing.Point(91, 125);
-            this.lstStudent.Name = "lstStudent";
-            this.lstStudent.Size = new System.Drawing.Size(218, 94);
-            this.lstStudent.TabIndex = 7;
-            // 
-            // lstFeatures
-            // 
-            this.lstFeatures.FormattingEnabled = true;
-            this.lstFeatures.ItemHeight = 18;
-            this.lstFeatures.Location = new System.Drawing.Point(91, 235);
-            this.lstFeatures.Name = "lstFeatures";
-            this.lstFeatures.Size = new System.Drawing.Size(218, 94);
-            this.lstFeatures.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 125);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 18);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Students";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 233);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 18);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Features";
-            // 
             // ManageNoteBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,11 +280,11 @@
             this.Text = "ManageNoteBooks";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeAvtiveNoteBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdNotebooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownloadVideoQR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeAvtiveNoteBook)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

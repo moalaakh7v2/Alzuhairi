@@ -60,7 +60,7 @@ namespace AdminPanel.View
             if (LogIn.IsLogin)
             {
                 pnlView.Controls.Clear();
-                btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible  = true;
+                btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible  = btnInit.Visible = true;
             }
             else
             {
