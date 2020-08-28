@@ -81,7 +81,7 @@ namespace AdminPanel.View
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 67);
 
-            NoteBookPanel noteBookPanel = new NoteBookPanel();
+            NoteBookPanel noteBookPanel = new NoteBookPanel(this);
             ShowInPanelControlManage(noteBookPanel);
         }
 

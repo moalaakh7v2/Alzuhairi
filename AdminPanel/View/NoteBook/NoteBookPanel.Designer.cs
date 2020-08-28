@@ -81,6 +81,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NoteBookPanel";
             this.Text = "NoteBookPanel";
+            this.Load += new System.EventHandler(this.NoteBookPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNoteBook)).EndInit();
             this.ResumeLayout(false);

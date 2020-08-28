@@ -75,6 +75,12 @@
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NoteBook\AddNoteBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NoteBook\AddNoteBook.Designer.cs">
+      <DependentUpon>AddNoteBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NoteBook\NoteBookPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NoteBook\AddNoteBook.resx">
+      <DependentUpon>AddNoteBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\NoteBookPanel.resx">
       <DependentUpon>NoteBookPanel.cs</DependentUpon>

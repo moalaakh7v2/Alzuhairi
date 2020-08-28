@@ -12,14 +12,33 @@ namespace AdminPanel.View.NoteBook
 {
     public partial class NoteBookPanel : Form
     {
-        public NoteBookPanel()
+        Main Main;
+        public NoteBookPanel(Main main)
         {
+            this.Main = main;
             InitializeComponent();
         }
-
+        private void NoteBookPanel_Load(object sender, EventArgs e)
+        {
+            btnAddNoteBook_Click(sender, e);
+        }
         private void btnAddNoteBook_Click(object sender, EventArgs e)
         {
             pnlChoise.Location = new Point(150, 12);
+
+            AddNoteBook addNoteBook = new AddNoteBook();
+            ShowInPanelView(addNoteBook);
         }
+
+        void ShowInPanelView(Form form)
+        {
+            Main.pnlView.Controls.Clear();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            Main.pnlView.Controls.Add(form);
+            form.Show();
+        }
+
+      
     }
 }
