@@ -35,8 +35,8 @@ namespace AdminPanel.View.Init
         {
             pnlChoise.Location = new Point(150, 66);
 
-            ManageSubjects manageSubjects = new ManageSubjects();
-            ShowInPanelView(manageSubjects);
+            ManageFeatures manageFeatures = new ManageFeatures();
+            ShowInPanelView(manageFeatures);
         }
         void ShowInPanelView(Form form)
         {
