@@ -99,7 +99,7 @@ namespace AdminPanel.View
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 176);
 
-            InitPanel initPanel = new InitPanel();
+            InitPanel initPanel = new InitPanel(this);
             ShowInPanelControlManage(initPanel);
         }
         private void btnAbout_Click(object sender, EventArgs e)
