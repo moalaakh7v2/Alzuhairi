@@ -40,6 +40,5 @@ namespace AdminPanel.View.Settings
             Main.CheckLogin();
         }
 
-        
     }
 }

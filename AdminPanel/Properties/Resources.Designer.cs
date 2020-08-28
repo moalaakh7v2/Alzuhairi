@@ -83,6 +83,16 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12527 {
+            get {
+                object obj = ResourceManager.GetObject("12527", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _841_8415925_5519_lincoln_ave_blue_store_icon_png {
             get {
                 object obj = ResourceManager.GetObject("841-8415925_5519-lincoln-ave-blue-store-icon-png", resourceCulture);
@@ -103,6 +113,26 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_User {
+            get {
+                object obj = ResourceManager.GetObject("Add User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_refresh_reload_icon_29 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-refresh-reload-icon-29", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Google_Play_Books_icon {
             get {
                 object obj = ResourceManager.GetObject("Google-Play-Books-icon", resourceCulture);
@@ -116,6 +146,26 @@ namespace AdminPanel.Properties {
         internal static System.Drawing.Bitmap logout_icon_65 {
             get {
                 object obj = ResourceManager.GetObject("logout-icon-65", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_1782307_1514157 {
+            get {
+                object obj = ResourceManager.GetObject("refresh-1782307-1514157", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_2 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

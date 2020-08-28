@@ -251,13 +251,13 @@
         private System.Windows.Forms.Button btnMin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlConrols;
-        private System.Windows.Forms.Panel pnlView;
+        public System.Windows.Forms.Panel pnlConrols;
+        public System.Windows.Forms.Panel pnlView;
         private System.Windows.Forms.Panel pnlControlManage;
         private System.Windows.Forms.PictureBox btnAbout;
         private System.Windows.Forms.PictureBox btnPOS;
         private System.Windows.Forms.PictureBox btnNoteBook;
         private System.Windows.Forms.PictureBox btnStudents;
-        private System.Windows.Forms.Panel pnlChoise;
+        public System.Windows.Forms.Panel pnlChoise;
     }
 }

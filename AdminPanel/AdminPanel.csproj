@@ -63,17 +63,59 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\FormMood.cs" />
+    <Compile Include="View\About\AboutPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\About\AboutPanel.Designer.cs">
+      <DependentUpon>AboutPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NoteBook\NoteBookPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NoteBook\NoteBookPanel.Designer.cs">
+      <DependentUpon>NoteBookPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Settings\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Settings\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\StorePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Store\StorePanel.Designer.cs">
+      <DependentUpon>StorePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Students\AddNewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Students\AddNewStudent.Designer.cs">
+      <DependentUpon>AddNewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Students\EditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Students\EditStudent.Designer.cs">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Students\ManageStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Students\ManageStudents.Designer.cs">
+      <DependentUpon>ManageStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Students\StudentPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Students\StudentPanel.Designer.cs">
+      <DependentUpon>StudentPanel.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,11 +127,32 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\About\AboutPanel.resx">
+      <DependentUpon>AboutPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\NoteBook\NoteBookPanel.resx">
+      <DependentUpon>NoteBookPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Settings\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\StorePanel.resx">
+      <DependentUpon>StorePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Students\AddNewStudent.resx">
+      <DependentUpon>AddNewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Students\EditStudent.resx">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Students\ManageStudents.resx">
+      <DependentUpon>ManageStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Students\StudentPanel.resx">
+      <DependentUpon>StudentPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -131,6 +194,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\about-us-logo-png-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12527.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-1782307-1514157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-refresh-reload-icon-29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

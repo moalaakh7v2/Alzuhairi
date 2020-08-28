@@ -1,4 +1,8 @@
-﻿using AdminPanel.View.Settings;
+﻿using AdminPanel.View.About;
+using AdminPanel.View.NoteBook;
+using AdminPanel.View.Settings;
+using AdminPanel.View.Store;
+using AdminPanel.View.Students;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,24 +71,45 @@ namespace AdminPanel.View
         {
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 12);
-        }
 
+            StudentPanel studentPanel = new StudentPanel(this);
+            ShowInPanelControlManage(studentPanel);
+        }
+        
         private void btnNoteBook_Click(object sender, EventArgs e)
         {
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 67);
+
+            NoteBookPanel noteBookPanel = new NoteBookPanel();
+            ShowInPanelControlManage(noteBookPanel);
         }
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 124);
+
+            StorePanel storePanel = new StorePanel();
+            ShowInPanelControlManage(storePanel);
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 176);
+
+            AboutPanel aboutPanel = new AboutPanel();
+            ShowInPanelControlManage(aboutPanel);
+        }
+
+        void ShowInPanelControlManage(Form form)
+        {
+            this.pnlControlManage.Controls.Clear();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            this.pnlControlManage.Controls.Add(form);
+            form.Show();
         }
     }
 }
