@@ -87,6 +87,12 @@
     <Compile Include="View\NoteBook\AddNoteBook.Designer.cs">
       <DependentUpon>AddNoteBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NoteBook\ManageNoteBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NoteBook\ManageNoteBooks.Designer.cs">
+      <DependentUpon>ManageNoteBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NoteBook\NoteBookPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\AddNoteBook.resx">
       <DependentUpon>AddNoteBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NoteBook\ManageNoteBooks.resx">
+      <DependentUpon>ManageNoteBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\NoteBookPanel.resx">
       <DependentUpon>NoteBookPanel.cs</DependentUpon>
@@ -248,6 +257,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1323223.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crystal_Project_Edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-icon-png-free-download-download-icon-png-1000_1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1246273.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

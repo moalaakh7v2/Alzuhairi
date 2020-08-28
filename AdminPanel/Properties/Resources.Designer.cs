@@ -83,6 +83,16 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1246273 {
+            get {
+                object obj = ResourceManager.GetObject("1246273", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _12527 {
             get {
                 object obj = ResourceManager.GetObject("12527", resourceCulture);
@@ -153,6 +163,26 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Crystal_Project_Edit_add {
+            get {
+                object obj = ResourceManager.GetObject("Crystal_Project_Edit_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_icon_png_free_download_download_icon_png_1000_1000 {
+            get {
+                object obj = ResourceManager.GetObject("download-icon-png-free-download-download-icon-png-1000_1000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Google_Play_Books_icon {
             get {
                 object obj = ResourceManager.GetObject("Google-Play-Books-icon", resourceCulture);
@@ -176,6 +206,16 @@ namespace AdminPanel.Properties {
         internal static System.Drawing.Bitmap refresh_1782307_1514157 {
             get {
                 object obj = ResourceManager.GetObject("refresh-1782307-1514157", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unnamed {
+            get {
+                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
