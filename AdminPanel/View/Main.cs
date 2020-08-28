@@ -1,4 +1,5 @@
 ﻿using AdminPanel.View.About;
+using AdminPanel.View.Init;
 using AdminPanel.View.NoteBook;
 using AdminPanel.View.Settings;
 using AdminPanel.View.Store;
@@ -34,12 +35,12 @@ namespace AdminPanel.View
 
         private void btnClose_MouseHover(object sender, EventArgs e)
         {
-            btnClose.ForeColor = Color.Red;
+            btnClose.BackColor = Color.Red;
         }
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            btnClose.ForeColor = Color.White;
+            btnClose.BackColor = Color.Transparent;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -93,11 +94,18 @@ namespace AdminPanel.View
             StorePanel storePanel = new StorePanel();
             ShowInPanelControlManage(storePanel);
         }
-
-        private void btnAbout_Click(object sender, EventArgs e)
+        private void btnInit_Click(object sender, EventArgs e)
         {
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 176);
+
+            InitPanel initPanel = new InitPanel();
+            ShowInPanelControlManage(initPanel);
+        }
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            pnlChoise.Visible = true;
+            pnlChoise.Location = new Point(63, 231);
 
             AboutPanel aboutPanel = new AboutPanel();
             ShowInPanelControlManage(aboutPanel);
@@ -111,5 +119,7 @@ namespace AdminPanel.View
             this.pnlControlManage.Controls.Add(form);
             form.Show();
         }
+
+        
     }
 }

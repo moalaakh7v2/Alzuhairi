@@ -47,7 +47,7 @@
             // 
             this.btnManageStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnManageStudents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManageStudents.Image = global::AdminPanel.Properties.Resources.Untitled_2;
+            this.btnManageStudents.Image = global::AdminPanel.Properties.Resources.Untitled_5;
             this.btnManageStudents.Location = new System.Drawing.Point(12, 66);
             this.btnManageStudents.Name = "btnManageStudents";
             this.btnManageStudents.Size = new System.Drawing.Size(135, 39);
@@ -60,7 +60,7 @@
             // 
             this.btnAddStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddStudents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddStudents.Image = global::AdminPanel.Properties.Resources.Add_User;
+            this.btnAddStudents.Image = global::AdminPanel.Properties.Resources.Add_User1;
             this.btnAddStudents.Location = new System.Drawing.Point(12, 12);
             this.btnAddStudents.Name = "btnAddStudents";
             this.btnAddStudents.Size = new System.Drawing.Size(135, 39);

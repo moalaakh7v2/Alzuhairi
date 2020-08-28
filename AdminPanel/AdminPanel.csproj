@@ -69,6 +69,12 @@
     <Compile Include="View\About\AboutPanel.Designer.cs">
       <DependentUpon>AboutPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Init\InitPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Init\InitPanel.Designer.cs">
+      <DependentUpon>InitPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="View\About\AboutPanel.resx">
       <DependentUpon>AboutPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Init\InitPanel.resx">
+      <DependentUpon>InitPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -218,6 +227,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow-refresh-reload-icon-29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1323223.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

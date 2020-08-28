@@ -28,37 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddNoteBook = new System.Windows.Forms.PictureBox();
             this.pnlChoise = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnManageNoteBook = new System.Windows.Forms.PictureBox();
+            this.btnAddNoteBook = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnManageNoteBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNoteBook)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.Add_User;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnAddNoteBook
-            // 
-            this.btnAddNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddNoteBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNoteBook.Image = global::AdminPanel.Properties.Resources.Add_User;
-            this.btnAddNoteBook.Location = new System.Drawing.Point(12, 12);
-            this.btnAddNoteBook.Name = "btnAddNoteBook";
-            this.btnAddNoteBook.Size = new System.Drawing.Size(135, 39);
-            this.btnAddNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAddNoteBook.TabIndex = 1;
-            this.btnAddNoteBook.TabStop = false;
-            this.btnAddNoteBook.Click += new System.EventHandler(this.btnAddNoteBook_Click);
             // 
             // pnlChoise
             // 
@@ -69,6 +44,32 @@
             this.pnlChoise.Size = new System.Drawing.Size(11, 39);
             this.pnlChoise.TabIndex = 5;
             // 
+            // btnManageNoteBook
+            // 
+            this.btnManageNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnManageNoteBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageNoteBook.Image = global::AdminPanel.Properties.Resources.Untitled_3;
+            this.btnManageNoteBook.Location = new System.Drawing.Point(12, 66);
+            this.btnManageNoteBook.Name = "btnManageNoteBook";
+            this.btnManageNoteBook.Size = new System.Drawing.Size(135, 39);
+            this.btnManageNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnManageNoteBook.TabIndex = 2;
+            this.btnManageNoteBook.TabStop = false;
+            this.btnManageNoteBook.Click += new System.EventHandler(this.btnManageNoteBook_Click);
+            // 
+            // btnAddNoteBook
+            // 
+            this.btnAddNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddNoteBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNoteBook.Image = global::AdminPanel.Properties.Resources.Untitled_1;
+            this.btnAddNoteBook.Location = new System.Drawing.Point(12, 12);
+            this.btnAddNoteBook.Name = "btnAddNoteBook";
+            this.btnAddNoteBook.Size = new System.Drawing.Size(135, 39);
+            this.btnAddNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddNoteBook.TabIndex = 1;
+            this.btnAddNoteBook.TabStop = false;
+            this.btnAddNoteBook.Click += new System.EventHandler(this.btnAddNoteBook_Click);
+            // 
             // NoteBookPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,13 +77,13 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(159, 468);
             this.Controls.Add(this.pnlChoise);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnManageNoteBook);
             this.Controls.Add(this.btnAddNoteBook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NoteBookPanel";
             this.Text = "NoteBookPanel";
             this.Load += new System.EventHandler(this.NoteBookPanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnManageNoteBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNoteBook)).EndInit();
             this.ResumeLayout(false);
 
@@ -91,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox btnAddNoteBook;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnManageNoteBook;
         private System.Windows.Forms.Panel pnlChoise;
     }
 }

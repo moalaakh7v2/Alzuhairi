@@ -29,7 +29,10 @@ namespace AdminPanel.View.NoteBook
             AddNoteBook addNoteBook = new AddNoteBook();
             ShowInPanelView(addNoteBook);
         }
-
+        private void btnManageNoteBook_Click(object sender, EventArgs e)
+        {
+            pnlChoise.Location = new Point(150, 67);
+        }
         void ShowInPanelView(Form form)
         {
             Main.pnlView.Controls.Clear();
@@ -39,6 +42,11 @@ namespace AdminPanel.View.NoteBook
             form.Show();
         }
 
-      
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
