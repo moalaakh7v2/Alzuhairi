@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdminPanel.View.Settings;
 
 namespace AdminPanel.View.Init
 {
@@ -38,6 +39,13 @@ namespace AdminPanel.View.Init
             ManageFeatures manageFeatures = new ManageFeatures();
             ShowInPanelView(manageFeatures);
         }
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            pnlChoise.Location = new Point(150, 122);
+
+            Settings.Settings settings = new Settings.Settings();
+            ShowInPanelView(settings);
+        }
         void ShowInPanelView(Form form)
         {
             Main.pnlView.Controls.Clear();
@@ -46,5 +54,7 @@ namespace AdminPanel.View.Init
             Main.pnlView.Controls.Add(form);
             form.Show();
         }
+
+        
     }
 }

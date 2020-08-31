@@ -63,6 +63,16 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _123 {
+            get {
+                object obj = ResourceManager.GetObject("123", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _124_1244891_user_groups_filled_icon_group_icon_png_clipart {
             get {
                 object obj = ResourceManager.GetObject("124-1244891_user-groups-filled-icon-group-icon-png-clipart", resourceCulture);
@@ -113,9 +123,29 @@ namespace AdminPanel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _321 {
+            get {
+                object obj = ResourceManager.GetObject("321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _841_8415925_5519_lincoln_ave_blue_store_icon_png {
             get {
                 object obj = ResourceManager.GetObject("841-8415925_5519-lincoln-ave-blue-store-icon-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _99 {
+            get {
+                object obj = ResourceManager.GetObject("99", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +336,16 @@ namespace AdminPanel.Properties {
         internal static System.Drawing.Bitmap شعار_صافي {
             get {
                 object obj = ResourceManager.GetObject("شعار صافي", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap شعار_صافي1 {
+            get {
+                object obj = ResourceManager.GetObject("شعار صافي1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

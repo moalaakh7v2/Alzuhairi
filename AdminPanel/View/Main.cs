@@ -60,6 +60,12 @@ namespace AdminPanel.View
             if (LogIn.IsLogin)
             {
                 pnlView.Controls.Clear();
+                About.About about = new About.About();
+                this.pnlView.Controls.Clear();
+                about.TopLevel = false;
+                about.AutoScroll = true;
+                this.pnlView.Controls.Add(about);
+                about.Show();
                 btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible  = btnInit.Visible = true;
             }
             else
@@ -109,6 +115,13 @@ namespace AdminPanel.View
 
             AboutPanel aboutPanel = new AboutPanel();
             ShowInPanelControlManage(aboutPanel);
+
+            About.About about = new About.About();
+            this.pnlView.Controls.Clear();
+            about.TopLevel = false;
+            about.AutoScroll = true;
+            this.pnlView.Controls.Add(about);
+            about.Show();
         }
 
         void ShowInPanelControlManage(Form form)

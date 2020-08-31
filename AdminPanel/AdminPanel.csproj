@@ -63,6 +63,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\FormMood.cs" />
+    <Compile Include="View\About\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\About\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\About\AboutPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,24 @@
     <Compile Include="View\Settings\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Settings\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Settings\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\AddStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Store\AddStore.Designer.cs">
+      <DependentUpon>AddStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store\ManageStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Store\ManageStore.Designer.cs">
+      <DependentUpon>ManageStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Store\StorePanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +181,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\About\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\About\AboutPanel.resx">
       <DependentUpon>AboutPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +210,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Settings\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Settings\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\AddStore.resx">
+      <DependentUpon>AddStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Store\ManageStore.resx">
+      <DependentUpon>ManageStore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Store\StorePanel.resx">
       <DependentUpon>StorePanel.cs</DependentUpon>
@@ -293,6 +329,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\شعار صافي1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
