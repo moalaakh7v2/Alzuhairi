@@ -7,7 +7,7 @@ using Models.Enums;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace Tools
+namespace Library
 {
     public class CallAPI
     {

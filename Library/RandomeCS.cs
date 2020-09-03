@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tools
+namespace Library
 {
     public class RandomeCS
     {
