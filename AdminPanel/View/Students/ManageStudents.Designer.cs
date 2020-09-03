@@ -91,6 +91,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(177, 26);
             this.txtName.TabIndex = 0;
+            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             // 
             // btnRefresh
             // 
@@ -114,6 +115,7 @@
             this.btnExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnExport.TabIndex = 3;
             this.btnExport.TabStop = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // ManageStudents
             // 
