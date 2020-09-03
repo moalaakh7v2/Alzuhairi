@@ -1,14 +1,13 @@
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
-
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using System;
+using System.Data.Common;
 namespace Models
 {
     public partial class Context : DbContext
     {
+        public static string ConnectionString = "data source=HP\\SQLEXPRESS;initial catalog=AlzuhairiDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
         public Context(DbContextOptions<Context> options)
             : base(options)
         {
@@ -29,20 +28,26 @@ namespace Models
         public virtual DbSet<Video> Videos { get; set; }
         public virtual DbSet<View> Views { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            foreach (var entity in modelBuilder.Model.GetEntityTypes())
-            {
-                foreach (var foreignKey in entity.GetForeignKeys())
-                {
-                    foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
-                }
-            }
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-          
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    foreach (var entity in modelBuilder.Model.GetEntityTypes())
+        //    {
+        //        foreach (var foreignKey in entity.GetForeignKeys())
+        //        {
+        //            foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+        //        }
+        //    }
+        //}
+        //public class SiteContextFactory : IDesignTimeDbContextFactory<Context>
+        //{
+        //    public Context CreateDbContext(string[] args)
+        //    {
+        //        DbContextOptionsBuilder<Context> optionsBuilder = new DbContextOptionsBuilder<Context>();
+        //        optionsBuilder.UseSqlServer(Context.ConnectionString);
+
+        //        return new Context(optionsBuilder.Options);
+        //    }
+        //}
     }
 }

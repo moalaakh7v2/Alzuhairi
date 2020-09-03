@@ -28,5 +28,11 @@ namespace WebServer.Controllers
         {
             return await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
         }
+
+        [HttpGet]
+        public string Init()
+        {
+            return "Welcome To Application";
+        }
     }
 }
