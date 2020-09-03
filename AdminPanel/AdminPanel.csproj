@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CheckData.cs" />
     <Compile Include="Classes\ManageAdmin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -339,6 +340,10 @@
     <ProjectReference Include="..\Library\Library.csproj">
       <Project>{d15941cb-8f0e-4695-b7e0-ede7f9f686d8}</Project>
       <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{AC33B592-F61F-4E80-829B-D32DE109984A}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

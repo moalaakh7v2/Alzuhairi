@@ -1,11 +1,8 @@
-﻿using System;
+﻿using AdminPanel.Classes;
+using Library;
+using Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdminPanel.View.Students
@@ -16,5 +13,35 @@ namespace AdminPanel.View.Students
         {
             InitializeComponent();
         }
+        List<Dept> depts;
+        private void AddNewStudent_Load(object sender, EventArgs e)
+        {
+            depts = CallAPI.GetListContent<Dept, Dept>("GetDepts");
+            comboDept.DataSource = depts;
+            comboDept.DisplayMember = "DeptName";
+            comboDept.ValueMember = "Id";
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!txtFName.CheckNull() && !txtLName.CheckNull() && !txtAge.CheckNull() && !txtNumber.CheckNull() && !txtImei.CheckNull())
+            {
+                Student student = new Student{
+                    FirstName = txtFName.Text,
+                    LastName = txtLName.Text,
+                    Age = Convert.ToInt32(txtAge.Text),
+                    DeptId = (int)comboDept.SelectedValue,
+                    PhoneNumber = txtNumber.Text,
+                    Imei = txtImei.Text
+                };
+                student = CallAPI.PostObjectAndGetObject<Student, Student>("CreateStudent");
+                if (student.Id != 0)
+                {
+                    MessageBox.Show("Student has been added successfully", "Done", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
     }
 }

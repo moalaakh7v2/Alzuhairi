@@ -192,6 +192,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AddNewStudent
             // 
@@ -217,6 +218,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewStudent";
             this.Text = "AddNewStudent";
+            this.Load += new System.EventHandler(this.AddNewStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
