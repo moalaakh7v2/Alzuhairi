@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Tools;
 
 namespace WebServer.Controllers
 {
@@ -27,6 +28,5 @@ namespace WebServer.Controllers
         {
             return await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
         }
-
     }
 }

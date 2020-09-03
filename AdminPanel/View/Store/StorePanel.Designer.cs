@@ -55,6 +55,7 @@
             this.btnManageStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnManageStore.TabIndex = 7;
             this.btnManageStore.TabStop = false;
+            this.btnManageStore.Click += new System.EventHandler(this.btnManageStore_Click_1);
             // 
             // btnAddStore
             // 
@@ -67,6 +68,7 @@
             this.btnAddStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAddStore.TabIndex = 6;
             this.btnAddStore.TabStop = false;
+            this.btnAddStore.Click += new System.EventHandler(this.btnAddStore_Click);
             // 
             // StorePanel
             // 
@@ -80,6 +82,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StorePanel";
             this.Text = "StorePanel";
+            this.Load += new System.EventHandler(this.StorePanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnManageStore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddStore)).EndInit();
             this.ResumeLayout(false);

@@ -97,7 +97,7 @@ namespace AdminPanel.View
             pnlChoise.Visible = true;
             pnlChoise.Location = new Point(63, 124);
 
-            StorePanel storePanel = new StorePanel();
+            StorePanel storePanel = new StorePanel(this);
             ShowInPanelControlManage(storePanel);
         }
         private void btnInit_Click(object sender, EventArgs e)
