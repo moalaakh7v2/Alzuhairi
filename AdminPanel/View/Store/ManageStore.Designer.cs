@@ -29,6 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.grdStores = new System.Windows.Forms.DataGridView();
+            this.comboNoteBooks = new System.Windows.Forms.ComboBox();
+            this.chkNoteBooksSerial = new System.Windows.Forms.CheckedListBox();
+            this.lblStoreTitle = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chkChoseNoteBook = new System.Windows.Forms.CheckedListBox();
+            this.btnGrant = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStores)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -42,16 +53,126 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Manage Store";
             // 
+            // grdStores
+            // 
+            this.grdStores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grdStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdStores.Location = new System.Drawing.Point(18, 69);
+            this.grdStores.Name = "grdStores";
+            this.grdStores.Size = new System.Drawing.Size(385, 196);
+            this.grdStores.TabIndex = 3;
+            // 
+            // comboNoteBooks
+            // 
+            this.comboNoteBooks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboNoteBooks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNoteBooks.FormattingEnabled = true;
+            this.comboNoteBooks.Location = new System.Drawing.Point(431, 94);
+            this.comboNoteBooks.Name = "comboNoteBooks";
+            this.comboNoteBooks.Size = new System.Drawing.Size(265, 21);
+            this.comboNoteBooks.TabIndex = 4;
+            // 
+            // chkNoteBooksSerial
+            // 
+            this.chkNoteBooksSerial.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkNoteBooksSerial.FormattingEnabled = true;
+            this.chkNoteBooksSerial.Location = new System.Drawing.Point(431, 126);
+            this.chkNoteBooksSerial.Name = "chkNoteBooksSerial";
+            this.chkNoteBooksSerial.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.chkNoteBooksSerial.Size = new System.Drawing.Size(265, 139);
+            this.chkNoteBooksSerial.TabIndex = 5;
+            // 
+            // lblStoreTitle
+            // 
+            this.lblStoreTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStoreTitle.AutoSize = true;
+            this.lblStoreTitle.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStoreTitle.Location = new System.Drawing.Point(430, 69);
+            this.lblStoreTitle.Name = "lblStoreTitle";
+            this.lblStoreTitle.Size = new System.Drawing.Size(88, 22);
+            this.lblStoreTitle.TabIndex = 6;
+            this.lblStoreTitle.Text = "Store Title";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.btnGrant);
+            this.groupBox1.Controls.Add(this.chkChoseNoteBook);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(112, 272);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(507, 184);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Grant Serial";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 26);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 22);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Store Title";
+            // 
+            // chkChoseNoteBook
+            // 
+            this.chkChoseNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkChoseNoteBook.FormattingEnabled = true;
+            this.chkChoseNoteBook.Location = new System.Drawing.Point(214, 22);
+            this.chkChoseNoteBook.Name = "chkChoseNoteBook";
+            this.chkChoseNoteBook.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.chkChoseNoteBook.Size = new System.Drawing.Size(265, 148);
+            this.chkChoseNoteBook.TabIndex = 8;
+            // 
+            // btnGrant
+            // 
+            this.btnGrant.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGrant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnGrant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrant.FlatAppearance.BorderSize = 0;
+            this.btnGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrant.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGrant.Location = new System.Drawing.Point(71, 110);
+            this.btnGrant.Name = "btnGrant";
+            this.btnGrant.Size = new System.Drawing.Size(84, 32);
+            this.btnGrant.TabIndex = 9;
+            this.btnGrant.Text = "Grant";
+            this.btnGrant.UseVisualStyleBackColor = false;
+            // 
             // ManageStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblStoreTitle);
+            this.Controls.Add(this.chkNoteBooksSerial);
+            this.Controls.Add(this.comboNoteBooks);
+            this.Controls.Add(this.grdStores);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageStore";
             this.Text = "ManageStore";
+            ((System.ComponentModel.ISupportInitialize)(this.grdStores)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,5 +181,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView grdStores;
+        private System.Windows.Forms.ComboBox comboNoteBooks;
+        private System.Windows.Forms.CheckedListBox chkNoteBooksSerial;
+        private System.Windows.Forms.Label lblStoreTitle;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckedListBox chkChoseNoteBook;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnGrant;
     }
 }
