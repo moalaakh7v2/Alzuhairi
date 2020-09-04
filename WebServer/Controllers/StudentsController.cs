@@ -27,6 +27,12 @@ namespace WebServer.Controllers
         {
             return await _context.Students.ToListAsync();
         }
+        //NEw
+        [HttpGet("GetStudentsByDeptId/{deptId}")]
+        public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(int deptId)
+        {
+            return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
+        }
 
         //4
         [HttpGet("GetStudent/{imei}")]

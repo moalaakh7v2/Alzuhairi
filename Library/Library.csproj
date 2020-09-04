@@ -37,8 +37,15 @@
     <Reference Include="RestSharp, Version=106.11.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.11.4\lib\net452\RestSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Spire.Barcode, Version=4.5.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Barcode.4.5.1\lib\net46\Spire.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.8.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Barcode.4.5.1\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +57,7 @@
   <ItemGroup>
     <Compile Include="CallAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRcode.cs" />
     <Compile Include="RandomeCS.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -30,22 +30,22 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDeptName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAddDept = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDeptName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboDepts = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAddSubject = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSubjectName = new System.Windows.Forms.TextBox();
             this.comboGetDept = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdStudents = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGetStudents = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,24 +74,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Depts";
             // 
-            // txtDeptName
-            // 
-            this.txtDeptName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDeptName.Location = new System.Drawing.Point(19, 74);
-            this.txtDeptName.Name = "txtDeptName";
-            this.txtDeptName.Size = new System.Drawing.Size(201, 26);
-            this.txtDeptName.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Dept Name";
-            // 
             // btnAddDept
             // 
             this.btnAddDept.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -107,15 +89,34 @@
             this.btnAddDept.TabIndex = 16;
             this.btnAddDept.Text = "Add";
             this.btnAddDept.UseVisualStyleBackColor = false;
+            this.btnAddDept.Click += new System.EventHandler(this.btnAddDept_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 22);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Dept Name";
+            // 
+            // txtDeptName
+            // 
+            this.txtDeptName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDeptName.Location = new System.Drawing.Point(19, 74);
+            this.txtDeptName.Name = "txtDeptName";
+            this.txtDeptName.Size = new System.Drawing.Size(201, 26);
+            this.txtDeptName.TabIndex = 5;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.comboDepts);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnAddSubject);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtSubjectName);
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(282, 77);
             this.groupBox2.Name = "groupBox2";
@@ -123,50 +124,6 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Subject";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(299, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 32);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 22);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Subject Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(149, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 26);
-            this.textBox1.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 22);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Dept Name";
             // 
             // comboDepts
             // 
@@ -178,6 +135,51 @@
             this.comboDepts.Size = new System.Drawing.Size(234, 30);
             this.comboDepts.TabIndex = 18;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 22);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Dept Name";
+            // 
+            // btnAddSubject
+            // 
+            this.btnAddSubject.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddSubject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSubject.FlatAppearance.BorderSize = 0;
+            this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSubject.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSubject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddSubject.Location = new System.Drawing.Point(299, 145);
+            this.btnAddSubject.Name = "btnAddSubject";
+            this.btnAddSubject.Size = new System.Drawing.Size(84, 32);
+            this.btnAddSubject.TabIndex = 16;
+            this.btnAddSubject.Text = "Add";
+            this.btnAddSubject.UseVisualStyleBackColor = false;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 22);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Subject Name";
+            // 
+            // txtSubjectName
+            // 
+            this.txtSubjectName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSubjectName.Location = new System.Drawing.Point(149, 101);
+            this.txtSubjectName.Name = "txtSubjectName";
+            this.txtSubjectName.Size = new System.Drawing.Size(234, 26);
+            this.txtSubjectName.TabIndex = 5;
+            // 
             // comboGetDept
             // 
             this.comboGetDept.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -188,19 +190,19 @@
             this.comboGetDept.Size = new System.Drawing.Size(217, 30);
             this.comboGetDept.TabIndex = 18;
             // 
-            // dataGridView1
+            // grdStudents
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(250, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(194, 144);
-            this.dataGridView1.TabIndex = 19;
+            this.grdStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdStudents.Location = new System.Drawing.Point(250, 16);
+            this.grdStudents.Name = "grdStudents";
+            this.grdStudents.Size = new System.Drawing.Size(194, 144);
+            this.grdStudents.TabIndex = 19;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.btnGetStudents);
+            this.groupBox3.Controls.Add(this.grdStudents);
             this.groupBox3.Controls.Add(this.comboGetDept);
             this.groupBox3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(154, 290);
@@ -210,21 +212,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dept Name";
             // 
-            // button2
+            // btnGetStudents
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(70, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 32);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Get Students";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGetStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGetStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnGetStudents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetStudents.FlatAppearance.BorderSize = 0;
+            this.btnGetStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetStudents.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetStudents.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGetStudents.Location = new System.Drawing.Point(70, 101);
+            this.btnGetStudents.Name = "btnGetStudents";
+            this.btnGetStudents.Size = new System.Drawing.Size(114, 32);
+            this.btnGetStudents.TabIndex = 19;
+            this.btnGetStudents.Text = "Get Students";
+            this.btnGetStudents.UseVisualStyleBackColor = false;
+            this.btnGetStudents.Click += new System.EventHandler(this.btnGetStudents_Click);
             // 
             // ManageSubjects
             // 
@@ -239,11 +242,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageSubjects";
             this.Text = "ManageSubjects";
+            this.Load += new System.EventHandler(this.ManageSubjects_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -260,12 +264,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboDepts;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddSubject;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSubjectName;
         private System.Windows.Forms.ComboBox comboGetDept;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdStudents;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGetStudents;
     }
 }
