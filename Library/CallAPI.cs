@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using RestSharp;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace Library
 {
@@ -13,7 +13,7 @@ namespace Library
             where T : class
         {
             string str = CreateGetRequest(SetUpURL<C>(parms));
-            var x = JsonConvert.DeserializeObject<List<T>>(str);
+            var x = JsonSerializer.Deserialize<List<T>>(str);
             return x;
         }
 
@@ -24,7 +24,7 @@ namespace Library
             try
             {
                 string str = CreateGetRequest(SetUpURL<C>(parms));
-                var x = JsonConvert.DeserializeObject<T>(str);
+                var x = JsonSerializer.Deserialize<T>(str);
                 return x;
             }
             catch
@@ -40,7 +40,7 @@ namespace Library
             try
             {
                 string str = CreatePostRequest(SetUpURL<C>(parms), obj);
-                var x = JsonConvert.DeserializeObject<T>(str);
+                var x = JsonSerializer.Deserialize<T>(str);
                 return x;
             }
             catch(Exception ex)
@@ -55,7 +55,7 @@ namespace Library
             try
             {
                 string str = CreatePostRequest(SetUpURL<C>(parms), obj);
-                var x = JsonConvert.DeserializeObject<bool>(str);
+                var x = JsonSerializer.Deserialize<bool>(str);
                 return x;
             }
             catch(Exception ex)
