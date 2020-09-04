@@ -7,7 +7,6 @@ namespace Models
 {
     public partial class Context : DbContext
     {
-        public static string ConnectionString = "data source=HP\\SQLEXPRESS;initial catalog=AlzuhairiDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
         public Context(DbContextOptions<Context> options)
             : base(options)
         {
