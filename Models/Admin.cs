@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 namespace Models
 {
@@ -10,5 +11,7 @@ namespace Models
 
         [Required]
         public string Password { get; set; }
+
+        public Guid Token { get; set; }
     }
 }

@@ -42,6 +42,7 @@ namespace AdminPanel.View.Settings
             admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "LogInAdminAccount");
             if (admin.Id != 0)
             {
+                Program.admin = admin;
                 IsLogin = true;
             }
             else

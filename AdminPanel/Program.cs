@@ -1,4 +1,5 @@
 ﻿using AdminPanel.View;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace AdminPanel
    
     public static class Program
     {
+        public static Admin admin;
         public static Main MainForm;
         /// <summary>
         /// The main entry point for the application.

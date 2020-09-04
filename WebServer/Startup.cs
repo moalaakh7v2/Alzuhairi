@@ -46,6 +46,12 @@ namespace WebServer
                         Email = "test",
                         Password = "123"
                     });
+                    context.Abouts.Add(new About
+                    {
+                        Email = "alzuhairi@gmail.com",
+                        Location = "Alhijaz",
+                        MobileNumber = "22421458"
+                    });
                     context.SaveChanges();
                 }
             }

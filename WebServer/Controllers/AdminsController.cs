@@ -6,6 +6,7 @@ using Library;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using Models;
 
 
@@ -32,13 +33,29 @@ namespace WebServer.Controllers
             {
                 return new Admin ();
             }
+            admin.Token = Guid.NewGuid();
+            await _context.SaveChangesAsync();
             return Ok(admin);
         }
 
-        [HttpGet]
-        public Admin Init()
+        [HttpPost("UpdateAdminInfo/{token}")]
+        public async Task<ActionResult<Admin>> UpdateAdminInfo(Admin admin , Guid token)
         {
-            return new Admin();
+            Admin GetAdmin = await _context.Admins.FirstOrDefaultAsync(x=>x.Token == token);
+            if (GetAdmin != null)
+            {
+                GetAdmin.Password = admin.Password;
+                GetAdmin.Email = admin.Email;
+                GetAdmin.Token = admin.Token;
+                await _context.SaveChangesAsync();
+            }
+            return GetAdmin;
+        }
+
+        [HttpGet]
+        public string Init()
+        {
+            return "Welcome To Alzuhairi";
         }
     }
 }

@@ -30,19 +30,19 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnUpdateAccount = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdateContact = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtEmailAbout = new System.Windows.Forms.TextBox();
+            this.txtMobile = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -63,8 +63,8 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnUpdateAccount);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 87);
             this.groupBox1.Name = "groupBox1";
@@ -73,19 +73,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account info";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 26);
-            this.textBox1.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 22);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Password";
             // 
-            // textBox2
+            // label2
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 163);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(254, 26);
-            this.textBox2.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 22);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "User Name";
             // 
             // btnUpdateAccount
             // 
@@ -102,34 +106,31 @@
             this.btnUpdateAccount.TabIndex = 6;
             this.btnUpdateAccount.Text = "Update";
             this.btnUpdateAccount.UseVisualStyleBackColor = false;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
             // 
-            // label2
+            // txtPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 22);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "User Name";
+            this.txtPassword.Location = new System.Drawing.Point(46, 163);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(254, 26);
+            this.txtPassword.TabIndex = 1;
             // 
-            // label3
+            // txtEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 22);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Password";
+            this.txtEmail.Location = new System.Drawing.Point(46, 91);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(254, 26);
+            this.txtEmail.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtLocation);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.btnUpdateContact);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtEmailAbout);
+            this.groupBox2.Controls.Add(this.txtMobile);
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(387, 87);
             this.groupBox2.Name = "groupBox2";
@@ -137,6 +138,31 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contact Info";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(42, 139);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 22);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Location";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Location = new System.Drawing.Point(46, 164);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(254, 26);
+            this.txtLocation.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 22);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Email Address";
             // 
             // label5
             // 
@@ -162,45 +188,21 @@
             this.btnUpdateContact.TabIndex = 6;
             this.btnUpdateContact.Text = "Update";
             this.btnUpdateContact.UseVisualStyleBackColor = false;
+            this.btnUpdateContact.Click += new System.EventHandler(this.btnUpdateContact_Click);
             // 
-            // textBox3
+            // txtEmailAbout
             // 
-            this.textBox3.Location = new System.Drawing.Point(46, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(254, 26);
-            this.textBox3.TabIndex = 1;
+            this.txtEmailAbout.Location = new System.Drawing.Point(46, 111);
+            this.txtEmailAbout.Name = "txtEmailAbout";
+            this.txtEmailAbout.Size = new System.Drawing.Size(254, 26);
+            this.txtEmailAbout.TabIndex = 1;
             // 
-            // textBox4
+            // txtMobile
             // 
-            this.textBox4.Location = new System.Drawing.Point(46, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(254, 26);
-            this.textBox4.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 22);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Email Address";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 139);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 22);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Location";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(46, 164);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(254, 26);
-            this.textBox5.TabIndex = 9;
+            this.txtMobile.Location = new System.Drawing.Point(46, 50);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(254, 26);
+            this.txtMobile.TabIndex = 0;
             // 
             // Settings
             // 
@@ -214,6 +216,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Settings";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -227,18 +230,18 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUpdateContact;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmailAbout;
+        private System.Windows.Forms.TextBox txtMobile;
     }
 }
