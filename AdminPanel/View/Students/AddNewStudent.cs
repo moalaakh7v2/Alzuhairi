@@ -34,7 +34,7 @@ namespace AdminPanel.View.Students
                     PhoneNumber = txtNumber.Text,
                     Imei = txtImei.Text
                 };
-                student = CallAPI.PostObjectAndGetObject<Student, Student>("CreateStudent");
+                student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "CreateStudent");
                 if (student.Id != 0)
                 {
                     MessageBox.Show("Student has been added successfully", "Done", MessageBoxButtons.OK,MessageBoxIcon.Information);

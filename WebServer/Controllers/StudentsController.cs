@@ -25,7 +25,17 @@ namespace WebServer.Controllers
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
         {
-            return await _context.Students.ToListAsync();
+            var Students = await _context.Students.Include(x=>x.Dept).Include(x=>x.StudentNoteBooks).ToListAsync();
+            foreach (var student in Students)
+            {
+                student.Dept.Students = null;
+                student.Dept.Subjects = null;
+                foreach (var StudentNoteBook in student.StudentNoteBooks)
+                {
+                    StudentNoteBook.Student = null;
+                }
+            }
+            return Students;
         }
         //NEw
         [HttpGet("GetStudentsByDeptId/{deptId}")]

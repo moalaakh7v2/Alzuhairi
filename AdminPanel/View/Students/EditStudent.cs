@@ -27,7 +27,7 @@ namespace AdminPanel.View.Students
             txtFullName.Text = student.FirstName + " " + student.LastName;
             txtDept.Text = student.Dept.DeptName;
             txtPhone.Text = student.PhoneNumber;
-            if (student.IsActive)
+            if (!student.IsActive)
                 btnDeactive.Enabled = false;
             foreach (var item in student.StudentNoteBooks.Select(x=>x.NoteBookSerial).Select(x=>x.NoteBook))
             {
