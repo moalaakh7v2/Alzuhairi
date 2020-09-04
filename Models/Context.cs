@@ -22,7 +22,6 @@ namespace Models
         public virtual DbSet<NoteBookSerial> NoteBookSerials { get; set; }
         public virtual DbSet<NoteBooksSold> NoteBooksSolds { get; set; }
         public virtual DbSet<Reseller> Resellers { get; set; }
-        public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<StudentNoteBook> StudentNoteBooks { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
