@@ -40,7 +40,7 @@ namespace AdminPanel.View.Settings
                 Password = txtPassword.Text
             };
             admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "LogInAdminAccount");
-            if (admin != null)
+            if (admin.Id != 0)
             {
                 IsLogin = true;
             }

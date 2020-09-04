@@ -6,7 +6,7 @@ namespace Library
 {
     public class QRcode
     {
-        public static void CreateQR(string str , string savePath ,  int width =10 )
+        public static void CreateQR(string str , string savePath ,  int width = 10 )
         {
             BarcodeSettings.ApplyKey("Free");
             BarcodeSettings settings = new BarcodeSettings();

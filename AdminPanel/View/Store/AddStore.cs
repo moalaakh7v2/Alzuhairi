@@ -22,17 +22,17 @@ namespace AdminPanel.View.Store
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            if (!txtName.CheckNull() && !txtPhone.CheckNull() && txtLocation.CheckNull())
-            {
-                Models.Store store = new Models.Store
-                {
-                    Name = txtName.Text,
-                    PhoneNumber = txtPhone.Text,
-                    Location = txtLocation.Text
-                };
-                store = CallAPI.PostObjectAndGetObject<Models.Store, Models.Store>("AddNewStore");
-                MessageBox.Show("", "");
-            }
+            //if (!txtName.CheckNull() && !txtPhone.CheckNull() && txtLocation.CheckNull())
+            //{
+            //    Models.Store store = new Models.Store
+            //    {
+            //        Name = txtName.Text,
+            //        PhoneNumber = txtPhone.Text,
+            //        Location = txtLocation.Text
+            //    };
+            //    store = CallAPI.PostObjectAndGetObject<Models.Store, Models.Store>("AddNewStore");
+            //    MessageBox.Show("", "");
+            //}
         }
     }
 }

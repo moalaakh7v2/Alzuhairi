@@ -21,14 +21,14 @@ namespace WebServer.Controllers
         }
 
         
-        [HttpPost("AddNewStore")]
-        public async Task<ActionResult<Store>> AddNewStore(Store store)
-        {
-            _context.Stores.Add(store);
-            await _context.SaveChangesAsync();
+        //[HttpPost("AddNewStore")]
+        //public async Task<ActionResult<Store>> AddNewStore(Store store)
+        //{
+        //    _context.Stores.Add(store);
+        //    await _context.SaveChangesAsync();
 
-            return store;
-        }
+        //    return store;
+        //}
 
     }
 }

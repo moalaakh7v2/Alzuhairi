@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using RestSharp.Authenticators;
-using System.Linq;
-using Models.Enums;
-using Newtonsoft.Json;
 using RestSharp;
+using Newtonsoft.Json;
 
 namespace Library
 {
@@ -47,7 +43,7 @@ namespace Library
                 var x = JsonConvert.DeserializeObject<T>(str);
                 return x;
             }
-            catch
+            catch(Exception ex)
             {
                 throw;
             }
@@ -62,7 +58,7 @@ namespace Library
                 var x = JsonConvert.DeserializeObject<bool>(str);
                 return x;
             }
-            catch
+            catch(Exception ex)
             {
                 throw;
             }

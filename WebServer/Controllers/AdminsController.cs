@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Library;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
+
 
 namespace WebServer.Controllers
 {
@@ -25,13 +27,19 @@ namespace WebServer.Controllers
         [HttpPost("LogInAdminAccount")]
         public async Task<ActionResult<Admin>> LogInAdminAccount(Admin admin)
         {
-            return await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
+            admin = await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
+            if (admin == null)
+            {
+                return new Admin {Email = "",Password="" };
+            }
+            return Ok(admin);
         }
 
         [HttpGet]
-        public string Init()
+        public Admin Init()
         {
-            return "Welcome To Application";
+            CallAPI.GetObjectContent<Admin, Admin>();
+            return new Admin();
         }
     }
 }
