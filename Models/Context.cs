@@ -29,27 +29,5 @@ namespace Models
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Video> Videos { get; set; }
         public virtual DbSet<View> Views { get; set; }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    foreach (var entity in modelBuilder.Model.GetEntityTypes())
-        //    {
-        //        foreach (var foreignKey in entity.GetForeignKeys())
-        //        {
-        //            foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
-        //        }
-        //    }
-        //}
-        //public class SiteContextFactory : IDesignTimeDbContextFactory<Context>
-        //{
-        //    public Context CreateDbContext(string[] args)
-        //    {
-        //        DbContextOptionsBuilder<Context> optionsBuilder = new DbContextOptionsBuilder<Context>();
-        //        optionsBuilder.UseSqlServer(Context.ConnectionString);
-
-        //        return new Context(optionsBuilder.Options);
-        //    }
-        //}
     }
 }
