@@ -13,7 +13,7 @@ namespace Library
             where T : class
         {
             string str = CreateGetRequest(SetUpURL<C>(parms));
-            var x = JsonSerializer.Deserialize<List<T>>(str);
+            var x = JsonSerializer.Deserialize<List<T>>(str, Options);
             return x;
         }
 
@@ -24,7 +24,7 @@ namespace Library
             try
             {
                 string str = CreateGetRequest(SetUpURL<C>(parms));
-                var x = JsonSerializer.Deserialize<T>(str);
+                var x = JsonSerializer.Deserialize<T>(str , Options);
                 return x;
             }
             catch
@@ -40,7 +40,7 @@ namespace Library
             try
             {
                 string str = CreatePostRequest(SetUpURL<C>(parms), obj);
-                var x = JsonSerializer.Deserialize<T>(str);
+                var x = JsonSerializer.Deserialize<T>(str , Options);
                 return x;
             }
             catch(Exception ex)
@@ -55,7 +55,7 @@ namespace Library
             try
             {
                 string str = CreatePostRequest(SetUpURL<C>(parms), obj);
-                var x = JsonSerializer.Deserialize<bool>(str);
+                var x = JsonSerializer.Deserialize<bool>(str , Options);
                 return x;
             }
             catch(Exception ex)
@@ -111,6 +111,12 @@ namespace Library
             }
             return url;
         }
-        
+
+        public static JsonSerializerOptions Options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = true
+        };
+
     }
 }

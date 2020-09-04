@@ -30,7 +30,7 @@ namespace WebServer.Controllers
             admin = await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
             if (admin == null)
             {
-                return new Admin {Email = "",Password = "" };
+                return new Admin ();
             }
             return Ok(admin);
         }
