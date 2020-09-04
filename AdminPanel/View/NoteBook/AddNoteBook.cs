@@ -39,7 +39,6 @@ namespace AdminPanel.View.NoteBook
                     Note = txtNote.Text
                 });
             }
-           CallAPI.PostObjectAndGetBool<NoteBook>
         }
     }
 }

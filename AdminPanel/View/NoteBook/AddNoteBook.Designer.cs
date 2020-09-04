@@ -41,6 +41,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.PictureBox();
             this.btnQrDownload = new System.Windows.Forms.Button();
+            this.chkFeatures = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExport)).BeginInit();
@@ -60,6 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.chkFeatures);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txtNote);
             this.groupBox1.Controls.Add(this.label3);
@@ -201,6 +203,14 @@
             this.btnQrDownload.Text = "Download QR Folder";
             this.btnQrDownload.UseVisualStyleBackColor = false;
             // 
+            // chkFeatures
+            // 
+            this.chkFeatures.FormattingEnabled = true;
+            this.chkFeatures.Location = new System.Drawing.Point(95, 169);
+            this.chkFeatures.Name = "chkFeatures";
+            this.chkFeatures.Size = new System.Drawing.Size(316, 179);
+            this.chkFeatures.TabIndex = 7;
+            // 
             // AddNoteBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,5 +252,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox btnExport;
         private System.Windows.Forms.Button btnQrDownload;
+        private System.Windows.Forms.CheckedListBox chkFeatures;
     }
 }
