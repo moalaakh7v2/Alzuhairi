@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AdminPanel.Classes;
+using Library;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,50 +15,51 @@ namespace AdminPanel.View.Students
 {
     public partial class ManageStudents : Form
     {
+        List<Student> students;
         public ManageStudents()
         {
             InitializeComponent();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void ManageStudents_Load(object sender, EventArgs e)
         {
-            List<Test> tests = new List<Test>();
-            tests.Add(new Test
-            {
-                Id = 7,
-                FirstName = "Alaa",
-                LastName = "Alkhawam",
-                Age = 22,
-                Active = true
-            });
-            tests.Add(new Test
-            {
-                Id = 7,
-                FirstName = "Marco",
-                LastName = "Asensio",
-                Age = 25,
-                Active = false
-            });
-            grdStudents.DataSource = tests;
+            students = CallAPI.GetListContent<Student, Student>("GetStudents");
+            grdStudents.DataSource = students;
         }
-        class Test
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            public int Id { get; set; }
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public int Age { get; set; }
-            public bool Active { get; set; }
+            grdStudents.DataSource = students;
         }
 
         private void grdStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            EditStudent editStudent = new EditStudent();
-            editStudent.ShowDialog();
+            try
+            {
+                Student student = (Student)grdStudents.Rows[e.RowIndex].DataBoundItem;
+                EditStudent editStudent = new EditStudent(student);
+                editStudent.ShowDialog();
+            }
+            catch { }
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var res = students.Where(x=>x.FirstName == txtName.Text).ToList();
+                if (!res.Any())
+                {
+                    MessageBox.Show("Not Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                grdStudents.DataSource = res;
+                
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            grdStudents.copyAlltoClipboard();
         }
     }
 }

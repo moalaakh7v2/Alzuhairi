@@ -21,6 +21,19 @@ namespace WebServer.Controllers
             _context = context;
         }
 
+        //34
+        [HttpGet("GetStudents")]
+        public async Task<ActionResult<List<Student>>> GetStudents()
+        {
+            return await _context.Students.ToListAsync();
+        }
+        //NEw
+        [HttpGet("GetStudentsByDeptId/{deptId}")]
+        public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(int deptId)
+        {
+            return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
+        }
+
         //4
         [HttpGet("GetStudent/{imei}")]
         public async Task<ActionResult<Student>> GetStudent(string imei)
@@ -39,7 +52,7 @@ namespace WebServer.Controllers
         }
 
         //5
-        [HttpPut("ModifyStudent")]
+        [HttpPost("ModifyStudent")]
         public async Task<ActionResult<Student>> ModifyStudent(Student student)
         {
             //Todo Update Phone Number

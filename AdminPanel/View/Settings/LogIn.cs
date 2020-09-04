@@ -1,4 +1,7 @@
 ﻿
+using AdminPanel.Classes;
+using Library;
+using Models;
 using System;
 using System.Windows.Forms;
 
@@ -22,21 +25,30 @@ namespace AdminPanel.View.Settings
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if (txtEmail.Text == "" || txtPassword==null)
-            //{
-            //    txtEmail.Text = "test";
-            //    txtPassword.Text = "123";
-            //}
-            //Admin admin = CallAPI.
-            //if (IsLogin = true;)
-            //{
-
-            //}
-            //else
-            //{
-            //    IsLogin = false;
-            //}
-            //Main.CheckLogin();
+            if (txtEmail.Text == "" || txtPassword == null)
+            {
+                txtEmail.Text = "test";
+                txtPassword.Text = "123";
+            }
+            if (txtEmail.CheckNull())
+                return ;
+            if (txtPassword.CheckNull())
+                return;
+            Admin admin = new Admin
+            {
+                Email = txtEmail.Text,
+                Password = txtPassword.Text
+            };
+            admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "LogInAdminAccount");
+            if (admin != null)
+            {
+                IsLogin = true;
+            }
+            else
+            {
+                IsLogin = false;
+            }
+            Main.CheckLogin();
         }
 
     }

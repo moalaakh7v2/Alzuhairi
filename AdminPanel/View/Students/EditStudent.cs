@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Library;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +14,38 @@ namespace AdminPanel.View.Students
 {
     public partial class EditStudent : Form
     {
-        public EditStudent()
+        Student student;
+        public EditStudent(Student student)
         {
+            this.student = student;
             InitializeComponent();
         }
 
+
+        private void EditStudent_Load(object sender, EventArgs e)
+        {
+            txtFullName.Text = student.FirstName + " " + student.LastName;
+            txtDept.Text = student.Dept.DeptName;
+            txtPhone.Text = student.PhoneNumber;
+            if (student.IsActive)
+                btnDeactive.Enabled = false;
+            foreach (var item in student.StudentNoteBooks.Select(x=>x.NoteBookSerial).Select(x=>x.NoteBook))
+            {
+                lstNoteBook.Items.Add(item.Subject.SubjectName + " - " + item.Subject.Dept.DeptName + " - " + item.ReleaseDate.Year);
+            }
+            // todo Alaa Get VideoWatched
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void EditStudent_Load(object sender, EventArgs e)
+        private void btnDeactive_Click(object sender, EventArgs e)
         {
-            txtFullName.Text = "Alaa Alkhawam";
-            txtDept.Text = "TCC";
-            txtPhone.Text = "0930701459";
+            student.IsActive = false;
+            student = CallAPI.PostObjectAndGetObject<Student, Student>("ModifyStudent");
+            Close();
+
         }
     }
 }
