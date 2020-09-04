@@ -14,6 +14,7 @@ namespace Models
         }
 
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<About> Abouts { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<CheckCode> CheckCodes { get; set; }
         public virtual DbSet<Dept> Depts { get; set; }
@@ -21,8 +22,8 @@ namespace Models
         public virtual DbSet<NoteBookFeature> NoteBookFeatures { get; set; }
         public virtual DbSet<NoteBook> NoteBooks { get; set; }
         public virtual DbSet<NoteBookSerial> NoteBookSerials { get; set; }
-        public virtual DbSet<NoteBooksSold> NoteBooksSolds { get; set; }
         public virtual DbSet<Reseller> Resellers { get; set; }
+        public virtual DbSet<StoreAndNoteBook> StoreAndNoteBooks { get; set; }
         public virtual DbSet<StudentNoteBook> StudentNoteBooks { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }

@@ -4,10 +4,6 @@ namespace Models
 {
     public partial class Reseller
     {
-        public Reseller()
-        {
-            NoteBooksSolds = new HashSet<NoteBooksSold>();
-        }
 
         public int Id { get; set; }
 
@@ -19,6 +15,5 @@ namespace Models
 
         [Required]
         public string PhoneNumber { get; set; }
-        public virtual ICollection<NoteBooksSold> NoteBooksSolds { get; set; }
     }
 }
