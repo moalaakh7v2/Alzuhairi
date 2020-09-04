@@ -65,7 +65,6 @@ namespace WebServer.Controllers
         [HttpPost("ModifyStudent")]
         public async Task<ActionResult<Student>> ModifyStudent(Student student)
         {
-            //Todo Update Phone Number
             _context.Entry(student).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return Ok(student);
