@@ -25,31 +25,39 @@ namespace AdminPanel.View.Settings
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtPassword == null)
+            try
             {
-                txtEmail.Text = "test";
-                txtPassword.Text = "123";
+                if (txtEmail.Text == "" || txtPassword == null)
+                {
+                    txtEmail.Text = "test";
+                    txtPassword.Text = "123";
+                }
+                if (txtEmail.CheckNull())
+                    return;
+                if (txtPassword.CheckNull())
+                    return;
+                Admin admin = new Admin
+                {
+                    Email = txtEmail.Text,
+                    Password = txtPassword.Text
+                };
+                admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "LogInAdminAccount");
+                if (admin.Id != 0)
+                {
+                    Program.admin = admin;
+                    IsLogin = true;
+                }
+                else
+                {
+                    IsLogin = false;
+                }
+                Main.CheckLogin();
             }
-            if (txtEmail.CheckNull())
-                return ;
-            if (txtPassword.CheckNull())
-                return;
-            Admin admin = new Admin
+            catch
             {
-                Email = txtEmail.Text,
-                Password = txtPassword.Text
-            };
-            admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "LogInAdminAccount");
-            if (admin.Id != 0)
-            {
-                Program.admin = admin;
-                IsLogin = true;
+                MessageBox.Show("Connection Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                IsLogin = false;
-            }
-            Main.CheckLogin();
+
         }
 
     }

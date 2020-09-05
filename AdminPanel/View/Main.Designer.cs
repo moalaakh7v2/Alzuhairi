@@ -33,24 +33,24 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlConrols = new System.Windows.Forms.Panel();
-            this.pnlChoise = new System.Windows.Forms.Panel();
-            this.pnlView = new System.Windows.Forms.Panel();
-            this.pnlControlManage = new System.Windows.Forms.Panel();
             this.btnInit = new System.Windows.Forms.PictureBox();
+            this.pnlChoise = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.PictureBox();
             this.btnPOS = new System.Windows.Forms.PictureBox();
             this.btnNoteBook = new System.Windows.Forms.PictureBox();
             this.btnStudents = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlView = new System.Windows.Forms.Panel();
+            this.pnlControlManage = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlConrols.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNoteBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNav
@@ -65,6 +65,7 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(972, 34);
             this.pnlNav.TabIndex = 0;
+            this.pnlNav.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNav_MouseMove);
             // 
             // btnMin
             // 
@@ -112,6 +113,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Alzuhairi";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.شعار_صافي;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnlConrols
             // 
             this.pnlConrols.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -126,31 +138,7 @@
             this.pnlConrols.Name = "pnlConrols";
             this.pnlConrols.Size = new System.Drawing.Size(69, 468);
             this.pnlConrols.TabIndex = 1;
-            // 
-            // pnlChoise
-            // 
-            this.pnlChoise.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pnlChoise.Location = new System.Drawing.Point(63, 12);
-            this.pnlChoise.Name = "pnlChoise";
-            this.pnlChoise.Size = new System.Drawing.Size(5, 46);
-            this.pnlChoise.TabIndex = 6;
-            this.pnlChoise.Visible = false;
-            // 
-            // pnlView
-            // 
-            this.pnlView.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlView.Location = new System.Drawing.Point(228, 34);
-            this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(744, 468);
-            this.pnlView.TabIndex = 2;
-            // 
-            // pnlControlManage
-            // 
-            this.pnlControlManage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlControlManage.Location = new System.Drawing.Point(69, 34);
-            this.pnlControlManage.Name = "pnlControlManage";
-            this.pnlControlManage.Size = new System.Drawing.Size(159, 468);
-            this.pnlControlManage.TabIndex = 3;
+            this.pnlConrols.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlNav_MouseMove);
             // 
             // btnInit
             // 
@@ -165,6 +153,15 @@
             this.btnInit.TabStop = false;
             this.btnInit.Visible = false;
             this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
+            // 
+            // pnlChoise
+            // 
+            this.pnlChoise.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlChoise.Location = new System.Drawing.Point(63, 12);
+            this.pnlChoise.Name = "pnlChoise";
+            this.pnlChoise.Size = new System.Drawing.Size(5, 46);
+            this.pnlChoise.TabIndex = 6;
+            this.pnlChoise.Visible = false;
             // 
             // btnAbout
             // 
@@ -222,16 +219,22 @@
             this.btnStudents.Visible = false;
             this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
             // 
-            // pictureBox1
+            // pnlView
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::AdminPanel.Properties.Resources.شعار_صافي;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pnlView.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlView.Location = new System.Drawing.Point(228, 34);
+            this.pnlView.Name = "pnlView";
+            this.pnlView.Size = new System.Drawing.Size(744, 468);
+            this.pnlView.TabIndex = 2;
+            this.pnlView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlNav_MouseMove);
+            // 
+            // pnlControlManage
+            // 
+            this.pnlControlManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlControlManage.Location = new System.Drawing.Point(69, 34);
+            this.pnlControlManage.Name = "pnlControlManage";
+            this.pnlControlManage.Size = new System.Drawing.Size(159, 468);
+            this.pnlControlManage.TabIndex = 3;
             // 
             // Main
             // 
@@ -251,13 +254,13 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.pnlNav.ResumeLayout(false);
             this.pnlNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlConrols.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnInit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNoteBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

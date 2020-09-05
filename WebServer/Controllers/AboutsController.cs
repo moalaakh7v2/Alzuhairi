@@ -22,9 +22,9 @@ namespace WebServer.Controllers
         }
 
         [HttpGet("GetAbout")]
-        public async Task<ActionResult<About>> GetAbout()
+        public ActionResult<About> GetAbout()
         {
-            return await _context.Abouts.FirstAsync();
+            return _context.Abouts.FirstOrDefault();
         }
         [HttpPost("UpdateAbout/{token}")]
         public async Task<ActionResult<About>> UpdateAbout(About about , Guid token)
