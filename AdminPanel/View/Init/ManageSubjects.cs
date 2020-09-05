@@ -24,14 +24,24 @@ namespace AdminPanel.View.Init
 
         private void btnAddDept_Click(object sender, EventArgs e)
         {
-            if (txtDeptName.CheckNull())
-                return;
-            Dept dept = new Dept
+            try
             {
-                DeptName = txtDeptName.Text
-            };
-            dept = CallAPI.PostObjectAndGetObject<Dept, Dept>(dept, "AddNewDept");
-            MessageBox.Show("Added SuccesFull", "Doen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtDeptName.CheckNull())
+                    return;
+                Dept dept = new Dept
+                {
+                    DeptName = txtDeptName.Text
+                };
+                dept = CallAPI.PostObjectAndGetObject<Dept, Dept>(dept, "AddNewDept");
+                ManageSubjects_Load(sender, e);
+                MessageBox.Show("Added SuccesFull", "Doen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDeptName.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error completing operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void ManageSubjects_Load(object sender, EventArgs e)
@@ -48,14 +58,23 @@ namespace AdminPanel.View.Init
 
         private void btnAddSubject_Click(object sender, EventArgs e)
         {
-            if (txtSubjectName.CheckNull())
-                return;
-            Subject subject = new Subject
+            try
             {
-                DeptId = (int)comboDepts.SelectedValue,
-                SubjectName = txtSubjectName.Text
-            };
-            subject = CallAPI.PostObjectAndGetObject<Subject, Subject>(subject, "AddNewSubject");
+                if (txtSubjectName.CheckNull())
+                    return;
+                Subject subject = new Subject
+                {
+                    DeptId = (int)comboDepts.SelectedValue,
+                    SubjectName = txtSubjectName.Text
+                };
+                subject = CallAPI.PostObjectAndGetObject<Subject, Subject>(subject, "AddNewSubject");
+                MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSubjectName.Text = "";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error completing operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnGetStudents_Click(object sender, EventArgs e)

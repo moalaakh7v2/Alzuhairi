@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDeptName);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 77);
+            this.groupBox1.Location = new System.Drawing.Point(18, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(237, 207);
             this.groupBox1.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtSubjectName);
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(282, 77);
+            this.groupBox2.Location = new System.Drawing.Point(282, 56);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(450, 207);
             this.groupBox2.TabIndex = 17;
@@ -185,7 +185,7 @@
             this.comboGetDept.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboGetDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboGetDept.FormattingEnabled = true;
-            this.comboGetDept.Location = new System.Drawing.Point(18, 53);
+            this.comboGetDept.Location = new System.Drawing.Point(6, 55);
             this.comboGetDept.Name = "comboGetDept";
             this.comboGetDept.Size = new System.Drawing.Size(217, 30);
             this.comboGetDept.TabIndex = 18;
@@ -195,7 +195,7 @@
             this.grdStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStudents.Location = new System.Drawing.Point(250, 16);
             this.grdStudents.Name = "grdStudents";
-            this.grdStudents.Size = new System.Drawing.Size(194, 144);
+            this.grdStudents.Size = new System.Drawing.Size(458, 165);
             this.grdStudents.TabIndex = 19;
             // 
             // groupBox3
@@ -205,9 +205,9 @@
             this.groupBox3.Controls.Add(this.grdStudents);
             this.groupBox3.Controls.Add(this.comboGetDept);
             this.groupBox3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(154, 290);
+            this.groupBox3.Location = new System.Drawing.Point(18, 269);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 166);
+            this.groupBox3.Size = new System.Drawing.Size(714, 187);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dept Name";
@@ -221,7 +221,7 @@
             this.btnGetStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetStudents.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetStudents.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGetStudents.Location = new System.Drawing.Point(70, 101);
+            this.btnGetStudents.Location = new System.Drawing.Point(61, 102);
             this.btnGetStudents.Name = "btnGetStudents";
             this.btnGetStudents.Size = new System.Drawing.Size(114, 32);
             this.btnGetStudents.TabIndex = 19;
