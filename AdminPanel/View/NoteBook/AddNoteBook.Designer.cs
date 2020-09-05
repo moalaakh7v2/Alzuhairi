@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkFeatures = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.PictureBox();
             this.btnQrDownload = new System.Windows.Forms.Button();
-            this.chkFeatures = new System.Windows.Forms.CheckedListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExport)).BeginInit();
@@ -61,7 +62,9 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.chkFeatures);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txtNote);
             this.groupBox1.Controls.Add(this.label3);
@@ -69,18 +72,27 @@
             this.groupBox1.Controls.Add(this.comboSubjects);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 76);
+            this.groupBox1.Location = new System.Drawing.Point(18, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 380);
+            this.groupBox1.Size = new System.Drawing.Size(429, 399);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Note Book Info";
+            // 
+            // chkFeatures
+            // 
+            this.chkFeatures.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFeatures.FormattingEnabled = true;
+            this.chkFeatures.Location = new System.Drawing.Point(95, 139);
+            this.chkFeatures.Name = "chkFeatures";
+            this.chkFeatures.Size = new System.Drawing.Size(316, 179);
+            this.chkFeatures.TabIndex = 7;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(95, 113);
+            this.textBox1.Location = new System.Drawing.Point(95, 93);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(316, 23);
             this.textBox1.TabIndex = 6;
@@ -90,7 +102,7 @@
             this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNote.AutoSize = true;
             this.txtNote.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(37, 118);
+            this.txtNote.Location = new System.Drawing.Point(37, 98);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(35, 18);
             this.txtNote.TabIndex = 5;
@@ -101,7 +113,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(274, 61);
+            this.label3.Location = new System.Drawing.Point(274, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 4;
@@ -111,7 +123,7 @@
             // 
             this.txtCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCount.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCount.Location = new System.Drawing.Point(322, 58);
+            this.txtCount.Location = new System.Drawing.Point(322, 38);
             this.txtCount.Name = "txtCount";
             this.txtCount.Size = new System.Drawing.Size(89, 23);
             this.txtCount.TabIndex = 3;
@@ -122,7 +134,7 @@
             this.comboSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSubjects.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSubjects.FormattingEnabled = true;
-            this.comboSubjects.Location = new System.Drawing.Point(95, 55);
+            this.comboSubjects.Location = new System.Drawing.Point(95, 35);
             this.comboSubjects.Name = "comboSubjects";
             this.comboSubjects.Size = new System.Drawing.Size(164, 26);
             this.comboSubjects.TabIndex = 2;
@@ -132,7 +144,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 61);
+            this.label2.Location = new System.Drawing.Point(29, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 18);
             this.label2.TabIndex = 1;
@@ -167,7 +179,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(631, 424);
+            this.btnAdd.Location = new System.Drawing.Point(322, 339);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 32);
             this.btnAdd.TabIndex = 10;
@@ -203,13 +215,16 @@
             this.btnQrDownload.Text = "Download QR Folder";
             this.btnQrDownload.UseVisualStyleBackColor = false;
             // 
-            // chkFeatures
+            // label4
             // 
-            this.chkFeatures.FormattingEnabled = true;
-            this.chkFeatures.Location = new System.Drawing.Point(95, 169);
-            this.chkFeatures.Name = "chkFeatures";
-            this.chkFeatures.Size = new System.Drawing.Size(316, 179);
-            this.chkFeatures.TabIndex = 7;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(29, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 18);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Feature";
             // 
             // AddNoteBook
             // 
@@ -219,7 +234,6 @@
             this.ClientSize = new System.Drawing.Size(744, 468);
             this.Controls.Add(this.btnQrDownload);
             this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -253,5 +267,6 @@
         private System.Windows.Forms.PictureBox btnExport;
         private System.Windows.Forms.Button btnQrDownload;
         private System.Windows.Forms.CheckedListBox chkFeatures;
+        private System.Windows.Forms.Label label4;
     }
 }

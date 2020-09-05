@@ -26,7 +26,7 @@ namespace WebServer.Controllers
         public async Task<ActionResult<List<NoteBookFeature>>> SetUpNewNoteBook(Guid noteSerial , int studentId)
         {
             //Check If Serial Fount
-            NoteBookSerial noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x=>x.NoteSerial == noteSerial);
+            NoteBookSerial noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x=>x.QRcode == noteSerial);
             if (noteBookSerial == null)
             {
                 return Problem("wrong number");

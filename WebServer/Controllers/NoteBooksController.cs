@@ -36,23 +36,38 @@ namespace WebServer.Controllers
 
         //L
         [HttpPost("AddNewNoteBook/{count}")]
-        public async Task<ActionResult<IEnumerable<NoteBookSerial>>> AddNewNoteBook(NoteBook noteBook , int count)
+        public async Task<ActionResult<NoteBook>> AddNewNoteBook(NoteBook noteBook , int count)
         {
-            noteBook.ReleaseDate = DateTime.Now;
-            await _context.NoteBooks.AddAsync(noteBook);
-            await _context.SaveChangesAsync();
-            List<NoteBookSerial> noteBookSerials = new List<NoteBookSerial>();
-            for (int i = 1; i <= count; i++)
+            try
             {
-                noteBookSerials.Add(new NoteBookSerial
+                noteBook.ReleaseDate = DateTime.Now;
+                await _context.NoteBooks.AddAsync(noteBook);
+                await _context.SaveChangesAsync();
+                List<NoteBookSerial> noteBookSerials = new List<NoteBookSerial>();
+                for (int i = 1; i <= count; i++)
                 {
-                    NoteBookId = noteBook.Id,
-                    NoteSerial = Guid.NewGuid()
-                });
+                    noteBookSerials.Add(new NoteBookSerial
+                    {
+                        NoteBookId = noteBook.Id,
+                        QRcode = Guid.NewGuid()
+                    });
+                }
+                await _context.NoteBookSerials.AddRangeAsync(noteBookSerials);
+                await _context.SaveChangesAsync();
+                foreach (var item in noteBookSerials)
+                {
+                    item.NoteBook = null;
+                }
+                noteBook.NoteBookFeatures = null;
+                noteBook.NoteBookSerials = noteBookSerials;
+                return Ok(noteBook);
             }
-            await _context.NoteBookSerials.AddRangeAsync(noteBookSerials);
-            await _context.SaveChangesAsync();
-            return Ok(noteBookSerials);
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+          
         }
 
     }

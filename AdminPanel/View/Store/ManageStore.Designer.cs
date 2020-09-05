@@ -30,10 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grdStores = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboNoteBook = new System.Windows.Forms.ComboBox();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnGrant = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,26 +56,26 @@
             this.grdStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStores.Location = new System.Drawing.Point(18, 69);
             this.grdStores.Name = "grdStores";
-            this.grdStores.Size = new System.Drawing.Size(714, 196);
+            this.grdStores.Size = new System.Drawing.Size(473, 196);
             this.grdStores.TabIndex = 3;
             // 
-            // comboBox1
+            // comboNoteBook
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(221, 284);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 26);
-            this.comboBox1.TabIndex = 4;
+            this.comboNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboNoteBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNoteBook.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboNoteBook.FormattingEnabled = true;
+            this.comboNoteBook.Location = new System.Drawing.Point(512, 134);
+            this.comboNoteBook.Name = "comboNoteBook";
+            this.comboNoteBook.Size = new System.Drawing.Size(217, 26);
+            this.comboNoteBook.TabIndex = 4;
             // 
             // txtCount
             // 
             this.txtCount.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCount.Location = new System.Drawing.Point(281, 329);
+            this.txtCount.Location = new System.Drawing.Point(572, 179);
             this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(191, 23);
+            this.txtCount.Size = new System.Drawing.Size(157, 23);
             this.txtCount.TabIndex = 5;
             // 
             // label2
@@ -81,7 +83,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(221, 329);
+            this.label2.Location = new System.Drawing.Point(512, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 22);
             this.label2.TabIndex = 6;
@@ -96,12 +98,33 @@
             this.btnGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrant.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGrant.Location = new System.Drawing.Point(307, 386);
+            this.btnGrant.Location = new System.Drawing.Point(572, 233);
             this.btnGrant.Name = "btnGrant";
-            this.btnGrant.Size = new System.Drawing.Size(84, 32);
+            this.btnGrant.Size = new System.Drawing.Size(88, 32);
             this.btnGrant.TabIndex = 10;
             this.btnGrant.Text = "Grant";
             this.btnGrant.UseVisualStyleBackColor = false;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(512, 109);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(88, 22);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "Store Title";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(18, 287);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(473, 169);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informations";
             // 
             // ManageStore
             // 
@@ -109,15 +132,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnGrant);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCount);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboNoteBook);
             this.Controls.Add(this.grdStores);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageStore";
             this.Text = "ManageStore";
+            this.Load += new System.EventHandler(this.ManageStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,9 +154,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grdStores;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboNoteBook;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGrant;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
