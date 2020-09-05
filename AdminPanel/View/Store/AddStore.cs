@@ -22,17 +22,24 @@ namespace AdminPanel.View.Store
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            //if (!txtName.CheckNull() && !txtPhone.CheckNull() && txtLocation.CheckNull())
-            //{
-            //    Models.Store store = new Models.Store
-            //    {
-            //        Name = txtName.Text,
-            //        PhoneNumber = txtPhone.Text,
-            //        Location = txtLocation.Text
-            //    };
-            //    store = CallAPI.PostObjectAndGetObject<Models.Store, Models.Store>("AddNewStore");
-            //    MessageBox.Show("", "");
-            //}
+            try
+            {
+                if (!txtName.CheckNull() && !txtPhone.CheckNull() && !txtLocation.CheckNull())
+                {
+                    Reseller reseller = new Reseller
+                    {
+                        Title = txtName.Text,
+                        PhoneNumber = txtPhone.Text,
+                        Location = txtLocation.Text
+                    };
+                    reseller = CallAPI.PostObjectAndGetObject<Reseller, Reseller>(reseller,"UpdateReseller");
+                    MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

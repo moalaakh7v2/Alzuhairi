@@ -52,10 +52,10 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(287, 107);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(268, 20);
+            this.txtName.Size = new System.Drawing.Size(268, 25);
             this.txtName.TabIndex = 3;
             // 
             // label2
@@ -83,10 +83,10 @@
             // txtPhone
             // 
             this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPhone.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(287, 161);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(268, 20);
+            this.txtPhone.Size = new System.Drawing.Size(268, 25);
             this.txtPhone.TabIndex = 5;
             // 
             // label4
@@ -103,7 +103,7 @@
             // txtLocation
             // 
             this.txtLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLocation.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLocation.Location = new System.Drawing.Point(287, 215);
             this.txtLocation.Multiline = true;
             this.txtLocation.Name = "txtLocation";
