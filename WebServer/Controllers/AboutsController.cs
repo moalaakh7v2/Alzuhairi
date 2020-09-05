@@ -33,6 +33,7 @@ namespace WebServer.Controllers
             {
                 _context.Abouts.Update(about);
                 await _context.SaveChangesAsync();
+                return about;
             }
             return new About();
         }
