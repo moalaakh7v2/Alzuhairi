@@ -37,15 +37,15 @@
             this.txtCount = new System.Windows.Forms.TextBox();
             this.comboSubjects = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdQRcode = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.PictureBox();
+            this.btnConvert = new System.Windows.Forms.PictureBox();
             this.btnQrDownload = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdQRcode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConvert)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -150,14 +150,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Subject";
             // 
-            // dataGridView1
+            // grdQRcode
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(475, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 175);
-            this.dataGridView1.TabIndex = 3;
+            this.grdQRcode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grdQRcode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdQRcode.Location = new System.Drawing.Point(475, 100);
+            this.grdQRcode.Name = "grdQRcode";
+            this.grdQRcode.Size = new System.Drawing.Size(240, 175);
+            this.grdQRcode.TabIndex = 3;
             // 
             // label5
             // 
@@ -166,9 +166,9 @@
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(472, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 18);
+            this.label5.Size = new System.Drawing.Size(52, 18);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Serial Numbers";
+            this.label5.Text = "QRcode";
             // 
             // btnAdd
             // 
@@ -187,23 +187,25 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnExport
+            // btnConvert
             // 
-            this.btnExport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExport.Image = global::AdminPanel.Properties.Resources._12527;
-            this.btnExport.Location = new System.Drawing.Point(717, 100);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(25, 28);
-            this.btnExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnExport.TabIndex = 11;
-            this.btnExport.TabStop = false;
+            this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConvert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConvert.Image = global::AdminPanel.Properties.Resources._12527;
+            this.btnConvert.Location = new System.Drawing.Point(717, 100);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(25, 28);
+            this.btnConvert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnConvert.TabIndex = 11;
+            this.btnConvert.TabStop = false;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // btnQrDownload
             // 
             this.btnQrDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnQrDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnQrDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQrDownload.Enabled = false;
             this.btnQrDownload.FlatAppearance.BorderSize = 0;
             this.btnQrDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQrDownload.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,9 +235,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
             this.Controls.Add(this.btnQrDownload);
-            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdQRcode);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -244,8 +246,8 @@
             this.Load += new System.EventHandler(this.AddNoteBook_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdQRcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConvert)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,10 +263,10 @@
         private System.Windows.Forms.Label txtNote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCount;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdQRcode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.PictureBox btnExport;
+        private System.Windows.Forms.PictureBox btnConvert;
         private System.Windows.Forms.Button btnQrDownload;
         private System.Windows.Forms.CheckedListBox chkFeatures;
         private System.Windows.Forms.Label label4;

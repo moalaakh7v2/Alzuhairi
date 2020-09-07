@@ -75,11 +75,17 @@ namespace AdminPanel.View.NoteBook
                 };
                 noteBook = CallAPI.PostObjectAndGetObject<Models.NoteBook, Models.NoteBook>(noteBook, "AddNewNoteBook", txtCount.Text);
                 MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grdQRcode.DataSource = noteBook.NoteBookSerials.Select(x => x.QRcode);
             }
             catch
             {
                 MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
