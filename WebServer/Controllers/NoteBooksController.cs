@@ -24,7 +24,18 @@ namespace WebServer.Controllers
         [HttpGet("GetNoteBooks")]
         public async Task<ActionResult<IEnumerable<NoteBook>>> GetNoteBooks()
         {
-            return await _context.NoteBooks.ToListAsync();
+            List<NoteBook> noteBooks = await _context.NoteBooks
+                .Include(x => x.Subject)
+                .ThenInclude(x => x.Dept)
+                .ToListAsync();
+            foreach (var item in noteBooks)
+            {
+                item.Subject.Dept.Subjects = null;
+                item.Subject.NoteBooks = null;
+            }
+                
+
+            return noteBooks;
         }
 
         //K
@@ -68,6 +79,39 @@ namespace WebServer.Controllers
                 throw;
             }
           
+        }
+
+        [HttpPost("AddNewSerialForExistNoteBook/{count}")]
+        public async Task<ActionResult<NoteBook>> AddNewSerialForExistNoteBook(NoteBook noteBook, int count)
+        {
+            try
+            {
+
+                List<NoteBookSerial> noteBookSerials = new List<NoteBookSerial>();
+                for (int i = 1; i <= count; i++)
+                {
+                    noteBookSerials.Add(new NoteBookSerial
+                    {
+                        NoteBookId = noteBook.Id,
+                        QRcode = Guid.NewGuid()
+                    });
+                }
+                await _context.NoteBookSerials.AddRangeAsync(noteBookSerials);
+                await _context.SaveChangesAsync();
+                foreach (var item in noteBookSerials)
+                {
+                    item.NoteBook = null;
+                }
+                noteBook.NoteBookFeatures = null;
+                noteBook.NoteBookSerials = noteBookSerials;
+                return Ok(noteBook);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
 
     }

@@ -127,6 +127,12 @@
     <Compile Include="View\NoteBook\NoteBookPanel.Designer.cs">
       <DependentUpon>NoteBookPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NoteBook\Reissuing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NoteBook\Reissuing.Designer.cs">
+      <DependentUpon>Reissuing.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Settings\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\NoteBookPanel.resx">
       <DependentUpon>NoteBookPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NoteBook\Reissuing.resx">
+      <DependentUpon>Reissuing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Settings\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -355,6 +364,9 @@
       <Project>{AC33B592-F61F-4E80-829B-D32DE109984A}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rrrrrr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,8 +6,9 @@ namespace Library
 {
     public class QRcode
     {
-        public static void CreateQR(string str , string savePath ,  int width = 10 )
+        public static void CreateQR(string str , string path ,  int width = 10 )
         {
+            path += "\\"+str+".png";
             BarcodeSettings.ApplyKey("Free");
             BarcodeSettings settings = new BarcodeSettings();
             settings.Type = BarCodeType.QRCode;
@@ -18,7 +19,7 @@ namespace Library
             settings.X = width;
             BarCodeGenerator generator = new BarCodeGenerator(settings);
             Image QRbarcode = generator.GenerateImage();
-            QRbarcode.Save(savePath, ImageFormat.Png);
+            QRbarcode.Save(path, ImageFormat.Png);
         }
     }
 }

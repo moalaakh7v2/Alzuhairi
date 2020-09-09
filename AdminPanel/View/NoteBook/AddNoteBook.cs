@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,7 @@ namespace AdminPanel.View.NoteBook
         List<Subject> subjects;
         List<SubjectsInDept> subjectsInDepts;
         List<Feature> features;
+        List<NoteBookSerial> noteBookSerials;
         public AddNoteBook()
         {
             InitializeComponent();
@@ -75,17 +78,32 @@ namespace AdminPanel.View.NoteBook
                 };
                 noteBook = CallAPI.PostObjectAndGetObject<Models.NoteBook, Models.NoteBook>(noteBook, "AddNewNoteBook", txtCount.Text);
                 MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                grdQRcode.DataSource = noteBook.NoteBookSerials.Select(x => x.QRcode);
+                noteBookSerials = noteBook.NoteBookSerials.ToList();
+                grdQRcode.DataSource = noteBookSerials;
+                grdQRcode.Columns[0].Visible = grdQRcode.Columns[2].Visible =
+                grdQRcode.Columns[3].Visible = grdQRcode.Columns[4].Visible = false;
+
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnConvert_Click(object sender, EventArgs e)
+        private void btnQrDownload_Click(object sender, EventArgs e)
         {
+            FolderBrowserDialog browser = new FolderBrowserDialog();
 
+            if (browser.ShowDialog() == DialogResult.OK)
+            {
+                string path = browser.SelectedPath;
+
+                foreach (var item in noteBookSerials)
+                {
+                    QRcode.CreateQR(item.QRcode.ToString(), path);
+                }
+                MessageBox.Show("operation accomplished successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

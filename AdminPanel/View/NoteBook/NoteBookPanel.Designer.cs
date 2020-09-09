@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlChoise = new System.Windows.Forms.Panel();
+            this.btnReissuing = new System.Windows.Forms.PictureBox();
             this.btnManageNoteBook = new System.Windows.Forms.PictureBox();
             this.btnAddNoteBook = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReissuing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnManageNoteBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNoteBook)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +45,19 @@
             this.pnlChoise.Name = "pnlChoise";
             this.pnlChoise.Size = new System.Drawing.Size(11, 39);
             this.pnlChoise.TabIndex = 5;
+            // 
+            // btnReissuing
+            // 
+            this.btnReissuing.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReissuing.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReissuing.Image = global::AdminPanel.Properties.Resources.rrrrrr;
+            this.btnReissuing.Location = new System.Drawing.Point(12, 121);
+            this.btnReissuing.Name = "btnReissuing";
+            this.btnReissuing.Size = new System.Drawing.Size(135, 39);
+            this.btnReissuing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReissuing.TabIndex = 6;
+            this.btnReissuing.TabStop = false;
+            this.btnReissuing.Click += new System.EventHandler(this.btnReissuing_Click);
             // 
             // btnManageNoteBook
             // 
@@ -76,6 +91,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(159, 468);
+            this.Controls.Add(this.btnReissuing);
             this.Controls.Add(this.pnlChoise);
             this.Controls.Add(this.btnManageNoteBook);
             this.Controls.Add(this.btnAddNoteBook);
@@ -83,6 +99,7 @@
             this.Name = "NoteBookPanel";
             this.Text = "NoteBookPanel";
             this.Load += new System.EventHandler(this.NoteBookPanel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnReissuing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnManageNoteBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNoteBook)).EndInit();
             this.ResumeLayout(false);
@@ -94,5 +111,6 @@
         private System.Windows.Forms.PictureBox btnAddNoteBook;
         private System.Windows.Forms.PictureBox btnManageNoteBook;
         private System.Windows.Forms.Panel pnlChoise;
+        private System.Windows.Forms.PictureBox btnReissuing;
     }
 }

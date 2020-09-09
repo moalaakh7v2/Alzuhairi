@@ -30,7 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.chkFeatures = new System.Windows.Forms.CheckedListBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,13 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.grdQRcode = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnConvert = new System.Windows.Forms.PictureBox();
             this.btnQrDownload = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdQRcode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConvert)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,14 +77,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Note Book Info";
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(29, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 18);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Feature";
+            // 
             // chkFeatures
             // 
             this.chkFeatures.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkFeatures.FormattingEnabled = true;
             this.chkFeatures.Location = new System.Drawing.Point(95, 139);
             this.chkFeatures.Name = "chkFeatures";
-            this.chkFeatures.Size = new System.Drawing.Size(316, 179);
+            this.chkFeatures.Size = new System.Drawing.Size(316, 164);
             this.chkFeatures.TabIndex = 7;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.Location = new System.Drawing.Point(322, 339);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(84, 32);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // textBox1
             // 
@@ -154,7 +180,7 @@
             // 
             this.grdQRcode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grdQRcode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdQRcode.Location = new System.Drawing.Point(475, 100);
+            this.grdQRcode.Location = new System.Drawing.Point(474, 88);
             this.grdQRcode.Name = "grdQRcode";
             this.grdQRcode.Size = new System.Drawing.Size(240, 175);
             this.grdQRcode.TabIndex = 3;
@@ -164,69 +190,28 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(472, 79);
+            this.label5.Location = new System.Drawing.Point(471, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "QRcode";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(322, 339);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 32);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnConvert
-            // 
-            this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnConvert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConvert.Image = global::AdminPanel.Properties.Resources._12527;
-            this.btnConvert.Location = new System.Drawing.Point(717, 100);
-            this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(25, 28);
-            this.btnConvert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnConvert.TabIndex = 11;
-            this.btnConvert.TabStop = false;
-            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // btnQrDownload
             // 
             this.btnQrDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnQrDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnQrDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQrDownload.Enabled = false;
             this.btnQrDownload.FlatAppearance.BorderSize = 0;
             this.btnQrDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQrDownload.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQrDownload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnQrDownload.Location = new System.Drawing.Point(475, 281);
+            this.btnQrDownload.Location = new System.Drawing.Point(474, 269);
             this.btnQrDownload.Name = "btnQrDownload";
             this.btnQrDownload.Size = new System.Drawing.Size(240, 32);
             this.btnQrDownload.TabIndex = 12;
             this.btnQrDownload.Text = "Download QR Folder";
             this.btnQrDownload.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Feature";
+            this.btnQrDownload.Click += new System.EventHandler(this.btnQrDownload_Click);
             // 
             // AddNoteBook
             // 
@@ -235,7 +220,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
             this.Controls.Add(this.btnQrDownload);
-            this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.grdQRcode);
             this.Controls.Add(this.groupBox1);
@@ -247,7 +231,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdQRcode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConvert)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +249,6 @@
         private System.Windows.Forms.DataGridView grdQRcode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.PictureBox btnConvert;
         private System.Windows.Forms.Button btnQrDownload;
         private System.Windows.Forms.CheckedListBox chkFeatures;
         private System.Windows.Forms.Label label4;

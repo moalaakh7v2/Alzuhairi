@@ -36,6 +36,13 @@ namespace AdminPanel.View.NoteBook
             ManageNoteBooks manageNoteBooks = new ManageNoteBooks();
             ShowInPanelView(manageNoteBooks);
         }
+        private void btnReissuing_Click(object sender, EventArgs e)
+        {
+            pnlChoise.Location = new Point(150, 123);
+
+            Reissuing reissuing = new Reissuing();
+            ShowInPanelView(reissuing);
+        }
         void ShowInPanelView(Form form)
         {
             Main.pnlView.Controls.Clear();
