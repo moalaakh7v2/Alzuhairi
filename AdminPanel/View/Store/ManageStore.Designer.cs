@@ -36,7 +36,10 @@
             this.btnGrant = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grdResellerAndNoteBook = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdResellerAndNoteBook)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,6 +61,7 @@
             this.grdStores.Name = "grdStores";
             this.grdStores.Size = new System.Drawing.Size(473, 196);
             this.grdStores.TabIndex = 3;
+            this.grdStores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStores_CellDoubleClick);
             // 
             // comboNoteBook
             // 
@@ -104,13 +108,14 @@
             this.btnGrant.TabIndex = 10;
             this.btnGrant.Text = "Grant";
             this.btnGrant.UseVisualStyleBackColor = false;
+            this.btnGrant.Click += new System.EventHandler(this.btnGrant_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(512, 109);
+            this.lblTitle.Location = new System.Drawing.Point(508, 109);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(88, 22);
             this.lblTitle.TabIndex = 11;
@@ -118,13 +123,23 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.grdResellerAndNoteBook);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 287);
+            this.groupBox1.Location = new System.Drawing.Point(18, 271);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(473, 169);
+            this.groupBox1.Size = new System.Drawing.Size(473, 185);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations";
+            // 
+            // grdResellerAndNoteBook
+            // 
+            this.grdResellerAndNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grdResellerAndNoteBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdResellerAndNoteBook.Location = new System.Drawing.Point(23, 29);
+            this.grdResellerAndNoteBook.Name = "grdResellerAndNoteBook";
+            this.grdResellerAndNoteBook.Size = new System.Drawing.Size(425, 144);
+            this.grdResellerAndNoteBook.TabIndex = 4;
             // 
             // ManageStore
             // 
@@ -145,6 +160,8 @@
             this.Text = "ManageStore";
             this.Load += new System.EventHandler(this.ManageStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdResellerAndNoteBook)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +177,6 @@
         private System.Windows.Forms.Button btnGrant;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView grdResellerAndNoteBook;
     }
 }

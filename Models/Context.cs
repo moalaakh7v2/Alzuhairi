@@ -22,7 +22,7 @@ namespace Models
         public virtual DbSet<NoteBook> NoteBooks { get; set; }
         public virtual DbSet<NoteBookSerial> NoteBookSerials { get; set; }
         public virtual DbSet<Reseller> Resellers { get; set; }
-        public virtual DbSet<StoreAndNoteBook> StoreAndNoteBooks { get; set; }
+        public virtual DbSet<ResellerAndNoteBook> ResellerAndNoteBooks { get; set; }
         public virtual DbSet<StudentNoteBook> StudentNoteBooks { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }

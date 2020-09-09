@@ -25,6 +25,11 @@ namespace WebServer.Controllers
         {
             return await _context.Resellers.ToListAsync();
         }
+        [HttpGet("GetResellerAndNoteBookByResellerId/{resellerId}")]
+        public async Task<ActionResult<IEnumerable<ResellerAndNoteBook>>> GetResellerAndNoteBookByResellerId(int resellerId)
+        {
+            return await _context.ResellerAndNoteBooks.Where(x=>x.ResellerId == resellerId).ToListAsync();
+        }
 
         [HttpPost("UpdateReseller")]
         public async Task<ActionResult<Reseller>> UpdateReseller(Reseller reseller)
@@ -32,6 +37,29 @@ namespace WebServer.Controllers
             _context.Resellers.Update(reseller);
             await _context.SaveChangesAsync();
             return Ok(reseller);
+        }
+
+        [HttpPost("GrantNoteBooksToReseller/{resellerId}/{noteBookId}/{count}")]
+        public async Task<ActionResult<ResellerAndNoteBook>> GrantNoteBooksToReseller(int resellerId,int noteBookId , int count)
+        {
+            ResellerAndNoteBook resellerAndNoteBook = _context.ResellerAndNoteBooks.FirstOrDefault(x => x.NoteBookId == noteBookId && x.ResellerId== resellerId);
+            if (x == null)
+            {
+                _context.ResellerAndNoteBooks.Add(new ResellerAndNoteBook
+                {
+                    ResellerId = resellerId,
+                    Count = count,
+                    NoteBookId = noteBookId,
+                    LastGrantDate= DateTime.Now
+                });
+            }
+            else
+            {
+                x.Count += count;
+                x.LastGrantDate = DateTime.Now;
+            }
+            await _context.SaveChangesAsync();
+            return Ok(resellerAndNoteBook);
         }
     }
 }
