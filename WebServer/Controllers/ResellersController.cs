@@ -43,7 +43,7 @@ namespace WebServer.Controllers
         public async Task<ActionResult<ResellerAndNoteBook>> GrantNoteBooksToReseller(int resellerId,int noteBookId , int count)
         {
             ResellerAndNoteBook resellerAndNoteBook = _context.ResellerAndNoteBooks.FirstOrDefault(x => x.NoteBookId == noteBookId && x.ResellerId== resellerId);
-            if (x == null)
+            if (resellerAndNoteBook == null)
             {
                 _context.ResellerAndNoteBooks.Add(new ResellerAndNoteBook
                 {
@@ -55,8 +55,8 @@ namespace WebServer.Controllers
             }
             else
             {
-                x.Count += count;
-                x.LastGrantDate = DateTime.Now;
+                resellerAndNoteBook.Count += count;
+                resellerAndNoteBook.LastGrantDate = DateTime.Now;
             }
             await _context.SaveChangesAsync();
             return Ok(resellerAndNoteBook);

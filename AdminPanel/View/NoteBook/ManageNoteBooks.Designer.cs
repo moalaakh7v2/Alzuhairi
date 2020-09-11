@@ -235,6 +235,7 @@
             this.btnAddVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAddVideo.TabIndex = 10;
             this.btnAddVideo.TabStop = false;
+            this.btnAddVideo.Click += new System.EventHandler(this.btnAddVideo_Click);
             // 
             // btnDownloadVideoQR
             // 

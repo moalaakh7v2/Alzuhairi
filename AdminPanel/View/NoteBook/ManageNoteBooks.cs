@@ -16,5 +16,12 @@ namespace AdminPanel.View.NoteBook
         {
             InitializeComponent();
         }
+
+        private void btnAddVideo_Click(object sender, EventArgs e)
+        {
+            AddVideo video = new AddVideo();
+            video.ShowDialog();
+        }
+
     }
 }

@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ionic.Zip.1.9.1.8\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -114,6 +117,12 @@
     </Compile>
     <Compile Include="View\NoteBook\AddNoteBook.Designer.cs">
       <DependentUpon>AddNoteBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NoteBook\AddVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NoteBook\AddVideo.Designer.cs">
+      <DependentUpon>AddVideo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NoteBook\ManageNoteBooks.cs">
       <SubType>Form</SubType>
@@ -217,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\AddNoteBook.resx">
       <DependentUpon>AddNoteBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NoteBook\AddVideo.resx">
+      <DependentUpon>AddVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\ManageNoteBooks.resx">
       <DependentUpon>ManageNoteBooks.cs</DependentUpon>
