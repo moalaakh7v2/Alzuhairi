@@ -27,6 +27,11 @@ namespace AdminPanel.View.Init
             {
                 if (txtTitle.CheckNull())
                     return;
+                if (features.Any(x=>x.Title == txtTitle.Text))
+                {
+                    MessageBox.Show("A pre-existing feature", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Feature feature = new Feature { Title = txtTitle.Text };
                 feature = CallAPI.PostObjectAndGetObject<Feature, Feature>(feature, "AddFeature");
                 if (feature.Id != 0)
@@ -46,8 +51,16 @@ namespace AdminPanel.View.Init
 
         private void ManageFeatures_Load(object sender, EventArgs e)
         {
-            features = CallAPI.GetListContent<Feature, Feature>("GetFeatures");
-            FillGrid();
+            try
+            {
+                features = CallAPI.GetListContent<Feature, Feature>("GetFeatures");
+                FillGrid();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         void FillGrid()

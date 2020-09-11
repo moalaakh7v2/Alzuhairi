@@ -24,7 +24,13 @@ namespace WebServer.Controllers
         [HttpGet("GetDepts")]
         public async Task<ActionResult<List<Dept>>> GetDepts()
         {
-            return await _context.Depts.ToListAsync();
+            var depts = await _context.Depts.
+                Include(x => x.Subjects)
+                .ToListAsync();
+            foreach (var dept in depts)
+                foreach (var subject in dept.Subjects)
+                    subject.Dept = null;
+            return depts;
         }
 
         //C

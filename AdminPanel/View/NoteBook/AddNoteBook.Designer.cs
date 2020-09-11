@@ -33,8 +33,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.chkFeatures = new System.Windows.Forms.CheckedListBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtNote = new System.Windows.Forms.Label();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.lblNote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.comboSubjects = new System.Windows.Forms.ComboBox();
@@ -63,8 +63,8 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.chkFeatures);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txtNote);
+            this.groupBox1.Controls.Add(this.lblNote);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCount);
             this.groupBox1.Controls.Add(this.comboSubjects);
@@ -114,25 +114,25 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(95, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(316, 23);
-            this.textBox1.TabIndex = 6;
-            // 
             // txtNote
             // 
             this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNote.AutoSize = true;
             this.txtNote.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(37, 98);
+            this.txtNote.Location = new System.Drawing.Point(95, 93);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(35, 18);
-            this.txtNote.TabIndex = 5;
-            this.txtNote.Text = "Note";
+            this.txtNote.Size = new System.Drawing.Size(316, 23);
+            this.txtNote.TabIndex = 6;
+            // 
+            // lblNote
+            // 
+            this.lblNote.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNote.AutoSize = true;
+            this.lblNote.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.Location = new System.Drawing.Point(37, 98);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(35, 18);
+            this.lblNote.TabIndex = 5;
+            this.lblNote.Text = "Note";
             // 
             // label3
             // 
@@ -242,8 +242,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboSubjects;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txtNote;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Label lblNote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.DataGridView grdQRcode;

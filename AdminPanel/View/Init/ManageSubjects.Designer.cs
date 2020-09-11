@@ -185,7 +185,7 @@
             this.comboGetDept.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboGetDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboGetDept.FormattingEnabled = true;
-            this.comboGetDept.Location = new System.Drawing.Point(6, 55);
+            this.comboGetDept.Location = new System.Drawing.Point(20, 51);
             this.comboGetDept.Name = "comboGetDept";
             this.comboGetDept.Size = new System.Drawing.Size(217, 30);
             this.comboGetDept.TabIndex = 18;

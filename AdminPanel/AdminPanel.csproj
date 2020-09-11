@@ -380,5 +380,20 @@
   <ItemGroup>
     <None Include="Resources\rrrrrr.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnStudents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNoteBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnPOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAbout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnInit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

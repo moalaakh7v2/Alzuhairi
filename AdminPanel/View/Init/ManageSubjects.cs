@@ -17,17 +17,42 @@ namespace AdminPanel.View.Init
     {
         List<Dept> depts;
         List<Student> students;
+        List<Subject> subjects;
         public ManageSubjects()
         {
             InitializeComponent();
         }
+        private void ManageSubjects_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                depts = CallAPI.GetListContent<Dept, Dept>("GetDepts");
+                subjects = CallAPI.GetListContent<Subject, Subject>("GetSubjects");
+                comboDepts.DataSource = depts;
+                comboDepts.ValueMember = "Id";
+                comboDepts.DisplayMember = "DeptName";
 
+                comboGetDept.DataSource = depts;
+                comboGetDept.ValueMember = "Id";
+                comboGetDept.DisplayMember = "DeptName";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error completing operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
         private void btnAddDept_Click(object sender, EventArgs e)
         {
             try
             {
                 if (txtDeptName.CheckNull())
                     return;
+                if (depts.Any(x=>x.DeptName == txtDeptName.Text))
+                {
+                    MessageBox.Show("The section already exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Dept dept = new Dept
                 {
                     DeptName = txtDeptName.Text
@@ -44,17 +69,7 @@ namespace AdminPanel.View.Init
             
         }
 
-        private void ManageSubjects_Load(object sender, EventArgs e)
-        {
-            depts = CallAPI.GetListContent<Dept, Dept>("GetDepts");
-            comboDepts.DataSource = depts;
-            comboDepts.ValueMember = "Id";
-            comboDepts.DisplayMember = "DeptName";
-
-            comboGetDept.DataSource = depts;
-            comboGetDept.ValueMember = "Id";
-            comboGetDept.DisplayMember = "DeptName";
-        }
+     
 
         private void btnAddSubject_Click(object sender, EventArgs e)
         {
@@ -62,6 +77,12 @@ namespace AdminPanel.View.Init
             {
                 if (txtSubjectName.CheckNull())
                     return;
+                int deptId = (int)comboDepts.SelectedValue;
+                if (subjects.Any(x=>x.SubjectName == txtSubjectName.Text && x.DeptId == deptId))
+                {
+                    MessageBox.Show("The Subject name is duplicated in the same section","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
                 Subject subject = new Subject
                 {
                     DeptId = (int)comboDepts.SelectedValue,
@@ -79,8 +100,15 @@ namespace AdminPanel.View.Init
 
         private void btnGetStudents_Click(object sender, EventArgs e)
         {
-            students = CallAPI.GetListContent<Student, Student>("GetStudentsByDeptId", comboGetDept.SelectedValue.ToString());
-            grdStudents.DataSource = students;
+            try
+            {
+                students = CallAPI.GetListContent<Student, Student>("GetStudentsByDeptId", comboGetDept.SelectedValue.ToString());
+                grdStudents.DataSource = students;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error completing operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

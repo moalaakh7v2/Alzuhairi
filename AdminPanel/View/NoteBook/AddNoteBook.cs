@@ -1,4 +1,5 @@
-﻿using Library;
+﻿using AdminPanel.Classes;
+using Library;
 using Models;
 using Models.ViewModels;
 using System;
@@ -21,6 +22,7 @@ namespace AdminPanel.View.NoteBook
         List<SubjectsInDept> subjectsInDepts;
         List<Feature> features;
         List<NoteBookSerial> noteBookSerials;
+        List<Models.NoteBook> noteBooks;
         public AddNoteBook()
         {
             InitializeComponent();
@@ -28,26 +30,34 @@ namespace AdminPanel.View.NoteBook
 
         private void AddNoteBook_Load(object sender, EventArgs e)
         {
-            subjects = CallAPI.GetListContent<Subject, Subject>("GetSubjects");
-            features = CallAPI.GetListContent<Feature, Feature>("GetFeatures");
-            subjectsInDepts = new List<SubjectsInDept>();
-            foreach (var item in subjects)
+            try
             {
-                subjectsInDepts.Add(new SubjectsInDept
+                subjects = CallAPI.GetListContent<Subject, Subject>("GetSubjects");
+                features = CallAPI.GetListContent<Feature, Feature>("GetFeatures");
+                noteBooks = CallAPI.GetListContent<Models.NoteBook, Models.NoteBook>("GetNoteBooks");
+                subjectsInDepts = new List<SubjectsInDept>();
+                foreach (var item in subjects)
                 {
-                    Id = item.Id,
-                    Title = item.SubjectName + " " + item.Dept.DeptName
-                });
+                    subjectsInDepts.Add(new SubjectsInDept
+                    {
+                        Id = item.Id,
+                        Title = item.SubjectName + " " + item.Dept.DeptName
+                    });
+                }
+                comboSubjects.DataSource = subjectsInDepts;
+                comboSubjects.DisplayMember = "Title";
+                comboSubjects.ValueMember = "Id";
+                foreach (var feature in features)
+                {
+                    chkFeatures.Items.Add(feature);
+                }
+                chkFeatures.DisplayMember = "Title";
+                chkFeatures.ValueMember = "Id";
             }
-            comboSubjects.DataSource = subjectsInDepts;
-            comboSubjects.DisplayMember = "Title";
-            comboSubjects.ValueMember = "Id";
-            foreach (var feature in features)
+            catch (Exception ex)
             {
-                chkFeatures.Items.Add(feature);
+                MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            chkFeatures.DisplayMember = "Title";
-            chkFeatures.ValueMember = "Id";
 
         }
 
@@ -55,6 +65,20 @@ namespace AdminPanel.View.NoteBook
         {
             try
             {
+                bool chkChek = false;
+                if (txtCount.CheckNull() || txtNote.CheckNull())
+                    return;
+                foreach (var itemChecked in chkFeatures.CheckedItems)
+                {
+                    chkChek = true;
+                    return;
+                }
+                if (!chkChek)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure not to add features ?! ", "Features", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Cancel)
+                        return;
+                }
                 List<int> featureIds = new List<int>();
                 foreach (var itemChecked in chkFeatures.CheckedItems)
                 {
@@ -72,7 +96,7 @@ namespace AdminPanel.View.NoteBook
                 }
                 Models.NoteBook noteBook = new Models.NoteBook
                 {
-                    Note = txtNote.Text,
+                    Note = lblNote.Text,
                     SubjectId = (int)comboSubjects.SelectedValue,
                     NoteBookFeatures = noteBookFeatures
                 };
@@ -92,6 +116,11 @@ namespace AdminPanel.View.NoteBook
 
         private void btnQrDownload_Click(object sender, EventArgs e)
         {
+            if (grdQRcode.DataSource == null)
+            {
+                MessageBox.Show("There is no code" , "Error" , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                return;
+            }
             FolderBrowserDialog browser = new FolderBrowserDialog();
 
             if (browser.ShowDialog() == DialogResult.OK)
