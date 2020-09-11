@@ -30,10 +30,10 @@
         {
             this.pnlChoise = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.PictureBox();
-            this.btnF = new System.Windows.Forms.PictureBox();
+            this.btnFeatures = new System.Windows.Forms.PictureBox();
             this.btnSubjects = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFeatures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSubjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             this.btnSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.Image = global::AdminPanel.Properties.Resources._99;
+            this.btnSettings.Image = global::AdminPanel.Properties.Resources.btnSettings1;
             this.btnSettings.Location = new System.Drawing.Point(12, 121);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(135, 39);
@@ -59,24 +59,24 @@
             this.btnSettings.TabStop = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // btnF
+            // btnFeatures
             // 
-            this.btnF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnF.Image = global::AdminPanel.Properties.Resources.Untitled_8;
-            this.btnF.Location = new System.Drawing.Point(12, 66);
-            this.btnF.Name = "btnF";
-            this.btnF.Size = new System.Drawing.Size(135, 39);
-            this.btnF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnF.TabIndex = 9;
-            this.btnF.TabStop = false;
-            this.btnF.Click += new System.EventHandler(this.btnF_Click);
+            this.btnFeatures.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFeatures.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeatures.Image = global::AdminPanel.Properties.Resources.btnFeatures1;
+            this.btnFeatures.Location = new System.Drawing.Point(12, 66);
+            this.btnFeatures.Name = "btnFeatures";
+            this.btnFeatures.Size = new System.Drawing.Size(135, 39);
+            this.btnFeatures.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFeatures.TabIndex = 9;
+            this.btnFeatures.TabStop = false;
+            this.btnFeatures.Click += new System.EventHandler(this.btnF_Click);
             // 
             // btnSubjects
             // 
             this.btnSubjects.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSubjects.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubjects.Image = global::AdminPanel.Properties.Resources.Untitled_7;
+            this.btnSubjects.Image = global::AdminPanel.Properties.Resources.btnSubjects;
             this.btnSubjects.Location = new System.Drawing.Point(12, 12);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Size = new System.Drawing.Size(135, 39);
@@ -92,7 +92,7 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(159, 468);
             this.Controls.Add(this.btnSettings);
-            this.Controls.Add(this.btnF);
+            this.Controls.Add(this.btnFeatures);
             this.Controls.Add(this.pnlChoise);
             this.Controls.Add(this.btnSubjects);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -100,7 +100,7 @@
             this.Text = "InitPanel";
             this.Load += new System.EventHandler(this.InitPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFeatures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSubjects)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,7 +110,7 @@
 
         private System.Windows.Forms.Panel pnlChoise;
         private System.Windows.Forms.PictureBox btnSubjects;
-        private System.Windows.Forms.PictureBox btnF;
+        private System.Windows.Forms.PictureBox btnFeatures;
         private System.Windows.Forms.PictureBox btnSettings;
     }
 }

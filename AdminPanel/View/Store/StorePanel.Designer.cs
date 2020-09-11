@@ -61,7 +61,7 @@
             // 
             this.btnAddStore.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddStore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddStore.Image = global::AdminPanel.Properties.Resources._123;
+            this.btnAddStore.Image = global::AdminPanel.Properties.Resources.btnAddStore3;
             this.btnAddStore.Location = new System.Drawing.Point(12, 12);
             this.btnAddStore.Name = "btnAddStore";
             this.btnAddStore.Size = new System.Drawing.Size(135, 39);

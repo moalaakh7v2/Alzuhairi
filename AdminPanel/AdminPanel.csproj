@@ -395,5 +395,32 @@
   <ItemGroup>
     <None Include="Resources\btnInit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSubjects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnFeatures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnFeatures1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSettings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAddStore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAddStore1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAddStore2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAddStore3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
