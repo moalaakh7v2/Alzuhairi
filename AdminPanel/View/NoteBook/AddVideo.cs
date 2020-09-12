@@ -25,7 +25,7 @@ namespace AdminPanel.View.NoteBook
         private void AddVideo_Load(object sender, EventArgs e)
         {
             Check();
-            var files = myFiles.Select(x => x.Split('\\').Last()).ToList();
+            var files = myFiles.Select(x => Path.GetFileName(x)).ToList();
             comboBox1.DataSource = files;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -60,11 +60,17 @@ namespace AdminPanel.View.NoteBook
         public void CompressZip()
         {
             ZipFile z = new ZipFile();
-           var videoPath= myFiles.First(x => x.Split('\\').Last() == comboBox1.Text);
+            var videoPath = myFiles.First(x => Path.GetFileName(x) == comboBox1.Text);
             z.AddFile(videoPath);
-            string name = comboBox1.Text.Split('.').First() + ".zip";
+            string name = Path.GetFileNameWithoutExtension(videoPath) + ".zip";
             z.Save(string.Format("{0}/{1}", ZipPath, name));
             MessageBox.Show("تم ضغط الفيديو ","تم");
+        }
+        public static void ClearDir(string dirPath)
+        {
+            string[] Files = Directory.GetFiles(dirPath);
+            foreach (string f in Files)
+                File.Delete(f);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using RestSharp;
 using System.Text.Json;
+using System.IO;
 
 namespace Library
 {
@@ -94,7 +95,22 @@ namespace Library
                 throw;
             }
         }
-
+        static string CreateVideoRequest(string url, object obj,string videoPath)
+        {
+            try
+            {
+                RestClient restClient = new RestClient("https://localhost:44396/api/");
+                RestRequest restRequest = new RestRequest(url, Method.POST, DataFormat.Json);
+                restRequest.AddJsonBody(obj);
+                restRequest.AddFile("VideoFile", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
+                IRestResponse restResponse = restClient.Execute(restRequest);
+                return restResponse.Content;
+            }
+            catch
+            {
+                throw;
+            }
+        }
         static string SetUpURL<T>(params string [] parms)
         {
             string name = typeof(T).Name;
