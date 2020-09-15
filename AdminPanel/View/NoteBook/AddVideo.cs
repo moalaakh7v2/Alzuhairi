@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using Ionic.Zip;
+using Library;
+using Models;
 
 namespace AdminPanel.View.NoteBook
 {
@@ -18,6 +20,7 @@ namespace AdminPanel.View.NoteBook
         public static string ZipPath = @"C:\_ZipVideos\";
         List<string> ext = new List<string> { "mp4", "avi" };
         List<string> myFiles;
+        string name;
         public AddVideo()
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace AdminPanel.View.NoteBook
         private void button1_Click(object sender, EventArgs e)
         {
             CompressZip();
+            CallAPI.PostFile<Video,Video>(ZipPath + name,"AddVideo");
         }
 
         private void Check()
@@ -62,7 +66,7 @@ namespace AdminPanel.View.NoteBook
             ZipFile z = new ZipFile();
             var videoPath = myFiles.First(x => Path.GetFileName(x) == comboBox1.Text);
             z.AddFile(videoPath);
-            string name = Path.GetFileNameWithoutExtension(videoPath) + ".zip";
+            name = Path.GetFileNameWithoutExtension(videoPath) + ".zip";
             z.Save(string.Format("{0}/{1}", ZipPath, name));
             MessageBox.Show("تم ضغط الفيديو ","تم");
         }

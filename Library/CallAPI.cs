@@ -49,6 +49,19 @@ namespace Library
                 throw;
             }
         }
+        public static T PostFile<C, T>(string FilePath, params string[] parms)
+        {
+            try
+            {
+                string str = UploadFile(SetUpURL<C>(parms), FilePath);
+                var x = JsonSerializer.Deserialize<T>(str, Options);
+                return x;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
         //Post And Get bool
         public static bool PostObjectAndGetBool<C, T>(object obj, params string[] parms)
@@ -95,33 +108,14 @@ namespace Library
                 throw;
             }
         }
-        static string CreateVideoRequest(string url, object obj,string videoPath)
-        {
-            try
-            {
-                RestClient restClient = new RestClient("https://localhost:44396/api/");
-                RestRequest restRequest = new RestRequest(url, Method.POST, DataFormat.Json);
-                restRequest.AddJsonBody(obj);
-                restRequest.AddFile("VideoFile", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
-                IRestResponse restResponse = restClient.Execute(restRequest);
-                return restResponse.Content;
-            }
-            catch
-            {
-                throw;
-            }
-        }
 
-        public static string UploadVideo(string url)
+        public static string UploadFile(string url, string videoPath)
         {
             RestClient restClient = new RestClient("https://localhost:44396/api/");
             RestRequest request = new RestRequest(url, Method.POST);
-            request.AddFile("VideoFile", File.ReadAllBytes(@"C:\Users\HP\Desktop\alaa.png"), Path.GetFileName(@"C:\Users\HP\Desktop\alaa.png"), "application/octet-stream");
-           // request.AddParameter("application /png", File.ReadAllBytes(@"C:\Users\HP\Desktop\alaa.png"), ParameterType.RequestBody);
-
+            request.AddFile("FileByte", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
             var response = restClient.Execute(request);
-
-            return "";
+            return response.Content;
         }
         static string SetUpURL<T>(params string [] parms)
         {

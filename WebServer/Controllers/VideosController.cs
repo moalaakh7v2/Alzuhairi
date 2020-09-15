@@ -17,6 +17,7 @@ namespace WebServer.Controllers
     {
         private readonly Context _context;
         private IHostingEnvironment _hostingEnvironment;
+        string VideosPath = "~/Uploads/";
         public VideosController(Context context , IHostingEnvironment environment)
         {
             _context = context;
@@ -68,11 +69,13 @@ namespace WebServer.Controllers
             return Ok();
         }
 
-        [HttpPost("Upload/{fileName}")]
-        public async Task<ActionResult<Video>> Upload(string fileName)
+        [HttpPost("AddVideo/{fileName}")]
+        public async Task<ActionResult<Video>> AddVideo(string fileName)
         {
+            if (!Directory.Exists(VideosPath))
+                Directory.CreateDirectory(VideosPath);
             IFormFile file = Request.Form.Files[0];
-            var filePath = Path.Combine(@"C:\Users\HP\Desktop\test", file.FileName);
+            var filePath = Path.Combine(VideosPath, file.FileName);
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
                 await file.CopyToAsync(fileStream);

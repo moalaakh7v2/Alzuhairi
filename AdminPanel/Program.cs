@@ -22,7 +22,6 @@ namespace AdminPanel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            CallAPI.UploadVideo("videos/Upload/alaa.png");
             MainForm = new Main();
             Application.Run(MainForm);
         }
