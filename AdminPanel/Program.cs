@@ -1,4 +1,5 @@
 ﻿using AdminPanel.View;
+using Library;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace AdminPanel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            CallAPI.UploadVideo("videos/Upload/alaa.png");
             MainForm = new Main();
             Application.Run(MainForm);
         }

@@ -111,6 +111,18 @@ namespace Library
                 throw;
             }
         }
+
+        public static string UploadVideo(string url)
+        {
+            RestClient restClient = new RestClient("https://localhost:44396/api/");
+            RestRequest request = new RestRequest(url, Method.POST);
+            request.AddFile("VideoFile", File.ReadAllBytes(@"C:\Users\HP\Desktop\alaa.png"), Path.GetFileName(@"C:\Users\HP\Desktop\alaa.png"), "application/octet-stream");
+           // request.AddParameter("application /png", File.ReadAllBytes(@"C:\Users\HP\Desktop\alaa.png"), ParameterType.RequestBody);
+
+            var response = restClient.Execute(request);
+
+            return "";
+        }
         static string SetUpURL<T>(params string [] parms)
         {
             string name = typeof(T).Name;

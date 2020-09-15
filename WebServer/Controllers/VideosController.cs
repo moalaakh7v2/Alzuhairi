@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace WebServer.Controllers
 {
@@ -14,10 +16,11 @@ namespace WebServer.Controllers
     public class VideosController : ControllerBase
     {
         private readonly Context _context;
-
-        public VideosController(Context context)
+        private IHostingEnvironment _hostingEnvironment;
+        public VideosController(Context context , IHostingEnvironment environment)
         {
             _context = context;
+            _hostingEnvironment = environment;
         }
 
         //8
@@ -62,6 +65,18 @@ namespace WebServer.Controllers
                 VideoId = video.Id
             });
             await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpPost("Upload/{fileName}")]
+        public async Task<ActionResult<Video>> Upload(string fileName)
+        {
+            IFormFile file = Request.Form.Files[0];
+            var filePath = Path.Combine(@"C:\Users\HP\Desktop\test", file.FileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+            }
             return Ok();
         }
     }
