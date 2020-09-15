@@ -112,9 +112,9 @@ namespace Library
         public static string UploadFile(string url, string videoPath)
         {
             RestClient restClient = new RestClient("https://localhost:44396/api/");
-            RestRequest request = new RestRequest(url, Method.POST);
+            RestRequest request = new RestRequest(url+"/alaa", Method.POST, DataFormat.Json);
             request.AddFile("FileByte", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
-            var response = restClient.Execute(request);
+            IRestResponse response = restClient.Execute(request);
             return response.Content;
         }
         static string SetUpURL<T>(params string [] parms)

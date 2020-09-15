@@ -16,12 +16,10 @@ namespace WebServer.Controllers
     public class VideosController : ControllerBase
     {
         private readonly Context _context;
-        private IHostingEnvironment _hostingEnvironment;
         string VideosPath = "~/Uploads/";
-        public VideosController(Context context , IHostingEnvironment environment)
+        public VideosController(Context context)
         {
             _context = context;
-            _hostingEnvironment = environment;
         }
 
         //8
@@ -69,8 +67,8 @@ namespace WebServer.Controllers
             return Ok();
         }
 
-        [HttpPost("AddVideo/{fileName}")]
-        public async Task<ActionResult<Video>> AddVideo(string fileName)
+        [HttpPost("AddVideo/{name}")]
+        public async Task<ActionResult<Video>> AddVideo(string name)
         {
             if (!Directory.Exists(VideosPath))
                 Directory.CreateDirectory(VideosPath);

@@ -34,7 +34,7 @@ namespace AdminPanel.View.NoteBook
         private void button1_Click(object sender, EventArgs e)
         {
             CompressZip();
-            CallAPI.PostFile<Video,Video>(ZipPath + name,"AddVideo");
+            CallAPI.PostFile<Video,Video>(ZipPath + name, "AddVideo");
         }
 
         private void Check()
