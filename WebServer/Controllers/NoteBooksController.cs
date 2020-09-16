@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.Language;
 using Microsoft.EntityFrameworkCore;
 using Models;
 
@@ -27,17 +28,32 @@ namespace WebServer.Controllers
             List<NoteBook> noteBooks = await _context.NoteBooks
                 .Include(x => x.Subject)
                 .ThenInclude(x => x.Dept)
+                .Include(x => x.NoteBookFeatures)
+                .ThenInclude(x=>x.Feature)
+                .Include(x=>x.NoteBookSerials)
+                .Include(x=>x.Videos)
                 .ToListAsync();
-            foreach (var item in noteBooks)
+            foreach (var noteBook in noteBooks)
             {
-                item.Subject.Dept.Subjects = null;
-                item.Subject.NoteBooks = null;
+                noteBook.Subject.Dept.Subjects = null;
+                noteBook.Subject.NoteBooks = null;
+                foreach (var NoteBookFeature in noteBook.NoteBookFeatures)
+                    NoteBookFeature.NoteBook = null;
+                foreach (var NoteBookSerial in noteBook.NoteBookSerials)
+                    NoteBookSerial.NoteBook = null;
+                foreach (var Video in noteBook.Videos)
+                    Video.NoteBook = null;
             }
-                
-
             return noteBooks;
         }
-
+        [HttpGet("DeActiveNoteBook/{notebookId}")]
+        public async Task<NoteBook> DeActiveNoteBook(int notebookId)
+        {
+            NoteBook noteBook = await _context.NoteBooks.FindAsync(notebookId);
+            noteBook.IsActive = false;
+            await _context.SaveChangesAsync();
+            return noteBook;
+        }
         //K
         [HttpGet("CheckNoteBookExists")]
         public bool CheckNoteBookExists(Subject subject)

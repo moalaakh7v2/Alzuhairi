@@ -71,6 +71,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "AddVideo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddVideo";
             this.Load += new System.EventHandler(this.AddVideo_Load);
             this.ResumeLayout(false);

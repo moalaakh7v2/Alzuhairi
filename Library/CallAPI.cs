@@ -8,14 +8,24 @@ namespace Library
 {
     public class CallAPI
     {
+        public static string URL = "https://localhost:44396/api/";
         //Get List
         public static List<T> GetListContent<C, T>(params string[] parms)
             where C : class
             where T : class
         {
-            string str = CreateGetRequest(SetUpURL<C>(parms));
-            var x = JsonSerializer.Deserialize<List<T>>(str, Options);
-            return x;
+            try
+            {
+                string str = CreateGetRequest(SetUpURL<C>(parms));
+                var x = JsonSerializer.Deserialize<List<T>>(str, Options);
+                return x;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
 
         //Get Object
@@ -83,7 +93,7 @@ namespace Library
         {
             try
             {
-                RestClient restClient = new RestClient("https://localhost:44396/api/");
+                RestClient restClient = new RestClient(URL);
                 RestRequest restRequest = new RestRequest(url, Method.GET, DataFormat.Json);
                 IRestResponse restResponse = restClient.Execute(restRequest);
                 return restResponse.Content;
@@ -97,7 +107,7 @@ namespace Library
         {
             try
             {
-                RestClient restClient = new RestClient("https://localhost:44396/api/");
+                RestClient restClient = new RestClient(URL);
                 RestRequest restRequest = new RestRequest(url, Method.POST, DataFormat.Json);
                 restRequest.AddJsonBody(obj);
                 IRestResponse restResponse = restClient.Execute(restRequest);
@@ -111,12 +121,15 @@ namespace Library
 
         public static string UploadFile(string url, string videoPath)
         {
-            RestClient restClient = new RestClient("https://localhost:44396/api/");
-            RestRequest request = new RestRequest(url+"/alaa", Method.POST, DataFormat.Json);
+            RestClient restClient = new RestClient(URL);
+            RestRequest request = new RestRequest(url, Method.POST, DataFormat.Json);
             request.AddFile("FileByte", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
             IRestResponse response = restClient.Execute(request);
             return response.Content;
         }
+
+
+
         static string SetUpURL<T>(params string [] parms)
         {
             string name = typeof(T).Name;

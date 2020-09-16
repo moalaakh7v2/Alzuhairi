@@ -28,7 +28,8 @@ namespace WebServer.Controllers
         [HttpGet("GetResellerAndNoteBookByResellerId/{resellerId}")]
         public async Task<ActionResult<IEnumerable<ResellerAndNoteBook>>> GetResellerAndNoteBookByResellerId(int resellerId)
         {
-            return await _context.ResellerAndNoteBooks.Where(x=>x.ResellerId == resellerId).ToListAsync();
+            var x = await _context.ResellerAndNoteBooks.Where(x => x.ResellerId == resellerId).ToListAsync();
+            return x;
         }
 
         [HttpPost("UpdateReseller")]

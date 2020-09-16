@@ -16,13 +16,15 @@ namespace AdminPanel.View.NoteBook
 {
     public partial class AddVideo : Form
     {
+        int noteBookId;
         public static string VideosPath = @"C:\AlzuhairiVideos\";
         public static string ZipPath = @"C:\_ZipVideos\";
         List<string> ext = new List<string> { "mp4", "avi" };
         List<string> myFiles;
         string name;
-        public AddVideo()
+        public AddVideo(int noteBookId)
         {
+            this.noteBookId = noteBookId;
             InitializeComponent();
         }
         private void AddVideo_Load(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace AdminPanel.View.NoteBook
         private void button1_Click(object sender, EventArgs e)
         {
             CompressZip();
-            CallAPI.PostFile<Video,Video>(ZipPath + name, "AddVideo");
+            Video video = CallAPI.PostFile<Video,Video>(ZipPath + name, "AddVideoToNoteBook" , noteBookId.ToString());
         }
 
         private void Check()

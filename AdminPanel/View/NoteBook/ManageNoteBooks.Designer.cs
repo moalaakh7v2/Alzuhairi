@@ -41,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.grdNotebooks = new System.Windows.Forms.DataGridView();
             this.comboDeptSubjectYear = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chkVideos = new System.Windows.Forms.CheckedListBox();
@@ -50,7 +49,6 @@
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeAvtiveNoteBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdNotebooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownloadVideoQR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
@@ -135,6 +133,7 @@
             this.btnDeAvtiveNoteBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnDeAvtiveNoteBook.TabIndex = 6;
             this.btnDeAvtiveNoteBook.TabStop = false;
+            this.btnDeAvtiveNoteBook.Click += new System.EventHandler(this.btnDeAvtiveNoteBook_Click);
             // 
             // txtUnused
             // 
@@ -184,15 +183,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Count of copies";
             // 
-            // grdNotebooks
-            // 
-            this.grdNotebooks.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grdNotebooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdNotebooks.Location = new System.Drawing.Point(18, 102);
-            this.grdNotebooks.Name = "grdNotebooks";
-            this.grdNotebooks.Size = new System.Drawing.Size(393, 178);
-            this.grdNotebooks.TabIndex = 4;
-            // 
             // comboDeptSubjectYear
             // 
             this.comboDeptSubjectYear.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -203,13 +193,14 @@
             this.comboDeptSubjectYear.Name = "comboDeptSubjectYear";
             this.comboDeptSubjectYear.Size = new System.Drawing.Size(393, 26);
             this.comboDeptSubjectYear.TabIndex = 5;
+            this.comboDeptSubjectYear.SelectedIndexChanged += new System.EventHandler(this.comboDeptSubjectYear_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 292);
+            this.label3.Location = new System.Drawing.Point(47, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 7;
@@ -219,9 +210,9 @@
             // 
             this.chkVideos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkVideos.FormattingEnabled = true;
-            this.chkVideos.Location = new System.Drawing.Point(117, 296);
+            this.chkVideos.Location = new System.Drawing.Point(117, 131);
             this.chkVideos.Name = "chkVideos";
-            this.chkVideos.Size = new System.Drawing.Size(294, 154);
+            this.chkVideos.Size = new System.Drawing.Size(294, 319);
             this.chkVideos.TabIndex = 11;
             // 
             // btnAddVideo
@@ -229,7 +220,7 @@
             this.btnAddVideo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddVideo.Image = global::AdminPanel.Properties.Resources.Crystal_Project_Edit_add;
-            this.btnAddVideo.Location = new System.Drawing.Point(55, 324);
+            this.btnAddVideo.Location = new System.Drawing.Point(55, 222);
             this.btnAddVideo.Name = "btnAddVideo";
             this.btnAddVideo.Size = new System.Drawing.Size(24, 28);
             this.btnAddVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -242,7 +233,7 @@
             this.btnDownloadVideoQR.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDownloadVideoQR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDownloadVideoQR.Image = global::AdminPanel.Properties.Resources.download_icon_png_free_download_download_icon_png_1000_1000;
-            this.btnDownloadVideoQR.Location = new System.Drawing.Point(55, 370);
+            this.btnDownloadVideoQR.Location = new System.Drawing.Point(55, 268);
             this.btnDownloadVideoQR.Name = "btnDownloadVideoQR";
             this.btnDownloadVideoQR.Size = new System.Drawing.Size(24, 28);
             this.btnDownloadVideoQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -254,12 +245,13 @@
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Image = global::AdminPanel.Properties.Resources.unnamed;
-            this.btnDelete.Location = new System.Drawing.Point(55, 417);
+            this.btnDelete.Location = new System.Drawing.Point(55, 315);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(24, 28);
             this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnDelete.TabIndex = 8;
             this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ManageNoteBooks
             // 
@@ -273,16 +265,15 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboDeptSubjectYear);
-            this.Controls.Add(this.grdNotebooks);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageNoteBooks";
             this.Text = "ManageNoteBooks";
+            this.Load += new System.EventHandler(this.ManageNoteBooks_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeAvtiveNoteBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdNotebooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownloadVideoQR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
@@ -295,7 +286,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView grdNotebooks;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboDeptSubjectYear;
         private System.Windows.Forms.Label label3;

@@ -50,7 +50,7 @@ namespace AdminPanel.View.Store
         {
             reseller = (Reseller)grdStores.Rows[e.RowIndex].DataBoundItem;
             lblTitle.Text = reseller.Title;
-            resellerAndNoteBooks = CallAPI.GetListContent<ResellerAndNoteBook, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
+            resellerAndNoteBooks = CallAPI.GetListContent<Reseller, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
             grdResellerAndNoteBook.DataSource = resellerAndNoteBooks;
             grdResellerAndNoteBook.Columns["Id"].Visible =
             grdResellerAndNoteBook.Columns["NoteBook"].Visible =
