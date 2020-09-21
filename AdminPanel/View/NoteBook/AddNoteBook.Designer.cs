@@ -94,6 +94,7 @@
             this.chkFeatures.FormattingEnabled = true;
             this.chkFeatures.Location = new System.Drawing.Point(95, 139);
             this.chkFeatures.Name = "chkFeatures";
+            this.chkFeatures.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chkFeatures.Size = new System.Drawing.Size(316, 164);
             this.chkFeatures.TabIndex = 7;
             // 
@@ -106,9 +107,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(322, 339);
+            this.btnAdd.Location = new System.Drawing.Point(322, 332);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 32);
+            this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -120,6 +121,7 @@
             this.txtNote.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNote.Location = new System.Drawing.Point(95, 93);
             this.txtNote.Name = "txtNote";
+            this.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtNote.Size = new System.Drawing.Size(316, 23);
             this.txtNote.TabIndex = 6;
             // 
@@ -162,6 +164,7 @@
             this.comboSubjects.FormattingEnabled = true;
             this.comboSubjects.Location = new System.Drawing.Point(95, 35);
             this.comboSubjects.Name = "comboSubjects";
+            this.comboSubjects.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboSubjects.Size = new System.Drawing.Size(164, 26);
             this.comboSubjects.TabIndex = 2;
             // 

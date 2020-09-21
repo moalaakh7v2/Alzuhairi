@@ -11,5 +11,6 @@ namespace Models
         public virtual NoteBook NoteBook { get; set; }
         [Required]
         public string Title { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

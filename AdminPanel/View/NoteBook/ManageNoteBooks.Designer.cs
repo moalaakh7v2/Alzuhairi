@@ -111,6 +111,7 @@
             this.lstFeatures.ItemHeight = 18;
             this.lstFeatures.Location = new System.Drawing.Point(91, 235);
             this.lstFeatures.Name = "lstFeatures";
+            this.lstFeatures.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lstFeatures.Size = new System.Drawing.Size(218, 94);
             this.lstFeatures.TabIndex = 8;
             // 
@@ -120,6 +121,7 @@
             this.lstStudent.ItemHeight = 18;
             this.lstStudent.Location = new System.Drawing.Point(91, 125);
             this.lstStudent.Name = "lstStudent";
+            this.lstStudent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lstStudent.Size = new System.Drawing.Size(218, 94);
             this.lstStudent.TabIndex = 7;
             // 
@@ -239,6 +241,7 @@
             this.btnDownloadVideoQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnDownloadVideoQR.TabIndex = 9;
             this.btnDownloadVideoQR.TabStop = false;
+            this.btnDownloadVideoQR.Click += new System.EventHandler(this.btnDownloadVideoQR_Click);
             // 
             // btnDelete
             // 

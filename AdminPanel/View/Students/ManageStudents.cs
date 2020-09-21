@@ -1,6 +1,7 @@
 ﻿using AdminPanel.Classes;
 using Library;
 using Models;
+using Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace AdminPanel.View.Students
     public partial class ManageStudents : Form
     {
         List<Student> students;
+        List<DisplayStudents> displayStudents;
         public ManageStudents()
         {
             InitializeComponent();
@@ -24,20 +26,43 @@ namespace AdminPanel.View.Students
         private void ManageStudents_Load(object sender, EventArgs e)
         {
             students = CallAPI.GetListContent<Student, Student>("GetStudents");
-            grdStudents.DataSource = students;
+            FillGridView(students);
+        }
+        void FillGridView(List<Student> students)
+        {
+            displayStudents = new List<DisplayStudents>();
+            grdStudents.DataSource = null;
+            foreach (var item in students)
+            {
+                displayStudents.Add(new DisplayStudents
+                {
+                    Id = item.Id,
+                    Age = item.Age,
+                    IsActive = item.IsActive,
+                    Dept = item.Dept.DeptName,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    PhoneNumber = item.PhoneNumber,
+                    RegisterDate = item.RegisterDate
+                });
+            }
+            grdStudents.DataSource = displayStudents;
+            grdStudents.Columns["Id"].Visible = false;
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            grdStudents.DataSource = students;
+            FillGridView(students);
         }
 
         private void grdStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                Student student = (Student)grdStudents.Rows[e.RowIndex].DataBoundItem;
+                DisplayStudents displayStudent = (DisplayStudents)grdStudents.Rows[e.RowIndex].DataBoundItem;
+                var student = students.Find(x => x.Id == displayStudent.Id);
                 EditStudent editStudent = new EditStudent(student);
                 editStudent.ShowDialog();
+                ManageStudents_Load(sender, e);
             }
             catch { }
         }
@@ -46,20 +71,29 @@ namespace AdminPanel.View.Students
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var res = students.Where(x=>x.FirstName == txtName.Text).ToList();
+                var res = students.Where(x=>x.FirstName.ToLower() == txtName.Text.ToLower()).ToList();
                 if (!res.Any())
                 {
                     MessageBox.Show("Not Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                grdStudents.DataSource = res;
+                FillGridView(res);
                 
             }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            grdStudents.copyAlltoClipboard();
+            try
+            {
+                if (grdStudents.DataSource != null)
+                    grdStudents.copyAlltoClipboard();
+            }
+            catch
+            {
+                CheckData.ErrorMessage();
+            }
+            
         }
     }
 }

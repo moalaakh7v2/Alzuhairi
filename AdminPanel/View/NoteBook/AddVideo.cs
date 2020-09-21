@@ -33,11 +33,6 @@ namespace AdminPanel.View.NoteBook
             var files = myFiles.Select(x => Path.GetFileName(x)).ToList();
             comboBox1.DataSource = files;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CompressZip();
-            Video video = CallAPI.PostFile<Video,Video>(ZipPath + name, "AddVideoToNoteBook" , noteBookId.ToString());
-        }
 
         private void Check()
         {
@@ -77,6 +72,12 @@ namespace AdminPanel.View.NoteBook
             string[] Files = Directory.GetFiles(dirPath);
             foreach (string f in Files)
                 File.Delete(f);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CompressZip();
+            Video video = CallAPI.PostFile<Video, Video>(ZipPath + name, "AddVideoToNoteBook", noteBookId.ToString());
         }
     }
 }

@@ -6,9 +6,11 @@ namespace Library
 {
     public class QRcode
     {
-        public static void CreateQR(string str , string path ,  int width = 10 )
+        public static void CreateQR(string str , string path ,  int width = 10 , string fileName = "")
         {
-            path += "\\"+str+".png";
+            if (fileName == "")
+                fileName = str;
+            path += "\\"+ fileName + ".png";
             BarcodeSettings.ApplyKey("Free");
             BarcodeSettings settings = new BarcodeSettings();
             settings.Type = BarCodeType.QRCode;

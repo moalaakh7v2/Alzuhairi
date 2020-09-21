@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -103,12 +104,22 @@ namespace AdminPanel.View.Init
             try
             {
                 students = CallAPI.GetListContent<Student, Student>("GetStudentsByDeptId", comboGetDept.SelectedValue.ToString());
-                grdStudents.DataSource = students;
+                grdStudents.DataSource = students.Select(x=> new {x.FirstName , x.LastName , x.PhoneNumber });
             }
             catch (Exception)
             {
-                MessageBox.Show("Error completing operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CheckData.ErrorMessage();
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (grdStudents.DataSource == null)
+            {
+                CheckData.ErrorMessage();
+                return;
+            }
+            grdStudents.copyAlltoClipboard();
         }
     }
 }

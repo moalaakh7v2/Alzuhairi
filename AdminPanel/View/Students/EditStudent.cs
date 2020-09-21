@@ -43,7 +43,7 @@ namespace AdminPanel.View.Students
         private void btnDeactive_Click(object sender, EventArgs e)
         {
             student.IsActive = false;
-            student = CallAPI.PostObjectAndGetObject<Student, Student>(student,"ModifyStudent");
+            student = CallAPI.PostObjectAndGetObject<Student, Student>(student,"ModifyStudent", "false");
             Close();
 
         }

@@ -43,26 +43,18 @@ namespace WebServer.Controllers
             }
             return Ok(video);
         }
-        //[HttpGet("RemoveVideo/{notebookId}/{vidoId}")]
-        //public async Task<ActionResult<Video>> RemoveVideo(int notebookId , int vidoId)
-        //{
-        //    var video = await _context.Videos.FirstOrDefaultAsync(x => x.Id == videoId);
-        //    if (video == null)
-        //    {
-        //        return Problem("Error Video Code");
-        //    }
-        //    var NotaSerials = _context.NoteBookSerials.Where(x => x.NoteBookId == video.NoteBookId);
-        //    var StudenNote = await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.StudentId == studenId);
-        //    if (StudenNote == null)
-        //    {
-        //        return Problem("This NoteBook Is Used By Another Student");
-        //    }
-        //    if (!StudenNote.IsActive)
-        //    {
-        //        return Problem("Not Active In Your Device");
-        //    }
-        //    return Ok(video);
-        //}
+        [HttpPost("RemoveVideo")]
+        public async Task<ActionResult<Video>> RemoveVideo(List<Guid> videoIds)
+        {
+            var videos = await _context.Videos.Where(x => videoIds.Contains(x.Id)).ToListAsync();
+            if (!videos.Any())
+                return Problem("Error Video Code");
+            //todo remove video from server 
+            foreach (var item in videos)
+                item.IsActive = false;
+            await _context.SaveChangesAsync();
+            return Ok(videos);
+        }
         //9
         [HttpPost("CheckWatching/{studenId}")]
         public async Task<ActionResult<Video>> CheckWatching(Video video, int studenId)

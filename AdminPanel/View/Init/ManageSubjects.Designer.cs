@@ -43,10 +43,12 @@
             this.grdStudents = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnGetStudents = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExport)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -193,14 +195,15 @@
             // grdStudents
             // 
             this.grdStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdStudents.Location = new System.Drawing.Point(250, 16);
+            this.grdStudents.Location = new System.Drawing.Point(264, 16);
             this.grdStudents.Name = "grdStudents";
-            this.grdStudents.Size = new System.Drawing.Size(458, 165);
+            this.grdStudents.Size = new System.Drawing.Size(397, 165);
             this.grdStudents.TabIndex = 19;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.Controls.Add(this.btnExport);
             this.groupBox3.Controls.Add(this.btnGetStudents);
             this.groupBox3.Controls.Add(this.grdStudents);
             this.groupBox3.Controls.Add(this.comboGetDept);
@@ -221,13 +224,25 @@
             this.btnGetStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetStudents.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetStudents.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGetStudents.Location = new System.Drawing.Point(61, 102);
+            this.btnGetStudents.Location = new System.Drawing.Point(70, 103);
             this.btnGetStudents.Name = "btnGetStudents";
             this.btnGetStudents.Size = new System.Drawing.Size(114, 32);
             this.btnGetStudents.TabIndex = 19;
             this.btnGetStudents.Text = "Get Students";
             this.btnGetStudents.UseVisualStyleBackColor = false;
             this.btnGetStudents.Click += new System.EventHandler(this.btnGetStudents_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Image = global::AdminPanel.Properties.Resources._12527;
+            this.btnExport.Location = new System.Drawing.Point(667, 25);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(25, 28);
+            this.btnExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExport.TabIndex = 20;
+            this.btnExport.TabStop = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // ManageSubjects
             // 
@@ -249,6 +264,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnExport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +287,6 @@
         private System.Windows.Forms.DataGridView grdStudents;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnGetStudents;
+        private System.Windows.Forms.PictureBox btnExport;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Library;
+﻿using AdminPanel.Classes;
+using Library;
 using Models;
 using Models.ViewModels;
 using System;
@@ -48,20 +49,37 @@ namespace AdminPanel.View.Store
 
         private void grdStores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            reseller = (Reseller)grdStores.Rows[e.RowIndex].DataBoundItem;
-            lblTitle.Text = reseller.Title;
-            resellerAndNoteBooks = CallAPI.GetListContent<Reseller, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
-            grdResellerAndNoteBook.DataSource = resellerAndNoteBooks;
-            grdResellerAndNoteBook.Columns["Id"].Visible =
-            grdResellerAndNoteBook.Columns["NoteBook"].Visible =
-            grdResellerAndNoteBook.Columns["Reseller"].Visible = false;
+            try
+            {
+
+                reseller = (Reseller)grdStores.Rows[e.RowIndex].DataBoundItem;
+                lblTitle.Text = reseller.Title;
+                resellerAndNoteBooks = CallAPI.GetListContent<Reseller, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
+                grdResellerAndNoteBook.DataSource = resellerAndNoteBooks;
+                grdResellerAndNoteBook.Columns["Id"].Visible =
+                grdResellerAndNoteBook.Columns["NoteBook"].Visible =
+                grdResellerAndNoteBook.Columns["Reseller"].Visible = false;
+            }
+            catch { }
         }
 
         private void btnGrant_Click(object sender, EventArgs e)
         {
-            ResellerAndNoteBook resellerAndNoteBook = CallAPI.GetObjectContent<ResellerAndNoteBook, ResellerAndNoteBook>("GrantNoteBooksToReseller",
-                reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
-            MessageBox.Show("Added Done" , "Done" ,MessageBoxButtons.OK,MessageBoxIcon.Information) ;
+            try
+            {
+                if (txtCount.CheckNull())
+                    return;
+                if (!txtCount.CheckInt())
+                    return;
+                ResellerAndNoteBook resellerAndNoteBook = CallAPI.GetObjectContent<ResellerAndNoteBook, ResellerAndNoteBook>("GrantNoteBooksToReseller",
+                 reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
+                MessageBox.Show("Added Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                CheckData.ErrorMessage();
+            }
+                      
         }
     }
 }

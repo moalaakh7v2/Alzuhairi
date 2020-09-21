@@ -52,9 +52,10 @@ namespace WebServer.Controllers
         }
 
         //3
-        [HttpPost("CreateStudent")]
-        public async Task<ActionResult<Student>> CreateStudent(Student student)
+        [HttpPost("CreateStudent/{studentId}")]
+        public async Task<ActionResult<Student>> CreateStudent(Student student, int studentId)
         {
+            student.Imei = student.Imei == null ? "" : student.Imei;
             student.RegisterDate = DateTime.Now;
             await _context.Students.AddAsync(student);
             await _context.SaveChangesAsync();
@@ -62,9 +63,10 @@ namespace WebServer.Controllers
         }
 
         //5
-        [HttpPost("ModifyStudent")]
-        public async Task<ActionResult<Student>> ModifyStudent(Student student)
+        [HttpPost("ModifyStudent/{approve}")]
+        public async Task<ActionResult<Student>> ModifyStudent(Student student , bool approve)
         {
+            student.IsActive = approve;
             _context.Entry(student).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return Ok(student);

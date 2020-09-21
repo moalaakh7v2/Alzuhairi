@@ -68,17 +68,6 @@ namespace AdminPanel.View.NoteBook
                 bool chkChek = false;
                 if (txtCount.CheckNull() || txtNote.CheckNull())
                     return;
-                //foreach (var itemChecked in chkFeatures.CheckedItems)
-                //{
-                //    chkChek = true;
-                //    return;
-                //}
-                //if (!chkChek)
-                //{
-                //    DialogResult dialogResult = MessageBox.Show("Are you sure not to add features ?! ", "Features", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //    if (dialogResult == DialogResult.Cancel)
-                //        return;
-                //}
                 List<int> featureIds = new List<int>();
                 foreach (var itemChecked in chkFeatures.CheckedItems)
                 {
@@ -125,12 +114,14 @@ namespace AdminPanel.View.NoteBook
 
             if (browser.ShowDialog() == DialogResult.OK)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 string path = browser.SelectedPath;
 
                 foreach (var item in noteBookSerials)
                 {
                     QRcode.CreateQR(item.QRcode.ToString(), path);
                 }
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("operation accomplished successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

@@ -24,7 +24,7 @@ namespace AdminPanel.View.Students
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!txtFName.CheckNull() && !txtLName.CheckNull() && !txtAge.CheckNull() && !txtNumber.CheckNull() && !txtImei.CheckNull())
+            if (!txtFName.CheckNull() && !txtLName.CheckNull() && txtAge.CheckAge() && txtNumber.CheckPhoneNumber())
             {
                 Student student = new Student{
                     FirstName = txtFName.Text,
@@ -32,13 +32,11 @@ namespace AdminPanel.View.Students
                     Age = Convert.ToInt32(txtAge.Text),
                     DeptId = (int)comboDept.SelectedValue,
                     PhoneNumber = txtNumber.Text,
-                    Imei = txtImei.Text
+                    StudentNoteBooks  = new List<StudentNoteBook>()
                 };
-                student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "CreateStudent");
+                student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "CreateStudent", student.Id.ToString());
                 if (student.Id != 0)
-                {
                     MessageBox.Show("Student has been added successfully", "Done", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
             }
         }
 
