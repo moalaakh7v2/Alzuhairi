@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -40,7 +41,10 @@ namespace WebServer.Controllers
                 foreach (var NoteBookFeature in noteBook.NoteBookFeatures)
                     NoteBookFeature.NoteBook = null;
                 foreach (var NoteBookSerial in noteBook.NoteBookSerials)
+                {
                     NoteBookSerial.NoteBook = null;
+                    NoteBookSerial.StudentNoteBooks = _context.StudentNoteBooks.Where(x => x.SerialId == NoteBookSerial.Id).ToList();
+                }
                 foreach (var Video in noteBook.Videos)
                     Video.NoteBook = null;
             }
@@ -49,9 +53,12 @@ namespace WebServer.Controllers
         [HttpGet("DeActiveNoteBook/{notebookId}")]
         public async Task<NoteBook> DeActiveNoteBook(int notebookId)
         {
-            NoteBook noteBook = await _context.NoteBooks.FindAsync(notebookId);
-            noteBook.IsActive = false;
-            await _context.SaveChangesAsync();
+            NoteBook noteBook = await _context.NoteBooks.FirstAsync(x => x.IsActive && x.Id == notebookId);
+            if (noteBook != null)
+            {
+                noteBook.IsActive = false;
+                await _context.SaveChangesAsync();
+            }
             return noteBook;
         }
         //K

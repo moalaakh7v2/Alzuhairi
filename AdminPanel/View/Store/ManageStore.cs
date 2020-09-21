@@ -71,7 +71,7 @@ namespace AdminPanel.View.Store
                     return;
                 if (!txtCount.CheckInt())
                     return;
-                ResellerAndNoteBook resellerAndNoteBook = CallAPI.GetObjectContent<ResellerAndNoteBook, ResellerAndNoteBook>("GrantNoteBooksToReseller",
+                ResellerAndNoteBook resellerAndNoteBook = CallAPI.PostObjectAndGetObject<ResellerAndNoteBook, ResellerAndNoteBook>(null,"GrantNoteBooksToReseller",
                  reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
                 MessageBox.Show("Added Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

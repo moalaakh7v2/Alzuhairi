@@ -78,6 +78,11 @@ namespace AdminPanel.View.NoteBook
         {
             CompressZip();
             Video video = CallAPI.PostFile<Video, Video>(ZipPath + name, "AddVideoToNoteBook", noteBookId.ToString());
+            if (video == null)
+                MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
         }
     }
 }

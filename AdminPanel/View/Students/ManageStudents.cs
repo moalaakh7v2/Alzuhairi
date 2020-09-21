@@ -71,7 +71,7 @@ namespace AdminPanel.View.Students
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var res = students.Where(x=>x.FirstName.ToLower() == txtName.Text.ToLower()).ToList();
+                var res = students.Where(x=>x.FirstName == txtName.Text).ToList();
                 if (!res.Any())
                 {
                     MessageBox.Show("Not Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -84,16 +84,13 @@ namespace AdminPanel.View.Students
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (grdStudents.DataSource != null)
-                    grdStudents.copyAlltoClipboard();
-            }
-            catch
+            if (grdStudents.DataSource == null)
             {
                 CheckData.ErrorMessage();
+                return;
             }
-            
+            grdStudents.copyAlltoClipboard();
+
         }
     }
 }

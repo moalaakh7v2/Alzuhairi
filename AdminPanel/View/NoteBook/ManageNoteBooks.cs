@@ -52,8 +52,8 @@ namespace AdminPanel.View.NoteBook
                     });
                 }
                 comboDeptSubjectYear.DataSource = noteBooksTitles;
-
-
+                comboDeptSubjectYear.DisplayMember = "Title";
+                comboDeptSubjectYear.ValueMember = "Id";
             }
             catch
             {
@@ -69,11 +69,9 @@ namespace AdminPanel.View.NoteBook
             var notebook = noteBooks.First(x => x.Id == notebookId);
             btnDeAvtiveNoteBook.Visible = notebook.IsActive;
             List<Feature> features = notebook.NoteBookFeatures.Select(x => x.Feature).ToList();
-            lstFeatures.DataSource = features.Select(x=>x.Title);
+            lstFeatures.DataSource = features.Select(x=>x.Title).ToList();
             txtCount.Text = notebook.NoteBookSerials.Count.ToString();
-
-            //todo Test This 
-            var used = notebook.NoteBookSerials.Select(x => x.StudentNoteBooks.Count());
+            var used = notebook.NoteBookSerials.Select(x => x.StudentNoteBooks.Count()).ToList();
             txtUsed.Text = used.Sum().ToString();
             txtUnused.Text = (notebook.NoteBookSerials.Count() - used.Sum()).ToString();
 
@@ -92,6 +90,9 @@ namespace AdminPanel.View.NoteBook
             {
                 int notebookId = (int)comboDeptSubjectYear.SelectedValue;
                 Models.NoteBook noteBook = CallAPI.GetObjectContent<Models.NoteBook, Models.NoteBook>("DeActiveNoteBook", notebookId.ToString());
+                if (noteBook == null) 
+                MessageBox.Show("this notebook was deactivated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
                 MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
