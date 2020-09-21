@@ -133,7 +133,9 @@ namespace Library
         static string SetUpURL<T>(params string [] parms)
         {
             string name = typeof(T).Name;
-            if (name[name.Length - 1] == 'Y' || name[name.Length - 1] == 'y')
+            if (name == "ResellerAndNoteBook")
+                name = "Reseller";
+            else if (name[name.Length - 1] == 'Y' || name[name.Length - 1] == 'y')
             {
                 name.Remove(name.Length - 1, 1);
                 name += "ie";

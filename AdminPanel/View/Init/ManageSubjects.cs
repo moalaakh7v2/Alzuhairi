@@ -104,7 +104,8 @@ namespace AdminPanel.View.Init
             try
             {
                 students = CallAPI.GetListContent<Student, Student>("GetStudentsByDeptId", comboGetDept.SelectedValue.ToString());
-                grdStudents.DataSource = students.Select(x=> new {x.FirstName , x.LastName , x.PhoneNumber });
+                var y = students.Select(x => new { x.FirstName, x.LastName, x.PhoneNumber }).ToList();
+                grdStudents.DataSource = y;
             }
             catch (Exception)
             {
