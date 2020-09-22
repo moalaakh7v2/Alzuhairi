@@ -6,19 +6,14 @@ namespace Library
 {
     public class RandomeCS
     {
+        static Random random = new Random();
         public static int IntRandom(int length = 6)
         {
             if (length < 1)
                 return int.MinValue;
-            string str = string.Empty;
-            Random random = new Random();
-            for (int i = 0; i < length; i++)
-                str += random.Next(0, 9).ToString();
-            return Convert.ToInt32(str);
+            int min = (int)Math.Pow(10, length - 1);
+            int max = min * 10 - 1;
+            return random.Next(min, max);
         }
-        //todo Check Random Code
-        //Errors
-        //000000
-        //123456
     }
 }
