@@ -42,8 +42,10 @@
             this.comboGetDept = new System.Windows.Forms.ComboBox();
             this.grdStudents = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnGetStudents = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.PictureBox();
+            this.btnGetStudents = new System.Windows.Forms.Button();
+            this.radioFirst = new System.Windows.Forms.RadioButton();
+            this.radioSecond = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).BeginInit();
@@ -114,6 +116,8 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.radioFirst);
+            this.groupBox2.Controls.Add(this.radioSecond);
             this.groupBox2.Controls.Add(this.comboDepts);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btnAddSubject);
@@ -215,6 +219,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dept Name";
             // 
+            // btnExport
+            // 
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Image = global::AdminPanel.Properties.Resources._12527;
+            this.btnExport.Location = new System.Drawing.Point(667, 25);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(25, 28);
+            this.btnExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExport.TabIndex = 20;
+            this.btnExport.TabStop = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // btnGetStudents
             // 
             this.btnGetStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -232,17 +248,27 @@
             this.btnGetStudents.UseVisualStyleBackColor = false;
             this.btnGetStudents.Click += new System.EventHandler(this.btnGetStudents_Click);
             // 
-            // btnExport
+            // radioFirst
             // 
-            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExport.Image = global::AdminPanel.Properties.Resources._12527;
-            this.btnExport.Location = new System.Drawing.Point(667, 25);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(25, 28);
-            this.btnExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnExport.TabIndex = 20;
-            this.btnExport.TabStop = false;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.radioFirst.AutoSize = true;
+            this.radioFirst.Checked = true;
+            this.radioFirst.Location = new System.Drawing.Point(29, 145);
+            this.radioFirst.Name = "radioFirst";
+            this.radioFirst.Size = new System.Drawing.Size(121, 26);
+            this.radioFirst.TabIndex = 20;
+            this.radioFirst.TabStop = true;
+            this.radioFirst.Text = "First Chapter";
+            this.radioFirst.UseVisualStyleBackColor = true;
+            // 
+            // radioSecond
+            // 
+            this.radioSecond.AutoSize = true;
+            this.radioSecond.Location = new System.Drawing.Point(29, 172);
+            this.radioSecond.Name = "radioSecond";
+            this.radioSecond.Size = new System.Drawing.Size(141, 26);
+            this.radioSecond.TabIndex = 21;
+            this.radioSecond.Text = "Second Chapter";
+            this.radioSecond.UseVisualStyleBackColor = true;
             // 
             // ManageSubjects
             // 
@@ -288,5 +314,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnGetStudents;
         private System.Windows.Forms.PictureBox btnExport;
+        private System.Windows.Forms.RadioButton radioFirst;
+        private System.Windows.Forms.RadioButton radioSecond;
     }
 }
