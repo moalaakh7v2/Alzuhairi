@@ -35,10 +35,16 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.PictureBox();
             this.btnExport = new System.Windows.Forms.PictureBox();
+            this.comboYear = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExport)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFilter)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,12 +123,58 @@
             this.btnExport.TabStop = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // comboYear
+            // 
+            this.comboYear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboYear.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboYear.FormattingEnabled = true;
+            this.comboYear.Location = new System.Drawing.Point(56, 23);
+            this.comboYear.Name = "comboYear";
+            this.comboYear.Size = new System.Drawing.Size(177, 30);
+            this.comboYear.TabIndex = 12;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnFilter);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.comboYear);
+            this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(329, 64);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(292, 62);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filter";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 22);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "year";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.Image = global::AdminPanel.Properties.Resources.download_icon_png_free_download_download_icon_png_1000_1000;
+            this.btnFilter.Location = new System.Drawing.Point(239, 22);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(29, 28);
+            this.btnFilter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFilter.TabIndex = 14;
+            this.btnFilter.TabStop = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // ManageStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExport);
@@ -137,6 +189,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExport)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFilter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +206,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox btnRefresh;
+        private System.Windows.Forms.ComboBox comboYear;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox btnFilter;
     }
 }

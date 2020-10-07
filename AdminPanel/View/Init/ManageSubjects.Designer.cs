@@ -160,7 +160,7 @@
             this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSubject.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSubject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddSubject.Location = new System.Drawing.Point(299, 145);
+            this.btnAddSubject.Location = new System.Drawing.Point(328, 166);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.Size = new System.Drawing.Size(84, 32);
             this.btnAddSubject.TabIndex = 16;
