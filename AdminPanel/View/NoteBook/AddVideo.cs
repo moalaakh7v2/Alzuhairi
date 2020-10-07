@@ -84,5 +84,10 @@ namespace AdminPanel.View.NoteBook
                 MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

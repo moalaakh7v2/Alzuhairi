@@ -30,6 +30,7 @@ namespace AdminPanel.View.NoteBook
             {
                 AddVideo video = new AddVideo((int)comboDeptSubjectYear.SelectedValue);
                 video.ShowDialog();
+                ManageNoteBooks_Load(sender, e);
             }
             catch
             {
@@ -67,7 +68,7 @@ namespace AdminPanel.View.NoteBook
             comboDeptSubjectYear.ValueMember = "Id";
             int notebookId = (int)comboDeptSubjectYear.SelectedValue;
             var notebook = noteBooks.First(x => x.Id == notebookId);
-            btnDeAvtiveNoteBook.Visible = notebook.IsActive;
+            btnDeAvtiveNoteBook.Visible = btnAddVideo.Visible = btnDownloadVideoQR.Visible = btnDelete.Visible = notebook.IsActive;
             List<Feature> features = notebook.NoteBookFeatures.Select(x => x.Feature).ToList();
             lstFeatures.DataSource = features.Select(x=>x.Title).ToList();
             txtCount.Text = notebook.NoteBookSerials.Count.ToString();
@@ -75,7 +76,8 @@ namespace AdminPanel.View.NoteBook
             txtUsed.Text = used.Sum().ToString();
             txtUnused.Text = (notebook.NoteBookSerials.Count() - used.Sum()).ToString();
 
-            videos = notebook.Videos.ToList();
+            videos = notebook.Videos.Where(x=>x.IsActive).ToList();
+            chkVideos.Items.Clear();
             foreach (var item in videos)
             {
                 chkVideos.Items.Add(item);
@@ -113,8 +115,7 @@ namespace AdminPanel.View.NoteBook
             List<Guid> vidoeIds = new List<Guid>();
             foreach (object itemChecked in chkVideos.CheckedItems)
             {
-                DataRowView castedItem = itemChecked as DataRowView;
-                vidoeIds.Add(new Guid(castedItem["Id"].ToString()));
+                vidoeIds.Add(((Video)itemChecked).Id);
             }
             CallAPI.PostObjectAndGetObject<Video,Video>(vidoeIds, "RemoveVideo");
             Cursor.Current = Cursors.Default;

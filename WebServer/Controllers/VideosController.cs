@@ -53,7 +53,7 @@ namespace WebServer.Controllers
             foreach (var item in videos)
                 item.IsActive = false;
             await _context.SaveChangesAsync();
-            return Ok(videos);
+            return Ok(new Video ());
         }
         //9
         [HttpPost("CheckWatching/{studenId}")]
