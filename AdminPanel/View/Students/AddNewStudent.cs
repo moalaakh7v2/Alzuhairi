@@ -32,6 +32,8 @@ namespace AdminPanel.View.Students
                     Age = Convert.ToInt32(txtAge.Text),
                     DeptId = (int)comboDept.SelectedValue,
                     PhoneNumber = txtNumber.Text,
+                    Address = txtAddress.Text,
+                    SchoolName = txtSchoolName.Text,
                     StudentNoteBooks  = new List<StudentNoteBook>()
                 };
                 student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "UpdateStudent", student.Id.ToString());

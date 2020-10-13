@@ -1,6 +1,7 @@
 ﻿using AdminPanel.Classes;
 using Library;
 using Models;
+using Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,6 +90,10 @@ namespace AdminPanel.View.Init
                     DeptId = (int)comboDepts.SelectedValue,
                     SubjectName = txtSubjectName.Text
                 };
+                if (radioFirst.Checked)
+                    subject.Chapter = Chapter.First;
+                else
+                    subject.Chapter = Chapter.Second;
                 subject = CallAPI.PostObjectAndGetObject<Subject, Subject>(subject, "AddNewSubject");
                 MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtSubjectName.Text = "";

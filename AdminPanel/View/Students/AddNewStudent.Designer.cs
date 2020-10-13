@@ -40,6 +40,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSchoolName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -140,7 +144,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(155, 266);
+            this.label7.Location = new System.Drawing.Point(155, 337);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 27);
             this.label7.TabIndex = 12;
@@ -150,7 +154,7 @@
             // 
             this.txtNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumber.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumber.Location = new System.Drawing.Point(306, 263);
+            this.txtNumber.Location = new System.Drawing.Point(306, 334);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(261, 30);
             this.txtNumber.TabIndex = 11;
@@ -164,7 +168,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(614, 353);
+            this.btnAdd.Location = new System.Drawing.Point(614, 385);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 32);
             this.btnAdd.TabIndex = 15;
@@ -172,12 +176,56 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(425, 260);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 27);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAddress.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(528, 260);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(170, 30);
+            this.txtAddress.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(44, 261);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 27);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "School Name";
+            // 
+            // txtSchoolName
+            // 
+            this.txtSchoolName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSchoolName.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSchoolName.Location = new System.Drawing.Point(179, 260);
+            this.txtSchoolName.Name = "txtSchoolName";
+            this.txtSchoolName.Size = new System.Drawing.Size(170, 30);
+            this.txtSchoolName.TabIndex = 16;
+            // 
             // AddNewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtSchoolName);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNumber);
@@ -214,5 +262,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSchoolName;
     }
 }

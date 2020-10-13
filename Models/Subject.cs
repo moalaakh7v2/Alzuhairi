@@ -1,3 +1,4 @@
+using Models.Enums;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace Models
@@ -8,14 +9,11 @@ namespace Models
         {
             NoteBooks = new HashSet<NoteBook>();
         }
-
         public int Id { get; set; }
-
         [Required]
         public string SubjectName { get; set; }
-
+        public Chapter Chapter { get; set; }
         public int DeptId { get; set; }
-
         public virtual Dept Dept { get; set; }
         public virtual ICollection<NoteBook> NoteBooks { get; set; }
     }
