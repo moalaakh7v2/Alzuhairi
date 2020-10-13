@@ -24,7 +24,7 @@ namespace WebServer.Controllers
         }
 
 
-        //A
+        
         [HttpPost("LogInAdminAccount")]
         public async Task<ActionResult<Admin>> LogInAdminAccount(Admin admin)
         {

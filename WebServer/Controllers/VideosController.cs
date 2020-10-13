@@ -43,6 +43,7 @@ namespace WebServer.Controllers
             }
             return Ok(video);
         }
+
         [HttpPost("RemoveVideo")]
         public async Task<ActionResult<Video>> RemoveVideo(List<Guid> videoIds)
         {
@@ -55,28 +56,29 @@ namespace WebServer.Controllers
             await _context.SaveChangesAsync();
             return Ok(new Video ());
         }
-        //9
-        [HttpPost("CheckWatching/{studenId}")]
-        public async Task<ActionResult<Video>> CheckWatching(Video video, int studenId)
-        {
-            var NotaSerials = _context.NoteBookSerials.Where(x => x.NoteBookId == video.NoteBookId);
-            var StudenNote = await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.StudentId == studenId);
-            if (StudenNote == null)
-            {
-                return Problem("This NoteBook Is Used By Another Student");
-            }
-            if (!StudenNote.IsActive)
-            {
-                return Problem("Not Active In Your Device");
-            }
-            await _context.Views.AddAsync(new View
-            {
-                StudentId = studenId,
-                VideoId = video.Id
-            });
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
+
+        ////test10
+        //[HttpPost("CheckWatching/{studenId}")]
+        //public async Task<ActionResult<Video>> CheckWatching(Video video, int studenId)
+        //{
+        //    var NotaSerials = _context.NoteBookSerials.Where(x => x.NoteBookId == video.NoteBookId);
+        //    var StudenNote = await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.StudentId == studenId);
+        //    if (StudenNote == null)
+        //    {
+        //        return Problem("This NoteBook Is Used By Another Student");
+        //    }
+        //    if (!StudenNote.IsActive)
+        //    {
+        //        return Problem("Not Active In Your Device");
+        //    }
+        //    await _context.Views.AddAsync(new View
+        //    {
+        //        StudentId = studenId,
+        //        VideoId = video.Id
+        //    });
+        //    await _context.SaveChangesAsync();
+        //    return Ok();
+        //}
 
         [HttpPost("AddVideoToNoteBook/{notebookId}")]
         public async Task<ActionResult<Video>> AddVideo(int notebookId)

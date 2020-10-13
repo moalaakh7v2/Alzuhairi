@@ -22,7 +22,7 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //J
+        
         [HttpGet("GetNoteBooks")]
         public async Task<ActionResult<IEnumerable<NoteBook>>> GetNoteBooks()
         {
@@ -50,6 +50,7 @@ namespace WebServer.Controllers
             }
             return noteBooks;
         }
+
         [HttpGet("DeActiveNoteBook/{notebookId}")]
         public async Task<NoteBook> DeActiveNoteBook(int notebookId)
         {
@@ -61,14 +62,14 @@ namespace WebServer.Controllers
             }
             return noteBook;
         }
-        //K
-        [HttpGet("CheckNoteBookExists")]
-        public bool CheckNoteBookExists(Subject subject)
-        {
-            return _context.NoteBooks.Any(x => x.SubjectId == subject.Id);
-        }
 
-        //L
+        ////test6
+        //[HttpGet("CheckNoteBookExists")]
+        //public bool CheckNoteBookExists(Subject subject)
+        //{
+        //    return _context.NoteBooks.Any(x => x.SubjectId == subject.Id);
+        //}
+
         [HttpPost("AddNewNoteBook/{count}")]
         public async Task<ActionResult<NoteBook>> AddNewNoteBook(NoteBook noteBook , int count)
         {

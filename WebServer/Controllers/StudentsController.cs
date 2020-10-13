@@ -21,7 +21,7 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //34
+        
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
         {
@@ -37,19 +37,19 @@ namespace WebServer.Controllers
             }
             return Students;
         }
-        //NEw
+        
         [HttpGet("GetStudentsByDeptId/{deptId}")]
         public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(int deptId)
         {
             return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
         }
 
-        //4
-        [HttpGet("GetStudent/{imei}")]
-        public async Task<ActionResult<Student>> GetStudent(string imei)
-        {
-            return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
-        }
+        ////test7
+        //[HttpGet("GetStudent/{imei}")]
+        //public async Task<ActionResult<Student>> GetStudent(string imei)
+        //{
+        //    return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
+        //}
 
         //Android3 Android8
         [HttpPost("UpdateStudent/{studentId}")]
@@ -67,7 +67,7 @@ namespace WebServer.Controllers
             return Ok(student);
         }
 
-        //5
+       
         [HttpPost("ModifyStudent/{approve}")]
         public async Task<ActionResult<Student>> ModifyStudent(Student student , bool approve)
         {

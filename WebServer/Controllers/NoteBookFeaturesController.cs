@@ -20,7 +20,6 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //m
         [HttpGet("GetNoteBookFeatures")]
         public async Task<ActionResult<IEnumerable<NoteBookFeature>>> GetNoteBookFeatures(int noteBookId)
         {
@@ -31,27 +30,27 @@ namespace WebServer.Controllers
             return await _context.NoteBookFeatures.Where(x=>x.NoteBookId == noteBookId && x.IsActive).ToListAsync();
         }
 
-        //N
-        [HttpPost("AddNoteBookFeatures")]
-        public async Task<ActionResult<IEnumerable<NoteBookFeature>>> AddNoteBookFeatures(List<NoteBookFeature> noteBookFeatures)
-        {
-            await _context.NoteBookFeatures.AddRangeAsync(noteBookFeatures);
-            await _context.SaveChangesAsync();
-            return Ok(noteBookFeatures);
-        }
+        ////test4
+        //[HttpPost("AddNoteBookFeatures")]
+        //public async Task<ActionResult<IEnumerable<NoteBookFeature>>> AddNoteBookFeatures(List<NoteBookFeature> noteBookFeatures)
+        //{
+        //    await _context.NoteBookFeatures.AddRangeAsync(noteBookFeatures);
+        //    await _context.SaveChangesAsync();
+        //    return Ok(noteBookFeatures);
+        //}
 
-        //O
-        [HttpPost("DeActiveNoteBookFeatures")]
-        public ActionResult<IEnumerable<NoteBookFeature>> DeActiveNoteBookFeatures(List<NoteBookFeature> noteBookFeatures)
-        {
-            foreach (var item in noteBookFeatures)
-            {
-                item.IsActive = false;
-            }
-            _context.NoteBookFeatures.UpdateRange(noteBookFeatures);
-            _context.SaveChanges();
-            return Ok(noteBookFeatures);
-        }
+        ////test5
+        //[HttpPost("DeActiveNoteBookFeatures")]
+        //public ActionResult<IEnumerable<NoteBookFeature>> DeActiveNoteBookFeatures(List<NoteBookFeature> noteBookFeatures)
+        //{
+        //    foreach (var item in noteBookFeatures)
+        //    {
+        //        item.IsActive = false;
+        //    }
+        //    _context.NoteBookFeatures.UpdateRange(noteBookFeatures);
+        //    _context.SaveChanges();
+        //    return Ok(noteBookFeatures);
+        //}
 
     }
 }

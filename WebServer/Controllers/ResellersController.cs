@@ -25,6 +25,7 @@ namespace WebServer.Controllers
         {
             return await _context.Resellers.ToListAsync();
         }
+
         [HttpGet("GetResellerAndNoteBookByResellerId/{resellerId}")]
         public async Task<ActionResult<IEnumerable<ResellerAndNoteBook>>> GetResellerAndNoteBookByResellerId(int resellerId)
         {
