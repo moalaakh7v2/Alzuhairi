@@ -21,11 +21,14 @@ namespace WebServer.Controllers
             _context = context;
         }
 
+        //Android4
         [HttpGet("GetAbout")]
         public ActionResult<About> GetAbout()
         {
             return _context.Abouts.FirstOrDefault();
         }
+
+
         [HttpPost("UpdateAbout/{token}")]
         public async Task<ActionResult<About>> UpdateAbout(About about , Guid token)
         {

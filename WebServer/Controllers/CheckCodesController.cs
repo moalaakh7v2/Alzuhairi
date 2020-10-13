@@ -21,8 +21,8 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //1
-        [HttpPost("CreateCode/{PhoneNumber}")]
+        //Android1
+        [HttpPost("CreateCode")]
         public async Task<ActionResult<CheckCode>> CreateCode(string PhoneNumber)
         {
             if (_context.CheckCodes.Any(x => x.PhoneNumber == PhoneNumber && x.SendDate.AddMinutes(15) <= DateTime.Now))
@@ -31,22 +31,24 @@ namespace WebServer.Controllers
             }
             _context.CheckCodes.Add(new CheckCode {
                 PhoneNumber = PhoneNumber,
-                Code = RandomeCS.IntRandom()
+                Code = RandomeCS.IntRandom(),
+                SendDate = DateTime.Now
             });
             await _context.SaveChangesAsync();
+            //todo Send MTN Code 
             return Ok();
         }
 
-        //2
-        [HttpPost("CheckCodeExists/{PhoneNumber}/{Code}")]
-        private async Task<ActionResult<RegisterState>> CheckCodeExists(string PhoneNumber , int Code)
+        //Android2
+        [HttpPost("CheckCodeExists")]
+        private async Task<ActionResult<RegisterState>> CheckCodeExists(CheckCode checkCode)
         {
-            bool state = _context.CheckCodes.Any(x=>x.PhoneNumber == PhoneNumber && x.Code == Code && x.SendDate.AddMinutes(15) <= DateTime.Now);
+            bool state = _context.CheckCodes.Any(x=>x.PhoneNumber == checkCode.PhoneNumber && x.Code == checkCode.Code && x.SendDate.AddMinutes(15) <= DateTime.Now);
             if (!state)
                 return RegisterState.NoteFound;
             else
             {
-                Student student = await _context.Students.FirstOrDefaultAsync(x => x.PhoneNumber == PhoneNumber);
+                Student student = await _context.Students.FirstOrDefaultAsync(x => x.PhoneNumber == checkCode.PhoneNumber);
                 if (student == null)
                     return RegisterState.unregistered;
                 else if (!student.IsActive)

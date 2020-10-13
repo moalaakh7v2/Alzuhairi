@@ -51,13 +51,18 @@ namespace WebServer.Controllers
             return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
         }
 
-        //3
-        [HttpPost("CreateStudent/{studentId}")]
-        public async Task<ActionResult<Student>> CreateStudent(Student student, int studentId)
+        //Android3 Android8
+        [HttpPost("UpdateStudent/{studentId}")]
+        public async Task<ActionResult<Student>> UpdateStudent(Student student, int studentId)
         {
-            student.Imei = student.Imei == null ? "" : student.Imei;
-            student.RegisterDate = DateTime.Now;
-            await _context.Students.AddAsync(student);
+            if (studentId != 0)
+                _context.Entry(student).State = EntityState.Modified;
+            else
+            {
+                student.Imei = student.Imei == null ? "" : student.Imei;
+                student.RegisterDate = DateTime.Now;
+                await _context.Students.AddAsync(student);
+            }
             await _context.SaveChangesAsync();
             return Ok(student);
         }

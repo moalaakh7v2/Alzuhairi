@@ -22,7 +22,7 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //8
+        //Android7
         [HttpPost("GetVideo/{studenId}")]
         public async Task<ActionResult<Video>> GetVideo(Guid videoId , int studenId)
         {
