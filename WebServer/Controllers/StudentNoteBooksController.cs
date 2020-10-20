@@ -47,7 +47,7 @@ namespace WebServer.Controllers
                 {
                     studentNoteBook.IsActive = true;
                     await _context.SaveChangesAsync();
-                    return Ok(studentNoteBook);
+                    return Ok(new List<NoteBookFeature>());
                 }
             }
             List<StudentNoteBook> studentNoteBooks = await  _context.StudentNoteBooks.Where(x=>x.StudentId == studentId).ToListAsync();

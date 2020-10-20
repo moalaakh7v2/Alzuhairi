@@ -58,10 +58,16 @@ namespace WebServer.Controllers
             return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
         }
 
+        //Android9
         [HttpGet("GetStudentByNumber/{phoneNumber}")]
         public async Task<ActionResult<Student>> GetStudentByNumber(string phoneNumber)
         {
-            return await _context.Students.FirstAsync(x => x.PhoneNumber == phoneNumber);
+            var student = await _context.Students.FirstOrDefaultAsync(x => x.PhoneNumber == phoneNumber);
+            if (student == null)
+            {
+                return Problem("User Not Found");
+            }
+            return student; 
         }
 
         ////test7
