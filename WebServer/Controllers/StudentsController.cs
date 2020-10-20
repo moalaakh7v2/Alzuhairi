@@ -21,6 +21,20 @@ namespace WebServer.Controllers
             _context = context;
         }
 
+        [HttpGet("test/{testId}/{hello}")]
+        public ActionResult<Student> test(int testId , bool hello)
+        {
+            if (testId == 1)
+            {
+                return Problem("hello word");
+            }
+            if (testId == 2)
+            {
+                return new Student { Id = 2 };
+            }
+            return Ok(new Student { Id = 2 });
+
+        }
         
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
@@ -44,6 +58,12 @@ namespace WebServer.Controllers
             return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
         }
 
+        [HttpGet("GetStudentByNumber/{phoneNumber}")]
+        public async Task<ActionResult<Student>> GetStudentByNumber(string phoneNumber)
+        {
+            return await _context.Students.FirstAsync(x => x.PhoneNumber == phoneNumber);
+        }
+
         ////test7
         //[HttpGet("GetStudent/{imei}")]
         //public async Task<ActionResult<Student>> GetStudent(string imei)
@@ -59,6 +79,7 @@ namespace WebServer.Controllers
                 _context.Entry(student).State = EntityState.Modified;
             else
             {
+                //todo Get Imei in android
                 student.Imei = student.Imei == null ? "" : student.Imei;
                 student.RegisterDate = DateTime.Now;
                 await _context.Students.AddAsync(student);

@@ -23,7 +23,7 @@ namespace WebServer.Controllers
 
         //Android1
         [HttpPost("CreateCode")]
-        public async Task<ActionResult<CheckCode>> CreateCode(string PhoneNumber)
+        public async Task<ActionResult<CheckCode>> CreateCode([FromBody] string PhoneNumber)
         {
             if (_context.CheckCodes.Any(x => x.PhoneNumber == PhoneNumber && x.SendDate.AddMinutes(15) <= DateTime.Now))
             {
@@ -40,8 +40,8 @@ namespace WebServer.Controllers
         }
 
         //Android2
-        [HttpPost("CheckCodeExists")]
-        private async Task<ActionResult<RegisterState>> CheckCodeExists(CheckCode checkCode)
+        [HttpPost("CheckCodeExists/{z}")]
+        public async Task<ActionResult<RegisterState>> CheckCodeExists(CheckCode checkCode , int z)
         {
             bool state = _context.CheckCodes.Any(x=>x.PhoneNumber == checkCode.PhoneNumber && x.Code == checkCode.Code && x.SendDate.AddMinutes(15) <= DateTime.Now);
             if (!state)

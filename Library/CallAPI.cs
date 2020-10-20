@@ -8,7 +8,7 @@ namespace Library
 {
     public class CallAPI
     {
-        public static string URL = "https://localhost:5001/api/";
+        public static string URL = "https://localhost:44396/api/";
         //Get List
         public static List<T> GetListContent<C, T>(params string[] parms)
             where C : class
@@ -20,12 +20,12 @@ namespace Library
                 var x = JsonSerializer.Deserialize<List<T>>(str, Options);
                 return x;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
+                throw new Exception(problem.detail);
             }
-          
+
         }
 
         //Get Object
@@ -38,9 +38,10 @@ namespace Library
                 var x = JsonSerializer.Deserialize<T>(str , Options);
                 return x;
             }
-            catch
+            catch(Exception ex)
             {
-                throw;
+                Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
+                throw new Exception(problem.detail);
             }
             
         }
@@ -54,9 +55,10 @@ namespace Library
                 var x = JsonSerializer.Deserialize<T>(str , Options);
                 return x;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw;
+                Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
+                throw new Exception(problem.detail);
             }
         }
         public static T PostFile<C, T>(string FilePath, params string[] parms)
@@ -69,10 +71,12 @@ namespace Library
             }
             catch (Exception ex)
             {
-                throw;
+                Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
+                throw new Exception(problem.detail);
+
             }
         }
-
+      
         //Post And Get bool
         public static bool PostObjectAndGetBool<C, T>(object obj, params string[] parms)
         {
@@ -82,41 +86,38 @@ namespace Library
                 var x = JsonSerializer.Deserialize<bool>(str , Options);
                 return x;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw;
+                Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
+                throw new Exception(problem.detail);
             }
         }
 
 
         static string CreateGetRequest(string url)
         {
-            try
+            RestClient restClient = new RestClient(URL);
+            RestRequest restRequest = new RestRequest(url, Method.GET, DataFormat.Json);
+            IRestResponse restResponse = restClient.Execute(restRequest);
+            if (restResponse.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                RestClient restClient = new RestClient(URL);
-                RestRequest restRequest = new RestRequest(url, Method.GET, DataFormat.Json);
-                IRestResponse restResponse = restClient.Execute(restRequest);
+                throw new Exception(restResponse.Content);
+            }
+            else
                 return restResponse.Content;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
         }
         static string CreatePostRequest(string url, object obj)
         {
-            try
+            RestClient restClient = new RestClient(URL);
+            RestRequest restRequest = new RestRequest(url, Method.POST, DataFormat.Json);
+            restRequest.AddJsonBody(obj);
+            IRestResponse restResponse = restClient.Execute(restRequest);
+            if (restResponse.StatusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                RestClient restClient = new RestClient(URL);
-                RestRequest restRequest = new RestRequest(url, Method.POST, DataFormat.Json);
-                restRequest.AddJsonBody(obj);
-                IRestResponse restResponse = restClient.Execute(restRequest);
+                throw new Exception(restResponse.Content);
+            }
+            else
                 return restResponse.Content;
-            }
-            catch
-            {
-                throw;
-            }
         }
 
         public static string UploadFile(string url, string videoPath)
@@ -125,7 +126,12 @@ namespace Library
             RestRequest request = new RestRequest(url, Method.POST, DataFormat.Json);
             request.AddFile("FileByte", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
             IRestResponse response = restClient.Execute(request);
-            return response.Content;
+            if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                throw new Exception(response.Content);
+            }
+            else
+                return response.Content;
         }
 
 
@@ -154,6 +160,13 @@ namespace Library
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             WriteIndented = true
         };
-
+        public class Problem
+        {
+            public string detail { get; set; }
+            public string instance { get; set; }
+            public int? statusCode { get; set; }
+            public string title { get; set; }
+            public string type { get; set; }
+        }
     }
 }
