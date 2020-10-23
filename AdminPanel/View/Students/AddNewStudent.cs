@@ -36,7 +36,7 @@ namespace AdminPanel.View.Students
                     SchoolName = txtSchoolName.Text,
                     StudentNoteBooks  = new List<StudentNoteBook>()
                 };
-                student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "CreateStudent", student.Id.ToString());
+                student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "UpdateStudent", student.Id.ToString());
                 if (student.Id != 0)
                     MessageBox.Show("Student has been added successfully", "Done", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }

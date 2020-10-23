@@ -24,7 +24,7 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //8
+        //Android7
         [HttpPost("GetVideo/{studenId}")]
         public async Task<ActionResult<Video>> GetVideo(Guid videoId , int studenId)
         {
@@ -33,18 +33,29 @@ namespace WebServer.Controllers
             {
                 return Problem("Error Video Code");
             }
-            var NotaSerials = _context.NoteBookSerials.Where(x=>x.NoteBookId == video.NoteBookId);
-            var StudenNote = await _context.StudentNoteBooks.FirstOrDefaultAsync(x=>x.StudentId == studenId);
-            if (StudenNote == null)
+            var studentNoteBooks = await _context.StudentNoteBooks.Where(x=>x.StudentId == studenId).Distinct().ToListAsync();
+            if (studentNoteBooks.Any())
             {
-                return Problem("This NoteBook Is Used By Another Student");
+                return Problem("You Don't have any notebook until now");
             }
-            if (!StudenNote.IsActive)
+            foreach (var studentNoteBook in studentNoteBooks)
             {
-                return Problem("Not Active In Your Device");
+                if (studentNoteBook.NoteBookSerial.NoteBookId == video.NoteBookId)
+                {
+                    if (!_context.NoteBooks.First(x=>x.Id == studentNoteBook.NoteBookSerial.NoteBookId).IsActive)
+                    {
+                        return Problem("this video to noteBook Note Active");
+                    }
+                    if (studentNoteBook.IsActive)
+                    {
+                        return Ok(video);
+                    }
+                    return Problem("this video to noteBook Note Active in your device");
+                }
             }
-            return Ok(video);
+            return Problem("You don't have notebook Conteins this video");
         }
+
         [HttpPost("RemoveVideo")]
         public async Task<ActionResult<Video>> RemoveVideo(List<Guid> videoIds)
         {
@@ -57,28 +68,29 @@ namespace WebServer.Controllers
             await _context.SaveChangesAsync();
             return Ok(new Video ());
         }
-        //9
-        [HttpPost("CheckWatching/{studenId}")]
-        public async Task<ActionResult<Video>> CheckWatching(Video video, int studenId)
-        {
-            var NotaSerials = _context.NoteBookSerials.Where(x => x.NoteBookId == video.NoteBookId);
-            var StudenNote = await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.StudentId == studenId);
-            if (StudenNote == null)
-            {
-                return Problem("This NoteBook Is Used By Another Student");
-            }
-            if (!StudenNote.IsActive)
-            {
-                return Problem("Not Active In Your Device");
-            }
-            await _context.Views.AddAsync(new View
-            {
-                StudentId = studenId,
-                VideoId = video.Id
-            });
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
+
+        ////test10
+        //[HttpPost("CheckWatching/{studenId}")]
+        //public async Task<ActionResult<Video>> CheckWatching(Video video, int studenId)
+        //{
+        //    var NotaSerials = _context.NoteBookSerials.Where(x => x.NoteBookId == video.NoteBookId);
+        //    var StudenNote = await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.StudentId == studenId);
+        //    if (StudenNote == null)
+        //    {
+        //        return Problem("This NoteBook Is Used By Another Student");
+        //    }
+        //    if (!StudenNote.IsActive)
+        //    {
+        //        return Problem("Not Active In Your Device");
+        //    }
+        //    await _context.Views.AddAsync(new View
+        //    {
+        //        StudentId = studenId,
+        //        VideoId = video.Id
+        //    });
+        //    await _context.SaveChangesAsync();
+        //    return Ok();
+        //}
 
         [HttpPost("AddVideoToNoteBook/{notebookId}")]
         public async Task<ActionResult<Video>> AddVideo(int notebookId)

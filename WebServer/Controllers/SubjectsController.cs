@@ -20,7 +20,7 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //F
+        
         [HttpGet("GetSubjects")]
         public async Task<ActionResult<IEnumerable<Subject>>> GetSubjects()
         {
@@ -32,7 +32,7 @@ namespace WebServer.Controllers
             return subjects;
         }
 
-        //G
+        
         [HttpPost("AddNewSubject")]
         public async Task<ActionResult<Dept>> AddNewDept(Subject subject)
         {
@@ -42,24 +42,24 @@ namespace WebServer.Controllers
             return Ok(subject);
         }
 
-        //H
-        [HttpPost("EditSubject")]
-        public async Task<ActionResult<Dept>> EditDept(Subject subject)
-        {
-            await _context.Subjects.AddAsync(subject);
-            await _context.SaveChangesAsync();
+        ////test8
+        //[HttpPost("EditSubject")]
+        //public async Task<ActionResult<Dept>> EditSubject(Subject subject)
+        //{
+        //    await _context.Subjects.AddAsync(subject);
+        //    await _context.SaveChangesAsync();
 
-            return Ok(subject);
-        }
+        //    return Ok(subject);
+        //}
 
-        //I
-        [HttpPost("DeleteSubject")]
-        public async Task<ActionResult<Dept>> DeleteDept(int subjectId)
-        {
-            Subject subject = await _context.Subjects.FindAsync(subjectId);
-            _context.Subjects.Remove(subject);
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
+        ////test9
+        //[HttpPost("DeleteSubject")]
+        //public async Task<ActionResult<Dept>> DeleteSubject(int subjectId)
+        //{
+        //    Subject subject = await _context.Subjects.FindAsync(subjectId);
+        //    _context.Subjects.Remove(subject);
+        //    await _context.SaveChangesAsync();
+        //    return Ok();
+        //}
     }
 }

@@ -21,7 +21,21 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        //34
+        [HttpGet("test/{testId}/{hello}")]
+        public ActionResult<Student> test(int testId , bool hello)
+        {
+            if (testId == 1)
+            {
+                return Problem("hello word");
+            }
+            if (testId == 2)
+            {
+                return new Student { Id = 2 };
+            }
+            return Ok(new Student { Id = 2 });
+
+        }
+        
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
         {
@@ -37,32 +51,50 @@ namespace WebServer.Controllers
             }
             return Students;
         }
-        //NEw
+        
         [HttpGet("GetStudentsByDeptId/{deptId}")]
         public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(int deptId)
         {
             return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
         }
 
-        //4
-        [HttpGet("GetStudent/{imei}")]
-        public async Task<ActionResult<Student>> GetStudent(string imei)
+        //Android9
+        [HttpGet("GetStudentByNumber/{phoneNumber}")]
+        public async Task<ActionResult<Student>> GetStudentByNumber(string phoneNumber)
         {
-            return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
+            var student = await _context.Students.FirstOrDefaultAsync(x => x.PhoneNumber == phoneNumber);
+            if (student == null)
+            {
+                return Problem("User Not Found");
+            }
+            return student; 
         }
 
-        //3
-        [HttpPost("CreateStudent/{studentId}")]
-        public async Task<ActionResult<Student>> CreateStudent(Student student, int studentId)
+        ////test7
+        //[HttpGet("GetStudent/{imei}")]
+        //public async Task<ActionResult<Student>> GetStudent(string imei)
+        //{
+        //    return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
+        //}
+
+        //Android3 Android8
+        [HttpPost("UpdateStudent/{studentId}")]
+        public async Task<ActionResult<Student>> UpdateStudent(Student student, int studentId)
         {
-            student.Imei = student.Imei == null ? "" : student.Imei;
-            student.RegisterDate = DateTime.Now;
-            await _context.Students.AddAsync(student);
+            if (studentId != 0)
+                _context.Entry(student).State = EntityState.Modified;
+            else
+            {
+                //todo Get Imei in android
+                student.Imei = student.Imei == null ? "" : student.Imei;
+                student.RegisterDate = DateTime.Now;
+                await _context.Students.AddAsync(student);
+            }
             await _context.SaveChangesAsync();
             return Ok(student);
         }
 
-        //5
+       
         [HttpPost("ModifyStudent/{approve}")]
         public async Task<ActionResult<Student>> ModifyStudent(Student student , bool approve)
         {
