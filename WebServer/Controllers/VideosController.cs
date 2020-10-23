@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using System.IO;
+using Library;
 using Microsoft.AspNetCore.Hosting;
+using System.IO.Compression;
 
 namespace WebServer.Controllers
 {
@@ -16,7 +18,7 @@ namespace WebServer.Controllers
     public class VideosController : ControllerBase
     {
         private readonly Context _context;
-        string VideosPath = "~/Uploads/";
+        string VideosPath = "Uploads/";
         public VideosController(Context context)
         {
             _context = context;
@@ -83,22 +85,27 @@ namespace WebServer.Controllers
         {
             try
             {
-                //todo Create Dir For Notebook In Upload
-                if (!Directory.Exists(VideosPath))
-                    Directory.CreateDirectory(VideosPath);
+                var notebook = _context.NoteBooks
+                    .Include(x=>x.Subject).First(x => x.Id == notebookId);
+                var VideoPath = VideosPath + "/" + notebook.Subject.SubjectName + "/" + notebook.Id + "/";
+                if (!Directory.Exists(VideoPath))
+                    Directory.CreateDirectory(VideoPath);
                 IFormFile file = Request.Form.Files[0];
-                var filePath = Path.Combine(VideosPath, file.FileName);
+                var filePath = Path.Combine(VideoPath, file.FileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                     await file.CopyToAsync(fileStream);
+               // ZipFile.ExtractToDirectory(VideoPath+file.FileName, VideoPath);
+             //   System.IO.File.Delete(VideoPath + file.FileName);
                 Video video = new Video
                 {
                     Id = Guid.NewGuid(),
                     NoteBookId = notebookId,
                     Path = VideosPath + file.FileName,
-                    Title = file.FileName
+                    Title = Path.GetFileNameWithoutExtension(file.FileName)
                 };
                 await _context.Videos.AddAsync(video);
                 await _context.SaveChangesAsync();
+                video.NoteBook = null;
                 return Ok(video);
             }
             catch
