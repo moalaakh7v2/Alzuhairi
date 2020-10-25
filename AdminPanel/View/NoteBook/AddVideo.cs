@@ -76,8 +76,9 @@ namespace AdminPanel.View.NoteBook
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CompressZip();
-            Video video = CallAPI.PostFile<Video, Video>(ZipPath + name, "AddVideoToNoteBook", noteBookId.ToString());
+            // CompressZip();
+            var videoPath = myFiles.First(x => Path.GetFileName(x) == comboBox1.Text);
+            Video video = CallAPI.PostFile<Video, Video>(videoPath + name, "AddVideoToNoteBook", noteBookId.ToString());
             if (video == null)
                 MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
