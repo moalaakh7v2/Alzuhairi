@@ -23,7 +23,6 @@ namespace AdminPanel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var xxxx = CallAPI.GetObjectContent<Student, Student>("test" , "3" , "true");
             MainForm = new Main();
             Application.Run(MainForm);
         }
