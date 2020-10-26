@@ -41,7 +41,7 @@ namespace AdminPanel.View.NoteBook
                     subjectsInDepts.Add(new SubjectsInDept
                     {
                         Id = item.Id,
-                        Title = item.SubjectName + " " + item.Dept.DeptName
+                        Title = item.SubjectName + " " + item.Dept.DeptName + " " + item.Chapter
                     });
                 }
                 comboSubjects.DataSource = subjectsInDepts;

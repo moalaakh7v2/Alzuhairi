@@ -38,7 +38,7 @@ namespace AdminPanel.View.NoteBook
                 noteBooksTitles.Add(new NoteBooksTitle
                 {
                     Id = item.Id,
-                    Title = item.Subject.SubjectName + " " + item.Subject.Dept.DeptName + " " + item.ReleaseDate.Year
+                    Title = item.Subject.SubjectName + " " + item.Subject.Dept.DeptName + " " + item.Subject.Chapter + " " + item.ReleaseDate.Year
                 });
             }
             comboNoteBook.DataSource = noteBooksTitles;

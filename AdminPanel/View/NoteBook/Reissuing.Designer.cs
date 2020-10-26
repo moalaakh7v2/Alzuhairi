@@ -59,7 +59,7 @@
             this.comboNoteBook.FormattingEnabled = true;
             this.comboNoteBook.Location = new System.Drawing.Point(163, 111);
             this.comboNoteBook.Name = "comboNoteBook";
-            this.comboNoteBook.Size = new System.Drawing.Size(207, 30);
+            this.comboNoteBook.Size = new System.Drawing.Size(240, 30);
             this.comboNoteBook.TabIndex = 3;
             // 
             // label2
@@ -79,7 +79,7 @@
             this.txtCount.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCount.Location = new System.Drawing.Point(163, 188);
             this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(207, 26);
+            this.txtCount.Size = new System.Drawing.Size(240, 26);
             this.txtCount.TabIndex = 5;
             // 
             // label3
@@ -102,7 +102,7 @@
             this.btnReissuing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReissuing.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReissuing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReissuing.Location = new System.Drawing.Point(286, 258);
+            this.btnReissuing.Location = new System.Drawing.Point(319, 258);
             this.btnReissuing.Name = "btnReissuing";
             this.btnReissuing.Size = new System.Drawing.Size(84, 32);
             this.btnReissuing.TabIndex = 11;

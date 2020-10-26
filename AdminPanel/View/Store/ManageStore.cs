@@ -44,21 +44,30 @@ namespace AdminPanel.View.Store
             comboNoteBook.DataSource = noteBooksTitles;
             comboNoteBook.DisplayMember = "Title";
             comboNoteBook.ValueMember = "Id";
-
         }
 
         private void grdStores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-
                 reseller = (Reseller)grdStores.Rows[e.RowIndex].DataBoundItem;
                 lblTitle.Text = reseller.Title;
                 resellerAndNoteBooks = CallAPI.GetListContent<Reseller, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
-                grdResellerAndNoteBook.DataSource = resellerAndNoteBooks;
-                grdResellerAndNoteBook.Columns["Id"].Visible =
-                grdResellerAndNoteBook.Columns["NoteBook"].Visible =
-                grdResellerAndNoteBook.Columns["Reseller"].Visible = false;
+                List<ResellerAndNoteBooksVM> resellerAndNoteBooksVM = new List<ResellerAndNoteBooksVM>();
+                foreach (var item in resellerAndNoteBooks)
+                {
+                    resellerAndNoteBooksVM.Add(new ResellerAndNoteBooksVM
+                    {
+                        NoteBookTitle = item.NoteBook.Subject.SubjectName + " " + item.NoteBook.Subject.Dept.DeptName + " " + item.NoteBook.Subject.Chapter + " " + item.NoteBook.ReleaseDate.Year,
+                        ResellerTitle = item.Reseller.Title,
+                        Count = item.Count,
+                        LastGrantDate = item.LastGrantDate
+                    });
+                }
+                grdResellerAndNoteBook.DataSource = resellerAndNoteBooksVM;
+                //grdResellerAndNoteBook.Columns["Id"].Visible =
+                //grdResellerAndNoteBook.Columns["NoteBook"].Visible =
+                //grdResellerAndNoteBook.Columns["Reseller"].Visible = false;
             }
             catch { }
         }

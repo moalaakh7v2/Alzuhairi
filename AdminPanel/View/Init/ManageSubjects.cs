@@ -91,9 +91,9 @@ namespace AdminPanel.View.Init
                     SubjectName = txtSubjectName.Text
                 };
                 if (radioFirst.Checked)
-                    subject.Chapter = Chapter.First;
+                    subject.Chapter = Chapter.فصل_أول;
                 else
-                    subject.Chapter = Chapter.Second;
+                    subject.Chapter = Chapter.فصل_ثاني;
                 subject = CallAPI.PostObjectAndGetObject<Subject, Subject>(subject, "AddNewSubject");
                 MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtSubjectName.Text = "";

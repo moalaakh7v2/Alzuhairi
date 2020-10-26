@@ -6,7 +6,7 @@ namespace Models.Enums
 {
     public enum Chapter
     {
-        First,
-        Second
+        فصل_أول,
+        فصل_ثاني
     }
 }
