@@ -23,7 +23,7 @@ namespace WebServer.Controllers
 
         //Android6
         [HttpPost("SetUpNewNoteBook/{studentId}")]
-        public async Task<ActionResult<List<NoteBookFeature>>> SetUpNewNoteBook(Guid noteSerial , int studentId)
+        public async Task<ActionResult<List<NoteBookFeature>>> SetUpNewNoteBook([FromBody] Guid noteSerial , int studentId)
         {
             //Check If Serial Found
             NoteBookSerial noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x=>x.QRcode == noteSerial);
@@ -63,7 +63,8 @@ namespace WebServer.Controllers
             List<NoteBookFeature> noteBookFeatures = await _context.NoteBookFeatures.Where(x => x.NoteBookId == noteBook.Id).ToListAsync();
             await _context.StudentNoteBooks.AddAsync(CraetestudentNoteBook);
             await _context.SaveChangesAsync();
-            
+            foreach (var item in noteBookFeatures)
+                item.NoteBook.NoteBookFeatures = null;
             return Ok(noteBookFeatures);
         }
     }

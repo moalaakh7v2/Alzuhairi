@@ -25,25 +25,27 @@ namespace WebServer.Controllers
         [HttpPost("CreateCode")]
         public async Task<ActionResult<CheckCode>> CreateCode([FromBody] string PhoneNumber)
         {
-            if (_context.CheckCodes.Any(x => x.PhoneNumber == PhoneNumber && x.SendDate.AddMinutes(15) <= DateTime.Now))
+            if (_context.CheckCodes.Any(x => x.PhoneNumber == PhoneNumber && x.SendDate.AddMinutes(15) >= DateTime.Now))
             {
                 return Problem("Please wait 15 minutes before re-requesting the code");
             }
-            _context.CheckCodes.Add(new CheckCode {
+            CheckCode checkCode = new CheckCode
+            {
                 PhoneNumber = PhoneNumber,
                 Code = RandomeCS.IntRandom(),
                 SendDate = DateTime.Now
-            });
+            };
+            _context.CheckCodes.Add(checkCode);
             await _context.SaveChangesAsync();
             //todo Send MTN Code 
-            return Ok();
+            return checkCode;
         }
 
         //Android2
         [HttpPost("CheckCodeExists/{z}")]
         public async Task<ActionResult<RegisterState>> CheckCodeExists(CheckCode checkCode , int z)
         {
-            bool state = _context.CheckCodes.Any(x=>x.PhoneNumber == checkCode.PhoneNumber && x.Code == checkCode.Code && x.SendDate.AddMinutes(15) <= DateTime.Now);
+            bool state = _context.CheckCodes.Any(x=>x.PhoneNumber == checkCode.PhoneNumber && x.Code == checkCode.Code);
             if (!state)
                 return RegisterState.NoteFound;
             else
