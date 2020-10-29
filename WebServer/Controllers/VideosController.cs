@@ -105,7 +105,7 @@ namespace WebServer.Controllers
                 IFormFile file = Request.Form.Files[0];
                 var filePath = Path.Combine(VideoPath, file.FileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
-                    await file.CopyToAsync(fileStream);
+                     file.CopyToAsync(fileStream);
                // ZipFile.ExtractToDirectory(VideoPath+file.FileName, VideoPath);
              //   System.IO.File.Delete(VideoPath + file.FileName);
                 Video video = new Video

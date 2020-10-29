@@ -22,16 +22,16 @@ namespace WebServer.Controllers
 
         //Android5
         [HttpPost("SendContact")]
-        public async Task<IActionResult> SendContact(Contact contact)
+        public async Task<ActionResult<Contact>> SendContact(Contact contact)
         {
-            if (_context.Contacts.Any(x=>x.StudentId == contact.StudentId && x.SendDate.Day == DateTime.Now.Day))
+            if (_context.Contacts.Any(x => x.StudentId == contact.StudentId && x.SendDate.Day == DateTime.Now.Day))
             {
                 return Problem("You must wait 24 hours before sending again");
             }
             contact.SendDate = DateTime.Now;
             _context.Contacts.Add(contact);
             await _context.SaveChangesAsync();
-            return Ok();
+            return contact;
         }
     }
 }
