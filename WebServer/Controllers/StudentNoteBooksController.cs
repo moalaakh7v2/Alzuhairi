@@ -46,7 +46,7 @@ namespace WebServer.Controllers
                 else
                 {
                     studentNoteBook.IsActive = true;
-                    await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync(); 
                     return Ok(new List<NoteBookFeature>());
                 }
             }

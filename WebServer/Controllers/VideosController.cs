@@ -26,8 +26,9 @@ namespace WebServer.Controllers
 
         //Android7
         [HttpPost("GetVideo/{studenId}")]
-        public async Task<ActionResult<Video>> GetVideo(Guid videoId , int studenId)
+        public async Task<ActionResult<Video>> GetVideo([FromRoute] string videoIdStr , int studenId)
         {
+            Guid videoId = new Guid(videoIdStr);
             var video = await _context.Videos.FirstOrDefaultAsync(x => x.Id == videoId);
             if (video == null)
             {
@@ -105,7 +106,7 @@ namespace WebServer.Controllers
                 IFormFile file = Request.Form.Files[0];
                 var filePath = Path.Combine(VideoPath, file.FileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
-                     file.CopyToAsync(fileStream);
+                     file.CopyTo(fileStream);
                // ZipFile.ExtractToDirectory(VideoPath+file.FileName, VideoPath);
              //   System.IO.File.Delete(VideoPath + file.FileName);
                 Video video = new Video
