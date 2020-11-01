@@ -51,6 +51,16 @@ namespace WebServer.Controllers
             return noteBooks;
         }
 
+        [HttpPost("GetNotebook/{test}")]
+        public async Task<ActionResult<NoteBookSerial>> GetNotebook([FromBody] Guid qr , bool test)
+        {
+            var noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x => x.QRcode == qr);
+            if (noteBookSerial == null)
+            {
+                return Problem("Note Found");
+            }
+            return noteBookSerial;
+        }
         [HttpGet("DeActiveNoteBook/{notebookId}")]
         public async Task<NoteBook> DeActiveNoteBook(int notebookId)
         {

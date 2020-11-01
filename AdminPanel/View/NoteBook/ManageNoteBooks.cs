@@ -24,20 +24,6 @@ namespace AdminPanel.View.NoteBook
             InitializeComponent();
         }
 
-        private void btnAddVideo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddVideo video = new AddVideo((int)comboDeptSubjectYear.SelectedValue);
-                video.ShowDialog();
-                ManageNoteBooks_Load(sender, e);
-            }
-            catch
-            {
-                CheckData.ErrorMessage();
-            }
-        }
-
         private void ManageNoteBooks_Load(object sender, EventArgs e)
         {
             try
@@ -85,6 +71,20 @@ namespace AdminPanel.View.NoteBook
             }
             chkVideos.DisplayMember = "Title";
             chkVideos.ValueMember = "Id";
+        }
+
+        private void btnAddVideo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddVideo video = new AddVideo((int)comboDeptSubjectYear.SelectedValue);
+                video.ShowDialog();
+                ManageNoteBooks_Load(sender, e);
+            }
+            catch
+            {
+                CheckData.ErrorMessage();
+            }
         }
 
         private void btnDeAvtiveNoteBook_Click(object sender, EventArgs e)

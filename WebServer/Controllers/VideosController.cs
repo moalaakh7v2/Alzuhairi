@@ -100,7 +100,7 @@ namespace WebServer.Controllers
             {
                 var notebook = _context.NoteBooks
                     .Include(x=>x.Subject).First(x => x.Id == notebookId);
-                var VideoPath = VideosPath + "/" + notebook.Subject.SubjectName + "/" + notebook.Id + "/";
+                var VideoPath = VideosPath + "" + notebook.Subject.SubjectName + "/" + notebook.Id + "/";
                 if (!Directory.Exists(VideoPath))
                     Directory.CreateDirectory(VideoPath);
                 IFormFile file = Request.Form.Files[0];
@@ -113,7 +113,7 @@ namespace WebServer.Controllers
                 {
                     Id = Guid.NewGuid(),
                     NoteBookId = notebookId,
-                    Path = VideosPath + file.FileName,
+                    Path = "http://192.168.1.106/alzuhiri/" + VideoPath + file.FileName,
                     Title = Path.GetFileNameWithoutExtension(file.FileName)
                 };
                 await _context.Videos.AddAsync(video);

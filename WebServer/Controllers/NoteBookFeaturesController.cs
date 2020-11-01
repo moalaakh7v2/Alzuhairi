@@ -20,7 +20,7 @@ namespace WebServer.Controllers
             _context = context;
         }
 
-        [HttpGet("GetNoteBookFeatures")]
+        [HttpGet("GetNoteBookFeatures/{noteBookId}")]
         public async Task<ActionResult<IEnumerable<NoteBookFeature>>> GetNoteBookFeatures(int noteBookId)
         {
             if (_context.NoteBooks.Any(x=>x.Id == noteBookId))
