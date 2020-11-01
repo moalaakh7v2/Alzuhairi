@@ -33,7 +33,7 @@ namespace AdminPanel.View.NoteBook
             try
             {
                 subjects = CallAPI.GetListContent<Subject, Subject>("GetSubjects");
-                features = CallAPI.GetListContent<Feature, Feature>("GetFeatures");
+                features = CallAPI.GetListContent<Feature, Feature>("GetFeatures").Where(x=>x.Id != 1).ToList();
                 noteBooks = CallAPI.GetListContent<Models.NoteBook, Models.NoteBook>("GetNoteBooks");
                 subjectsInDepts = new List<SubjectsInDept>();
                 foreach (var item in subjects)
@@ -75,6 +75,11 @@ namespace AdminPanel.View.NoteBook
                 }
                 var ChoseFeature = features.Where(x => featureIds.Contains(x.Id)).ToList();
                 List<NoteBookFeature> noteBookFeatures = new List<NoteBookFeature>();
+                noteBookFeatures.Add(new NoteBookFeature
+                {
+                    FeatureId = 1,
+                    IsActive = true
+                });
                 foreach (var item in ChoseFeature)
                 {
                     noteBookFeatures.Add(new NoteBookFeature

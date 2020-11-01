@@ -43,13 +43,8 @@ namespace WebServer.Controllers
                 {
                     return Problem("Used by another student");
                 }
-                else
-                {
-                    studentNoteBook.IsActive = true;
-                    await _context.SaveChangesAsync(); 
-                    return Ok(new List<NoteBookFeature>());
-                }
             }
+            studentNoteBook.IsActive = true;
             List<StudentNoteBook> studentNoteBooks = await  _context.StudentNoteBooks.Where(x=>x.StudentId == studentId).ToListAsync();
             foreach (var item in studentNoteBooks)
                 item.IsActive = false;

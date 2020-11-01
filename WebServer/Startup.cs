@@ -52,6 +52,10 @@ namespace WebServer
                         Location = "Alhijaz",
                         MobileNumber = "22421458"
                     });
+                    context.Features.Add(new Feature
+                    {
+                        Title = "You got the Notebook"
+                    });
                     context.SaveChanges();
                 }
             }
