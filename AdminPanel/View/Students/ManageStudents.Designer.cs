@@ -38,13 +38,12 @@
             this.comboYear = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.PictureBox();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExport)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFilter)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,7 +102,7 @@
             // 
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.Image = global::AdminPanel.Properties.Resources.arrow_refresh_reload_icon_29;
-            this.btnRefresh.Location = new System.Drawing.Point(655, 87);
+            this.btnRefresh.Location = new System.Drawing.Point(660, 87);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(29, 28);
             this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,20 +128,20 @@
             this.comboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboYear.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboYear.FormattingEnabled = true;
-            this.comboYear.Location = new System.Drawing.Point(56, 23);
+            this.comboYear.Location = new System.Drawing.Point(55, 23);
             this.comboYear.Name = "comboYear";
             this.comboYear.Size = new System.Drawing.Size(177, 30);
             this.comboYear.TabIndex = 12;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnFilter);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnFilter);
             this.groupBox2.Controls.Add(this.comboYear);
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(329, 64);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(292, 62);
+            this.groupBox2.Size = new System.Drawing.Size(320, 62);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filter";
@@ -158,14 +157,19 @@
             // 
             // btnFilter
             // 
+            this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Image = global::AdminPanel.Properties.Resources.download_icon_png_free_download_download_icon_png_1000_1000;
-            this.btnFilter.Location = new System.Drawing.Point(239, 22);
+            this.btnFilter.FlatAppearance.BorderSize = 0;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFilter.Location = new System.Drawing.Point(238, 23);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(29, 28);
-            this.btnFilter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnFilter.TabIndex = 14;
-            this.btnFilter.TabStop = false;
+            this.btnFilter.Size = new System.Drawing.Size(70, 30);
+            this.btnFilter.TabIndex = 15;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // ManageStudents
@@ -191,7 +195,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExport)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFilter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +212,6 @@
         private System.Windows.Forms.ComboBox comboYear;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox btnFilter;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

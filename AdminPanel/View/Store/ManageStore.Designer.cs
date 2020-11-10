@@ -37,9 +37,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grdResellerAndNoteBook = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboLocation = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdResellerAndNoteBook)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -141,12 +145,53 @@
             this.grdResellerAndNoteBook.Size = new System.Drawing.Size(425, 144);
             this.grdResellerAndNoteBook.TabIndex = 4;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnFilter);
+            this.groupBox2.Controls.Add(this.comboLocation);
+            this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(203, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(284, 57);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search";
+            // 
+            // comboLocation
+            // 
+            this.comboLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLocation.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboLocation.FormattingEnabled = true;
+            this.comboLocation.Location = new System.Drawing.Point(6, 25);
+            this.comboLocation.Name = "comboLocation";
+            this.comboLocation.Size = new System.Drawing.Size(181, 26);
+            this.comboLocation.TabIndex = 14;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.FlatAppearance.BorderSize = 0;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFilter.Location = new System.Drawing.Point(204, 25);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(70, 26);
+            this.btnFilter.TabIndex = 14;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // ManageStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnGrant);
@@ -162,6 +207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdResellerAndNoteBook)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +224,8 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView grdResellerAndNoteBook;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboLocation;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

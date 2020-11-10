@@ -27,7 +27,7 @@ namespace AdminPanel.View.Students
         {
             students = CallAPI.GetListContent<Student, Student>("GetStudents");
             FillGridView(students);
-            var years = students.Select(x => x.RegisterDate.Year).ToList();
+            var years = students.Select(x => x.RegisterDate.Year).Distinct().ToList();
             comboYear.DataSource = years;
         }
         void FillGridView(List<Student> students)
@@ -96,10 +96,10 @@ namespace AdminPanel.View.Students
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            if(comboYear.SelectedItem != null)
+            if (comboYear.SelectedItem != null)
             {
                 int year = (int)comboYear.SelectedItem;
-                FillGridView(students.Where(x=>x.RegisterDate.Year == year).ToList());
+                FillGridView(students.Where(x => x.RegisterDate.Year == year).ToList());
             }
         }
     }
