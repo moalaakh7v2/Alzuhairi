@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeAdded", "QRCodeAdded\QRCodeAdded.csproj", "{EE0C259C-C32D-4C51-90C9-0A47C017A090}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

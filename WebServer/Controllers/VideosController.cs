@@ -92,7 +92,28 @@ namespace WebServer.Controllers
         //    await _context.SaveChangesAsync();
         //    return Ok();
         //}
-
+        [HttpPost("AddVideo/{notebookId}/{path}/{videoName}")]
+        public async Task<ActionResult<Video>> AddVideo(int notebookId,string path,string videoName)
+        {
+            try
+            {
+                Video video = new Video
+                {
+                    Id = Guid.NewGuid(),
+                    NoteBookId = notebookId,
+                    Path = path,
+                    Title = videoName
+                };
+                await _context.Videos.AddAsync(video);
+                await _context.SaveChangesAsync();
+                video.NoteBook = null;
+                return Ok(video);
+            }
+            catch
+            {
+                return Problem("Error In Save Video Task");
+            }
+        }
         [HttpPost("AddVideoToNoteBook/{notebookId}")]
         public async Task<ActionResult<Video>> AddVideo(int notebookId)
         {

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using Library;
+using Models.Enums;
 
 namespace AdminPanel.View.Store
 {
@@ -19,7 +20,10 @@ namespace AdminPanel.View.Store
         {
             InitializeComponent();
         }
-
+        private void AddStore_Load(object sender, EventArgs e)
+        {
+            comboLocation.DataSource = Enum.GetValues(typeof(Provinces));
+        }
         private void btnAddStore_Click(object sender, EventArgs e)
         {
             try
@@ -30,7 +34,7 @@ namespace AdminPanel.View.Store
                     {
                         Title = txtName.Text,
                         PhoneNumber = txtPhone.Text,
-                        Location = txtLocation.Text
+                        Location = comboLocation.Text +"-"+ txtLocation.Text
                     };
                     reseller = CallAPI.PostObjectAndGetObject<Reseller, Reseller>(reseller,"UpdateReseller");
                     MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -41,5 +45,7 @@ namespace AdminPanel.View.Store
                 MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+     
     }
 }

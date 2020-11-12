@@ -1,6 +1,7 @@
 ﻿using AdminPanel.Classes;
 using Library;
 using Models;
+using Models.Enums;
 using Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace AdminPanel.View.Store
 
         private void ManageStore_Load(object sender, EventArgs e)
         {
+            comboLocation.DataSource = Enum.GetValues(typeof(Provinces));
             resellers = CallAPI.GetListContent<Reseller, Reseller>("GetResellers");
             grdStores.DataSource = resellers;
             grdStores.Columns["Id"].Visible = false;
@@ -89,6 +91,11 @@ namespace AdminPanel.View.Store
                 CheckData.ErrorMessage();
             }
                       
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            grdStores.DataSource = resellers.Where(x => x.Location.Split('-').First() == comboLocation.Text).ToList();
         }
     }
 }

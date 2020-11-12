@@ -36,6 +36,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.btnAddStore = new System.Windows.Forms.Button();
+            this.comboLocation = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +96,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(183, 212);
+            this.label4.Location = new System.Drawing.Point(183, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 22);
             this.label4.TabIndex = 8;
@@ -104,7 +106,7 @@
             // 
             this.txtLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLocation.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(287, 215);
+            this.txtLocation.Location = new System.Drawing.Point(287, 252);
             this.txtLocation.Multiline = true;
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(268, 91);
@@ -119,7 +121,7 @@
             this.btnAddStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStore.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddStore.Location = new System.Drawing.Point(366, 352);
+            this.btnAddStore.Location = new System.Drawing.Point(366, 389);
             this.btnAddStore.Name = "btnAddStore";
             this.btnAddStore.Size = new System.Drawing.Size(84, 32);
             this.btnAddStore.TabIndex = 9;
@@ -127,12 +129,36 @@
             this.btnAddStore.UseVisualStyleBackColor = false;
             this.btnAddStore.Click += new System.EventHandler(this.btnAddStore_Click);
             // 
+            // comboLocation
+            // 
+            this.comboLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLocation.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboLocation.FormattingEnabled = true;
+            this.comboLocation.Location = new System.Drawing.Point(287, 210);
+            this.comboLocation.Name = "comboLocation";
+            this.comboLocation.Size = new System.Drawing.Size(268, 26);
+            this.comboLocation.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(118, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(154, 22);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "More Location Info";
+            // 
             // AddStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 468);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboLocation);
             this.Controls.Add(this.btnAddStore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtLocation);
@@ -144,6 +170,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStore";
             this.Text = "AddStore";
+            this.Load += new System.EventHandler(this.AddStore_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +186,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Button btnAddStore;
+        private System.Windows.Forms.ComboBox comboLocation;
+        private System.Windows.Forms.Label label5;
     }
 }
