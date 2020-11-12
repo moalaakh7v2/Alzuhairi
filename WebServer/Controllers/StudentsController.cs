@@ -86,7 +86,7 @@ namespace WebServer.Controllers
             else
             {
                 //todo Get Imei in android
-                student.Imei = student.Imei == null ? "" : student.Imei;
+                student.Mac = student.Mac == null ? "" : student.Mac;
                 student.RegisterDate = DateTime.Now;
                 await _context.Students.AddAsync(student);
             }

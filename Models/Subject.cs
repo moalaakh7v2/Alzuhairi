@@ -13,8 +13,7 @@ namespace Models
         [Required]
         public string SubjectName { get; set; }
         public Chapter Chapter { get; set; }
-        public int DeptId { get; set; }
-        public virtual Dept Dept { get; set; }
+        public Dept Dept { get; set; }
         public virtual ICollection<NoteBook> NoteBooks { get; set; }
     }
 }

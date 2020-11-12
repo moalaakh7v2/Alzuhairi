@@ -1,6 +1,7 @@
 ﻿using AdminPanel.Classes;
 using Library;
 using Models;
+using Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,13 +14,9 @@ namespace AdminPanel.View.Students
         {
             InitializeComponent();
         }
-        List<Dept> depts;
         private void AddNewStudent_Load(object sender, EventArgs e)
         {
-            depts = CallAPI.GetListContent<Dept, Dept>("GetDepts");
-            comboDept.DataSource = depts;
-            comboDept.DisplayMember = "DeptName";
-            comboDept.ValueMember = "Id";
+            comboDept.DataSource = Enum.GetValues(typeof(Dept));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ namespace Models
         public Guid QRcode { get; set; }
         public int NoteBookId { get; set; }
         public virtual NoteBook NoteBook { get; set; }
+        public bool IsActive { get; set; }
         public virtual ICollection<StudentNoteBook> StudentNoteBooks { get; set; }
     }
 }

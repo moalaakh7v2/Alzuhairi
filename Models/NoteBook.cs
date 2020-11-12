@@ -15,8 +15,6 @@ namespace Models
         public DateTime ReleaseDate { get; set; }
         public int SubjectId { get; set; }
         public virtual Subject Subject { get; set; }
-        public bool IsActive { get; set; } = true;
-        public string Note { get; set; }
         public virtual ICollection<NoteBookFeature> NoteBookFeatures { get; set; }
         public virtual ICollection<NoteBookSerial> NoteBookSerials { get; set; }
         public virtual ICollection<Video> Videos { get; set; }

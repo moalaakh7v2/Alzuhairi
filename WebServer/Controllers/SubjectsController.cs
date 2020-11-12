@@ -34,32 +34,12 @@ namespace WebServer.Controllers
 
         
         [HttpPost("AddNewSubject")]
-        public async Task<ActionResult<Dept>> AddNewDept(Subject subject)
+        public async Task<ActionResult<Subject>> AddNewDept(Subject subject)
         {
             await _context.Subjects.AddAsync(subject);
             await _context.SaveChangesAsync();
 
-            return Ok(subject);
+            return subject;
         }
-
-        ////test8
-        //[HttpPost("EditSubject")]
-        //public async Task<ActionResult<Dept>> EditSubject(Subject subject)
-        //{
-        //    await _context.Subjects.AddAsync(subject);
-        //    await _context.SaveChangesAsync();
-
-        //    return Ok(subject);
-        //}
-
-        ////test9
-        //[HttpPost("DeleteSubject")]
-        //public async Task<ActionResult<Dept>> DeleteSubject(int subjectId)
-        //{
-        //    Subject subject = await _context.Subjects.FindAsync(subjectId);
-        //    _context.Subjects.Remove(subject);
-        //    await _context.SaveChangesAsync();
-        //    return Ok();
-        //}
     }
 }

@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Models.Enums
 {
-    public enum Chapter
+    public enum Dept
     {
-        الفصل_الأول,
-        الفصل_الثاني,
-        متكامل
+        بكالوريا,
+        تاسع
     }
 }
