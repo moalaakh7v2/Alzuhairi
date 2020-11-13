@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Models.Enums;
 
 namespace WebServer.Controllers
 {
@@ -39,11 +40,9 @@ namespace WebServer.Controllers
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
         {
-            var Students = await _context.Students.Include(x=>x.Dept).Include(x=>x.StudentNoteBooks).ToListAsync();
+            var Students = await _context.Students.Include(x=>x.StudentNoteBooks).ToListAsync();
             foreach (var student in Students)
             {
-                student.Dept.Students = null;
-                student.Dept.Subjects = null;
                 foreach (var StudentNoteBook in student.StudentNoteBooks)
                 {
                     StudentNoteBook.Student = null;
@@ -52,11 +51,11 @@ namespace WebServer.Controllers
             return Students;
         }
         
-        [HttpGet("GetStudentsByDeptId/{deptId}")]
-        public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(int deptId)
-        {
-            return await _context.Students.Where(x => x.DeptId == deptId).ToListAsync();
-        }
+        //[HttpGet("GetStudentsByDeptId/{dept}")]
+        //public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(Dept dept)
+        //{
+        //    return await _context.Students.Where(x => x == deptId).ToListAsync();
+        //}
 
         //Android9
         [HttpGet("GetStudentByNumber/{phoneNumber}")]

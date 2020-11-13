@@ -36,7 +36,6 @@ namespace WebServer.Controllers
                 .ToListAsync();
             foreach (var noteBook in noteBooks)
             {
-                noteBook.Subject.Dept.Subjects = null;
                 noteBook.Subject.NoteBooks = null;
                 foreach (var NoteBookFeature in noteBook.NoteBookFeatures)
                     NoteBookFeature.NoteBook = null;
@@ -61,17 +60,17 @@ namespace WebServer.Controllers
             }
             return noteBookSerial;
         }
-        [HttpGet("DeActiveNoteBook/{notebookId}")]
-        public async Task<NoteBook> DeActiveNoteBook(int notebookId)
-        {
-            NoteBook noteBook = await _context.NoteBooks.FirstAsync(x => x.IsActive && x.Id == notebookId);
-            if (noteBook != null)
-            {
-                noteBook.IsActive = false;
-                await _context.SaveChangesAsync();
-            }
-            return noteBook;
-        }
+        //[HttpGet("DeActiveNoteBook/{notebookId}")]
+        //public async Task<NoteBook> DeActiveNoteBook(int notebookId)
+        //{
+        //    NoteBook noteBook = await _context.NoteBooks.FirstAsync(x => x.IsActive && x.Id == notebookId);
+        //    if (noteBook != null)
+        //    {
+        //        noteBook.IsActive = false;
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    return noteBook;
+        //}
 
         ////test6
         //[HttpGet("CheckNoteBookExists")]

@@ -29,16 +29,12 @@ namespace WebServer.Controllers
         }
 
 
-        [HttpPost("UpdateAbout/{token}")]
-        public async Task<ActionResult<About>> UpdateAbout(About about , Guid token)
+        [HttpPost("UpdateAbout")]
+        public async Task<ActionResult<About>> UpdateAbout(About about)
         {
-            if (_context.Admins.Any(x=>x.Token == token))
-            {
-                _context.Abouts.Update(about);
-                await _context.SaveChangesAsync();
-                return about;
-            }
-            return new About();
+            _context.Abouts.Update(about);
+            await _context.SaveChangesAsync();
+            return about;
         }
 
     }

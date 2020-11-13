@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grdSubjects = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboDept = new System.Windows.Forms.ComboBox();
@@ -38,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSubjects)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,6 +56,7 @@
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.Controls.Add(this.grdSubjects);
             this.groupBox3.Controls.Add(this.btnAdd);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.comboDept);
@@ -69,6 +72,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informations";
             // 
+            // grdSubjects
+            // 
+            this.grdSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdSubjects.Location = new System.Drawing.Point(346, 86);
+            this.grdSubjects.Name = "grdSubjects";
+            this.grdSubjects.Size = new System.Drawing.Size(349, 190);
+            this.grdSubjects.TabIndex = 19;
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -78,7 +89,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(328, 250);
+            this.btnAdd.Location = new System.Drawing.Point(154, 248);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 32);
             this.btnAdd.TabIndex = 18;
@@ -89,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(206, 190);
+            this.label4.Location = new System.Drawing.Point(32, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 22);
             this.label4.TabIndex = 5;
@@ -99,7 +110,7 @@
             // 
             this.comboDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboDept.FormattingEnabled = true;
-            this.comboDept.Location = new System.Drawing.Point(271, 187);
+            this.comboDept.Location = new System.Drawing.Point(97, 185);
             this.comboDept.Name = "comboDept";
             this.comboDept.Size = new System.Drawing.Size(213, 30);
             this.comboDept.TabIndex = 4;
@@ -107,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 95);
+            this.label3.Location = new System.Drawing.Point(24, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 3;
@@ -117,7 +128,7 @@
             // 
             this.comboChapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboChapter.FormattingEnabled = true;
-            this.comboChapter.Location = new System.Drawing.Point(271, 92);
+            this.comboChapter.Location = new System.Drawing.Point(97, 90);
             this.comboChapter.Name = "comboChapter";
             this.comboChapter.Size = new System.Drawing.Size(213, 30);
             this.comboChapter.TabIndex = 2;
@@ -125,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 141);
+            this.label2.Location = new System.Drawing.Point(32, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 22);
             this.label2.TabIndex = 1;
@@ -133,7 +144,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(271, 141);
+            this.txtName.Location = new System.Drawing.Point(97, 139);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(213, 26);
             this.txtName.TabIndex = 0;
@@ -152,6 +163,7 @@
             this.Load += new System.EventHandler(this.ManageSubjects_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSubjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView grdSubjects;
     }
 }

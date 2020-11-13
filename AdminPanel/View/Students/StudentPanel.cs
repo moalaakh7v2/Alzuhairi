@@ -22,6 +22,7 @@ namespace AdminPanel.View.Students
         {
             btnAddStudents_Click(sender, e);
         }
+
         private void btnAddStudents_Click(object sender, EventArgs e)
         {
             pnlChoise.Location = new Point(150, 12);

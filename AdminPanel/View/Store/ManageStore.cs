@@ -40,7 +40,7 @@ namespace AdminPanel.View.Store
                 noteBooksTitles.Add(new NoteBooksTitle
                 {
                     Id = item.Id,
-                    Title = item.Subject.SubjectName + " " + item.Subject.Dept.DeptName + " " + item.ReleaseDate.Year
+                    Title = item.Subject.SubjectName + " " + item.Subject.Dept.ToString() + " " + item.ReleaseDate.Year
                 });
             }
             comboNoteBook.DataSource = noteBooksTitles;
@@ -60,7 +60,7 @@ namespace AdminPanel.View.Store
                 {
                     resellerAndNoteBooksVM.Add(new ResellerAndNoteBooksVM
                     {
-                        NoteBookTitle = item.NoteBook.Subject.SubjectName + " " + item.NoteBook.Subject.Dept.DeptName + " " + item.NoteBook.Subject.Chapter + " " + item.NoteBook.ReleaseDate.Year,
+                        NoteBookTitle = item.NoteBook.Subject.SubjectName + " " + item.NoteBook.Subject.Dept.ToString() + " " + item.NoteBook.Subject.Chapter + " " + item.NoteBook.ReleaseDate.Year,
                         ResellerTitle = item.Reseller.Title,
                         Count = item.Count,
                         LastGrantDate = item.LastGrantDate

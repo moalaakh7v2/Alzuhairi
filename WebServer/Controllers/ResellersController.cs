@@ -38,7 +38,6 @@ namespace WebServer.Controllers
             foreach (var item in resellerAndNoteBooks)
             {
                 item.NoteBook.Subject.NoteBooks = null;
-                item.NoteBook.Subject.Dept.Subjects = null;
             }
             return resellerAndNoteBooks;
         }

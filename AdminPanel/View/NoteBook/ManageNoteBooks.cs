@@ -35,7 +35,7 @@ namespace AdminPanel.View.NoteBook
                     noteBooksTitles.Add(new NoteBooksTitle
                     {
                         Id = item.Id,
-                        Title = item.Subject.SubjectName + " " + item.Subject.Dept.DeptName + " " + item.Subject.Chapter + " " + item.ReleaseDate.Year
+                        Title = item.Subject.SubjectName + " " + item.Subject.Dept.ToString() + " " + item.Subject.Chapter + " " + item.ReleaseDate.Year
 
                     });
                 }
@@ -55,7 +55,7 @@ namespace AdminPanel.View.NoteBook
             comboDeptSubjectYear.ValueMember = "Id";
             int notebookId = (int)comboDeptSubjectYear.SelectedValue;
             var notebook = noteBooks.First(x => x.Id == notebookId);
-            btnDeAvtiveNoteBook.Visible = btnAddVideo.Visible = btnDownloadVideoQR.Visible = btnDelete.Visible = notebook.IsActive;
+            btnDeAvtiveNoteBook.Visible = btnAddVideo.Visible = btnDownloadVideoQR.Visible = btnDelete.Visible;
             List<Feature> features = notebook.NoteBookFeatures.Select(x => x.Feature).ToList();
             lstFeatures.DataSource = features.Select(x=>x.Title).ToList();
             txtCount.Text = notebook.NoteBookSerials.Count.ToString();

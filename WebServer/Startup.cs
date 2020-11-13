@@ -49,7 +49,7 @@ namespace WebServer
                     context.Abouts.Add(new About
                     {
                         Email = "alzuhairi@gmail.com",
-                        Location = "Alhijaz",
+                        Address = "Alhijaz",
                         MobileNumber = "22421458"
                     });
                     context.Features.Add(new Feature

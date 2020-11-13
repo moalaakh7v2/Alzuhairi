@@ -32,10 +32,6 @@ namespace WebServer.Controllers
                 return Problem("wrong number");
             }
             NoteBook noteBook = await _context.NoteBooks.FirstOrDefaultAsync(x => x.Id == noteBookSerial.NoteBookId);
-            if (!noteBook.IsActive)
-            {
-                return Problem("It stopped working");
-            }
             StudentNoteBook studentNoteBook =await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.SerialId == noteBookSerial.Id);
             if (studentNoteBook != null)
             {

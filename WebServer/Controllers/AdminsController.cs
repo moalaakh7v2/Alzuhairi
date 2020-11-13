@@ -30,26 +30,17 @@ namespace WebServer.Controllers
         {
             admin = await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
             if (admin == null)
-            {
-                return new Admin ();
-            }
-            admin.Token = Guid.NewGuid();
+                return Problem("Incorrect Information");
             await _context.SaveChangesAsync();
-            return Ok(admin);
+            return admin;
         }
 
-        [HttpPost("UpdateAdminInfo/{token}")]
-        public async Task<ActionResult<Admin>> UpdateAdminInfo(Admin admin , Guid token)
+        [HttpPost("UpdateAdminInfo/{Id}")]
+        public async Task<ActionResult<Admin>> UpdateAdminInfo(Admin admin , int Id)
         {
-            Admin GetAdmin = await _context.Admins.FirstOrDefaultAsync(x=>x.Token == token);
-            if (GetAdmin != null)
-            {
-                GetAdmin.Password = admin.Password;
-                GetAdmin.Email = admin.Email;
-                GetAdmin.Token = admin.Token;
-                await _context.SaveChangesAsync();
-            }
-            return GetAdmin;
+            _context.Entry(admin).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return admin;
         }
 
         [HttpGet]

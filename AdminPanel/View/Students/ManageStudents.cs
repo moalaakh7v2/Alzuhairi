@@ -41,7 +41,6 @@ namespace AdminPanel.View.Students
                     Id = item.Id,
                     Age = item.Age,
                     IsActive = item.IsActive,
-                    Dept = item.Dept.DeptName,
                     FirstName = item.FirstName,
                     LastName = item.LastName,
                     PhoneNumber = item.PhoneNumber,

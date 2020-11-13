@@ -41,7 +41,7 @@ namespace AdminPanel.View.NoteBook
                     subjectsInDepts.Add(new SubjectsInDept
                     {
                         Id = item.Id,
-                        Title = item.SubjectName + " " + item.Dept.DeptName + " " + item.Chapter
+                        Title = item.SubjectName + " " + item.Dept.ToString() + " " + item.Chapter
                     });
                 }
                 comboSubjects.DataSource = subjectsInDepts;
@@ -90,7 +90,6 @@ namespace AdminPanel.View.NoteBook
                 }
                 Models.NoteBook noteBook = new Models.NoteBook
                 {
-                    Note = lblNote.Text,
                     SubjectId = (int)comboSubjects.SelectedValue,
                     NoteBookFeatures = noteBookFeatures
                 };

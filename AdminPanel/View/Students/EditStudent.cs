@@ -25,13 +25,12 @@ namespace AdminPanel.View.Students
         private void EditStudent_Load(object sender, EventArgs e)
         {
             txtFullName.Text = student.FirstName + " " + student.LastName;
-            txtDept.Text = student.Dept.DeptName;
             txtPhone.Text = student.PhoneNumber;
             if (!student.IsActive)
                 btnDeactive.Enabled = false;
             foreach (var item in student.StudentNoteBooks.Select(x=>x.NoteBookSerial).Select(x=>x.NoteBook))
             {
-                lstNoteBook.Items.Add(item.Subject.SubjectName + " - " + item.Subject.Dept.DeptName + " - " + item.ReleaseDate.Year);
+                lstNoteBook.Items.Add(item.Subject.SubjectName + " - " + item.Subject.Dept.ToString() + " - " + item.ReleaseDate.Year);
             }
             // todo Alaa Get VideoWatched
         }

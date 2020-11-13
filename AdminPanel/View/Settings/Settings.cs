@@ -24,17 +24,15 @@ namespace AdminPanel.View.Settings
                     return;
                 Admin admin = new Admin
                 {
+                    Id = Program.admin.Id,
                     Email = txtEmail.Text,
                     Password = txtPassword.Text,
-                    Token = Guid.NewGuid()
                 };
-                admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "UpdateAdminInfo", Program.admin.Token.ToString());
-                if (admin.Id != 0)
-                {
-                    MessageBox.Show("Modified successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Program.admin = admin;
-                    txtEmail.Text = txtPassword.Text = "";
-                }
+                admin = CallAPI.PostObjectAndGetObject<Admin, Admin>(admin, "UpdateAdminInfo", "7");
+                MessageBox.Show("Modified successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Program.admin = admin;
+                txtEmail.Text = txtPassword.Text = "";
+
             }
             catch (Exception)
             {
@@ -48,7 +46,7 @@ namespace AdminPanel.View.Settings
         {
             about = CallAPI.GetObjectContent<Models.About, Models.About>("GetAbout");
             txtEmailAbout.Text = about.Email;
-            txtLocation.Text = about.Location;
+            txtLocation.Text = about.Address;
             txtMobile.Text = about.MobileNumber;
         }
 
@@ -63,20 +61,13 @@ namespace AdminPanel.View.Settings
                 if (txtLocation.CheckNull())
                     return;
                 about.Email = txtEmailAbout.Text;
-                about.Location = txtLocation.Text;
+                about.Address = txtLocation.Text;
                 about.MobileNumber = txtMobile.Text;
-                about = CallAPI.PostObjectAndGetObject<Models.About, Models.About>(about, "UpdateAbout", Program.admin.Token.ToString());
-                if (about.Id != 0)
-                {
-                    MessageBox.Show("Modified successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtEmailAbout.Text = about.Email;
-                    txtLocation.Text = about.Location;
-                    txtMobile.Text = about.MobileNumber;
-                }
-                else
-                {
-                    throw new Exception();
-                }
+                about = CallAPI.PostObjectAndGetObject<Models.About, Models.About>(about, "UpdateAbout");
+                MessageBox.Show("Modified successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtEmailAbout.Text = about.Email;
+                txtLocation.Text = about.Address;
+                txtMobile.Text = about.MobileNumber;
             }
             catch
             {

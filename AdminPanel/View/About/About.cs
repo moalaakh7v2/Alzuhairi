@@ -24,7 +24,7 @@ namespace AdminPanel.View.About
         {
             about = CallAPI.GetObjectContent<Models.About, Models.About>("GetAbout");
             txtEmail.Text = about.Email;
-            txtLocation.Text = about.Location;
+            txtAddress.Text = about.Address;
             txtMobile.Text = about.MobileNumber;
         }
     }

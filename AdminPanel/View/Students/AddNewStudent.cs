@@ -27,7 +27,6 @@ namespace AdminPanel.View.Students
                     FirstName = txtFName.Text,
                     LastName = txtLName.Text,
                     Age = Convert.ToInt32(txtAge.Text),
-                    DeptId = (int)comboDept.SelectedValue,
                     PhoneNumber = txtNumber.Text,
                     Address = txtAddress.Text,
                     SchoolName = txtSchoolName.Text,

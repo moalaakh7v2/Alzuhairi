@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
-            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,13 +98,13 @@
             // 
             // txtLocation
             // 
-            this.txtLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLocation.Location = new System.Drawing.Point(370, 352);
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.ReadOnly = true;
-            this.txtLocation.Size = new System.Drawing.Size(196, 54);
-            this.txtLocation.TabIndex = 6;
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAddress.Location = new System.Drawing.Point(370, 352);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtLocation";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(196, 54);
+            this.txtAddress.TabIndex = 6;
             // 
             // About
             // 
@@ -112,7 +112,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(744, 427);
-            this.Controls.Add(this.txtLocation);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtMobile);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
@@ -137,6 +137,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtMobile;
-        private System.Windows.Forms.TextBox txtLocation;
+        private System.Windows.Forms.TextBox txtAddress;
     }
 }

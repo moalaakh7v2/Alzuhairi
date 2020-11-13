@@ -24,6 +24,9 @@ namespace AdminPanel.View.Init
 
         private void ManageSubjects_Load(object sender, EventArgs e)
         {
+            grdSubjects.DataSource = CallAPI.GetListContent<Subject, Subject>("GetSubjects");
+            grdSubjects.Columns["Id"].Visible = false;
+            grdSubjects.Columns["NoteBooks"].Visible = false;
             comboChapter.DataSource = Enum.GetValues(typeof(Chapter));
             comboDept.DataSource = Enum.GetValues(typeof(Dept));
 
@@ -33,6 +36,8 @@ namespace AdminPanel.View.Init
         {
             try
             {
+                if (txtName.CheckNull())
+                    return;
                 List<Subject> subjects = CallAPI.GetListContent<Subject, Subject>("GetSubjects");
                 if (subjects.Any(x=>x.SubjectName == txtName.Text && x.Chapter == (Chapter)comboChapter.SelectedValue && x.Dept == (Dept)comboDept.SelectedValue ))
                 {
@@ -47,6 +52,7 @@ namespace AdminPanel.View.Init
                 };
                 subject = CallAPI.PostObjectAndGetObject<Subject, Subject>(subject, "AddNewSubject");
                 MessageBox.Show("The information has been entered successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ManageSubjects_Load(sender, e);
             }
             catch(Exception ex)
             {

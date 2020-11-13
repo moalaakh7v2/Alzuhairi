@@ -43,10 +43,10 @@ namespace WebServer.Controllers
             {
                 if (studentNoteBook.NoteBookSerial.NoteBookId == video.NoteBookId)
                 {
-                    if (!_context.NoteBooks.First(x=>x.Id == studentNoteBook.NoteBookSerial.NoteBookId).IsActive)
-                    {
-                        return Problem("this video to noteBook Note Active");
-                    }
+                    //if (!_context.NoteBooks.First(x=>x.Id == studentNoteBook.NoteBookSerial.NoteBookId).IsActive)
+                    //{
+                    //    return Problem("this video to noteBook Note Active");
+                    //}
                     if (studentNoteBook.IsActive)
                     {
                         return Ok(video);
