@@ -33,8 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.chkFeatures = new System.Windows.Forms.CheckedListBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtNote = new System.Windows.Forms.TextBox();
-            this.lblNote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.comboSubjects = new System.Windows.Forms.ComboBox();
@@ -63,8 +61,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.chkFeatures);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.txtNote);
-            this.groupBox1.Controls.Add(this.lblNote);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCount);
             this.groupBox1.Controls.Add(this.comboSubjects);
@@ -115,33 +111,12 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtNote
-            // 
-            this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNote.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(95, 93);
-            this.txtNote.Name = "txtNote";
-            this.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNote.Size = new System.Drawing.Size(316, 23);
-            this.txtNote.TabIndex = 6;
-            // 
-            // lblNote
-            // 
-            this.lblNote.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNote.AutoSize = true;
-            this.lblNote.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote.Location = new System.Drawing.Point(37, 98);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(35, 18);
-            this.lblNote.TabIndex = 5;
-            this.lblNote.Text = "Note";
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(274, 41);
+            this.label3.Location = new System.Drawing.Point(39, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 4;
@@ -151,9 +126,9 @@
             // 
             this.txtCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCount.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCount.Location = new System.Drawing.Point(322, 38);
+            this.txtCount.Location = new System.Drawing.Point(95, 91);
             this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(89, 23);
+            this.txtCount.Size = new System.Drawing.Size(316, 23);
             this.txtCount.TabIndex = 3;
             // 
             // comboSubjects
@@ -165,7 +140,7 @@
             this.comboSubjects.Location = new System.Drawing.Point(95, 35);
             this.comboSubjects.Name = "comboSubjects";
             this.comboSubjects.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboSubjects.Size = new System.Drawing.Size(164, 26);
+            this.comboSubjects.Size = new System.Drawing.Size(316, 26);
             this.comboSubjects.TabIndex = 2;
             // 
             // label2
@@ -245,8 +220,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboSubjects;
-        private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.Label lblNote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.DataGridView grdQRcode;

@@ -55,6 +55,7 @@
             this.txtTitle.Location = new System.Drawing.Point(22, 64);
             this.txtTitle.Multiline = true;
             this.txtTitle.Name = "txtTitle";
+            this.txtTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTitle.Size = new System.Drawing.Size(243, 99);
             this.txtTitle.TabIndex = 6;
             // 

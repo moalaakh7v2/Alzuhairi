@@ -1,4 +1,5 @@
-﻿using Library;
+﻿using AdminPanel.Classes;
+using Library;
 using Models;
 using Models.ViewModels;
 using System;
@@ -48,6 +49,8 @@ namespace AdminPanel.View.NoteBook
 
         private void btnReissuing_Click(object sender, EventArgs e)
         {
+            if (!txtCount.CheckInt())
+                return;
             noteBook = noteBooks.First(x => x.Id == (int)comboNoteBook.SelectedValue);
             noteBook = CallAPI.PostObjectAndGetObject<Models.NoteBook, Models.NoteBook>(noteBook, "AddNewSerialForExistNoteBook", txtCount.Text);
             grdQRcode.DataSource = noteBook.NoteBookSerials;
@@ -57,6 +60,11 @@ namespace AdminPanel.View.NoteBook
 
         private void btnQrDownload_Click(object sender, EventArgs e)
         {
+            if (grdQRcode.DataSource == null)
+            {
+                MessageBox.Show("There is no code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             FolderBrowserDialog browser = new FolderBrowserDialog();
 
             if (browser.ShowDialog() == DialogResult.OK)

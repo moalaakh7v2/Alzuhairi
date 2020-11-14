@@ -6,4 +6,15 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.PowerPoint.dll">
+      <Guid>91493440-5a91-11cf-8700-00aa0060263b</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>11</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
+
 </Project>

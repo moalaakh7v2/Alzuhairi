@@ -77,6 +77,7 @@
             this.grdSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSubjects.Location = new System.Drawing.Point(346, 86);
             this.grdSubjects.Name = "grdSubjects";
+            this.grdSubjects.ReadOnly = true;
             this.grdSubjects.Size = new System.Drawing.Size(349, 190);
             this.grdSubjects.TabIndex = 19;
             // 

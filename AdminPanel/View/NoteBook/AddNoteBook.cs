@@ -66,7 +66,7 @@ namespace AdminPanel.View.NoteBook
             try
             {
                 bool chkChek = false;
-                if (txtCount.CheckNull() || txtNote.CheckNull())
+                if (txtCount.CheckNull())
                     return;
                 List<int> featureIds = new List<int>();
                 foreach (var itemChecked in chkFeatures.CheckedItems)

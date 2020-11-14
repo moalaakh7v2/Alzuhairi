@@ -59,6 +59,7 @@
             this.comboNoteBook.FormattingEnabled = true;
             this.comboNoteBook.Location = new System.Drawing.Point(163, 111);
             this.comboNoteBook.Name = "comboNoteBook";
+            this.comboNoteBook.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboNoteBook.Size = new System.Drawing.Size(240, 30);
             this.comboNoteBook.TabIndex = 3;
             // 

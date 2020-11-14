@@ -18,5 +18,6 @@ namespace Models
         public virtual ICollection<NoteBookFeature> NoteBookFeatures { get; set; }
         public virtual ICollection<NoteBookSerial> NoteBookSerials { get; set; }
         public virtual ICollection<Video> Videos { get; set; }
+        public string Title => Subject.SubjectName + " " + Subject.Dept.ToString() + " " + Subject.Chapter.ToString();
     }
 }

@@ -127,6 +127,12 @@
     <Compile Include="View\NoteBook\AddVideo.Designer.cs">
       <DependentUpon>AddVideo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NoteBook\AddVideoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NoteBook\AddVideoInfo.Designer.cs">
+      <DependentUpon>AddVideoInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NoteBook\ManageNoteBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\AddVideo.resx">
       <DependentUpon>AddVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NoteBook\AddVideoInfo.resx">
+      <DependentUpon>AddVideoInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NoteBook\ManageNoteBooks.resx">
       <DependentUpon>ManageNoteBooks.cs</DependentUpon>
