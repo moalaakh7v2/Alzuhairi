@@ -28,7 +28,6 @@ namespace WebServer.Controllers
         {
             List<NoteBook> noteBooks = await _context.NoteBooks
                 .Include(x => x.Subject)
-                .ThenInclude(x => x.Dept)
                 .Include(x => x.NoteBookFeatures)
                 .ThenInclude(x=>x.Feature)
                 .Include(x=>x.NoteBookSerials)
