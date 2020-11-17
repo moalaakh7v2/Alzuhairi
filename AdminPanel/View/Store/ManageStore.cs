@@ -82,6 +82,20 @@ namespace AdminPanel.View.Store
                     return;
                 if (!txtCount.CheckInt())
                     return;
+                if (comboNoteBook.SelectedItem == null)
+                {
+                    CheckData.ErrorMessage("Error , Plase Select notebook from the combo box");
+                    return;
+                }
+                if(reseller == null)
+                {
+                    CheckData.ErrorMessage("Error , Plase Select reseller ");
+                    return;
+                }
+                // Todo Check Limit of NoteBookSerials Count
+                var noteBook = noteBooks.First(x => x.Id == (int)comboNoteBook.SelectedValue);
+                   var countNoteBookSerials = noteBook.NoteBookSerials.Count;
+                //----------------------------------------------------------------------
                 ResellerAndNoteBook resellerAndNoteBook = CallAPI.PostObjectAndGetObject<ResellerAndNoteBook, ResellerAndNoteBook>(null,"GrantNoteBooksToReseller",
                  reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
                 MessageBox.Show("Added Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);

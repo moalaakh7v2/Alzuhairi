@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace AdminPanel.View.NoteBook
@@ -128,6 +129,17 @@ namespace AdminPanel.View.NoteBook
                 Cursor.Current = Cursors.Default;
                 MessageBox.Show("operation accomplished successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtCount.Text = "";
+            grdQRcode = null;
+            foreach (int i in chkFeatures.CheckedIndices)
+            {
+                chkFeatures.SetItemCheckState(i, CheckState.Unchecked);
+            }
+
         }
     }
 }

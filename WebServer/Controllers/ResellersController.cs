@@ -32,7 +32,6 @@ namespace WebServer.Controllers
             var resellerAndNoteBooks = await _context.ResellerAndNoteBooks.Where(x => x.ResellerId == resellerId)
                 .Include(x=>x.NoteBook)
                 .ThenInclude(x=>x.Subject)
-                .ThenInclude(x=>x.Dept)
                 .Include(x=>x.Reseller)
                 .ToListAsync();
             foreach (var item in resellerAndNoteBooks)

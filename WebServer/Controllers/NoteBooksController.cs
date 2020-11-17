@@ -59,17 +59,24 @@ namespace WebServer.Controllers
             }
             return noteBookSerial;
         }
-        //[HttpGet("DeActiveNoteBook/{notebookId}")]
-        //public async Task<NoteBook> DeActiveNoteBook(int notebookId)
-        //{
-        //    NoteBook noteBook = await _context.NoteBooks.FirstAsync(x => x.IsActive && x.Id == notebookId);
-        //    if (noteBook != null)
-        //    {
-        //        noteBook.IsActive = false;
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    return noteBook;
-        //}
+        [HttpGet("DeActiveNoteBook/{notebookId}")]
+        public async Task<NoteBook> DeActiveNoteBook(int notebookId)
+        {
+            var noteBookSerialIds = _context.NoteBookSerials.Where(x => x.NoteBookId == notebookId).Select(x=>x.Id).ToList();
+            var usingNoteBook = _context.StudentNoteBooks.Where(x => noteBookSerialIds.Contains(x.Id))
+                .Include(x=>x.NoteBookSerial)
+                .Select(x=>x.NoteBookSerial); 
+            if (usingNoteBook != null)
+            {
+                foreach (var item in usingNoteBook)
+                {
+                    item.IsActive = false;
+                    _context.Entry(item).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
+            }
+            return new NoteBook();
+        }
 
         ////test6
         //[HttpGet("CheckNoteBookExists")]

@@ -57,7 +57,7 @@ namespace AdminPanel.View.NoteBook
             var notebook = noteBooks.First(x => x.Id == notebookId);
             btnDeAvtiveNoteBook.Visible = btnAddVideo.Visible = btnDownloadVideoQR.Visible = btnDelete.Visible;
             List<Feature> features = notebook.NoteBookFeatures.Select(x => x.Feature).ToList();
-            lstFeatures.DataSource = features.Select(x=>x.Title).ToList();
+            lstFeatures.DataSource = features.Where(x => x.Id != 1).Select(x=>x.Title).ToList();
             txtCount.Text = notebook.NoteBookSerials.Count.ToString();
             var used = notebook.NoteBookSerials.Select(x => x.StudentNoteBooks.Count()).ToList();
             txtUsed.Text = used.Sum().ToString();
@@ -121,7 +121,8 @@ namespace AdminPanel.View.NoteBook
             CallAPI.PostObjectAndGetObject<Video,Video>(vidoeIds, "RemoveVideo");
             Cursor.Current = Cursors.Default;
             MessageBox.Show("The deletion was successful" , "Done" , MessageBoxButtons.OK , MessageBoxIcon.Information);
-            comboDeptSubjectYear_SelectedIndexChanged(sender, e);
+            chkVideos.Items.Clear();
+            ManageNoteBooks_Load(sender, e);
         }
 
         private void btnDownloadVideoQR_Click(object sender, EventArgs e)

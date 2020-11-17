@@ -56,7 +56,7 @@ namespace AdminPanel.View.Init
                 features = CallAPI.GetListContent<Feature, Feature>("GetFeatures");
                 FillGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("There Are An Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -66,7 +66,7 @@ namespace AdminPanel.View.Init
         void FillGrid()
         {
             lstFeatures.DataSource = null;
-            lstFeatures.DataSource = features;
+            lstFeatures.DataSource = features.Where(x => x.Id != 1).ToList();
             lstFeatures.DisplayMember = "Title";
         }
     }

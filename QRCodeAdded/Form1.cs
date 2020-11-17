@@ -50,7 +50,7 @@ namespace QRCodeAdded
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            Microsoft.Office.Interop.PowerPoint.Application a = new Microsoft.Office.Interop.PowerPoint.Application();
+            //Microsoft.Office.Interop.PowerPoint.Application a = new Microsoft.Office.Interop.PowerPoint.Application();
             
         }
     }
