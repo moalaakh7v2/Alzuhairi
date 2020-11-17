@@ -27,14 +27,14 @@ namespace AdminPanel.View.Students
         {
             pnlChoise.Location = new Point(150, 12);
 
-            AddNewStudent addNewStudent = new AddNewStudent();
-            ShowInPanelView(addNewStudent);
+            ManageStudents manageStudents = new ManageStudents();
+            ShowInPanelView(manageStudents);
         }
 
 
         private void btnManageStudents_Click(object sender, EventArgs e)
         {
-            pnlChoise.Location = new Point(150, 66);
+            pnlChoise.Location = new Point(150, 12);
 
             ManageStudents manageStudents = new ManageStudents();
             ShowInPanelView(manageStudents);
