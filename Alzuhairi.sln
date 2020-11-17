@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeAdded", "QRCodeAdded\QRCodeAdded.csproj", "{EE0C259C-C32D-4C51-90C9-0A47C017A090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Picture2PDF", "..\PowerPointAPP\PowerPointAPP\Picture2PDF.csproj", "{7E64D097-3E20-4AF8-81E4-28873617FE4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlzuhairiMobile", "..\AlzuhairiMobile\AlzuhairiMobile\AlzuhairiMobile\AlzuhairiMobile.csproj", "{794A436B-1F1E-4A0F-890C-D40CC5AE45C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlzuhairiMobile.Android", "..\AlzuhairiMobile\AlzuhairiMobile\AlzuhairiMobile.Android\AlzuhairiMobile.Android.csproj", "{F4A8F2A9-1699-4CA1-A203-085F988BCB02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +39,20 @@ Global
 		{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D15941CB-8F0E-4695-B7E0-EDE7F9F686D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE0C259C-C32D-4C51-90C9-0A47C017A090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E64D097-3E20-4AF8-81E4-28873617FE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E64D097-3E20-4AF8-81E4-28873617FE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E64D097-3E20-4AF8-81E4-28873617FE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E64D097-3E20-4AF8-81E4-28873617FE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794A436B-1F1E-4A0F-890C-D40CC5AE45C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794A436B-1F1E-4A0F-890C-D40CC5AE45C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794A436B-1F1E-4A0F-890C-D40CC5AE45C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794A436B-1F1E-4A0F-890C-D40CC5AE45C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4A8F2A9-1699-4CA1-A203-085F988BCB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A8F2A9-1699-4CA1-A203-085F988BCB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A8F2A9-1699-4CA1-A203-085F988BCB02}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F4A8F2A9-1699-4CA1-A203-085F988BCB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A8F2A9-1699-4CA1-A203-085F988BCB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4A8F2A9-1699-4CA1-A203-085F988BCB02}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

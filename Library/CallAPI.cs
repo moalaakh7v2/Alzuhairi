@@ -97,6 +97,11 @@ namespace Library
         }
 
 
+        public void test()
+        {
+
+        }
+
         static string CreateGetRequest(string url)
         {
             RestClient restClient = new RestClient(URL);
