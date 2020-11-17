@@ -11,13 +11,12 @@
             <Editor x:Name="txtLname" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
             <Label Text="Age"  FontSize="Medium" />
             <Entry x:Name="txtAge" FontSize="Medium" />
-            <Label Text="Location" FontSize="Medium" />
-            <Entry x:Name="txtLocation" FontSize="Medium" />
-            <Label Text="Dept" FontSize="Medium" />
-            <Picker x:Name="comboDept" Title="Select a Dept"  SelectedItem="{Binding SelectedColorName, Mode=TwoWay}" />
+            <Label Text="Address" FontSize="Medium" />
+            <Entry x:Name="txtAddress" FontSize="Medium" />
             <Label Text="School Name" FontSize="Medium" />
             <Editor x:Name="txtSchool" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
-            <StackLayout Orientation="Horizontal">
+            
+            <StackLayout Orientation="Horizontal" Padding="30">
                 <Button Text="Reset" x:Name="btnReset" Clicked="btnReset_Clicked" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" x:Name="btnSave" Clicked="btnSave_Clicked" HorizontalOptions="FillAndExpand"></Button>
             </StackLayout>

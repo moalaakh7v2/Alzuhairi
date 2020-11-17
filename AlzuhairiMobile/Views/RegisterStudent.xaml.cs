@@ -28,7 +28,7 @@ namespace AlzuhairiMobile.Views
         }
         private void btnReset_Clicked(object sender, EventArgs e)
         {
-            txtFname.Text = txtLname.Text = txtLocation.Text = txtSchool.Text = txtAge.Text = "";
+            txtFname.Text = txtLname.Text = txtAddress.Text = txtSchool.Text = txtAge.Text = "";
         }
 
         private async void btnSave_Clicked(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace AlzuhairiMobile.Views
                 Student student = new Student();
                 student.FirstName = txtFname.Text;
                 student.LastName = txtLname.Text;
-                student.Address = txtLocation.Text;
+                student.Address = txtAddress.Text;
                 student.PhoneNumber = PhoneNumber;
                 student.Age = Convert.ToInt32(txtAge.Text);
                 student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "UpdateStudent", student.Id.ToString());
@@ -79,7 +79,7 @@ namespace AlzuhairiMobile.Views
         bool checkData()
         {
             if (string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(txtFname.Text) || string.IsNullOrEmpty(txtLname.Text)
-                || string.IsNullOrEmpty(txtLocation.Text) || string.IsNullOrEmpty(txtSchool.Text))
+                || string.IsNullOrEmpty(txtAddress.Text) || string.IsNullOrEmpty(txtSchool.Text))
                 return false;
             return true;
 
