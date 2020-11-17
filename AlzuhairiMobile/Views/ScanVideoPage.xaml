@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+             x:Class="AlzuhairiMobile.Views.ScanVideoPage"
+             Title="Scan Video">
+    <StackLayout>
+        <o:VideoPlayer x:Name="vidDisplay" Source="http://vjs.zencdn.net/v/oceans.mp4" />
+        <!--<o:VideoPlayer x:Name="vidDisplay" Source="https://www.youtube.com/watch?v=izF6j-u8xV0" />-->
+    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Scan" x:Name="btnScanVideo" Clicked="btnScanVideo_Clicked" />
+    </ContentPage.ToolbarItems>
+</ContentPage>
+    
+    

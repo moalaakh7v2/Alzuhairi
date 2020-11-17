@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlzuhairiMobile.Views.SettingsPage"
+             Title="Settings">
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="First Name"  FontSize="Medium" />
+            <Entry x:Name="txtFname" FontSize="Medium" />
+            <Label Text="Last Name" FontSize="Medium" />
+            <Editor x:Name="txtLname" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Label Text="Location" FontSize="Medium" />
+            <Editor x:Name="txtLocation" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Reset" x:Name="btnReset" Clicked="btnReset_Clicked" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" x:Name="btnSave" Clicked="btnSave_Clicked" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

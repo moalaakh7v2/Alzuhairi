@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AlzuhairiMobile.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <Label Text="Login" HorizontalOptions="Center" FontSize="30" ></Label>
+            <Entry x:Name="txtPhoneNumber" Placeholder="phone Number" Keyboard="Numeric" >
+            </Entry>
+            <Button x:Name="btnSend" VerticalOptions="Center" Text="Send Code" Clicked="btnSend_Clicked"/>
+            <Entry x:Name="txtCode" Keyboard="Numeric" Placeholder="Code"></Entry>
+            <Button x:Name="btnVerify" VerticalOptions="Center" Text="Verify" Clicked="btnVerify_Clicked"/>
+            <Button x:Name="btnReset" VerticalOptions="Center" Text="Reset" Clicked="btnReset_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
