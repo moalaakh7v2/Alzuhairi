@@ -55,13 +55,14 @@ namespace WebServer.Controllers
             ResellerAndNoteBook resellerAndNoteBook = _context.ResellerAndNoteBooks.FirstOrDefault(x => x.NoteBookId == noteBookId && x.ResellerId== resellerId);
             if (resellerAndNoteBook == null)
             {
-                _context.ResellerAndNoteBooks.Add(new ResellerAndNoteBook
+                resellerAndNoteBook = new ResellerAndNoteBook
                 {
                     ResellerId = resellerId,
                     Count = count,
                     NoteBookId = noteBookId,
-                    LastGrantDate= DateTime.Now
-                });
+                    LastGrantDate = DateTime.Now
+                };
+                _context.ResellerAndNoteBooks.Add(resellerAndNoteBook);
             }
             else
             {
@@ -69,7 +70,7 @@ namespace WebServer.Controllers
                 resellerAndNoteBook.LastGrantDate = DateTime.Now;
             }
             await _context.SaveChangesAsync();
-            return Ok(resellerAndNoteBook);
+            return resellerAndNoteBook;
         }
     }
 }

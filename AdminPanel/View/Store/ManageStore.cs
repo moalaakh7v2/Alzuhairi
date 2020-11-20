@@ -40,7 +40,7 @@ namespace AdminPanel.View.Store
                 noteBooksTitles.Add(new NoteBooksTitle
                 {
                     Id = item.Id,
-                    Title = item.Subject.SubjectName + " " + item.Subject.Dept.ToString() + " " + item.ReleaseDate.Year
+                    Title = item.Subject.SubjectName + " " + item.Subject.Dept.ToString() + " " + item.Subject.Chapter + " " + item.ReleaseDate.Year
                 });
             }
             comboNoteBook.DataSource = noteBooksTitles;
@@ -100,7 +100,7 @@ namespace AdminPanel.View.Store
                  reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
                 MessageBox.Show("Added Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch
+            catch(Exception ex)
             {
                 CheckData.ErrorMessage();
             }
