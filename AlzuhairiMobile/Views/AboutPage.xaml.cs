@@ -31,9 +31,5 @@ namespace AlzuhairiMobile.Views
            
         }
 
-        private async void btnContacrUs_Clicked(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

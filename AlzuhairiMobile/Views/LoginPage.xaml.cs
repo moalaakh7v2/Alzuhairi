@@ -21,8 +21,6 @@ namespace AlzuhairiMobile.Views
         public LoginPage()
         {
             InitializeComponent();
-               
-                   
             txtCode.IsVisible = btnVerify.IsVisible = btnReset.IsVisible = false;
         }
         protected override void OnAppearing()

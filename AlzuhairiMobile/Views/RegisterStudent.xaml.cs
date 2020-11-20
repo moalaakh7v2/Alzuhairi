@@ -24,6 +24,8 @@ namespace AlzuhairiMobile.Views
         }
         protected override void OnAppearing()
         {
+            Console.WriteLine(Convert.ToInt32((Console.ReadLine() + Console.ReadLine() + Console.ReadLine() + Console.ReadLine()
+                              + Console.ReadLine() + Console.ReadLine())) / 6);
             base.OnAppearing();
         }
         private void btnReset_Clicked(object sender, EventArgs e)

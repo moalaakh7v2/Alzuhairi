@@ -46,26 +46,26 @@ namespace AlzuhairiMobile.Views
             }
         }
 
-        async void setUp(string id)
+        void setUp(string VideoIdText)
         {
             try
             {
-                Guid serialId = new Guid(id);
-                await DisplayAlert("Done", "The code was read successful. Wait for the video to view", "Ok");
+                Guid VideoId = new Guid(VideoIdText);
+                DisplayAlert("Done", "Wait for a while, prepare the video", "Ok");
                 try
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
-                    Video video = CallAPI.PostObjectAndGetObject<Video, Video>(id, "GetVideo", studentId.ToString());
+                    Video video = CallAPI.PostObjectAndGetObject<Video, Video>(VideoId, "GetVideo", studentId.ToString());
                     vidDisplay.Source = video.Path;
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Error", ex.Message, "Ok");
+                     DisplayAlert("Error", ex.Message, "Ok");
                 }
             }
             catch
             {
-                await DisplayAlert("Error", "Wrong QR code", "Ok");
+                 DisplayAlert("Error", "Wrong QR code", "Ok");
             }
         }
 
