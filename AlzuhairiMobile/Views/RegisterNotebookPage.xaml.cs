@@ -22,13 +22,15 @@ namespace AlzuhairiMobile.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (!string.IsNullOrEmpty(Settings.NoteBookFeature))
+            //اذا كان يمتلك نوطة في اعداداته
+            if (!string.IsNullOrEmpty(Settings.RegisterNoteBook))
             {
+                //عرض عنوان النوطة والميزات التي حصل عليها
                 txtNotebookInfo.Text = Settings.NoteBookFeature;
             }
             else
             {
-                txtNotebookInfo.Text = "There are no Notebook registered in your account";
+                txtNotebookInfo.Text = "There is no Notebook. Scan the code on the first page in the notebook to save it in your application";
             }
         }
         private void btnGetNew_Clicked(object sender, EventArgs e)
@@ -40,8 +42,8 @@ namespace AlzuhairiMobile.Views
         {
             try
             {
-             
-                var ScannerPage = new ZXingScannerPage();
+
+                ZXingScannerPage ScannerPage = new ZXingScannerPage();
                 
                 ScannerPage.OnScanResult += (result) =>
                 {
@@ -60,16 +62,16 @@ namespace AlzuhairiMobile.Views
             }
         }
 
-        async void SetUP(string id)
+        void SetUP(string serialIdtext)
         {
             try
             {
-                Guid serialId = new Guid(id);
-                await DisplayAlert("Done", "The code read was successful. Wait a while for the notebook to be registered\n"+serialId.ToString(), "Ok");
+                Guid serialId = new Guid(serialIdtext);
                 try
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
-                    var noteBookFeatures = CallAPI.PostObjectAndGetObject<StudentNoteBook, List<NoteBookFeature>>(serialId, "SetUpNewNoteBook", studentId.ToString());
+                    List<NoteBookFeature> noteBookFeatures = CallAPI.PostObjectAndGetObject<StudentNoteBook, List<NoteBookFeature>>
+                                                             (serialId, "SetUpNewNoteBook", studentId.ToString());
                     if (noteBookFeatures.Any())
                     {
                         Settings.RegisterNoteBook = noteBookFeatures[0].NoteBookId.ToString();
@@ -85,12 +87,12 @@ namespace AlzuhairiMobile.Views
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Error", ex.Message, "Ok");
+                     DisplayAlert("Error", ex.Message, "Ok");
                 }
             }
             catch
             {
-                await DisplayAlert("Error", "Wrong QR code", "Ok");
+                 DisplayAlert("Error", "Wrong QR code", "Ok");
             }
         }
         
