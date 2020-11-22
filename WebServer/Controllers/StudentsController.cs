@@ -21,21 +21,6 @@ namespace WebServer.Controllers
         {
             _context = context;
         }
-
-        [HttpGet("test/{testId}/{hello}")]
-        public ActionResult<Student> test(int testId , bool hello)
-        {
-            if (testId == 1)
-            {
-                return Problem("hello word");
-            }
-            if (testId == 2)
-            {
-                return new Student { Id = 2 };
-            }
-            return Ok(new Student { Id = 2 });
-
-        }
         
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
@@ -50,12 +35,6 @@ namespace WebServer.Controllers
             }
             return Students;
         }
-        
-        //[HttpGet("GetStudentsByDeptId/{dept}")]
-        //public async Task<ActionResult<List<Student>>> GetStudentsByDeptId(Dept dept)
-        //{
-        //    return await _context.Students.Where(x => x == deptId).ToListAsync();
-        //}
 
         //Android9
         [HttpGet("GetStudentByNumber/{phoneNumber}")]
@@ -69,13 +48,6 @@ namespace WebServer.Controllers
             return student; 
         }
 
-        ////test7
-        //[HttpGet("GetStudent/{imei}")]
-        //public async Task<ActionResult<Student>> GetStudent(string imei)
-        //{
-        //    return await _context.Students.FirstOrDefaultAsync(x=>x.Imei == imei);
-        //}
-
         //Android3 Android8
         [HttpPost("UpdateStudent/{studentId}")]
         public async Task<ActionResult<Student>> UpdateStudent(Student student, int studentId)
@@ -84,13 +56,11 @@ namespace WebServer.Controllers
                 _context.Entry(student).State = EntityState.Modified;
             else
             {
-                //todo Get Imei in android
-                student.Mac = student.Mac == null ? "" : student.Mac;
-                student.RegisterDate = DateTime.Now;
+                student.LoginData = DateTime.Now;
                 await _context.Students.AddAsync(student);
             }
             await _context.SaveChangesAsync();
-            return Ok(student);
+            return student;
         }
 
        
@@ -100,8 +70,7 @@ namespace WebServer.Controllers
             student.IsActive = approve;
             _context.Entry(student).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return Ok(student);
+            return student;
         }
-
     }
 }

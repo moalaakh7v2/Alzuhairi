@@ -13,10 +13,10 @@ namespace Models
         public string LastName { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
-        public DateTime RegisterDate { get; set; }
+        public DateTime LoginData { get; set; }
         public string PhoneNumber { get; set; }
         public string SchoolName { get; set; }
-        public string Mac { get; set; } 
+        public string Imei { get; set; } 
         public bool IsActive { get; set; } = true;
         public virtual ICollection<StudentNoteBook> StudentNoteBooks { get; set; }
     }

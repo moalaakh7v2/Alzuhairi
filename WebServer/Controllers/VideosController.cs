@@ -26,9 +26,8 @@ namespace WebServer.Controllers
 
         //Android7
         [HttpPost("GetVideo/{studenId}")]
-        public async Task<ActionResult<Video>> GetVideo([FromRoute] string videoIdStr , int studenId)
+        public async Task<ActionResult<Video>> GetVideo([FromRoute] Guid videoId, int studenId)
         {
-            Guid videoId = new Guid(videoIdStr);
             var video = await _context.Videos.FirstOrDefaultAsync(x => x.Id == videoId);
             if (video == null)
             {
@@ -43,13 +42,10 @@ namespace WebServer.Controllers
             {
                 if (studentNoteBook.NoteBookSerial.NoteBookId == video.NoteBookId)
                 {
-                    //if (!_context.NoteBooks.First(x=>x.Id == studentNoteBook.NoteBookSerial.NoteBookId).IsActive)
-                    //{
-                    //    return Problem("this video to noteBook Note Active");
-                    //}
                     if (studentNoteBook.IsActive)
                     {
-                        return Ok(video);
+
+                        return video;
                     }
                     return Problem("this video to noteBook Note Active in your device");
                 }
