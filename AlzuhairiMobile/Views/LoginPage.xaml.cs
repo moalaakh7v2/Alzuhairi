@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AlzuhairiMobile.Services;
-using Android.Provider;
 using Android.Widget;
 using Library;
 using Models;
@@ -43,7 +37,7 @@ namespace AlzuhairiMobile.Views
                     await DisplayAlert("Error", "Enter A valid Phone Number", "Cancel");
                     return;
                 }
-                var checkCode = CallAPI.PostObjectAndGetObject<CheckCode, CheckCode>(txtPhoneNumber.Text, "CreateCode");
+                var checkCode = CallAPI.GetObjectContent<CheckCode, CheckCode>("CreateCode", txtPhoneNumber.Text, "123456789");
                 if (checkCode != null)
                 {
                     Toast.MakeText(Android.App.Application.Context, "Send Message To " + txtPhoneNumber.Text, ToastLength.Long).Show();
@@ -55,7 +49,7 @@ namespace AlzuhairiMobile.Views
                     await DisplayAlert("Error", "re-Send Code Letter", "Ok");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await DisplayAlert("Error", ex.Message, "Cancel");
             }

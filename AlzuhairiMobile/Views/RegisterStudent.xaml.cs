@@ -24,8 +24,6 @@ namespace AlzuhairiMobile.Views
         }
         protected override void OnAppearing()
         {
-            Console.WriteLine(Convert.ToInt32((Console.ReadLine() + Console.ReadLine() + Console.ReadLine() + Console.ReadLine()
-                              + Console.ReadLine() + Console.ReadLine())) / 6);
             base.OnAppearing();
         }
         private void btnReset_Clicked(object sender, EventArgs e)
@@ -58,6 +56,7 @@ namespace AlzuhairiMobile.Views
                 student.Address = txtAddress.Text;
                 student.PhoneNumber = PhoneNumber;
                 student.Age = Convert.ToInt32(txtAge.Text);
+                student.SchoolName = txtSchool.Text;
                 student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "UpdateStudent", student.Id.ToString());
                 if (student != null)
                 {
@@ -66,6 +65,7 @@ namespace AlzuhairiMobile.Views
                     Settings.FirstName = student.FirstName;
                     Settings.LastName = student.LastName;
                     Settings.Location = student.Address;
+                    Settings.Shcoole = student.SchoolName;
                     await DisplayAlert("Done", "operation accomplished successfully", "Ok");
                     App.Current.MainPage = new AppShell();
                 }

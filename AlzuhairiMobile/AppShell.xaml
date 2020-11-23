@@ -58,8 +58,8 @@
         </ResourceDictionary>
     </Shell.Resources>
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Your Notebook" Icon="tab_feed.png" Route="RegisterNotebookPage" ContentTemplate="{DataTemplate local:RegisterNotebookPage}" />
-        <ShellContent Title="Scan Video" Icon="tab_scanvideo.png" ContentTemplate="{DataTemplate local:ScanVideoPage}" />
+        <ShellContent Title="Notebook" Icon="tab_feed.png" Route="RegisterNotebookPage" ContentTemplate="{DataTemplate local:RegisterNotebookPage}" />
+        <ShellContent Title="Video" Icon="tab_scanvideo.png" ContentTemplate="{DataTemplate local:ScanVideoPage}" />
         <ShellContent Title="About" Icon="tab_home.png"  ContentTemplate="{DataTemplate local:AboutPage}" />
         <ShellContent Title="Settings" Icon="tab_settings.png" ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>

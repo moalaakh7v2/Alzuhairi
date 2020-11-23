@@ -70,6 +70,14 @@ namespace AlzuhairiMobile.Services
             set { AppSettings.AddOrUpdateValue(LocationKey, value); }
         }
 
+        private const string ShcooleKey = "Shcoole_key";
+        private static readonly string shcooleKey = string.Empty;
+        public static string Shcoole
+        {
+            get { return AppSettings.GetValueOrDefault(ShcooleKey, ShcooleKey); }
+            set { AppSettings.AddOrUpdateValue(ShcooleKey, value); }
+        }
+
 
 
     }
