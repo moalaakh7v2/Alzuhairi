@@ -41,11 +41,11 @@
             // 
             this.lblNoteBook.AutoSize = true;
             this.lblNoteBook.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoteBook.Location = new System.Drawing.Point(277, 41);
+            this.lblNoteBook.Location = new System.Drawing.Point(256, 33);
             this.lblNoteBook.Name = "lblNoteBook";
-            this.lblNoteBook.Size = new System.Drawing.Size(47, 20);
+            this.lblNoteBook.Size = new System.Drawing.Size(76, 20);
             this.lblNoteBook.TabIndex = 0;
-            this.lblNoteBook.Text = "label1";
+            this.lblNoteBook.Text = "Add Video";
             // 
             // txtTitle
             // 
@@ -67,7 +67,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(131, 100);
+            this.lblTitle.Location = new System.Drawing.Point(131, 96);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(38, 20);
             this.lblTitle.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.lblPath.AutoSize = true;
             this.lblPath.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPath.Location = new System.Drawing.Point(131, 158);
+            this.lblPath.Location = new System.Drawing.Point(131, 154);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(38, 20);
             this.lblPath.TabIndex = 4;
@@ -103,6 +103,7 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // AddVideoInfo
             // 

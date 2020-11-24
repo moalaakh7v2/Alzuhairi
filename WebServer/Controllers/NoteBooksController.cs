@@ -60,22 +60,21 @@ namespace WebServer.Controllers
             return noteBookSerial;
         }
         [HttpGet("DeActiveNoteBook/{notebookId}")]
-        public async Task<NoteBook> DeActiveNoteBook(int notebookId)
+        public async Task<ActionResult<NoteBook>> DeActiveNoteBook(int notebookId)
         {
-            var noteBookSerialIds = _context.NoteBookSerials.Where(x => x.NoteBookId == notebookId).Select(x=>x.Id).ToList();
+            var noteBookSerialIds = _context.NoteBookSerials.Where(x => x.NoteBookId == notebookId).Select(x => x.Id).ToList();
             var usingNoteBook = _context.StudentNoteBooks.Where(x => noteBookSerialIds.Contains(x.Id))
-                .Include(x=>x.NoteBookSerial)
-                .Select(x=>x.NoteBookSerial); 
-            if (usingNoteBook != null)
+                .Include(x => x.NoteBookSerial)
+                .Select(x => x.NoteBookSerial)
+                .ToList();
+            foreach (var item in usingNoteBook)
             {
-                foreach (var item in usingNoteBook)
-                {
-                    item.IsActive = false;
-                    _context.Entry(item).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
+                item.IsActive = false;
+                _context.Entry(item).State = EntityState.Modified;
+                _context.SaveChanges();
             }
-            return new NoteBook();
+            NoteBook noteBook = new NoteBook();
+            return Ok(noteBook);
         }
 
         [HttpPost("AddNewNoteBook/{count}")]

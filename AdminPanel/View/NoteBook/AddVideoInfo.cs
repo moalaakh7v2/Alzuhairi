@@ -1,4 +1,5 @@
 ﻿using AdminPanel.Classes;
+using Library;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,17 @@ namespace AdminPanel.View.NoteBook
                 return;
             if (txtTitle.CheckNull())
                 return;
+            Video video = CallAPI.PostObjectAndGetObject<Video, Video>(txtPath.Text, "AddVideo", noteBook.Id.ToString(), txtTitle.Text);
+            if (video == null)
+                MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

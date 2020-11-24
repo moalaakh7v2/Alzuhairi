@@ -59,15 +59,14 @@ namespace WebServer.Controllers
             var videos = await _context.Videos.Where(x => videoIds.Contains(x.Id)).ToListAsync();
             if (!videos.Any())
                 return Problem("Error Video Code");
-            //todo remove video from server 
             foreach (var item in videos)
                 item.IsActive = false;
             await _context.SaveChangesAsync();
             return Ok(new Video ());
         }
 
-        [HttpPost("AddVideo/{notebookId}/{path}/{videoName}")]
-        public async Task<ActionResult<Video>> AddVideo(int notebookId,string path,string videoName)
+        [HttpPost("AddVideo/{notebookId}/{videoName}")]
+        public async Task<ActionResult<Video>> AddVideo([FromBody] string path, int notebookId, string videoName)
         {
             try
             {
@@ -76,7 +75,8 @@ namespace WebServer.Controllers
                     Id = Guid.NewGuid(),
                     NoteBookId = notebookId,
                     Path = path,
-                    Title = videoName
+                    Title = videoName,
+                    IsActive = true
                 };
                 await _context.Videos.AddAsync(video);
                 await _context.SaveChangesAsync();
@@ -87,40 +87,6 @@ namespace WebServer.Controllers
             {
                 return Problem("Error In Save Video Task");
             }
-        }
-        [HttpPost("AddVideoToNoteBook/{notebookId}")]
-        public async Task<ActionResult<Video>> AddVideo(int notebookId)
-        {
-            try
-            {
-                var notebook = _context.NoteBooks
-                    .Include(x=>x.Subject).First(x => x.Id == notebookId);
-                var VideoPath = VideosPath + "" + notebook.Subject.SubjectName + "/" + notebook.Id + "/";
-                if (!Directory.Exists(VideoPath))
-                    Directory.CreateDirectory(VideoPath);
-                IFormFile file = Request.Form.Files[0];
-                var filePath = Path.Combine(VideoPath, file.FileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                     file.CopyTo(fileStream);
-               // ZipFile.ExtractToDirectory(VideoPath+file.FileName, VideoPath);
-             //   System.IO.File.Delete(VideoPath + file.FileName);
-                Video video = new Video
-                {
-                    Id = Guid.NewGuid(),
-                    NoteBookId = notebookId,
-                    Path = "http://192.168.1.106/alzuhiri/" + VideoPath + file.FileName,
-                    Title = Path.GetFileNameWithoutExtension(file.FileName)
-                };
-                await _context.Videos.AddAsync(video);
-                await _context.SaveChangesAsync();
-                video.NoteBook = null;
-                return Ok(video);
-            }
-            catch
-            {
-                return Problem("Error In Save Video Task");
-            }
-           
         }
     }
 }

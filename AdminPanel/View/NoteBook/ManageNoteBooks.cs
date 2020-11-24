@@ -19,6 +19,7 @@ namespace AdminPanel.View.NoteBook
         List<Models.NoteBook> noteBooks;
         List<NoteBooksTitle> noteBooksTitles;
         List<Video> videos;
+        Models.NoteBook notebook;
         public ManageNoteBooks()
         {
             InitializeComponent();
@@ -29,6 +30,14 @@ namespace AdminPanel.View.NoteBook
             try
             {
                 noteBooks = CallAPI.GetListContent<Models.NoteBook, Models.NoteBook>("GetNoteBooks");
+                if(!noteBooks.Any())
+                {
+                    foreach (Control item in this.Controls)
+                    {
+                        item.Enabled = false;
+                    }
+                    return;
+                }
                 noteBooksTitles = new List<NoteBooksTitle>();
                 foreach (var item in noteBooks)
                 {
@@ -54,7 +63,7 @@ namespace AdminPanel.View.NoteBook
             comboDeptSubjectYear.DisplayMember = "Title";
             comboDeptSubjectYear.ValueMember = "Id";
             int notebookId = (int)comboDeptSubjectYear.SelectedValue;
-            var notebook = noteBooks.First(x => x.Id == notebookId);
+            notebook = noteBooks.First(x => x.Id == notebookId);
             btnDeAvtiveNoteBook.Visible = btnAddVideo.Visible = btnDownloadVideoQR.Visible = btnDelete.Visible;
             List<Feature> features = notebook.NoteBookFeatures.Select(x => x.Feature).ToList();
             lstFeatures.DataSource = features.Where(x => x.Id != 1).Select(x=>x.Title).ToList();
@@ -77,7 +86,7 @@ namespace AdminPanel.View.NoteBook
         {
             try
             {
-                AddVideo video = new AddVideo((int)comboDeptSubjectYear.SelectedValue);
+                AddVideoInfo video = new AddVideoInfo(notebook);
                 video.ShowDialog();
                 ManageNoteBooks_Load(sender, e);
             }
@@ -91,12 +100,17 @@ namespace AdminPanel.View.NoteBook
         {
             try
             {
-                int notebookId = (int)comboDeptSubjectYear.SelectedValue;
-                Models.NoteBook noteBook = CallAPI.GetObjectContent<Models.NoteBook, Models.NoteBook>("DeActiveNoteBook", notebookId.ToString());
-                if (noteBook == null) 
-                MessageBox.Show("this notebook was deactivated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (Convert.ToInt32(txtUsed.Text) > 0)
+                {
+                    int notebookId = (int)comboDeptSubjectYear.SelectedValue;
+                    Models.NoteBook noteBook = CallAPI.GetObjectContent<Models.NoteBook, Models.NoteBook>("DeActiveNoteBook", notebookId.ToString());
+                    if (noteBook == null)
+                        MessageBox.Show("Error in connection", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
-                MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("this notebooks was deactivated", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch
             {
@@ -109,7 +123,7 @@ namespace AdminPanel.View.NoteBook
         {
             if(chkVideos.Items.Count == 0 || chkVideos.CheckedItems.Count == 0)
             {
-                CheckData.ErrorMessage();
+                CheckData.ErrorMessage("No Video Selected");
                 return;
             }
             Cursor.Current = Cursors.WaitCursor;

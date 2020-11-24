@@ -64,21 +64,21 @@ namespace Library
                 throw new Exception(problem.detail);
             }
         }
-        public static T PostFile<C, T>(string FilePath, params string[] parms)
-        {
-            try
-            {
-                string str = UploadFile(SetUpURL<C>(parms), FilePath);
-                var x = JsonSerializer.Deserialize<T>(str, Options);
-                return x;
-            }
-            catch (Exception ex)
-            {
-                Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
-                throw new Exception(problem.detail);
+        //public static T PostFile<C, T>(string FilePath, params string[] parms)
+        //{
+        //    try
+        //    {
+        //        string str = UploadFile(SetUpURL<C>(parms), FilePath);
+        //        var x = JsonSerializer.Deserialize<T>(str, Options);
+        //        return x;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
+        //        throw new Exception(problem.detail);
 
-            }
-        }
+        //    }
+        //}
       
         //Post And Get bool
         public static bool PostObjectAndGetBool<C, T>(object obj, params string[] parms)
@@ -94,12 +94,6 @@ namespace Library
                 Problem problem = JsonSerializer.Deserialize<Problem>(ex.Message, Options);
                 throw new Exception(problem.detail);
             }
-        }
-
-
-        public void test()
-        {
-
         }
 
         static string CreateGetRequest(string url)
@@ -128,19 +122,19 @@ namespace Library
                 return restResponse.Content;
         }
 
-        public static string UploadFile(string url, string videoPath)
-        {
-            RestClient restClient = new RestClient(URL);
-            RestRequest request = new RestRequest(url, Method.POST, DataFormat.Json);
-            request.AddFile("FileByte", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
-            IRestResponse response = restClient.Execute(request);
-            if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
-            {
-                throw new Exception(response.Content);
-            }
-            else
-                return response.Content;
-        }
+        //public static string UploadFile(string url, string videoPath)
+        //{
+        //    RestClient restClient = new RestClient(URL);
+        //    RestRequest request = new RestRequest(url, Method.POST, DataFormat.Json);
+        //    request.AddFile("FileByte", File.ReadAllBytes(videoPath), Path.GetFileName(videoPath), "application/octet-stream");
+        //    IRestResponse response = restClient.Execute(request);
+        //    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+        //    {
+        //        throw new Exception(response.Content);
+        //    }
+        //    else
+        //        return response.Content;
+        //}
 
 
 
