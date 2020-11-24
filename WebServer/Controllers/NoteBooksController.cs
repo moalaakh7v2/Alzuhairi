@@ -62,11 +62,11 @@ namespace WebServer.Controllers
         [HttpGet("DeActiveNoteBook/{notebookId}")]
         public async Task<ActionResult<NoteBook>> DeActiveNoteBook(int notebookId)
         {
-            var noteBookSerialIds = _context.NoteBookSerials.Where(x => x.NoteBookId == notebookId).Select(x => x.Id).ToList();
-            var usingNoteBook = _context.StudentNoteBooks.Where(x => noteBookSerialIds.Contains(x.Id))
+            var noteBookSerialIds = _context.NoteBookSerials.Where(x => x.NoteBookId == notebookId && x.IsActive).Select(x => x.Id).ToList();
+            var usingNoteBook = await _context.StudentNoteBooks.Where(x => noteBookSerialIds.Contains(x.Id))
                 .Include(x => x.NoteBookSerial)
                 .Select(x => x.NoteBookSerial)
-                .ToList();
+                .ToListAsync();
             foreach (var item in usingNoteBook)
             {
                 item.IsActive = false;

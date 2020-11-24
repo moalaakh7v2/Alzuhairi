@@ -68,7 +68,7 @@ namespace AdminPanel.View.NoteBook
             List<Feature> features = notebook.NoteBookFeatures.Select(x => x.Feature).ToList();
             lstFeatures.DataSource = features.Where(x => x.Id != 1).Select(x=>x.Title).ToList();
             txtCount.Text = notebook.NoteBookSerials.Count.ToString();
-            var used = notebook.NoteBookSerials.Select(x => x.StudentNoteBooks.Count()).ToList();
+            var used = notebook.NoteBookSerials.Where(x=>x.IsActive).Select(x => x.StudentNoteBooks.Count()).ToList();
             txtUsed.Text = used.Sum().ToString();
             txtUnused.Text = (notebook.NoteBookSerials.Count() - used.Sum()).ToString();
 
