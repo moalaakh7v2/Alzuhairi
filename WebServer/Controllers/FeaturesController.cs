@@ -31,7 +31,7 @@ namespace WebServer.Controllers
             _context.Features.Add(feature);
             await _context.SaveChangesAsync();
 
-            return Ok(feature);
+            return feature;
         }
 
     }

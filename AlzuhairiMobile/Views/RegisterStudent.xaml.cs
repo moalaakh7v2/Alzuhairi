@@ -41,10 +41,10 @@ namespace AlzuhairiMobile.Views
                 }
                 catch
                 {
-                    await DisplayAlert("Error", "Enter Age", "Ok");
+                    await DisplayAlert("خطأ", "أدخل العمر", "موافق");
                     return;
                 }
-                await DisplayAlert("Error" , "Please enter all data" , "Ok");
+                await DisplayAlert("خطأ" , "الرجاء ادخال كافة المعلومات" , "موافق");
                 return;
             }
             try
@@ -66,15 +66,15 @@ namespace AlzuhairiMobile.Views
                     Settings.LastName = student.LastName;
                     Settings.Location = student.Address;
                     Settings.Shcoole = student.SchoolName;
-                    await DisplayAlert("Done", "operation accomplished successfully", "Ok");
+                    await DisplayAlert("تم", "تمت المهمة بنجاح", "موافق");
                     App.Current.MainPage = new AppShell();
                 }
                 else
-                    await DisplayAlert("Error", "The operation failed", "Cancel");
+                    await DisplayAlert("خطأ", "فشلت المهمة", "خروج");
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "Cancel");
+                await DisplayAlert("خطأ", ex.Message, "خروج");
             }
         }
 

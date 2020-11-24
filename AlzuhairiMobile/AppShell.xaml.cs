@@ -32,6 +32,11 @@ namespace AlzuhairiMobile
                 await DisplayAlert("Error" , ex.Message , "Cancel");
             }
             await Shell.Current.GoToAsync("//LoginPage");
-        } 
+        }
+
+        private async void Help_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Help !", "هنا يتم عرض خطوات استعمال التطبيق", "Ok");
+        }
     }
 }

@@ -20,16 +20,14 @@ namespace AlzuhairiMobile.Views
             try
             {
                 About about = CallAPI.GetObjectContent<About, About>("GetAbout");
-                lblEmail.Text = "Email : " + about.Email;
-                lblMobile.Text = "Mobile : " + about.MobileNumber;
-                lblLocation.Text = "Location : " + about.Address;
+                lblEmail.Text = "البريد الالكتروني : " + about.Email;
+                lblMobile.Text = "الجوال : " + about.MobileNumber;
+                lblLocation.Text = "الموقع : " + about.Address;
             }
             catch(Exception ex)
             {
                await DisplayAlert("Error", ex.Message, "Cancel");
             }
-           
         }
-
     }
 }

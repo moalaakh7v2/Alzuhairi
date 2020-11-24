@@ -30,7 +30,7 @@ namespace AlzuhairiMobile.Views
             }
             catch(Exception ex)
             {
-                DisplayAlert("Error", ex.Message, "Cancel");
+                DisplayAlert("خطأ", ex.Message, "خروج");
             }
            
         }
@@ -54,14 +54,14 @@ namespace AlzuhairiMobile.Views
                     Settings.FirstName = student.FirstName;
                     Settings.LastName = student.LastName;
                     Settings.Location = student.Address;
-                    await DisplayAlert("Done", "operation accomplished successfully", "Ok");
+                    await DisplayAlert("تم", "تمت العملية بنجاح", "موافق");
                 }
                 else
-                    await DisplayAlert("Error", "The operation failed", "Cancel");
+                    await DisplayAlert("خطأ", "فشلت المهمة", "خروج");
             }
            catch(Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "Cancel");
+                await DisplayAlert("خطأ", ex.Message, "خروج");
             }
 
         }

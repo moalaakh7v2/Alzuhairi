@@ -27,12 +27,12 @@ namespace WebServer.Controllers
         {
             if (_context.CheckCodes.Any(x => x.PhoneNumber == PhoneNumber && x.SendDate.AddMinutes(15) >= DateTime.Now))
             {
-                return Problem("Please wait 15 minutes before re-requesting the code");
+                return Problem("الرجاء الانتظار 15 دقيقة قبل اعادة طلب الرمز");
             }
             Student student = _context.Students.FirstOrDefault(x => x.PhoneNumber == PhoneNumber);
             if (student != null && student.Imei != imei && student.LoginData.AddDays(3) > DateTime.Now)
             {
-                return Problem("You cannot login at the moment");
+                return Problem("لايمكنك تسجيل الدخول في هذا الوقت");
             }
             CheckCode checkCode = new CheckCode
             {

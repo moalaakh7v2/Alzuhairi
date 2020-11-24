@@ -78,13 +78,6 @@ namespace WebServer.Controllers
             return new NoteBook();
         }
 
-        ////test6
-        //[HttpGet("CheckNoteBookExists")]
-        //public bool CheckNoteBookExists(Subject subject)
-        //{
-        //    return _context.NoteBooks.Any(x => x.SubjectId == subject.Id);
-        //}
-
         [HttpPost("AddNewNoteBook/{count}")]
         public async Task<ActionResult<NoteBook>> AddNewNoteBook(NoteBook noteBook , int count)
         {

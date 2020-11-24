@@ -42,7 +42,7 @@ namespace AlzuhairiMobile.Views
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "Ok");
+                await DisplayAlert("خطأ", ex.Message, "خروج");
             }
         }
 
@@ -51,7 +51,7 @@ namespace AlzuhairiMobile.Views
             try
             {
                 Guid VideoId = new Guid(VideoIdText);
-                DisplayAlert("Done", "Wait for a while, prepare the video", "Ok");
+                DisplayAlert("تم", "انتظر قليلا ريثما يتم تحضير الفيديو", "موافق");
                 try
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
@@ -60,12 +60,12 @@ namespace AlzuhairiMobile.Views
                 }
                 catch (Exception ex)
                 {
-                     DisplayAlert("Error", ex.Message, "Ok");
+                     DisplayAlert("خطأ", ex.Message, "خروج");
                 }
             }
             catch
             {
-                 DisplayAlert("Error", "Wrong QR code", "Ok");
+                 DisplayAlert("خطأ", "خطأ في قراءة الكود", "خروج");
             }
         }
 

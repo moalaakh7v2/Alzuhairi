@@ -30,7 +30,7 @@ namespace AlzuhairiMobile.Views
             }
             else
             {
-                txtNotebookInfo.Text = "There is no Notebook. Scan the code on the first page in the notebook to save it in your application";
+                txtNotebookInfo.Text = "لايوجد أي نوطة , قم بتصوير الكود في أول صفحة من النوطة لحفظها في الهاتف الخاص بك";
             }
         }
         private void btnGetNew_Clicked(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace AlzuhairiMobile.Views
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "Ok");
+                await DisplayAlert("خطأ", ex.Message, "موافق");
             }
         }
 
@@ -82,17 +82,17 @@ namespace AlzuhairiMobile.Views
                         Settings.NoteBookFeature = Features;
                     }
                     else
-                        txtNotebookInfo.Text = "Done";
+                        txtNotebookInfo.Text = "تمت العملية بنجاح";
                     
                 }
                 catch (Exception ex)
                 {
-                     DisplayAlert("Error", ex.Message, "Ok");
+                     DisplayAlert("خطأ", ex.Message, "موافق");
                 }
             }
             catch
             {
-                 DisplayAlert("Error", "Wrong QR code", "Ok");
+                 DisplayAlert("خطأ", "خطأ في قراءة الكود", "موافق");
             }
         }
         

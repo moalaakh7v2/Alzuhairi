@@ -25,32 +25,10 @@ namespace WebServer.Controllers
         {
             if (_context.NoteBooks.Any(x=>x.Id == noteBookId))
             {
-                return Problem("NoteBook Not Fount");
+                return Problem("النوطة غير موجودة");
             }
             return await _context.NoteBookFeatures.Where(x=>x.NoteBookId == noteBookId && x.IsActive).ToListAsync();
         }
-
-        ////test4
-        //[HttpPost("AddNoteBookFeatures")]
-        //public async Task<ActionResult<IEnumerable<NoteBookFeature>>> AddNoteBookFeatures(List<NoteBookFeature> noteBookFeatures)
-        //{
-        //    await _context.NoteBookFeatures.AddRangeAsync(noteBookFeatures);
-        //    await _context.SaveChangesAsync();
-        //    return Ok(noteBookFeatures);
-        //}
-
-        ////test5
-        //[HttpPost("DeActiveNoteBookFeatures")]
-        //public ActionResult<IEnumerable<NoteBookFeature>> DeActiveNoteBookFeatures(List<NoteBookFeature> noteBookFeatures)
-        //{
-        //    foreach (var item in noteBookFeatures)
-        //    {
-        //        item.IsActive = false;
-        //    }
-        //    _context.NoteBookFeatures.UpdateRange(noteBookFeatures);
-        //    _context.SaveChanges();
-        //    return Ok(noteBookFeatures);
-        //}
 
     }
 }

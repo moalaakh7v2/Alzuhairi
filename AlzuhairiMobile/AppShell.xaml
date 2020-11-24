@@ -58,13 +58,13 @@
         </ResourceDictionary>
     </Shell.Resources>
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Notebook" Icon="tab_feed.png" Route="RegisterNotebookPage" ContentTemplate="{DataTemplate local:RegisterNotebookPage}" />
-        <ShellContent Title="Video" Icon="tab_scanvideo.png" ContentTemplate="{DataTemplate local:ScanVideoPage}" />
-        <ShellContent Title="About" Icon="tab_home.png"  ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Settings" Icon="tab_settings.png" ContentTemplate="{DataTemplate local:SettingsPage}" />
+        <ShellContent Title="نوطة" Icon="tab_feed.png" Route="RegisterNotebookPage" ContentTemplate="{DataTemplate local:RegisterNotebookPage}" />
+        <ShellContent Title="فيديو" Icon="tab_scanvideo.png" ContentTemplate="{DataTemplate local:ScanVideoPage}" />
+        <ShellContent Title="حول" Icon="tab_home.png"  ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="ضبط" Icon="tab_settings.png" ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
-    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
-    </MenuItem>
+    <MenuItem Text="مساعدة" Icon="tab_help.png" StyleClass="MenuItemLayoutStyle" Clicked="Help_Clicked"></MenuItem>
+    <MenuItem Text="تسجيل الخروج" Icon="tab_logout.png" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked"></MenuItem>
     <ShellContent Route="LoginPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:LoginPage}" />
 
 </Shell>

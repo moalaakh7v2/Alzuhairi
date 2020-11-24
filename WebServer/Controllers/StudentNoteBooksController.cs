@@ -29,7 +29,7 @@ namespace WebServer.Controllers
             NoteBookSerial noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x=>x.QRcode == noteSerial);
             if (noteBookSerial == null)
             {
-                return Problem("wrong number");
+                return Problem("رمز خاطئ");
             }
             NoteBook noteBook = await _context.NoteBooks.FirstOrDefaultAsync(x => x.Id == noteBookSerial.NoteBookId);
             StudentNoteBook studentNoteBook =await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.SerialId == noteBookSerial.Id);
@@ -37,7 +37,7 @@ namespace WebServer.Controllers
             {
                 if (studentNoteBook.StudentId != studentId)
                 {
-                    return Problem("Used by another student");
+                    return Problem("النوطة مستخدمة من طالب آخر");
                 }
             }
             studentNoteBook.IsActive = true;
