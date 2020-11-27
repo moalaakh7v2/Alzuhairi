@@ -42,6 +42,8 @@ namespace AlzuhairiMobile.Views
 
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
+            if (!CheckData())
+                return;
             try
             {
                 Student student = CallAPI.GetObjectContent<Student, Student>("GetStudentByNumber", Settings.StudentPhone);
@@ -64,6 +66,21 @@ namespace AlzuhairiMobile.Views
                 await DisplayAlert("خطأ", ex.Message, "خروج");
             }
 
+        }
+
+        bool CheckData()
+        {
+            if (string.IsNullOrEmpty(txtFname.Text) || string.IsNullOrEmpty(txtFname.Text) || string.IsNullOrEmpty(txtFname.Text))
+            {
+                DisplayAlert("خطأ", "يرجى إدخال كافة البيانات", "خروج");
+                return false;
+            }
+            if (txtFname.Text == Settings.FirstName && txtLname.Text == Settings.LastName && txtLocation.Text == Settings.Location)
+            {
+                DisplayAlert("خطأ", "يم يتم تغير أي نوع من المعلومات", "خروج");
+                return false;
+            }
+            return true;
         }
     }
 }

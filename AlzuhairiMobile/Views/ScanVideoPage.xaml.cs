@@ -15,11 +15,18 @@ namespace AlzuhairiMobile.Views
         public ScanVideoPage()
         {
             InitializeComponent();
+            vidDisplay.IsVisible = false;
         }
-
         private void btnScanVideo_Clicked(object sender, EventArgs e)
         {
+            vidDisplay.IsVisible = true;
+            //https://res.cloudinary.com/dagpkl64s/video/upload/v1606168600/Facebook_w18iav.mp4
             Scanner();
+        }
+
+        private void btnScanExc_Clicked(object sender, EventArgs e)
+        {
+            //
         }
         public async void Scanner()
         {

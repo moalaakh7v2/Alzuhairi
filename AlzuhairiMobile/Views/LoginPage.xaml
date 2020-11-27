@@ -8,13 +8,13 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Label Text="Login" HorizontalOptions="Center" FontSize="30" ></Label>
-            <Entry x:Name="txtPhoneNumber" Placeholder="phone Number" Keyboard="Numeric" >
+            <Label Text="تسجيل الدخول" HorizontalOptions="Center" FontSize="30" ></Label>
+            <Entry x:Name="txtPhoneNumber" Placeholder="رقم الهاتف" Keyboard="Numeric" >
             </Entry>
-            <Button x:Name="btnSend" VerticalOptions="Center" Text="Send Code" Clicked="btnSend_Clicked"/>
-            <Entry x:Name="txtCode" Keyboard="Numeric" Placeholder="Code"></Entry>
-            <Button x:Name="btnVerify" VerticalOptions="Center" Text="Verify" Clicked="btnVerify_Clicked"/>
-            <Button x:Name="btnReset" VerticalOptions="Center" Text="Reset" Clicked="btnReset_Clicked"/>
+            <Button x:Name="btnSend" VerticalOptions="Center" Text="ارسال رمز" Clicked="btnSend_Clicked"/>
+            <Entry x:Name="txtCode" Keyboard="Numeric" Placeholder="الكود"></Entry>
+            <Button x:Name="btnVerify" VerticalOptions="Center" Text="تأكيد" Clicked="btnVerify_Clicked"/>
+            <Button x:Name="btnReset" VerticalOptions="Center" Text="تغيير الرقم" Clicked="btnReset_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
