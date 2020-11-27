@@ -2,15 +2,14 @@ using System;
 using System.ComponentModel.DataAnnotations;
 namespace Models
 {
-    public partial class Video
+    public partial class File
     {
         public Guid Id { get; set; }
-        [Required]
         public string Path { get; set; }
         public int NoteBookId { get; set; }
         public virtual NoteBook NoteBook { get; set; }
-        [Required]
         public string Title { get; set; }
         public bool IsActive { get; set; } = true;
+        public bool IsVideo { get; set; } 
     }
 }

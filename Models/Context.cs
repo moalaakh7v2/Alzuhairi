@@ -25,7 +25,7 @@ namespace Models
         public virtual DbSet<StudentNoteBook> StudentNoteBooks { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
-        public virtual DbSet<Video> Videos { get; set; }
+        public virtual DbSet<File> Files { get; set; }
         public virtual DbSet<View> Views { get; set; }
     }
 }

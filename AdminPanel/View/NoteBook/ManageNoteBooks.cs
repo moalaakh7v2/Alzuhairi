@@ -18,7 +18,7 @@ namespace AdminPanel.View.NoteBook
     {
         List<Models.NoteBook> noteBooks;
         List<NoteBooksTitle> noteBooksTitles;
-        List<Video> videos;
+        List<File> videos;
         Models.NoteBook notebook;
         public ManageNoteBooks()
         {
@@ -130,9 +130,9 @@ namespace AdminPanel.View.NoteBook
             List<Guid> vidoeIds = new List<Guid>();
             foreach (object itemChecked in chkVideos.CheckedItems)
             {
-                vidoeIds.Add(((Video)itemChecked).Id);
+                vidoeIds.Add(((File)itemChecked).Id);
             }
-            CallAPI.PostObjectAndGetObject<Video,Video>(vidoeIds, "RemoveVideo");
+            CallAPI.PostObjectAndGetObject<File,File>(vidoeIds, "RemoveVideo");
             Cursor.Current = Cursors.Default;
             MessageBox.Show("The deletion was successful" , "Done" , MessageBoxButtons.OK , MessageBoxIcon.Information);
             chkVideos.Items.Clear();

@@ -33,7 +33,7 @@ namespace AdminPanel.View.NoteBook
                 return;
             if (txtTitle.CheckNull())
                 return;
-            Video video = CallAPI.PostObjectAndGetObject<Video, Video>(txtPath.Text, "AddVideo", noteBook.Id.ToString(), txtTitle.Text);
+            File video = CallAPI.PostObjectAndGetObject<File, File>(txtPath.Text, "AddVideo", noteBook.Id.ToString(), txtTitle.Text);
             if (video == null)
                 MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else

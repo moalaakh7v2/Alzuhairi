@@ -62,7 +62,7 @@ namespace AlzuhairiMobile.Views
                 try
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
-                    Video video = CallAPI.PostObjectAndGetObject<Video, Video>(VideoId, "GetVideo", studentId.ToString());
+                    File video = CallAPI.PostObjectAndGetObject<File, File>(VideoId, "GetVideo", studentId.ToString());
                     vidDisplay.Source = video.Path;
                 }
                 catch (Exception ex)

@@ -8,7 +8,7 @@ namespace Models
         {
             NoteBookFeatures = new HashSet<NoteBookFeature>();
             NoteBookSerials = new HashSet<NoteBookSerial>();
-            Videos = new HashSet<Video>();
+            Videos = new HashSet<File>();
         }
 
         public int Id { get; set; }
@@ -17,7 +17,7 @@ namespace Models
         public virtual Subject Subject { get; set; }
         public virtual ICollection<NoteBookFeature> NoteBookFeatures { get; set; }
         public virtual ICollection<NoteBookSerial> NoteBookSerials { get; set; }
-        public virtual ICollection<Video> Videos { get; set; }
+        public virtual ICollection<File> Videos { get; set; }
         public string Title => Subject!=null ? Subject.SubjectName + " " + Subject.Dept.ToString() + " " + Subject.Chapter.ToString() : "";
     }
 }
