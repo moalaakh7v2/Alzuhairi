@@ -35,22 +35,28 @@
             this.lblPath = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.RadioVideo = new System.Windows.Forms.RadioButton();
+            this.RadioExamples = new System.Windows.Forms.RadioButton();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNoteBook
             // 
             this.lblNoteBook.AutoSize = true;
             this.lblNoteBook.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoteBook.Location = new System.Drawing.Point(256, 33);
+            this.lblNoteBook.Location = new System.Drawing.Point(149, 17);
             this.lblNoteBook.Name = "lblNoteBook";
-            this.lblNoteBook.Size = new System.Drawing.Size(76, 20);
+            this.lblNoteBook.Size = new System.Drawing.Size(62, 20);
             this.lblNoteBook.TabIndex = 0;
-            this.lblNoteBook.Text = "Add Video";
+            this.lblNoteBook.Text = "Add File";
             // 
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(194, 93);
+            this.txtTitle.Location = new System.Drawing.Point(84, 51);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(215, 25);
             this.txtTitle.TabIndex = 1;
@@ -58,7 +64,7 @@
             // txtPath
             // 
             this.txtPath.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(194, 151);
+            this.txtPath.Location = new System.Drawing.Point(84, 93);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(215, 25);
             this.txtPath.TabIndex = 2;
@@ -67,7 +73,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(131, 96);
+            this.lblTitle.Location = new System.Drawing.Point(21, 54);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(38, 20);
             this.lblTitle.TabIndex = 3;
@@ -77,7 +83,7 @@
             // 
             this.lblPath.AutoSize = true;
             this.lblPath.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPath.Location = new System.Drawing.Point(131, 154);
+            this.lblPath.Location = new System.Drawing.Point(21, 96);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(38, 20);
             this.lblPath.TabIndex = 4;
@@ -86,7 +92,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(246, 217);
+            this.btnAdd.Location = new System.Drawing.Point(134, 174);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(92, 33);
             this.btnAdd.TabIndex = 5;
@@ -97,7 +103,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(246, 258);
+            this.btnClose.Location = new System.Drawing.Point(134, 215);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 33);
             this.btnClose.TabIndex = 6;
@@ -105,25 +111,68 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lblPath);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.lblNoteBook);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.txtTitle);
+            this.panel1.Controls.Add(this.txtPath);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Location = new System.Drawing.Point(109, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 267);
+            this.panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.RadioExamples);
+            this.panel2.Controls.Add(this.RadioVideo);
+            this.panel2.Location = new System.Drawing.Point(84, 130);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(215, 32);
+            this.panel2.TabIndex = 7;
+            // 
+            // RadioVideo
+            // 
+            this.RadioVideo.AutoSize = true;
+            this.RadioVideo.Location = new System.Drawing.Point(30, 7);
+            this.RadioVideo.Name = "RadioVideo";
+            this.RadioVideo.Size = new System.Drawing.Size(51, 17);
+            this.RadioVideo.TabIndex = 8;
+            this.RadioVideo.TabStop = true;
+            this.RadioVideo.Text = "Video";
+            this.RadioVideo.UseVisualStyleBackColor = true;
+            // 
+            // RadioExamples
+            // 
+            this.RadioExamples.AutoSize = true;
+            this.RadioExamples.Location = new System.Drawing.Point(112, 7);
+            this.RadioExamples.Name = "RadioExamples";
+            this.RadioExamples.Size = new System.Drawing.Size(70, 17);
+            this.RadioExamples.TabIndex = 9;
+            this.RadioExamples.TabStop = true;
+            this.RadioExamples.Text = "Examples";
+            this.RadioExamples.UseVisualStyleBackColor = true;
+            // 
             // AddVideoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 323);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblPath);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.lblNoteBook);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddVideoInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddVideoInfo";
             this.Load += new System.EventHandler(this.AddVideoInfo_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -136,5 +185,9 @@
         private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton RadioExamples;
+        private System.Windows.Forms.RadioButton RadioVideo;
     }
 }

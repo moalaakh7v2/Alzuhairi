@@ -64,12 +64,11 @@ namespace ServerAlzuhairi.Controllers
             return new Models.File ();
         }
 
-        [HttpPost("AddFile/{IsVideo}")]
-        public async Task<ActionResult<Models.File>> AddVideo(Models.File file , bool IsVideo)
+        [HttpPost("AddFile")]
+        public async Task<ActionResult<Models.File>> AddVideo([FromBody]Models.File file)
         {
             try
             {
-                file.IsVideo = IsVideo;
                 await _context.Files.AddAsync(file);
                 await _context.SaveChangesAsync();
                 file.NoteBook = null;

@@ -33,8 +33,16 @@ namespace AdminPanel.View.NoteBook
                 return;
             if (txtTitle.CheckNull())
                 return;
-            File video = CallAPI.PostObjectAndGetObject<File, File>(txtPath.Text, "AddVideo", noteBook.Id.ToString(), txtTitle.Text);
-            if (video == null)
+            File file = new File
+            {
+                Title = txtTitle.Text,
+                Path = txtPath.Text,
+                NoteBookId = noteBook.Id,
+                IsVideo = RadioVideo.Checked,
+                IsActive = true
+            };
+            var checkFile = CallAPI.PostObjectAndGetObject<File, File>(file, "AddVideo");
+            if (checkFile == null)
                 MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
