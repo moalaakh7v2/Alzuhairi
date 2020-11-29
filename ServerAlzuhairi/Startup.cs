@@ -54,7 +54,7 @@ namespace ServerAlzuhairi
                     });
                     context.Features.Add(new Feature
                     {
-                        Title = "You got the Notebook"
+                        Title = "·ﬁœ Õ’·  ⁄·Ï "
                     });
                     context.SaveChanges();
                 }

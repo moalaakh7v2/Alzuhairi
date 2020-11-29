@@ -7,6 +7,7 @@
     <StackLayout>
         <!--<o:VideoPlayer x:Name="vidDisplay" Source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />-->
         <o:VideoPlayer x:Name="vidDisplay" />
+        <WebView Source="" x:Name="pdfDisplay" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
         <!--<o:VideoPlayer x:Name="vidDisplay" Source="http://vjs.zencdn.net/v/oceans.mp4" />-->
         <!--<o:VideoPlayer x:Name="vidDisplay" Source="https://www.youtube.com/watch?v=izF6j-u8xV0" />-->
     </StackLayout>

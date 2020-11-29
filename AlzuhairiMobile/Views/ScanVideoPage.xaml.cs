@@ -15,10 +15,11 @@ namespace AlzuhairiMobile.Views
         public ScanVideoPage()
         {
             InitializeComponent();
-            vidDisplay.IsVisible = false;
+            vidDisplay.IsVisible = pdfDisplay.IsVisible = false;
         }
         private void btnScanVideo_Clicked(object sender, EventArgs e)
         {
+            pdfDisplay.IsVisible = false;
             vidDisplay.IsVisible = true;
             //https://res.cloudinary.com/dagpkl64s/video/upload/v1606168600/Facebook_w18iav.mp4
             Scanner();
@@ -26,7 +27,10 @@ namespace AlzuhairiMobile.Views
 
         private void btnScanExc_Clicked(object sender, EventArgs e)
         {
-            //
+            vidDisplay.IsVisible = false
+            pdfDisplay.IsVisible = true;
+            //https://drive.google.com/file/d/1bY1y3xTcwU75nFuPnFUL5wHfem3zxMv9/view?usp=sharing
+            Scanner();
         }
         public async void Scanner()
         {
@@ -53,26 +57,30 @@ namespace AlzuhairiMobile.Views
             }
         }
 
-        void setUp(string VideoIdText)
+        async void setUp(string VideoIdText)
         {
             try
             {
+                await DisplayAlert("تم", "انتظر قليلا ريثما يتم تحضير الملف لعرضه", "موافق");
                 Guid VideoId = new Guid(VideoIdText);
-                DisplayAlert("تم", "انتظر قليلا ريثما يتم تحضير الفيديو", "موافق");
                 try
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
                     File video = CallAPI.PostObjectAndGetObject<File, File>(VideoId, "GetVideo", studentId.ToString());
-                    vidDisplay.Source = video.Path;
+                    if (video.IsVideo)
+                        vidDisplay.Source = video.Path;
+                    else
+                        pdfDisplay.Source = video.Path;
+                    
                 }
                 catch (Exception ex)
                 {
-                     DisplayAlert("خطأ", ex.Message, "خروج");
+                    await DisplayAlert("خطأ", ex.Message, "خروج");
                 }
             }
             catch
             {
-                 DisplayAlert("خطأ", "خطأ في قراءة الكود", "خروج");
+                 await DisplayAlert("خطأ", "خطأ في قراءة الكود", "خروج");
             }
         }
 

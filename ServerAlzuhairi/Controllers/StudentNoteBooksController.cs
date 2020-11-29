@@ -31,8 +31,12 @@ namespace ServerAlzuhairi.Controllers
             {
                 return Problem("رمز خاطئ");
             }
+            if (!noteBookSerial.IsActive)
+            {
+                return Problem("النوطة غير مفعلة");
+            }
             NoteBook noteBook = await _context.NoteBooks.FirstOrDefaultAsync(x => x.Id == noteBookSerial.NoteBookId);
-            StudentNoteBook studentNoteBook =await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.SerialId == noteBookSerial.Id);
+            StudentNoteBook studentNoteBook =await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.NoteBookSerialId == noteBookSerial.Id);
             if (studentNoteBook != null)
             {
                 if (studentNoteBook.StudentId != studentId)
@@ -40,7 +44,6 @@ namespace ServerAlzuhairi.Controllers
                     return Problem("النوطة مستخدمة من طالب آخر");
                 }
             }
-            studentNoteBook.IsActive = true;
             List<StudentNoteBook> studentNoteBooks = await  _context.StudentNoteBooks.Where(x=>x.StudentId == studentId).ToListAsync();
             foreach (var item in studentNoteBooks)
                 item.IsActive = false;
@@ -48,15 +51,19 @@ namespace ServerAlzuhairi.Controllers
             StudentNoteBook CraetestudentNoteBook = new StudentNoteBook
             {
                 StudentId = studentId,
-                SerialId = noteBookSerial.Id,
+                NoteBookSerialId = noteBookSerial.Id,
                 IsActive = true,
             };
-            List<NoteBookFeature> noteBookFeatures = await _context.NoteBookFeatures.Where(x => x.NoteBookId == noteBook.Id).ToListAsync();
-            await _context.StudentNoteBooks.AddAsync(CraetestudentNoteBook);
-            await _context.SaveChangesAsync();
+            List<NoteBookFeature> noteBookFeatures = await _context.NoteBookFeatures
+                .Where(x => x.NoteBookId == noteBook.Id)
+                 .Include(x=>x.Feature)
+                .ToListAsync();
+                await _context.StudentNoteBooks.AddAsync(CraetestudentNoteBook);
+                await _context.SaveChangesAsync();
+           
             foreach (var item in noteBookFeatures)
-                item.NoteBook.NoteBookFeatures = null;
-            return Ok(noteBookFeatures);
+                item.NoteBook = null;
+            return noteBookFeatures;
         }
     }
 }

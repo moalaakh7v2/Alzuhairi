@@ -97,6 +97,7 @@ namespace AdminPanel.View.NoteBook
                 noteBook = CallAPI.PostObjectAndGetObject<Models.NoteBook, Models.NoteBook>(noteBook, "AddNewNoteBook", txtCount.Text);
                 MessageBox.Show("Added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 noteBookSerials = noteBook.NoteBookSerials.ToList();
+                grdQRcode.DataSource = null;
                 grdQRcode.DataSource = noteBookSerials;
                 grdQRcode.Columns[0].Visible = grdQRcode.Columns[2].Visible =
                 grdQRcode.Columns[3].Visible = grdQRcode.Columns[4].Visible = false;

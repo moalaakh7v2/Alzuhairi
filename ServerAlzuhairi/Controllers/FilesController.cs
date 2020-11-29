@@ -25,15 +25,18 @@ namespace ServerAlzuhairi.Controllers
 
         //Android7
         [HttpPost("GetVideo/{studenId}")]
-        public async Task<ActionResult<Models.File>> GetVideo([FromRoute] Guid videoId, int studenId)
+        public async Task<ActionResult<Models.File>> GetVideo([FromBody] Guid videoId, int studenId)
         {
             var video = await _context.Files.FirstOrDefaultAsync(x => x.Id == videoId);
             if (video == null)
             {
                 return Problem("خطأ في رمز الفديو");
             }
-            var studentNoteBooks = await _context.StudentNoteBooks.Where(x=>x.StudentId == studenId).Distinct().ToListAsync();
-            if (studentNoteBooks.Any())
+            List<StudentNoteBook> studentNoteBooks = await _context.StudentNoteBooks
+                .Include(x => x.NoteBookSerial)
+                .Where(x=>x.StudentId == studenId)
+                .ToListAsync();
+            if (!studentNoteBooks.Any())
             {
                 return Problem("أنت لاتمتلك النوطة الخاصة بالفديو");
             }
@@ -43,7 +46,6 @@ namespace ServerAlzuhairi.Controllers
                 {
                     if (studentNoteBook.IsActive)
                     {
-
                         return video;
                     }
                     return Problem("هذا الفيديو تابع لنوطة غير مفعلة");

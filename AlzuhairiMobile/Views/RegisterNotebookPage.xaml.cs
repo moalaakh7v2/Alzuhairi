@@ -74,15 +74,18 @@ namespace AlzuhairiMobile.Views
                                                              (serialId, "SetUpNewNoteBook", studentId.ToString());
                     if (noteBookFeatures.Any())
                     {
-                        Settings.RegisterNoteBook = noteBookFeatures[0].NoteBookId.ToString();
-                        string Features = noteBookFeatures[0] + "\n\n";
-                        foreach (var item in noteBookFeatures)
+                        Settings.RegisterNoteBook = noteBookFeatures.First().NoteBookId.ToString();
+                        string Features = noteBookFeatures.First().Feature.Title + "\n\n";
+                        foreach (var item in noteBookFeatures.Where(x=>x.Id != 1))
                             Features += item.Feature.Title + "\n";
                         txtNotebookInfo.Text = Features;
                         Settings.NoteBookFeature = Features;
                     }
                     else
+                    {
                         txtNotebookInfo.Text = "تمت العملية بنجاح";
+                    }
+                       
                     
                 }
                 catch (Exception ex)

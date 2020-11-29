@@ -3,7 +3,6 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
-using ZXing.Net.Mobile.Forms.Android;
 using MediaManager.Forms;
 using MediaManager;
 using Android.Content;
@@ -27,8 +26,8 @@ namespace AlzuhairiMobile.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

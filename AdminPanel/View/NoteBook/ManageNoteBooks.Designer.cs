@@ -141,6 +141,7 @@
             // 
             this.txtUnused.Location = new System.Drawing.Point(222, 75);
             this.txtUnused.Name = "txtUnused";
+            this.txtUnused.ReadOnly = true;
             this.txtUnused.Size = new System.Drawing.Size(87, 23);
             this.txtUnused.TabIndex = 5;
             // 
@@ -157,6 +158,7 @@
             // 
             this.txtUsed.Location = new System.Drawing.Point(60, 75);
             this.txtUsed.Name = "txtUsed";
+            this.txtUsed.ReadOnly = true;
             this.txtUsed.Size = new System.Drawing.Size(87, 23);
             this.txtUsed.TabIndex = 3;
             // 
@@ -173,6 +175,7 @@
             // 
             this.txtCount.Location = new System.Drawing.Point(121, 33);
             this.txtCount.Name = "txtCount";
+            this.txtCount.ReadOnly = true;
             this.txtCount.Size = new System.Drawing.Size(188, 23);
             this.txtCount.TabIndex = 1;
             // 

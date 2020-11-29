@@ -40,7 +40,7 @@ namespace ServerAlzuhairi.Controllers
                 foreach (var NoteBookSerial in noteBook.NoteBookSerials)
                 {
                     NoteBookSerial.NoteBook = null;
-                    NoteBookSerial.StudentNoteBooks = _context.StudentNoteBooks.Where(x => x.SerialId == NoteBookSerial.Id).ToList();
+                    NoteBookSerial.StudentNoteBooks = _context.StudentNoteBooks.Where(x => x.NoteBookSerialId == NoteBookSerial.Id).ToList();
                 }
                 foreach (var Video in noteBook.Videos)
                     Video.NoteBook = null;
@@ -123,7 +123,8 @@ namespace ServerAlzuhairi.Controllers
                     noteBookSerials.Add(new NoteBookSerial
                     {
                         NoteBookId = noteBook.Id,
-                        QRcode = Guid.NewGuid()
+                        QRcode = Guid.NewGuid(),
+                        IsActive = true
                     });
                 }
                 await _context.NoteBookSerials.AddRangeAsync(noteBookSerials);

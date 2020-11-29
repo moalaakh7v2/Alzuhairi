@@ -59,10 +59,16 @@
             // 
             // grdStores
             // 
+            this.grdStores.AllowUserToAddRows = false;
+            this.grdStores.AllowUserToDeleteRows = false;
+            this.grdStores.AllowUserToOrderColumns = true;
+            this.grdStores.AllowUserToResizeColumns = false;
+            this.grdStores.AllowUserToResizeRows = false;
             this.grdStores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grdStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStores.Location = new System.Drawing.Point(18, 69);
             this.grdStores.Name = "grdStores";
+            this.grdStores.ReadOnly = true;
             this.grdStores.Size = new System.Drawing.Size(473, 196);
             this.grdStores.TabIndex = 3;
             this.grdStores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStores_CellDoubleClick);
@@ -138,10 +144,16 @@
             // 
             // grdResellerAndNoteBook
             // 
+            this.grdResellerAndNoteBook.AllowUserToAddRows = false;
+            this.grdResellerAndNoteBook.AllowUserToDeleteRows = false;
+            this.grdResellerAndNoteBook.AllowUserToOrderColumns = true;
+            this.grdResellerAndNoteBook.AllowUserToResizeColumns = false;
+            this.grdResellerAndNoteBook.AllowUserToResizeRows = false;
             this.grdResellerAndNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grdResellerAndNoteBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdResellerAndNoteBook.Location = new System.Drawing.Point(23, 29);
             this.grdResellerAndNoteBook.Name = "grdResellerAndNoteBook";
+            this.grdResellerAndNoteBook.ReadOnly = true;
             this.grdResellerAndNoteBook.Size = new System.Drawing.Size(685, 144);
             this.grdResellerAndNoteBook.TabIndex = 4;
             // 
