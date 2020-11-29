@@ -53,25 +53,27 @@ namespace AdminPanel.View.Store
             try
             {
                 reseller = (Reseller)grdStores.Rows[e.RowIndex].DataBoundItem;
-                lblTitle.Text = reseller.Title;
-                resellerAndNoteBooks = CallAPI.GetListContent<Reseller, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
-                List<ResellerAndNoteBooksVM> resellerAndNoteBooksVM = new List<ResellerAndNoteBooksVM>();
-                foreach (var item in resellerAndNoteBooks)
-                {
-                    resellerAndNoteBooksVM.Add(new ResellerAndNoteBooksVM
-                    {
-                        NoteBookTitle = item.NoteBook.Subject.SubjectName + " " + item.NoteBook.Subject.Dept.ToString() + " " + item.NoteBook.Subject.Chapter + " " + item.NoteBook.ReleaseDate.Year,
-                        ResellerTitle = item.Reseller.Title,
-                        Count = item.Count,
-                        LastGrantDate = item.LastGrantDate
-                    });
-                }
-                grdResellerAndNoteBook.DataSource = resellerAndNoteBooksVM;
-                //grdResellerAndNoteBook.Columns["Id"].Visible =
-                //grdResellerAndNoteBook.Columns["NoteBook"].Visible =
-                //grdResellerAndNoteBook.Columns["Reseller"].Visible = false;
+                FillGrid();
             }
             catch { }
+        }
+
+        private void FillGrid()
+        {
+            lblTitle.Text = reseller.Title;
+            resellerAndNoteBooks = CallAPI.GetListContent<Reseller, ResellerAndNoteBook>("GetResellerAndNoteBookByResellerId", reseller.Id.ToString());
+            List<ResellerAndNoteBooksVM> resellerAndNoteBooksVM = new List<ResellerAndNoteBooksVM>();
+            foreach (var item in resellerAndNoteBooks)
+            {
+                resellerAndNoteBooksVM.Add(new ResellerAndNoteBooksVM
+                {
+                    NoteBookTitle = item.NoteBook.Subject.SubjectName + " " + item.NoteBook.Subject.Dept.ToString() + " " + item.NoteBook.Subject.Chapter + " " + item.NoteBook.ReleaseDate.Year,
+                    ResellerTitle = item.Reseller.Title,
+                    Count = item.Count,
+                    LastGrantDate = item.LastGrantDate
+                });
+            }
+            grdResellerAndNoteBook.DataSource = resellerAndNoteBooksVM;
         }
 
         private void btnGrant_Click(object sender, EventArgs e)
@@ -99,6 +101,7 @@ namespace AdminPanel.View.Store
                 ResellerAndNoteBook resellerAndNoteBook = CallAPI.PostObjectAndGetObject<ResellerAndNoteBook, ResellerAndNoteBook>(null,"GrantNoteBooksToReseller",
                  reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
                 MessageBox.Show("Added Done", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FillGrid();
             }
             catch(Exception ex)
             {

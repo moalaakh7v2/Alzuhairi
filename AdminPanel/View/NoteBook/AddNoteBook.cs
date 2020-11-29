@@ -110,25 +110,33 @@ namespace AdminPanel.View.NoteBook
 
         private void btnQrDownload_Click(object sender, EventArgs e)
         {
-            if (grdQRcode.DataSource == null)
+            try
             {
-                MessageBox.Show("There is no code" , "Error" , MessageBoxButtons.OK , MessageBoxIcon.Error);
-                return;
-            }
-            FolderBrowserDialog browser = new FolderBrowserDialog();
-
-            if (browser.ShowDialog() == DialogResult.OK)
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                string path = browser.SelectedPath;
-
-                foreach (var item in noteBookSerials)
+                if (grdQRcode.DataSource == null)
                 {
-                    QRcode.CreateQR(item.QRcode.ToString(), path);
+                    MessageBox.Show("There is no code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                Cursor.Current = Cursors.Default;
-                MessageBox.Show("operation accomplished successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FolderBrowserDialog browser = new FolderBrowserDialog();
+
+                if (browser.ShowDialog() == DialogResult.OK)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    string path = browser.SelectedPath;
+
+                    foreach (var item in noteBookSerials)
+                    {
+                        QRcode.CreateQR(item.QRcode.ToString(), path);
+                    }
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("operation accomplished successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            catch
+            {
+                MessageBox.Show("There is no NoteBook Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void btnReset_Click(object sender, EventArgs e)

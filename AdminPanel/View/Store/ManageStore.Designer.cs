@@ -38,8 +38,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grdResellerAndNoteBook = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboLocation = new System.Windows.Forms.ComboBox();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.comboLocation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdStores)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdResellerAndNoteBook)).BeginInit();
@@ -131,7 +131,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(18, 271);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(473, 185);
+            this.groupBox1.Size = new System.Drawing.Size(714, 185);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations";
@@ -142,7 +142,7 @@
             this.grdResellerAndNoteBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdResellerAndNoteBook.Location = new System.Drawing.Point(23, 29);
             this.grdResellerAndNoteBook.Name = "grdResellerAndNoteBook";
-            this.grdResellerAndNoteBook.Size = new System.Drawing.Size(425, 144);
+            this.grdResellerAndNoteBook.Size = new System.Drawing.Size(685, 144);
             this.grdResellerAndNoteBook.TabIndex = 4;
             // 
             // groupBox2
@@ -156,17 +156,6 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
-            // 
-            // comboLocation
-            // 
-            this.comboLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboLocation.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboLocation.FormattingEnabled = true;
-            this.comboLocation.Location = new System.Drawing.Point(6, 25);
-            this.comboLocation.Name = "comboLocation";
-            this.comboLocation.Size = new System.Drawing.Size(181, 26);
-            this.comboLocation.TabIndex = 14;
             // 
             // btnFilter
             // 
@@ -184,6 +173,17 @@
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // comboLocation
+            // 
+            this.comboLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLocation.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboLocation.FormattingEnabled = true;
+            this.comboLocation.Location = new System.Drawing.Point(6, 25);
+            this.comboLocation.Name = "comboLocation";
+            this.comboLocation.Size = new System.Drawing.Size(181, 26);
+            this.comboLocation.TabIndex = 14;
             // 
             // ManageStore
             // 

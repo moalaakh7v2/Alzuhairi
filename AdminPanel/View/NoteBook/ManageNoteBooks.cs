@@ -74,10 +74,14 @@ namespace AdminPanel.View.NoteBook
 
             videos = notebook.Videos.Where(x=>x.IsActive).ToList();
             chkVideos.Items.Clear();
+            
             foreach (var item in videos)
             {
-                chkVideos.Items.Add(item);
-            }
+                chkVideos.Items.Add(new DisplayFliesVM
+                {
+                    Id = item.Id,
+                    Title = item.Title + (item.IsVideo ? " (Video)" : " (exercise)")
+                });            }
             chkVideos.DisplayMember = "Title";
             chkVideos.ValueMember = "Id";
         }
@@ -90,7 +94,7 @@ namespace AdminPanel.View.NoteBook
                 video.ShowDialog();
                 ManageNoteBooks_Load(sender, e);
             }
-            catch
+            catch(Exception ex)
             {
                 CheckData.ErrorMessage();
             }

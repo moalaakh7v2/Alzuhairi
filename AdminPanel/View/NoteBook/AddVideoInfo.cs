@@ -41,7 +41,7 @@ namespace AdminPanel.View.NoteBook
                 IsVideo = RadioVideo.Checked,
                 IsActive = true
             };
-            var checkFile = CallAPI.PostObjectAndGetObject<File, File>(file, "AddVideo");
+            var checkFile = CallAPI.PostObjectAndGetObject<File, File>(file, "AddFile");
             if (checkFile == null)
                 MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else

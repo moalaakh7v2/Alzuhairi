@@ -65,7 +65,7 @@ namespace ServerAlzuhairi.Controllers
         }
 
         [HttpPost("AddFile")]
-        public async Task<ActionResult<Models.File>> AddVideo([FromBody]Models.File file)
+        public async Task<ActionResult<Models.File>> AddFile([FromBody]Models.File file)
         {
             try
             {

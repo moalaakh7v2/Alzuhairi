@@ -37,8 +37,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.RadioExercise = new System.Windows.Forms.RadioButton();
             this.RadioVideo = new System.Windows.Forms.RadioButton();
-            this.RadioExamples = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -128,16 +128,27 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.RadioExamples);
+            this.panel2.Controls.Add(this.RadioExercise);
             this.panel2.Controls.Add(this.RadioVideo);
             this.panel2.Location = new System.Drawing.Point(84, 130);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(215, 32);
             this.panel2.TabIndex = 7;
             // 
+            // RadioExercise
+            // 
+            this.RadioExercise.AutoSize = true;
+            this.RadioExercise.Location = new System.Drawing.Point(112, 7);
+            this.RadioExercise.Name = "RadioExercise";
+            this.RadioExercise.Size = new System.Drawing.Size(65, 17);
+            this.RadioExercise.TabIndex = 9;
+            this.RadioExercise.Text = "Exercise";
+            this.RadioExercise.UseVisualStyleBackColor = true;
+            // 
             // RadioVideo
             // 
             this.RadioVideo.AutoSize = true;
+            this.RadioVideo.Checked = true;
             this.RadioVideo.Location = new System.Drawing.Point(30, 7);
             this.RadioVideo.Name = "RadioVideo";
             this.RadioVideo.Size = new System.Drawing.Size(51, 17);
@@ -145,17 +156,6 @@
             this.RadioVideo.TabStop = true;
             this.RadioVideo.Text = "Video";
             this.RadioVideo.UseVisualStyleBackColor = true;
-            // 
-            // RadioExamples
-            // 
-            this.RadioExamples.AutoSize = true;
-            this.RadioExamples.Location = new System.Drawing.Point(112, 7);
-            this.RadioExamples.Name = "RadioExamples";
-            this.RadioExamples.Size = new System.Drawing.Size(70, 17);
-            this.RadioExamples.TabIndex = 9;
-            this.RadioExamples.TabStop = true;
-            this.RadioExamples.Text = "Examples";
-            this.RadioExamples.UseVisualStyleBackColor = true;
             // 
             // AddVideoInfo
             // 
@@ -187,7 +187,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton RadioExamples;
+        private System.Windows.Forms.RadioButton RadioExercise;
         private System.Windows.Forms.RadioButton RadioVideo;
     }
 }
