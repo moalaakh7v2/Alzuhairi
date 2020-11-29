@@ -1,20 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
              x:Class="AlzuhairiMobile.Views.ScanVideoPage"
              Title="تصوير فيديو">
-    <StackLayout>
-        <!--<o:VideoPlayer x:Name="vidDisplay" Source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />-->
-        <o:VideoPlayer x:Name="vidDisplay" AutoPlay="True" FillMode="ResizeAspectFill" />
-        <WebView Source="" x:Name="pdfDisplay" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-        <!--<o:VideoPlayer x:Name="vidDisplay" Source="http://vjs.zencdn.net/v/oceans.mp4" />-->
-        <!--<o:VideoPlayer x:Name="vidDisplay" Source="https://www.youtube.com/watch?v=izF6j-u8xV0" />-->
+    <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+        
+        <Button x:Name="btnScanVideo"  Padding="0,0,0,5" Text="عرض فيديو"
+                       Clicked="btnScanVideo_Clicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"  Margin="10"/>
+        
+        <Button x:Name="btnScanExc" Padding="0,0,0,5" Text="عرض تمارين"
+                       Clicked="btnScanExc_Clicked" Margin="10"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"/>
     </StackLayout>
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="كود فيديو" x:Name="btnScanVideo" Clicked="btnScanVideo_Clicked" />
         <ToolbarItem Text="تمارين" x:Name="btnScanExc" Clicked="btnScanExc_Clicked" />
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 </ContentPage>
     
     

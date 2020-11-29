@@ -41,6 +41,10 @@ namespace ServerAlzuhairi.Controllers
                 {
                     NoteBookSerial.NoteBook = null;
                     NoteBookSerial.StudentNoteBooks = _context.StudentNoteBooks.Where(x => x.NoteBookSerialId == NoteBookSerial.Id).ToList();
+                    foreach (var item in NoteBookSerial.StudentNoteBooks)
+                    {
+                        item.NoteBookSerial = null;
+                    }
                 }
                 foreach (var Video in noteBook.Videos)
                     Video.NoteBook = null;

@@ -16,23 +16,23 @@ namespace AlzuhairiMobile.Views
         public ScanVideoPage()
         {
             InitializeComponent();
-            vidDisplay.IsVisible = pdfDisplay.IsVisible = false;
+            //vidDisplay.IsVisible = pdfDisplay.IsVisible = false;
         }
         private void btnScanVideo_Clicked(object sender, EventArgs e)
         {
-            pdfDisplay.IsVisible = false;
-            vidDisplay.IsVisible = true;
+            //pdfDisplay.IsVisible = false;
+            //vidDisplay.IsVisible = true;
             IsVideo = true;
-            pdfDisplay.Source = "";
+            //pdfDisplay.Source = "";
             Scanner();
         }
 
         private void btnScanExc_Clicked(object sender, EventArgs e)
         {
-            vidDisplay.IsVisible = false;
-            pdfDisplay.IsVisible = true;
+            //vidDisplay.IsVisible = false;
+            //pdfDisplay.IsVisible = true;
             IsVideo = false;
-            vidDisplay.Source = "";
+            //vidDisplay.Source = "";
             Scanner();
         }
         public async void Scanner()
@@ -70,11 +70,7 @@ namespace AlzuhairiMobile.Views
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
                     File video = CallAPI.PostObjectAndGetObject<File, File>(VideoId, "GetVideo", studentId.ToString(), IsVideo.ToString());
-                    if (video.IsVideo)
-                        vidDisplay.Source = video.Path;
-                    else
-                        pdfDisplay.Source = video.Path;
-                    
+                    await Navigation.PushModalAsync(new DisplayFile(video.IsVideo, video.Path));
                 }
                 catch (Exception ex)
                 {
