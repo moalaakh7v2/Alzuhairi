@@ -24,21 +24,21 @@ namespace ServerAlzuhairi.Controllers
         }
 
         //Android7
-        [HttpPost("GetVideo/{studenId}")]
-        public async Task<ActionResult<Models.File>> GetVideo([FromBody] Guid videoId, int studenId)
+        [HttpPost("GetVideo/{studenId}/{IsVideo}")]
+        public async Task<ActionResult<Models.File>> GetVideo([FromBody] Guid videoId, int studenId , bool IsVideo)
         {
             var video = await _context.Files.FirstOrDefaultAsync(x => x.Id == videoId);
             if (video == null)
-            {
-                return Problem("خطأ في رمز الفديو");
-            }
+                return Problem("خطأ في رمز الملف");
+            if (video.IsVideo != IsVideo)
+                return Problem("خطأ في تنسيق الملف المطلوب");
             List<StudentNoteBook> studentNoteBooks = await _context.StudentNoteBooks
                 .Include(x => x.NoteBookSerial)
                 .Where(x=>x.StudentId == studenId)
                 .ToListAsync();
             if (!studentNoteBooks.Any())
             {
-                return Problem("أنت لاتمتلك النوطة الخاصة بالفديو");
+                return Problem("أنت لاتمتلك النوطة الخاصة بالملف المطلوب");
             }
             foreach (var studentNoteBook in studentNoteBooks)
             {
@@ -48,10 +48,10 @@ namespace ServerAlzuhairi.Controllers
                     {
                         return video;
                     }
-                    return Problem("هذا الفيديو تابع لنوطة غير مفعلة");
+                    return Problem("هذا الملف تابع لنوطة غير مفعلة");
                 }
             }
-            return Problem("أنت لاتمتلك نوطة تتضمن هذا الفديو");
+            return Problem("أنت لاتمتلك نوطة تتضمن هذا الملف");
         }
 
         [HttpPost("RemoveVideo")]

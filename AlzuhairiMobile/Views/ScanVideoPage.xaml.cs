@@ -12,6 +12,7 @@ namespace AlzuhairiMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScanVideoPage : ContentPage
     {
+        bool IsVideo;
         public ScanVideoPage()
         {
             InitializeComponent();
@@ -21,15 +22,17 @@ namespace AlzuhairiMobile.Views
         {
             pdfDisplay.IsVisible = false;
             vidDisplay.IsVisible = true;
-            //https://res.cloudinary.com/dagpkl64s/video/upload/v1606168600/Facebook_w18iav.mp4
+            IsVideo = true;
+            pdfDisplay.Source = "";
             Scanner();
         }
 
         private void btnScanExc_Clicked(object sender, EventArgs e)
         {
-            vidDisplay.IsVisible = false
+            vidDisplay.IsVisible = false;
             pdfDisplay.IsVisible = true;
-            //https://drive.google.com/file/d/1bY1y3xTcwU75nFuPnFUL5wHfem3zxMv9/view?usp=sharing
+            IsVideo = false;
+            vidDisplay.Source = "";
             Scanner();
         }
         public async void Scanner()
@@ -66,7 +69,7 @@ namespace AlzuhairiMobile.Views
                 try
                 {
                     int studentId = Convert.ToInt32(Settings.StudentId);
-                    File video = CallAPI.PostObjectAndGetObject<File, File>(VideoId, "GetVideo", studentId.ToString());
+                    File video = CallAPI.PostObjectAndGetObject<File, File>(VideoId, "GetVideo", studentId.ToString(), IsVideo.ToString());
                     if (video.IsVideo)
                         vidDisplay.Source = video.Path;
                     else
