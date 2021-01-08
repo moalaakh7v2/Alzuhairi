@@ -25,6 +25,13 @@ namespace ServerAlzuhairi.Controllers
         {
             return await _context.Resellers.ToListAsync();
         }
+        [HttpGet("GetActiveNoteBookResellers/{noteBookId}")]
+        public async Task<ActionResult<IEnumerable<Reseller>>> GetActiveNoteBookResellers(int noteBookId)
+        {
+            var r = await _context.ResellerAndNoteBooks
+                .Where(x=>x.NoteBookId == noteBookId)
+                .ToListAsync();
+        }
 
         [HttpGet("GetResellerAndNoteBookByResellerId/{resellerId}")]
         public async Task<ActionResult<IEnumerable<ResellerAndNoteBook>>> GetResellerAndNoteBookByResellerId(int resellerId)

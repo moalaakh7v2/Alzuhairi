@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminPanel.Classes
 {
-    public static class ExportTowExcel
+    public static class gridView
     {
         public static void copyAlltoClipboard(this DataGridView gridView)
         {

@@ -24,15 +24,18 @@ namespace AdminPanel.View.Students
 
         private void EditStudent_Load(object sender, EventArgs e)
         {
+          
             txtFullName.Text = student.FirstName + " " + student.LastName;
             txtPhone.Text = student.PhoneNumber;
             if (!student.IsActive)
-                btnDeactive.Enabled = false;
+                btnDeactive.Text = "Activate";
+            else
+                btnDeactive.Text = "Deactivate";
+
             foreach (var item in student.StudentNoteBooks.Select(x=>x.NoteBookSerial).Select(x=>x.NoteBook))
             {
                 lstNoteBook.Items.Add(item.Subject.SubjectName + " - " + item.Subject.Dept.ToString() + " - " + item.ReleaseDate.Year);
             }
-            // todo Alaa Get VideoWatched
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -41,8 +44,11 @@ namespace AdminPanel.View.Students
 
         private void btnDeactive_Click(object sender, EventArgs e)
         {
-            student.IsActive = false;
-            student = CallAPI.PostObjectAndGetObject<Student, Student>(student,"ModifyStudent", "false");
+            if (btnDeactive.Text == "Deactivate")
+                student.IsActive = false;
+            else if (btnDeactive.Text == "Activate")
+                student.IsActive = true;
+            student = CallAPI.PostObjectAndGetObject<Student, Student>(student,"ModifyStudent");
             Close();
 
         }

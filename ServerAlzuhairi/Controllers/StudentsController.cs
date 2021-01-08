@@ -25,12 +25,20 @@ namespace ServerAlzuhairi.Controllers
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<Student>>> GetStudents()
         {
-            var Students = await _context.Students.Include(x=>x.StudentNoteBooks).ToListAsync();
+            var Students = await _context.Students
+                .Include(x=>x.StudentNoteBooks)
+                .ThenInclude(x=>x.NoteBookSerial)
+                .ThenInclude(x=>x.NoteBook)
+                .ThenInclude(x=>x.Subject)
+                .ToListAsync();
             foreach (var student in Students)
             {
                 foreach (var StudentNoteBook in student.StudentNoteBooks)
                 {
                     StudentNoteBook.Student = null;
+                    StudentNoteBook.NoteBookSerial.StudentNoteBooks = null;
+                    StudentNoteBook.NoteBookSerial.NoteBook.NoteBookSerials = null;
+                    StudentNoteBook.NoteBookSerial.NoteBook.Subject.NoteBooks = null;
                 }
             }
             return Students;
@@ -64,10 +72,9 @@ namespace ServerAlzuhairi.Controllers
         }
 
        
-        [HttpPost("ModifyStudent/{approve}")]
-        public async Task<ActionResult<Student>> ModifyStudent(Student student , bool approve)
+        [HttpPost("ModifyStudent")]
+        public async Task<ActionResult<Student>> ModifyStudent(Student student)
         {
-            student.IsActive = approve;
             _context.Entry(student).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return student;

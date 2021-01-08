@@ -8,7 +8,7 @@ namespace Library
 {
     public class CallAPI
     {
-        public static string URL = "http://192.168.1.106:45455/api/";
+        public static string URL = "http://10.10.2.200:45455/api/";
         //  public static string URL = "http://moalaa7test.somee.com/api/";
         // public static string URL = "http://192.168.1.106/alzuhiri/api/";
         //public static string URL = "https://localhost:5001/api/";

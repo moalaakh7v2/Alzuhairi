@@ -96,7 +96,7 @@ namespace AdminPanel.View.Store
                 }
                 // Todo Check Limit of NoteBookSerials Count
                 var noteBook = noteBooks.First(x => x.Id == (int)comboNoteBook.SelectedValue);
-                   var countNoteBookSerials = noteBook.NoteBookSerials.Count;
+                   var NoteBookSerials = noteBook.NoteBookSerials;
                 //----------------------------------------------------------------------
                 ResellerAndNoteBook resellerAndNoteBook = CallAPI.PostObjectAndGetObject<ResellerAndNoteBook, ResellerAndNoteBook>(null,"GrantNoteBooksToReseller",
                  reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);

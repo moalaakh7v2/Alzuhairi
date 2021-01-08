@@ -39,12 +39,12 @@ namespace AdminPanel.View.Students
                 displayStudents.Add(new DisplayStudents
                 {
                     Id = item.Id,
-                    Age = item.Age,
-                    IsActive = item.IsActive,
+                    Age = item.Age.ToString(),
+                    IsActive = item.IsActive ? "مفعل" : "غير مفعل",
                     FirstName = item.FirstName,
                     LastName = item.LastName,
                     PhoneNumber = item.PhoneNumber,
-                    RegisterDate = item.LoginData
+                    RegisterDate = item.LoginData.ToString()
                 });
             }
             grdStudents.DataSource = displayStudents;
