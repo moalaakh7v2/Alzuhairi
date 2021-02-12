@@ -65,6 +65,7 @@
             this.grdStores.AllowUserToResizeColumns = false;
             this.grdStores.AllowUserToResizeRows = false;
             this.grdStores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grdStores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStores.Location = new System.Drawing.Point(18, 69);
             this.grdStores.Name = "grdStores";
@@ -150,6 +151,7 @@
             this.grdResellerAndNoteBook.AllowUserToResizeColumns = false;
             this.grdResellerAndNoteBook.AllowUserToResizeRows = false;
             this.grdResellerAndNoteBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grdResellerAndNoteBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdResellerAndNoteBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdResellerAndNoteBook.Location = new System.Drawing.Point(23, 29);
             this.grdResellerAndNoteBook.Name = "grdResellerAndNoteBook";

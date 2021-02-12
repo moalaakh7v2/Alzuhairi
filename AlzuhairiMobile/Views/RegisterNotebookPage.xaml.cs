@@ -79,7 +79,6 @@ namespace AlzuhairiMobile.Views
                         foreach (var item in noteBookFeatures.Where(x=>x.Id != 1))
                             Features += item.Feature.Title + "\n";
                         txtNotebookInfo.Text = Features;
-                        Settings.NoteBookFeature = Features;
                     }
                     else
                     {

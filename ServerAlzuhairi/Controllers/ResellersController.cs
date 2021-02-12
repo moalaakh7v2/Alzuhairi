@@ -31,6 +31,7 @@ namespace ServerAlzuhairi.Controllers
             var r = await _context.ResellerAndNoteBooks
                 .Where(x=>x.NoteBookId == noteBookId)
                 .ToListAsync();
+            return null;
         }
 
         [HttpGet("GetResellerAndNoteBookByResellerId/{resellerId}")]

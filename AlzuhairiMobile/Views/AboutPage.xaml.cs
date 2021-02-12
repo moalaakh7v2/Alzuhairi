@@ -1,5 +1,4 @@
-﻿using Android.OS;
-using Library;
+﻿using Library;
 using Models;
 using System;
 using System.ComponentModel;

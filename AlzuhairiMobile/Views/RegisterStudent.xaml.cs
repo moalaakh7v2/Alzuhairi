@@ -57,6 +57,7 @@ namespace AlzuhairiMobile.Views
                 student.PhoneNumber = PhoneNumber;
                 student.Age = Convert.ToInt32(txtAge.Text);
                 student.SchoolName = txtSchool.Text;
+                student.Imei = Tools.GetMacAddr();
                 student = CallAPI.PostObjectAndGetObject<Student, Student>(student, "UpdateStudent", student.Id.ToString());
                 if (student != null)
                 {
