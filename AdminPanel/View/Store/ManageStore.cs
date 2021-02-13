@@ -22,6 +22,7 @@ namespace AdminPanel.View.Store
         List<ResellerAndNoteBook> resellerAndNoteBooks;
         List<Models.NoteBook> noteBooks;
         List<NoteBooksTitle> noteBooksTitles;
+        int count = 0;
         public ManageStore()
         {
             InitializeComponent();
@@ -96,7 +97,22 @@ namespace AdminPanel.View.Store
                 }
                 // Todo Check Limit of NoteBookSerials Count
                 var noteBook = noteBooks.First(x => x.Id == (int)comboNoteBook.SelectedValue);
-                   var NoteBookSerials = noteBook.NoteBookSerials;
+                int NoteBookSerialsCount = noteBook.NoteBookSerials.Count();
+                var resellerAndNoteBookCount = resellerAndNoteBooks.FirstOrDefault(x => x.NoteBookId == (int)comboNoteBook.SelectedValue);
+                int requiredCount = Convert.ToInt32(txtCount.Text);
+                bool check ;
+                if (resellerAndNoteBookCount == null)
+                    check = NoteBookSerialsCount < requiredCount;
+                else
+                {
+                    int AllowedNumber = NoteBookSerialsCount - resellerAndNoteBookCount.Count;
+                    check = AllowedNumber < requiredCount;
+                }
+                if (check)
+                {
+                    CheckData.ErrorMessage("Error , You have exceeded your notebook count limit ");
+                    return;
+                }
                 //----------------------------------------------------------------------
                 ResellerAndNoteBook resellerAndNoteBook = CallAPI.PostObjectAndGetObject<ResellerAndNoteBook, ResellerAndNoteBook>(null,"GrantNoteBooksToReseller",
                  reseller.Id.ToString(), comboNoteBook.SelectedValue.ToString(), txtCount.Text);
