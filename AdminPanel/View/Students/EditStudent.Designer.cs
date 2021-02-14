@@ -35,11 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnDeactive = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstNoteBook
@@ -119,24 +116,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Note Book";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.btnClose);
-            this.groupBox2.Controls.Add(this.btnDeactive);
-            this.groupBox2.Location = new System.Drawing.Point(12, 213);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(590, 100);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Manage";
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(298, 39);
+            this.btnClose.Location = new System.Drawing.Point(249, 247);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 30);
             this.btnClose.TabIndex = 1;
@@ -144,26 +129,12 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnDeactive
-            // 
-            this.btnDeactive.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDeactive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeactive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeactive.ForeColor = System.Drawing.Color.Red;
-            this.btnDeactive.Location = new System.Drawing.Point(201, 39);
-            this.btnDeactive.Name = "btnDeactive";
-            this.btnDeactive.Size = new System.Drawing.Size(91, 30);
-            this.btnDeactive.TabIndex = 0;
-            this.btnDeactive.Text = "Deacivate";
-            this.btnDeactive.UseVisualStyleBackColor = true;
-            this.btnDeactive.Click += new System.EventHandler(this.btnDeactive_Click);
-            // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 325);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lstNoteBook);
@@ -174,7 +145,6 @@
             this.Load += new System.EventHandler(this.EditStudent_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,8 +159,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnDeactive;
     }
 }
