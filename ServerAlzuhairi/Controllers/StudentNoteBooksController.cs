@@ -25,7 +25,6 @@ namespace ServerAlzuhairi.Controllers
         [HttpPost("SetUpNewNoteBook/{studentId}")]
         public async Task<ActionResult<List<NoteBookFeature>>> SetUpNewNoteBook([FromBody] Guid noteSerial , int studentId)
         {
-            //Check If Serial Found
             NoteBookSerial noteBookSerial = await _context.NoteBookSerials.FirstOrDefaultAsync(x=>x.QRcode == noteSerial);
             if (noteBookSerial == null)
             {
@@ -35,8 +34,7 @@ namespace ServerAlzuhairi.Controllers
             {
                 return Problem("النوطة غير مفعلة");
             }
-            NoteBook noteBook = await _context.NoteBooks.FirstOrDefaultAsync(x => x.Id == noteBookSerial.NoteBookId);
-            StudentNoteBook studentNoteBook =await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.NoteBookSerialId == noteBookSerial.Id);
+            StudentNoteBook studentNoteBook = await _context.StudentNoteBooks.FirstOrDefaultAsync(x => x.NoteBookSerialId == noteBookSerial.Id);
             if (studentNoteBook != null)
             {
                 if (studentNoteBook.StudentId != studentId)
@@ -44,23 +42,22 @@ namespace ServerAlzuhairi.Controllers
                     return Problem("النوطة مستخدمة من طالب آخر");
                 }
             }
-            List<StudentNoteBook> studentNoteBooks = await  _context.StudentNoteBooks.Where(x=>x.StudentId == studentId).ToListAsync();
-            foreach (var item in studentNoteBooks)
-                item.IsActive = false;
-
-            StudentNoteBook CraetestudentNoteBook = new StudentNoteBook
+            else
             {
-                StudentId = studentId,
-                NoteBookSerialId = noteBookSerial.Id,
-                IsActive = true,
-            };
+                StudentNoteBook CraetestudentNoteBook = new StudentNoteBook
+                {
+                    StudentId = studentId,
+                    NoteBookSerialId = noteBookSerial.Id,
+                    IsActive = true,
+                };
+                await _context.StudentNoteBooks.AddAsync(CraetestudentNoteBook);
+                await _context.SaveChangesAsync();
+            }
+            NoteBook noteBook = await _context.NoteBooks.FirstOrDefaultAsync(x => x.Id == noteBookSerial.NoteBookId);
             List<NoteBookFeature> noteBookFeatures = await _context.NoteBookFeatures
                 .Where(x => x.NoteBookId == noteBook.Id)
                  .Include(x=>x.Feature)
                 .ToListAsync();
-                await _context.StudentNoteBooks.AddAsync(CraetestudentNoteBook);
-                await _context.SaveChangesAsync();
-           
             foreach (var item in noteBookFeatures)
                 item.NoteBook = null;
             return noteBookFeatures;
