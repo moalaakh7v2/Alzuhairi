@@ -23,14 +23,14 @@ namespace ServerAlzuhairi.Controllers
 
         //Android1
         [HttpGet("CreateCode/{PhoneNumber}/{imei}")]
-        public async Task<ActionResult<CheckCode>> CreateCode(string PhoneNumber , string imei)
+        public async Task<ActionResult<CheckCode>> CreateCode(string PhoneNumber , string userMAC)
         {
             if (_context.CheckCodes.Any(x => x.PhoneNumber == PhoneNumber && x.SendDate.AddMinutes(15) >= DateTime.Now))
             {
                 return Problem("الرجاء الانتظار 15 دقيقة قبل اعادة طلب الرمز");
             }
             Student student = _context.Students.FirstOrDefault(x => x.PhoneNumber == PhoneNumber);
-            if (student != null && student.Imei != imei && student.LoginData.AddDays(3) > DateTime.Now)
+            if (student != null && student.Mac != userMAC && student.LoginData.AddDays(3) > DateTime.Now)
             {
                 return Problem("لايمكنك تسجيل الدخول في هذا الوقت");
             }

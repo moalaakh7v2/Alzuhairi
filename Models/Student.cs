@@ -16,7 +16,7 @@ namespace Models
         public DateTime LoginData { get; set; }
         public string PhoneNumber { get; set; }
         public string SchoolName { get; set; }
-        public string Imei { get; set; } 
+        public string Mac { get; set; } 
         public bool IsActive { get; set; } = true;
         public virtual ICollection<StudentNoteBook> StudentNoteBooks { get; set; }
     }
