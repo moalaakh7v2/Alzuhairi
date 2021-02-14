@@ -44,7 +44,7 @@ namespace ServerAlzuhairi.Controllers
             {
                 if (studentNoteBook.NoteBookSerial.NoteBookId == video.NoteBookId)
                 {
-                    if (studentNoteBook.IsActive)
+                    if (studentNoteBook.NoteBookSerial.IsActive)
                     {
                         return video;
                     }
