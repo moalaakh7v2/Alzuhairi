@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,7 +73,7 @@ namespace AdminPanel.View
                 about.AutoScroll = true;
                 this.pnlView.Controls.Add(about);
                 about.Show();
-                btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible  = btnInit.Visible = true;
+                btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible  = btnInit.Visible = btnLogout.Visible = true;
             }
             else
             {
@@ -146,6 +147,15 @@ namespace AdminPanel.View
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.pnlView.Controls.Clear();
+            Program.admin = null;
+            LogIn.IsLogin = false;
+            btnStudents.Visible = btnNoteBook.Visible = btnPOS.Visible = btnAbout.Visible = btnInit.Visible = btnLogout.Visible = false;
+            Main_Load(sender, e);
         }
     }
 }

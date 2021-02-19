@@ -30,8 +30,7 @@ namespace ServerAlzuhairi.Controllers
         {
             admin = await _context.Admins.FirstOrDefaultAsync(x => x.Email == admin.Email && x.Password == admin.Password);
             if (admin == null)
-                return Problem("Incorrect Information");
-            await _context.SaveChangesAsync();
+                return new Admin();
             return admin;
         }
 
