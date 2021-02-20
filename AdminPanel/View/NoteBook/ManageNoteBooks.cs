@@ -132,9 +132,9 @@ namespace AdminPanel.View.NoteBook
             }
             Cursor.Current = Cursors.WaitCursor;
             List<Guid> vidoeIds = new List<Guid>();
-            foreach (object itemChecked in chkVideos.CheckedItems)
+            foreach (DisplayFliesVM itemChecked in chkVideos.CheckedItems)
             {
-                vidoeIds.Add(((File)itemChecked).Id);
+                vidoeIds.Add((itemChecked).Id);
             }
             CallAPI.PostObjectAndGetObject<File,File>(vidoeIds, "RemoveVideo");
             Cursor.Current = Cursors.Default;
